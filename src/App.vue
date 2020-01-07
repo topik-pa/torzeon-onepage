@@ -1,13 +1,22 @@
 <template>
   <div id="app">
     <img src="./assets/logo.png">
+    <header-cmp/>
     <router-view/>
+    <footer-cmp/>
   </div>
 </template>
 
 <script>
+import HeaderCmp from '@/components/shared/HeaderCmp'
+import FooterCmp from '@/components/shared/FooterCmp'
+
 export default {
-  name: 'App'
+  name: 'App',
+  components: {
+    HeaderCmp,
+    FooterCmp
+  }
 }
 </script>
 
