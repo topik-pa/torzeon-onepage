@@ -1,8 +1,9 @@
 <template>
   <div id="app">
-    <img src="./assets/logo.png">
     <header-cmp/>
-    <router-view/>
+    <main>
+      <router-view/>
+    </main>
     <footer-cmp/>
   </div>
 </template>
@@ -28,8 +29,19 @@ export default {
   font-family: 'Montserrat', sans-serif;
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
-  text-align: center;
-  color: #2c3e50;
-  margin-top: 60px;
+  margin: 0 auto;
+  width: 100%;
+  max-width: 1280px;
+  position: relative;
+}
+
+main {
+  background-image: url('https://s3-eu-west-1.amazonaws.com/production-hairdressr/fe-dummy/cover.png');
+  background-repeat: no-repeat;
+  min-height: 640px;
+  background-position: 50% 5rem;
+  position: absolute;
+  width: 100%;
+  top: 0;
 }
 </style>
