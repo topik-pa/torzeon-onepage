@@ -1,13 +1,16 @@
 <template>
   <article :class="{'up': isArticleUp}">
     <div class="shadow" :class="{'expanded': isShadowExpanded}"></div>
+    <tour-cmp/>
   </article>
 </template>
 
 <script>
 import JSUtils from '@/assets/scripts/utilities.js'
+import TourCmp from '@/components/tour/TourCmp'
+
 export default {
-  name: 'Tour',
+  name: 'ArticleCmp',
   data () {
     return {
       stopExpandShadow: 120,
@@ -16,6 +19,9 @@ export default {
       isArticleUp: false,
       debounceInterval: 10
     }
+  },
+  components: {
+    TourCmp
   },
   mounted: function () {
     var _this = this
@@ -45,7 +51,7 @@ export default {
 article, .shadow {
     background: white;
     top: 480px;
-    padding: 2rem 4rem;
+    padding: 2rem 2rem;
     border-radius: 10px;
 }
 
@@ -76,12 +82,12 @@ article.up {
 @media screen and (max-width: 768px) {
     article {
         top: 460px;
-        padding: 2rem 2rem;
+        padding: 2rem 1rem;
         margin: 0 2rem;
     }
     .shadow {
         margin: 0;
-        padding: 2rem 2rem;
+        padding: 2rem 1rem;
     }
     .shadow.expanded {
         margin: 0 -1rem;

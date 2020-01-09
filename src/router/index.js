@@ -1,6 +1,6 @@
 import Vue from 'vue'
 import Router from 'vue-router'
-import Tour from '@/components/Tour'
+import ArticleCmp from '@/components/shared/ArticleCmp'
 
 Vue.use(Router)
 
@@ -9,12 +9,12 @@ export default new Router({
     {
       path: '/',
       name: 'Home',
-      component: Tour
+      component: ArticleCmp
     },
     {
       path: '/test-tour',
       name: 'Tour',
-      component: Tour
+      component: ArticleCmp
     }
   ]
 })
