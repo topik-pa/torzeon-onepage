@@ -73,7 +73,7 @@
       transform: rotate(-45deg) translate(0, -1px);
     }
   
-    ul
+    #menu-toggle ul
     {
       position: absolute;
       width: 200px;
@@ -90,7 +90,7 @@
       transition: transform 0.5s cubic-bezier(0.77,0.2,0.05,1.0);
     }
   
-    ul li
+    #menu-toggle ul li
     {
       font-size: 1.5rem;
     }
