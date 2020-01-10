@@ -8,12 +8,16 @@
     <aside>
       <tour-card-cmp v-for="highlight in highlights" :key="highlight.id" :marker="highlight.marker" :title="highlight.title" :image="highlight.image" :list="highlight.list" :text="highlight.text" :cta="highlight.cta"/>
     </aside>
+    <div class="stops">
+      <tour-stop-cmp v-for="stop in stops" :key="stop.id" :stop="stop"/>
+    </div>
   </section>
 </template>
 
 <script>
 import TourFooterCmp from './TourFooterCmp'
 import TourGalleryCmp from './TourGalleryCmp'
+import TourStopCmp from './TourStopCmp'
 import TourCardCmp from './TourCardCmp'
 export default {
   name: 'TourCmp',
@@ -118,12 +122,82 @@ export default {
         {
           id: 1,
           marker: 'Places',
-          title: 'Most interesting destinations',
+          title: 'You will visit...',
           image: {
             src: 'https://image.shutterstock.com/image-photo/heatwave-hot-sun-climate-change-260nw-1152324746.jpg',
             alt: 'Alt text for this image'
           },
           text: 'Lorem ipsum dolor sit amet, consectetur adipiscing elit. Aliquam id finibus elit. Duis id placerat augue. Vivamus gravida rhoncus enim vitae placerat.'
+        },
+        {
+          id: 2,
+          marker: 'Relax',
+          title: 'You will taste...',
+          image: {
+            src: 'https://image.shutterstock.com/image-photo/heatwave-hot-sun-climate-change-260nw-1152324746.jpg',
+            alt: 'Alt text for this image'
+          },
+          text: 'Lorem ipsum dolor sit amet, consectetur adipiscing elit. Aliquam id finibus elit. Duis id placerat augue. Vivamus gravida rhoncus enim vitae placerat.'
+        }
+      ],
+      stops: [
+        {
+          id: 0,
+          name: 'Stop 1',
+          type: 'public',
+          gmapsLocation: 'https://goo.gl/maps/4UesoB2u579WrBm68',
+          path: 'https://goo.gl/maps/FY7REQsgZu9Ridmx5',
+          description: 'Here we are in the first step of our journey... <br/> Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nullam id sodales ex, nec mollis tortor. Proin ac dictum nunc. Nulla id justo varius, auctor elit ac, tristique erat.',
+          checked: false,
+          hasOwnPage: false,
+          promo: 'M',
+          action: 'check',
+          links: [
+            {
+              url: 'https://it.wikipedia.org/wiki/Stazione_di_Milano_Centrale',
+              name: 'Stazione Centrale (from Wikipedia)'
+            },
+            {
+              url: 'https://www.esquire.com/it/lifestyle/viaggi/a19151611/stazione-centrale-milano-curiosita/',
+              name: 'Stazione Centrale (from Esquire)'
+            },
+            {
+              url: 'https://www.panorama.it/cultura/arte-idee/michelangelo-pistoletto-spiega-la-sua-mela-reintegrata/',
+              name: 'The apple (from Panorama)'
+            }
+          ],
+          images: [
+            {
+              id: 0,
+              name: 'Stazione Centrale main building',
+              url: 'https://hips.hearstapps.com/hmg-prod.s3.amazonaws.com/images/gettyimages-923042218-1520434856.jpg?crop=1.00xw:0.847xh;0,0.0987xh&resize=480:*',
+              alt: 'First image of stazione Centrale',
+              description: 'The station was build in the... Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nullam id sodales ex, nec mollis tortor. Proin ac dictum nunc. Nulla id justo varius, auctor elit ac, tristique erat.'
+            },
+            {
+              id: 1,
+              name: 'The apple monument',
+              url: 'https://www.artribune.com/wp-content/uploads/2016/03/La-Mela-Reintegrata-di-Pistoletto-in-Piazza-Duca-dAosta.jpg',
+              alt: 'Second image of stazione Centrale',
+              description: 'The big apple of Stazione Centrale... Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nullam id sodales ex, nec mollis tortor. Proin ac dictum nunc.'
+            }
+          ]
+        },
+        {
+          id: 1,
+          name: 'Stop 2',
+          type: 'public',
+          gmapsLocation: 'https://goo.gl/maps/4UesoB2u579WrBm68',
+          path: 'https://goo.gl/maps/FY7REQsgZu9Ridmx5',
+          description: 'Here we are in the first step of our journey... <br/> Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nullam id sodales ex, nec mollis tortor. Proin ac dictum nunc. Nulla id justo varius, auctor elit ac, tristique erat.',
+          checked: false,
+          hasOwnPage: false,
+          promo: 'M',
+          action: 'check',
+          links: [
+          ],
+          images: [
+          ]
         }
       ]
     }
@@ -131,7 +205,8 @@ export default {
   components: {
     TourFooterCmp,
     TourGalleryCmp,
-    TourCardCmp
+    TourCardCmp,
+    TourStopCmp
   }
 }
 </script>
@@ -158,6 +233,10 @@ p {
     font-size: 1.2rem;
     line-height: 150%;
     margin: 0;
+}
+
+.stops {
+  margin-top: 4rem;
 }
 
 @media screen and (max-width: 768px) {
