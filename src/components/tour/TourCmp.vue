@@ -11,6 +11,7 @@
     <div class="stops">
       <tour-stop-cmp v-for="stop in stops" :key="stop.id" :stop="stop"/>
     </div>
+    <tour-bottom-cmp :stops="stops"/>
   </section>
 </template>
 
@@ -19,6 +20,7 @@ import TourFooterCmp from './TourFooterCmp'
 import TourGalleryCmp from './TourGalleryCmp'
 import TourStopCmp from './TourStopCmp'
 import TourCardCmp from './TourCardCmp'
+import TourBottomCmp from './TourBottomCmp'
 export default {
   name: 'TourCmp',
   data () {
@@ -149,7 +151,6 @@ export default {
           path: 'https://goo.gl/maps/FY7REQsgZu9Ridmx5',
           description: 'Here we are in the first step of our journey... <br/> Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nullam id sodales ex, nec mollis tortor. Proin ac dictum nunc. Nulla id justo varius, auctor elit ac, tristique erat.',
           checked: false,
-          hasOwnPage: false,
           promo: 'M',
           action: 'check',
           links: [
@@ -192,7 +193,7 @@ export default {
           description: 'Here we are in the first step of our journey... <br/> Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nullam id sodales ex, nec mollis tortor. Proin ac dictum nunc. Nulla id justo varius, auctor elit ac, tristique erat.',
           checked: false,
           hasOwnPage: false,
-          promo: 'M',
+          promo: 'X',
           action: 'check',
           links: [
           ],
@@ -206,7 +207,8 @@ export default {
     TourFooterCmp,
     TourGalleryCmp,
     TourCardCmp,
-    TourStopCmp
+    TourStopCmp,
+    TourBottomCmp
   }
 }
 </script>

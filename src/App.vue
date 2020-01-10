@@ -44,4 +44,8 @@ main {
   width: 100%;
   top: 0;
 }
+
+.stops .stop:last-child {
+  border: none;
+}
 </style>

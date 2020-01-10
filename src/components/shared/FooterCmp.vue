@@ -9,7 +9,7 @@ export default {
   name: 'FooterCmp',
   data () {
     return {
-      isVisible: true
+      isVisible: false
     }
   }
 }

@@ -29,7 +29,7 @@
 
     <div class="check">
       <small>Are you here?</small>
-      <button type="button" class="btn btn-primary" :class="{disabled: stop.checked}"><strong>CHECK</strong> THIS LOCATION!</button>
+      <button @click="checkStop" type="button" class="btn btn-primary" :class="{disabled: stop.checked}"><strong>CHECK</strong> THIS LOCATION!</button>
     </div>
   </div>
 </template>
@@ -50,6 +50,17 @@ export default {
   },
   computed: {
     isFirstStop: () => {
+    }
+  },
+  methods: {
+    checkStop () {
+      this.stop.checked = true
+      /* if (this.stop.action === 'check') {
+      }
+      if (this.stop.action === 'last') {
+      }
+      if (this.stop.action === 'promo') {
+      } */
     }
   }
 }
