@@ -1,25 +1,27 @@
 <template>
-  <footer v-if="isVisible">
-    <div id="promocode">
-      <strong>Promocode</strong> for <span>"{{privateStop.name}}":&nbsp;</span>
-      <div v-for="stop in stops" :key="stop.name">
-        <span v-if="stop.checked" >{{stop.promo}}</span>
-        <span v-else><i class="icon material-icons">clear</i></span>
-        &nbsp;
+  <transition name="fade">
+    <footer v-if="started" transition="baudo">
+      <div id="promocode">
+        <strong>Promocode</strong> for <span>"{{privateStop.name}}":&nbsp;</span>
+        <div v-for="stop in stops" :key="stop.name">
+          <span v-if="stop.checked" >{{stop.promo}}</span>
+          <span v-else><i class="icon material-icons">clear</i></span>
+          &nbsp;
+        </div>
       </div>
-    </div>
-    <div id="stops">
-      <div v-for="stop in stops" :key="stop.id">
-        <i v-if="stop.checked" class="icon material-icons">star</i>
-        <i v-else class="icon material-icons">star_border</i>
+      <div id="stops">
+        <div v-for="stop in stops" :key="stop.id">
+          <i v-if="stop.checked" class="icon material-icons">star</i>
+          <i v-else class="icon material-icons">star_border</i>
+        </div>
       </div>
-    </div>
-    <div id="progress">
-      <div>
-        <progress :value="progress" max="100"></progress>
+      <div id="progress">
+        <div>
+          <progress :value="progress" max="100"></progress>
+        </div>
       </div>
-    </div>
-  </footer>
+    </footer>
+  </transition>
 </template>
 
 <script>
@@ -27,13 +29,16 @@ export default {
   name: 'FooterCmp',
   data () {
     return {
-      isVisible: true,
       progress: 0
     }
   },
   props: {
     stops: {
       type: Array,
+      required: false
+    },
+    started: {
+      type: Boolean,
       required: false
     }
   },
@@ -77,6 +82,7 @@ export default {
     width: 100%;
     max-width: 1280px;
     box-shadow: 0px 0px 5px 0px #AAAAAA;
+    border-radius: 3px;
   }
 
   #progress {
@@ -128,10 +134,17 @@ export default {
     display: flex;
     justify-content: space-between;
     width: 20%;
-    margin: 1rem auto;
-    margin-bottom: 1.3rem;
+    margin: 0 auto;
+    margin-bottom: 1rem;
     min-width: 240px;
   }
+
+  .fade-enter-active, .fade-leave-active {
+    transition: opacity .6s;
+  }
+ .fade-enter, .fade-leave-active {
+    opacity: 0;
+  }  
 
   @media screen and (max-width: 768px) {
     footer {

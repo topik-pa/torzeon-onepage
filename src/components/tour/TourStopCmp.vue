@@ -29,7 +29,7 @@
 
     <div class="check">
       <small>Are you here?</small>
-      <button @click="checkStop" type="button" class="btn btn-primary" :class="{disabled: stop.checked}"><strong>CHECK</strong> THIS LOCATION!</button>
+      <button @click="checkStop" type="button" class="btn btn-primary" :class="{disabled: stop.checked}">{{labelButtonCheck}} </button>
     </div>
   </div>
 </template>
@@ -39,7 +39,8 @@ export default {
   name: 'TourStopCmp',
   data: function () {
     return {
-      labelGMapsLocation: this.stop.id === 0 ? 'How to get there?' : 'Where am I?'
+      labelGMapsLocation: this.stop.id === 0 ? 'How to get there?' : 'Where am I?',
+      labelButtonCheck: 'CHECK THIS LOCATION!'
     }
   },
   props: {
@@ -49,12 +50,11 @@ export default {
     }
   },
   computed: {
-    isFirstStop: () => {
-    }
   },
   methods: {
     checkStop () {
       this.stop.checked = true
+      this.labelButtonCheck = 'CHECKED!'
       /* if (this.stop.action === 'check') {
       }
       if (this.stop.action === 'last') {

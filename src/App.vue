@@ -48,4 +48,28 @@ main {
 .stops .stop:last-child {
   border: none;
 }
+
+.btn {
+    display: inline-block;
+    font-weight: 400;
+    text-align: center;
+    vertical-align: middle;
+    background-color: transparent;
+    border: 1px solid transparent;
+    padding: .5rem 1rem;
+    font-size: 1rem;
+    line-height: 1.5;
+    border-radius: 5px;
+}
+.btn-primary {
+    color: #333;
+    background-color: #F8E627;
+    border-color: #E7D516;
+    font-weight: bold;
+}
+.btn-primary.disabled {
+    color: #999;
+    background-color: transparent;
+    cursor: auto;
+}
 </style>

@@ -8,10 +8,15 @@
     <aside>
       <tour-card-cmp v-for="highlight in highlights" :key="highlight.id" :marker="highlight.marker" :title="highlight.title" :image="highlight.image" :list="highlight.list" :text="highlight.text" :cta="highlight.cta"/>
     </aside>
+    <div id="ready">
+      <div class="title">
+        <h2><i class="icon material-icons">directions</i>&nbsp; Are you ready? ....Let's START!</h2>        
+      </div>
+    </div>
     <div class="stops">
       <tour-stop-cmp v-for="stop in stops" :key="stop.id" :stop="stop"/>
     </div>
-    <tour-bottom-cmp :stops="stops"/>
+    <tour-bottom-cmp :stops="stops" :started="started"/>
   </section>
 </template>
 
@@ -31,6 +36,7 @@ export default {
       author: 'Marco Pavan',
       avatarAuthorUrl: 'https://placekitten.com/g/40/40',
       authorMail: 'marcopavan.mp@gmail.com',
+      started: false,
       socials: [
         {
           name: 'Facebook',
@@ -145,14 +151,13 @@ export default {
       stops: [
         {
           id: 0,
-          name: 'Stop 1',
+          name: 'Stazione Centrale',
           type: 'public',
           gmapsLocation: 'https://goo.gl/maps/4UesoB2u579WrBm68',
           path: 'https://goo.gl/maps/FY7REQsgZu9Ridmx5',
           description: 'Here we are in the first step of our journey... <br/> Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nullam id sodales ex, nec mollis tortor. Proin ac dictum nunc. Nulla id justo varius, auctor elit ac, tristique erat.',
           checked: false,
           promo: 'M',
-          action: 'check',
           links: [
             {
               url: 'https://it.wikipedia.org/wiki/Stazione_di_Milano_Centrale',
@@ -186,18 +191,94 @@ export default {
         },
         {
           id: 1,
-          name: 'Stop 2',
+          name: 'Duomo',
           type: 'public',
-          gmapsLocation: 'https://goo.gl/maps/4UesoB2u579WrBm68',
-          path: 'https://goo.gl/maps/FY7REQsgZu9Ridmx5',
-          description: 'Here we are in the first step of our journey... <br/> Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nullam id sodales ex, nec mollis tortor. Proin ac dictum nunc. Nulla id justo varius, auctor elit ac, tristique erat.',
+          gmaps: 'https://goo.gl/maps/aWae9qkr1GasgJQs5',
+          path: 'https://goo.gl/maps/eKiBCzHGzNBUuaUe7',
+          description: 'Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nullam id sodales ex, nec mollis tortor. Proin ac dictum nunc. Nulla id justo varius, auctor elit ac, tristique erat.',
           checked: false,
-          hasOwnPage: false,
-          promo: 'X',
-          action: 'check',
+          promo: 'R',
           links: [
+            {
+              url: 'https://www.duomomilano.it/it/',
+              name: 'Duomo di Milano (Official site)'
+            },
+            {
+              url: 'https://it.wikipedia.org/wiki/Duomo_di_Milano',
+              name: 'Duomo di Milano (Wikipedia)'
+            }
           ],
           images: [
+            {
+              id: 0,
+              url: 'http://www.italia.it/fileadmin/src/img/cluster_gallery/Citta_d_arte_Milano/Duomo-Milano.jpg',
+              alt: 'Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nullam id sodales ex, nec mollis tortor. Proin ac dictum nunc.',
+              description: 'Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nullam id sodales ex, nec mollis tortor. Proin ac dictum nunc.'
+            },
+            {
+              id: 1,
+              url: 'https://i2.wp.com/www.maart.mi.it/wp-content/uploads/2017/04/Maart-Milano-Duomo.png',
+              alt: 'Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nullam id sodales ex, nec mollis tortor. Proin ac dictum nunc.',
+              description: 'Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nullam id sodales ex, nec mollis tortor. Proin ac dictum nunc.'
+            }
+          ]
+        },
+        {
+          id: 2,
+          name: 'Caffè Vecchia Brera',
+          type: 'private',
+          gmaps: 'https://goo.gl/maps/1KGVb7GvAwsJ1WQ88',
+          path: 'https://goo.gl/maps/gwBY1VmGQm6K2eVs5',
+          fbPage: 'https://www.facebook.com/Torzeon-103840521139047/',
+          description: 'Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nullam id sodales ex, nec mollis tortor. Proin ac dictum nunc.',
+          checked: false,
+          promo: 'C',
+          links: [
+            {
+              url: 'https://www.creperiacaffevecchiabrera.it/',
+              name: 'Caffè Vecchia Brera (Official site)'
+            }
+          ],
+          images: [
+            {
+              id: 0,
+              url: 'https://media-cdn.tripadvisor.com/media/photo-s/14/fc/5e/56/welcoming-frontage.jpg',
+              alt: 'Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nullam id sodales ex, nec mollis tortor.',
+              description: 'Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nullam id sodales ex, nec mollis tortor.'
+            }
+          ]
+        },
+        {
+          id: 3,
+          name: 'Castello Sforzesco',
+          type: 'public',
+          gmaps: 'https://goo.gl/maps/WmsDrifoSoWW1jej7',
+          description: 'Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nullam id sodales ex, nec mollis tortor. Proin ac dictum nunc.',
+          checked: false,
+          promo: '',
+          links: [
+            {
+              url: 'https://www.milanocastello.it/',
+              name: 'Castello Sforzesco (official site)'
+            },
+            {
+              url: 'https://it.wikipedia.org/wiki/Castello_Sforzesco',
+              name: 'Castello Sforzesco (from Wikipedia)'
+            }
+          ],
+          images: [
+            {
+              id: 0,
+              url: 'https://upload.wikimedia.org/wikipedia/commons/7/7e/20110725_Castello_Sforzesco_Milan_5557.jpg',
+              alt: 'Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nullam id sodales ex, nec mollis tortor. Proin ac dictum nunc.',
+              description: 'Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nullam id sodales ex, nec mollis tortor. Proin ac dictum nunc.'
+            },
+            {
+              id: 1,
+              url: 'https://www.turismo.it/typo3temp/pics/24bd0ac83b.jpg',
+              alt: 'Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nullam id sodales ex, nec mollis tortor. Proin ac dictum nunc.',
+              description: 'Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nullam id sodales ex, nec mollis tortor. Proin ac dictum nunc.'
+            }
           ]
         }
       ]
@@ -209,6 +290,24 @@ export default {
     TourCardCmp,
     TourStopCmp,
     TourBottomCmp
+  },
+  computed: {
+  },
+  methods: {
+    tourStarted () {
+      var scrollSize = window.innerHeight - document.getElementById('ready').getBoundingClientRect().top
+      if (scrollSize < 300) {
+        this.started = false
+      } else {
+        this.started = true
+      }
+    }
+  },
+  created () {
+    window.addEventListener('scroll', this.tourStarted)
+  },
+  destroyed () {
+    window.removeEventListener('scroll', this.tourStarted)
   }
 }
 </script>
@@ -239,6 +338,15 @@ p {
 
 .stops {
   margin-top: 4rem;
+}
+
+#ready {
+  margin: 5rem 0;
+}
+
+#ready i {
+  font-size: 200%;
+  vertical-align: middle;
 }
 
 @media screen and (max-width: 768px) {
