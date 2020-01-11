@@ -4,9 +4,11 @@ import Vue from 'vue'
 import App from './App'
 import router from './router'
 import Vuex from 'vuex'
+import VueSimpleAlert from 'vue-simple-alert'
 import '@/assets/styles/reset.css'
 
 Vue.use(Vuex)
+Vue.use(VueSimpleAlert)
 
 Vue.config.productionTip = false
 

@@ -144,7 +144,7 @@ export default {
   }
  .fade-enter, .fade-leave-active {
     opacity: 0;
-  }  
+  }
 
   @media screen and (max-width: 768px) {
     footer {

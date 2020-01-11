@@ -10,7 +10,7 @@
     </aside>
     <div id="ready">
       <div class="title">
-        <h2><i class="icon material-icons">directions</i>&nbsp; Are you ready? ....Let's START!</h2>        
+        <h2><i class="icon material-icons">directions</i>&nbsp; Are you ready? ....Let's START!</h2>
       </div>
     </div>
     <div class="stops">
@@ -158,6 +158,7 @@ export default {
           description: 'Here we are in the first step of our journey... <br/> Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nullam id sodales ex, nec mollis tortor. Proin ac dictum nunc. Nulla id justo varius, auctor elit ac, tristique erat.',
           checked: false,
           promo: 'M',
+          popup: 'check',
           links: [
             {
               url: 'https://it.wikipedia.org/wiki/Stazione_di_Milano_Centrale',
@@ -198,6 +199,7 @@ export default {
           description: 'Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nullam id sodales ex, nec mollis tortor. Proin ac dictum nunc. Nulla id justo varius, auctor elit ac, tristique erat.',
           checked: false,
           promo: 'R',
+          popup: 'check',
           links: [
             {
               url: 'https://www.duomomilano.it/it/',
@@ -233,6 +235,7 @@ export default {
           description: 'Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nullam id sodales ex, nec mollis tortor. Proin ac dictum nunc.',
           checked: false,
           promo: 'C',
+          popup: 'shop',
           links: [
             {
               url: 'https://www.creperiacaffevecchiabrera.it/',
@@ -256,6 +259,7 @@ export default {
           description: 'Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nullam id sodales ex, nec mollis tortor. Proin ac dictum nunc.',
           checked: false,
           promo: '',
+          popup: 'finish',
           links: [
             {
               url: 'https://www.milanocastello.it/',
