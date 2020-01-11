@@ -8,8 +8,7 @@
       <h3>{{title}}</h3>
     </div>
     <div v-if="text" class="text">
-      <p>
-        {{text}}
+      <p v-html="text">
       </p>
     </div>
     <div v-if="list" class="list">

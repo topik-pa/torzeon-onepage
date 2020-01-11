@@ -2,7 +2,7 @@
   <div class="footer">
     <div class="author">
       <img :alt="author" :src="avatar"/>
-      <div>by <a title="Contact the author with an email" :href="mail">{{author}}</a></div>
+      <div>by <a title="Contact the author with an email" :href="'mailto:' + mail">{{author}}</a></div>
     </div>
     <div class="socials">
       <i v-for="social in socials" :key="social.name" class="material-icons">
@@ -51,11 +51,14 @@ export default {
 .author {
     display: flex;
     align-items: center;
+    font-size: 90%;
 }
 
 .author img {
     border-radius: 50%;
-    margin-right: 1rem;
+    margin-right: .5rem;
+    width: 40px;
+    height: 40px;
 }
 
 .socials i {

@@ -36,7 +36,7 @@ export default {
 }
 
 main {
-  background-image: url('https://s3-eu-west-1.amazonaws.com/production-hairdressr/fe-dummy/cover.png');
+  background-image: url('https://www.cinqueterre5.com/photos/milano-galleria-vittorio-emanuele-II_mobile.jpg');
   background-repeat: no-repeat;
   min-height: 640px;
   background-position: 50% 5rem;
@@ -47,6 +47,19 @@ main {
 
 .stops .stop:last-child {
   border: none;
+}
+
+a {
+  color: #666;
+  text-decoration: none;
+}
+
+p {
+  line-height: 1.4;
+}
+
+strong {
+  font-weight: bold;
 }
 
 .btn {

@@ -1,9 +1,9 @@
 <template>
   <transition name="fade">
-    <footer v-if="started" transition="baudo">
+    <footer v-if="started">
       <div id="promocode">
-        <strong>Promocode</strong> for <span>"{{privateStop.name}}":&nbsp;</span>
-        <div v-for="stop in stops" :key="stop.name">
+        <span class="light">Promocode:&nbsp;</span>
+        <div v-for="stop in stopsWPromo" :key="stop.name">
           <span v-if="stop.checked" >{{stop.promo}}</span>
           <span v-else><i class="icon material-icons">clear</i></span>
           &nbsp;
@@ -58,6 +58,9 @@ export default {
       } else {
         return {}
       }
+    },
+    stopsWPromo () {
+      return this.stops.filter((stop) => stop.promo)
     }
   },
   created () {
@@ -139,6 +142,10 @@ export default {
     min-width: 240px;
   }
 
+  .light {
+    font-style: initial;
+  }
+
   .fade-enter-active, .fade-leave-active {
     transition: opacity .6s;
   }
@@ -150,6 +157,10 @@ export default {
     footer {
       width: 100vw;
       right: inherit;
+    }
+
+    .light {
+      display: block;
     }
   }
 </style>

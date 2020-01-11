@@ -12,7 +12,7 @@
             <img :src="image.url" :alt="image.alt"/>
             <figcaption>{{image.name}}</figcaption>
         </figure>
-        <p>{{image.description}}</p>
+        <p v-html="image.description"></p>
       </div>
     </div>
 
@@ -62,7 +62,14 @@ export default {
         this.$fire({
           title: `Congrats! You checked <br/> &#34;${this.stop.name}&#34;`,
           type: 'success',
-          html: `You discovered the following letter of your promocode: <br/><strong style="font-size:200%">&#34;${this.stop.promo}&#34;</strong><br/><br/><br/><a target="_blank" href="${this.stop.path}"><i class="icon material-icons">directions_walk</i>Reach next location</a><br/><br/>`
+          html: `<br/><br/><a target="_blank" href="${this.stop.path}"><i class="icon material-icons">directions_walk</i>Reach next location</a><br/><br/>`
+        })
+      }
+      if (this.stop.popup === 'promo') {
+        this.$fire({
+          title: `Congrats! You checked <br/> &#34;${this.stop.name}&#34;`,
+          type: 'success',
+          html: `You discovered the following piece of your promocode: <br/><strong style="font-size:200%">&#34;${this.stop.promo}&#34;</strong><br/><br/><br/><a target="_blank" href="${this.stop.path}"><i class="icon material-icons">directions_walk</i>Reach next location</a><br/><br/>`
         })
       }
       if (this.stop.popup === 'shop') {
@@ -195,9 +202,12 @@ export default {
 <style scoped>
   .stop {
     font-size: 1.2rem;
-    margin-bottom: 5rem;
     border-bottom: 1px solid #999;
-    padding-bottom: 5rem;
+    padding: 5rem 1rem;
+  }
+
+  .stop.private {
+    background-color: #f1f1f1;
   }
 
   h2 {

@@ -1,20 +1,17 @@
 <template>
   <header :class="{'fixed': isFixedHeader && !isMobile }">
     <logo-cmp/>
-    <menu-cmp/>
   </header>
 </template>
 
 <script>
 import JSUtils from '@/assets/scripts/utilities.js'
 import LogoCmp from './LogoCmp'
-import MenuCmp from './MenuCmp'
 
 export default {
   name: 'HeaderCmp',
   components: {
-    LogoCmp,
-    MenuCmp
+    LogoCmp
   },
   data () {
     return {
@@ -54,6 +51,9 @@ export default {
     background-color: #FFFFFF;
     z-index: 99;
     top: 300px;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
   }
 
   header.fixed  {
