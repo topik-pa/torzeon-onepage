@@ -1,7 +1,7 @@
 <template>
   <article :class="{'up': isArticleUp}">
     <div class="shadow" :class="{'expanded': isShadowExpanded}"></div>
-    <tour-cmp/>
+    <tour-cmp :tour="$store.getters.getDefaultTour"/>
   </article>
 </template>
 
