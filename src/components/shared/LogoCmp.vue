@@ -1,6 +1,6 @@
 <template>
   <div>
-    <router-link :to="url">{{name}} <span>a day in...</span></router-link>
+    <router-link :to="url">{{name}}</router-link>
   </div>
 </template>
 
@@ -18,13 +18,12 @@ export default {
 
 <style scoped>
 div {
-    font-weight: bold;
-    font-size: 1.7rem;
+    font-size: 180%;
     padding-left: 5rem;
 }
 span {
   display: block;
-  font-size: .8rem;
+  font-size: 80%;
 }
 
 @media screen and (max-width: 768px) {

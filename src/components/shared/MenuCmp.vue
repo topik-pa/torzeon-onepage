@@ -39,7 +39,7 @@ nav {
     top: -5rem;
     text-transform: uppercase;
     color: #999999;
-    font-size: 1.1rem;
+    font-size: 110%;
     line-height: 5rem;
     height: 5rem;
     padding: 0 5rem;

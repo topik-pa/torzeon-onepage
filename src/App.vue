@@ -4,13 +4,11 @@
     <main :style="this.cover">
       <router-view/>
     </main>
-    <footer-cmp/>
   </div>
 </template>
 
 <script>
 import HeaderCmp from '@/components/shared/HeaderCmp'
-import FooterCmp from '@/components/shared/FooterCmp'
 
 export default {
   name: 'App',
@@ -20,8 +18,7 @@ export default {
     }
   },
   components: {
-    HeaderCmp,
-    FooterCmp
+    HeaderCmp
   }
 }
 </script>
@@ -32,6 +29,8 @@ export default {
 
 #app {
   font-family: 'Montserrat', sans-serif;
+  color: #333;
+  font-size: 14px;
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
   margin: 0 auto;
@@ -46,25 +45,68 @@ main {
   height: 640px;
   background-position: center 0;
   background-size: cover;
-  position: absolute;
   width: 100%;
-  top: 5rem;
+  margin-top: 5rem;
 }
 
-.stops .stop:last-child {
+#stops .stop:last-child {
   border: none;
 }
 
 a {
-  color: #666;
+  font-weight: bold;
   text-decoration: none;
+  color: #666;
+  outline: none;
 }
+
+h1 {
+  font-weight: bold;
+  font-size: 210%;
+  margin: 2rem 0;
+}
+
+h2 {
+  font-weight: bold;
+  margin-bottom: 1rem;
+  font-size: 120%;
+}
+
+h3 {
+    font-size: 150%;
+    margin-bottom: 1rem;
+  }
 
 p {
-  line-height: 1.4;
+  line-height: 150%;
 }
 
-strong {
-  font-weight: bold;
+li {
+  margin-bottom: .4rem;
+}
+
+figure {
+  margin-bottom: 1rem;
+}
+
+figcaption {
+  text-align: center;
+  color: #666;
+  font-style: italic;
+}
+
+img {
+  width: 100%;
+  box-sizing: border-box;
+}
+
+@media screen and (max-width: 768px) {
+  #app {
+    font-size: 13px;
+  }
+
+  main {
+    margin-top: 0;
+  }
 }
 </style>

@@ -1,5 +1,5 @@
 <template>
-  <div class="footer">
+  <div id="share">
     <div class="author">
       <img :alt="author" :src="avatar"/>
       <div>by <a title="Contact the author with an email" :href="'mailto:' + mail">{{author}}</a></div>
@@ -14,7 +14,7 @@
 
 <script>
 export default {
-  name: 'TourFooterCmp',
+  name: 'TourShareCmp',
   props: {
     author: {
       type: String,
@@ -32,16 +32,12 @@ export default {
       type: Array,
       required: false
     }
-  },
-  data () {
-    return {
-    }
   }
 }
 </script>
 
 <style scoped>
-.footer {
+#share {
     display: flex;
     justify-content: space-between;
     padding: 2rem 0;
@@ -63,6 +59,6 @@ export default {
 
 .socials i {
     margin: 0 .5rem;
-    color: #DDDDDD;
+    color: #333;
 }
 </style>

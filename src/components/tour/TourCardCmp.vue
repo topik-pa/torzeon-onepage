@@ -69,35 +69,38 @@ export default {
 }
 
 .marker {
-    font-size: 120px;
+    font-size: 750%;
     position: absolute;
     top: 0;
     left: -20px;
     line-height: 110px;
-    opacity: .1;
+    opacity: .15;
+    text-transform: capitalize;
 }
 
 .title {
-    padding: 2rem 0;
-    font-size: 230%;
+    padding-top: 3rem;
     font-weight: bold;
     margin-bottom: 1rem;
 }
 
-li {
-  line-height: 1.5rem;
+h3 {
+  font-size: 180%;
 }
 
 li > span span:after {
   content: ': ';
 }
+
 li > span span {
-  font-weight: bolder;
+  font-weight: bold;
+  font-style: normal;
 }
 
 li > span {
   vertical-align: super;
-  font-weight: 400;
+  font-weight: normal;
+  font-style: italic;
 }
 
 .image img {
@@ -108,6 +111,5 @@ li > span {
 
 .text {
   font-weight: normal;
-  line-height: 140%;
 }
 </style>

@@ -1,6 +1,6 @@
 <template>
   <transition name="fade">
-    <footer v-if="started">
+    <section v-if="started">
       <div id="promocode">
         <span class="light">Promocode:&nbsp;</span>
         <div v-for="stop in stopsWPromo" :key="stop.name">
@@ -9,7 +9,7 @@
           &nbsp;
         </div>
       </div>
-      <div id="stops">
+      <div id="stop-count">
         <div v-for="stop in stops" :key="stop.id">
           <i v-if="stop.checked" class="icon material-icons">star</i>
           <i v-else class="icon material-icons">star_border</i>
@@ -20,13 +20,13 @@
           <progress :value="progress" max="100"></progress>
         </div>
       </div>
-    </footer>
+    </section>
   </transition>
 </template>
 
 <script>
 export default {
-  name: 'FooterCmp',
+  name: 'TourProgressCmp',
   data () {
     return {
       progress: 0
@@ -44,15 +44,15 @@ export default {
   },
   methods: {
     scroller () {
-      var scrollPosition = window.scrollY
-      var scrollSize = window.innerHeight - document.documentElement.offsetHeight
-      var advanced = Math.round((scrollPosition * 100) / scrollSize)
+      let scrollPosition = window.scrollY
+      let scrollSize = window.innerHeight - document.documentElement.offsetHeight
+      let advanced = Math.round((scrollPosition * 100) / scrollSize)
       this.progress = advanced
     }
   },
   computed: {
     privateStop () {
-      let privateStop = this.stops.filter((stop) => stop.type === 'private')[0]
+      let privateStop = this.stops.find((stop) => stop.type === 'private')
       if (privateStop) {
         return privateStop
       } else {
@@ -73,7 +73,7 @@ export default {
 </script>
 
 <style scoped>
-  footer {
+  section {
     border-top: 1px solid #999;
     background-color: #FFF;
     z-index: 99;
@@ -121,7 +121,7 @@ export default {
   #promocode {
     text-align: center;
     line-height: 3rem;
-    font-size: 1.5rem;
+    font-size: 150%;
   }
 
   #promocode div {
@@ -133,7 +133,7 @@ export default {
     vertical-align: text-bottom;
   }
 
-  #stops {
+  #stop-count {
     display: flex;
     justify-content: space-between;
     width: 20%;
@@ -154,7 +154,7 @@ export default {
   }
 
   @media screen and (max-width: 768px) {
-    footer {
+    section {
       width: 100vw;
       right: inherit;
     }

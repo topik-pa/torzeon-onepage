@@ -1,6 +1,6 @@
 import Vue from 'vue'
 import Router from 'vue-router'
-import ArticleCmp from '@/components/shared/ArticleCmp'
+import ArticleCmp from '@/components/ArticleCmp'
 
 Vue.use(Router)
 

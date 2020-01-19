@@ -15,7 +15,6 @@
         <p v-html="image.description"></p>
       </div>
     </div>
-
     <div class="links" v-if="stop.links.length">
       <div class="subtitle">
         <h3><i class="icon material-icons">android</i>&nbsp;Other infos from the Web</h3>
@@ -26,7 +25,6 @@
         </li>
       </ul>
     </div>
-
     <div class="check">
       <small>Are you here?</small>
       <cta-cmp :label="labelButtonCheck" :btnType="'primary'" :disabled="stop.checked" @clicked="checkStop"/>
@@ -35,7 +33,7 @@
 </template>
 
 <script>
-import ctaCmp from '@/components/shared/ctaCmp'
+import CtaCmp from '@/components/shared/CtaCmp'
 import { getCheckPopup, getPromoPopup, getShopPopup, getFinishPopup } from '@/templates/popups.js'
 
 export default {
@@ -53,7 +51,7 @@ export default {
     }
   },
   components: {
-    ctaCmp
+    CtaCmp
   },
   methods: {
     checkStop () {
@@ -101,28 +99,13 @@ export default {
 
 <style scoped>
   .stop {
-    font-size: 1.2rem;
+    font-size: 120%;
     border-bottom: 1px solid #999;
     padding: 5rem 1rem;
   }
 
   .stop.private {
     background-color: #f1f1f1;
-  }
-
-  h2 {
-    font-weight: bold;
-    font-size: 1.2rem;
-    margin-bottom: .5rem;
-  }
-
-  h3 {
-    font-size: 1.5rem;
-    margin-bottom: .5rem;
-  }
-
-  li {
-    margin-bottom: .8rem;
   }
 
   .title {
@@ -138,25 +121,13 @@ export default {
     margin: 2rem 0;
   }
 
-  figure {
-    margin-bottom: 1rem;
-  }
-
   .image p {
     margin-bottom: 3rem;
   }
 
   img {
-    width: 100%;
     border: 1px solid #AAA;
-    box-sizing: border-box;
     box-shadow: 0px 0px 5px #AAAAAA;
-  }
-
-  figcaption {
-    text-align: center;
-    color: #666;
-    font-style: italic;
   }
 
   .links {

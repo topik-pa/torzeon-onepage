@@ -6,7 +6,7 @@
 
 <script>
 export default {
-  name: 'ctaCmp',
+  name: 'CtaCmp',
   props: {
     label: {
       type: String,
@@ -38,8 +38,8 @@ button {
     background-color: transparent;
     border: 1px solid transparent;
     padding: .5rem 1rem;
-    font-size: 1rem;
-    line-height: 1.5;
+    font-size: 100%;
+    line-height: 1.4;
     border-radius: 5px;
 }
 button.primary {

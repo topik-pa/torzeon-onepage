@@ -21,8 +21,8 @@ export default {
     }
   },
   mounted: function () {
-    var _this = this
-    var deabouncedScrollListener = JSUtils.debounce(function () {
+    let _this = this
+    let deabouncedScrollListener = JSUtils.debounce(function () {
       let scrollPosition = window.scrollY
       if (scrollPosition > _this.stopHeaderFixed) {
         _this.isFixedHeader = false

@@ -1,5 +1,5 @@
 <template>
-  <div class="gallery">
+  <div id="gallery">
     <div v-for="obj in imageObjects" :key="obj.id" :class="{'big': obj.big, 'small': !obj.big}">
       <img v-if="obj.big" :alt="obj.alt" :src="obj.src"/>
       <img v-else v-for="img in obj" :key="img.id" :alt="img.alt" :src="img.src"/>
@@ -19,9 +19,9 @@ export default {
   computed: {
     imageObjects: function () {
       let returnedArray = []
-      var tempArr = []
+      let tempArr = []
       this.images.forEach((elem, i) => {
-        var obj = {}
+        let obj = {}
         obj.src = elem.src
         obj.alt = elem.alt
         // Only some images will be big
@@ -44,18 +44,18 @@ export default {
 </script>
 
 <style scoped>
-.gallery {
+#gallery {
   display: flex;
 }
 
-.gallery div.small {
+#gallery div.small {
   width: 50%;
 }
-.gallery div.big {
+#gallery div.big {
   width: 100%;
 }
 
-.gallery img {
+#gallery img {
   display: block;
   width: 100%;
   border: 5px solid #FFFFFF;
@@ -64,10 +64,10 @@ export default {
 }
 
 @media screen and (max-width: 768px) {
-  .gallery {
+  #gallery {
     flex-direction: column;
   }
-  .gallery div {
+  #gallery div {
     display: flex;
     align-items: center;
     justify-content: space-between;

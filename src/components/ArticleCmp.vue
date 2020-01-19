@@ -13,9 +13,9 @@ export default {
   name: 'ArticleCmp',
   data () {
     return {
-      stopExpandShadow: 120,
+      stopExpandShadow: 220,
       isShadowExpanded: false,
-      stopArticleUp: 60,
+      stopArticleUp: 120,
       isArticleUp: false,
       debounceInterval: 10
     }
@@ -24,8 +24,8 @@ export default {
     TourCmp
   },
   mounted: function () {
-    var _this = this
-    var deabouncedScrollListener = JSUtils.debounce(function () {
+    let _this = this
+    let deabouncedScrollListener = JSUtils.debounce(function () {
       let scrollPosition = window.scrollY
       if (scrollPosition >= _this.stopExpandShadow) {
         _this.isShadowExpanded = true
@@ -50,7 +50,7 @@ export default {
 <style scoped>
 article, .shadow {
     background: white;
-    top: 480px;
+    top: 420px;
     padding: 2rem 2rem;
     border-radius: 10px;
 }
@@ -60,10 +60,9 @@ article {
     margin: 0 5rem;
     z-index: 99;
     transition: top 1s ease-out;
-    height: 1024px;
 }
 article.up {
-  top: 380px;
+  top: 320px;
 }
 
 .shadow {
@@ -81,9 +80,12 @@ article.up {
 
 @media screen and (max-width: 768px) {
     article {
-        top: 460px;
+        top: 360px;
         padding: 2rem .5rem;
         margin: 0 1rem;
+    }
+    article.up {
+      top: 220px;
     }
     .shadow {
         margin: 0;
