@@ -1,3 +1,5 @@
+import i18n from '@/i18n.js'
+
 const data = {
   project: 'Torzeon',
   version: 0.1,
@@ -8,8 +10,8 @@ const data = {
     {
       id: 0,
       default: true,
-      title: 'Un giorno a... Milano',
-      subtitle: 'I luoghi più caratteristici, tra Storia e modernità',
+      title: i18n.t('message.tour_0.title'),
+      subtitle: i18n.t('message.tour_0.subtitle'),
       cover: 'https://www.cinqueterre5.com/photos/milano-galleria-vittorio-emanuele-II_mobile.jpg',
       text: 'Il tour parte dalla storica Stazione Centrale, esempio di architettura del periodo Fascista, per attraversare i nuovi quartieri di piazza Gae Aulenti e Tre Torri, ma vedranno luoghi classici come il Duomo e il Castello Sforzesco. Una pausa per un gelato presso Oggi Gelato allieterà la giornata prima della conclusione del tour.',
       author: 'Marco Pavan',

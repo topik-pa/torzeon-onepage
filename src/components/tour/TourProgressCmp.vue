@@ -2,7 +2,7 @@
   <transition name="fade">
     <section v-if="started">
       <div id="promocode">
-        <span class="title">Promocode:&nbsp;</span>
+        <span class="title">{{ $t("message.promocode") }}</span>
         <div v-for="stop in stopsWPromo" :key="stop.name">
           <span v-if="stop.checked" >{{stop.promo}}</span>
           <span v-else><i class="icon material-icons">clear</i></span>
