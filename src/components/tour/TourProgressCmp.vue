@@ -2,7 +2,7 @@
   <transition name="fade">
     <section v-if="started">
       <div id="promocode">
-        <span class="light">Promocode:&nbsp;</span>
+        <span class="title">Promocode:&nbsp;</span>
         <div v-for="stop in stopsWPromo" :key="stop.name">
           <span v-if="stop.checked" >{{stop.promo}}</span>
           <span v-else><i class="icon material-icons">clear</i></span>
@@ -10,9 +10,12 @@
         </div>
       </div>
       <div id="stop-count">
-        <div v-for="stop in stops" :key="stop.id">
-          <i v-if="stop.checked" class="icon material-icons">star</i>
-          <i v-else class="icon material-icons">star_border</i>
+        <span class="title">Checkpoints:&nbsp;</span>
+        <div>
+          <div v-for="stop in stops" :key="stop.id">
+            <i v-if="stop.checked" class="icon material-icons" :class="{'private': stop.type === 'private'}">star</i>
+            <i v-else class="icon material-icons" :class="{'private': stop.type === 'private'}">star_border</i>
+          </div>
         </div>
       </div>
       <div id="progress">
@@ -86,6 +89,8 @@ export default {
     max-width: 1280px;
     box-shadow: 0px 0px 5px 0px #AAAAAA;
     border-radius: 3px;
+    text-align: center;
+    font-size: 110%;
   }
 
   #progress {
@@ -97,11 +102,11 @@ export default {
   }
 
   #progress progress{
-      -webkit-appearance: none;
-      appearance: none;
-      width: 100%;
-      height: 0.3rem;
-      border-top: 1px solid #AAA;
+    -webkit-appearance: none;
+    appearance: none;
+    width: 100%;
+    height: .5rem;
+    border-top: 1px solid #AAA;
   }
 
   #progress progress::-webkit-progress-bar {
@@ -119,21 +124,16 @@ export default {
   }
 
   #promocode {
-    text-align: center;
-    line-height: 3rem;
-    font-size: 150%;
+    padding: 1rem 0;
   }
 
   #promocode div {
     display: inline;
+    vertical-align: middle;
     font-weight: bold;
   }
 
-  #promocode i {
-    vertical-align: text-bottom;
-  }
-
-  #stop-count {
+  #stop-count > div {
     display: flex;
     justify-content: space-between;
     width: 20%;
@@ -142,8 +142,14 @@ export default {
     min-width: 240px;
   }
 
-  .light {
-    font-style: initial;
+  #stop-count i.private {
+    color: #F8E627;
+    font-weight: bold;
+  }
+
+  .title {
+    margin-bottom: .3rem;
+    display: block;
   }
 
   .fade-enter-active, .fade-leave-active {
@@ -159,7 +165,7 @@ export default {
       right: inherit;
     }
 
-    .light {
+    .title {
       display: block;
     }
   }

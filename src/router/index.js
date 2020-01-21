@@ -9,11 +9,22 @@ export default new Router({
     {
       path: '/',
       name: 'Home',
+      redirect: to => {
+        if (navigator.language === 'it-IT') {
+          return '/un-giorno-a-milano'
+        } else {
+          return '/a-day-in-milan'
+        }
+      }
+    },
+    {
+      path: '/un-giorno-a-milano',
+      name: 'Tour-IT',
       component: ArticleCmp
     },
     {
-      path: '/test-tour',
-      name: 'Tour',
+      path: '/a-day-in-milan',
+      name: 'Tour-EN',
       component: ArticleCmp
     }
   ]

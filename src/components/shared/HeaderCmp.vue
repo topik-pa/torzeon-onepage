@@ -15,9 +15,9 @@ export default {
   },
   data () {
     return {
-      stopHeaderFixed: 300,
+      stopHeaderFixed: 280,
       isFixedHeader: true,
-      debounceInterval: 10
+      debounceInterval: 1
     }
   },
   mounted: function () {
@@ -50,7 +50,7 @@ export default {
     border-bottom: 1px solid #999;
     background-color: #FFFFFF;
     z-index: 99;
-    top: 300px;
+    top: 280px;
     display: flex;
     justify-content: space-between;
     align-items: center;
