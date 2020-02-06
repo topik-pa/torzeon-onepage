@@ -5,7 +5,7 @@
         <span class="title">{{ $t("message.promocode") }}</span>
         <div v-for="stop in stopsWPromo" :key="stop.name">
           <span v-if="stop.checked" >{{stop.promo}}</span>
-          <span v-else><i class="icon material-icons">clear</i></span>
+          <span v-else><i class="fas fa-asterisk"></i></span>
           &nbsp;
         </div>
       </div>
@@ -13,8 +13,8 @@
         <span class="title">Checkpoints:&nbsp;</span>
         <div>
           <div v-for="stop in stops" :key="stop.id">
-            <i v-if="stop.checked" class="icon material-icons" :class="{'private': stop.type === 'private'}">star</i>
-            <i v-else class="icon material-icons" :class="{'private': stop.type === 'private'}">star_border</i>
+            <i v-if="stop.checked" class="fas fa-star" :class="{'private': stop.type === 'private'}"></i>
+            <i v-else class="far fa-star" :class="{'private': stop.type === 'private'}"></i>
           </div>
         </div>
       </div>
@@ -78,7 +78,6 @@ export default {
 <style scoped>
   section {
     border-top: 1px solid #999;
-    background-color: #FFF;
     z-index: 99;
     position: fixed;
     left: 0;
@@ -91,6 +90,7 @@ export default {
     border-radius: 3px;
     text-align: center;
     font-size: 110%;
+    background-color: rgb(241, 226, 56);
   }
 
   #progress {
@@ -124,7 +124,7 @@ export default {
   }
 
   #promocode {
-    padding: 1rem 0;
+    padding: .5rem 0;
   }
 
   #promocode div {
@@ -143,8 +143,7 @@ export default {
   }
 
   #stop-count i.private {
-    color: #F8E627;
-    font-weight: bold;
+    color: #000000;
   }
 
   .title {

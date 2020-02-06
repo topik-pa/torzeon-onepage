@@ -10,7 +10,7 @@
     </aside>
     <div id="ready">
       <div class="title">
-        <h2><i class="icon material-icons">directions</i>&nbsp; Are you ready? ...Let's START!</h2>
+        <h2><i class="far fa-play-circle"></i>&nbsp;{{ $t('message.readyMessage') }}</h2>
       </div>
     </div>
     <div id="stops">

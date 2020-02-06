@@ -8,13 +8,12 @@
       <h3>{{title}}</h3>
     </div>
     <div v-if="text" class="text">
-      <p v-html="text">
-      </p>
+      <p v-html="text"></p>
     </div>
     <div v-if="list" class="list">
       <ul>
         <li v-for="obj in list" :key="obj.id">
-          <i class="icon material-icons">{{obj.icon}}</i>&nbsp;<span><span>{{obj.key}}</span>{{obj.value}}</span>
+          <i :class="obj.icon" :title="obj.key"></i>&nbsp;<span>{{obj.value}}</span>
         </li>
       </ul>
     </div>
@@ -88,17 +87,17 @@ h3 {
   font-size: 180%;
 }
 
-li > span span:after {
-  content: ': ';
+i {
+  font-size: 200%;
+  vertical-align: middle;
+  width: 2rem;
 }
 
-li > span span {
-  font-weight: bold;
-  font-style: normal;
+li {
+  margin-bottom: .6rem;
 }
 
 li > span {
-  vertical-align: super;
   font-weight: normal;
   font-style: italic;
 }

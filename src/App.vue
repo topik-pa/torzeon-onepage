@@ -25,7 +25,7 @@ export default {
 
 <style>
 @import url('https://fonts.googleapis.com/css?family=Montserrat:400,700&display=swap');
-@import url('https://fonts.googleapis.com/icon?family=Material+Icons');
+@import url('./assets/styles/font-awesome.min.css');
 
 #app {
   font-family: 'Montserrat', sans-serif;
@@ -81,10 +81,6 @@ p {
   line-height: 150%;
 }
 
-li {
-  margin-bottom: .4rem;
-}
-
 figure {
   margin-bottom: 1rem;
 }
@@ -98,6 +94,11 @@ figcaption {
 img {
   width: 100%;
   box-sizing: border-box;
+}
+
+strong {
+  font-weight: bold;
+  font-style: italic;
 }
 
 @media screen and (max-width: 768px) {

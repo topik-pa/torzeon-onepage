@@ -2,12 +2,12 @@
   <div id="share">
     <div class="author">
       <img :alt="author" :src="avatar"/>
-      <div>by <a title="Contact the author with an email" :href="'mailto:' + mail">{{author}}</a></div>
+      <div>{{ $t('message.by') }}<a :title="$t('message.contactTourAuthor')" :href="'mailto:' + mail">{{author}}</a></div>
     </div>
     <div class="socials">
-      <i v-for="social in socials" :key="social.name" class="material-icons">
-        {{social.icon}}
-      </i>
+      <a v-for="social in socials" :key="social.name" :href="social.href" :title="$t('message.shareOn') + social.name">
+        <i :class="social.icon"></i>
+      </a>
     </div>
   </div>
 </template>
@@ -15,6 +15,11 @@
 <script>
 export default {
   name: 'TourShareCmp',
+  data () {
+    return {
+
+    }
+  },
   props: {
     author: {
       type: String,
@@ -60,5 +65,6 @@ export default {
 .socials i {
     margin: 0 .5rem;
     color: #333;
+    font-size: 140%;
 }
 </style>
