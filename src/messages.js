@@ -12,6 +12,10 @@ const messages = {
       duration: 'Duration',
       geometry: 'Geometry',
       readyMessage: 'Are you ready? ...Let\'s START!',
+      getThere: 'Location on map',
+      checkLocation: 'CHECK!',
+      locationChecked: 'CHECKED',
+      infoFromTheWeb: 'Some infos from the Web',
       tour_0: {
         title: 'A day in... Milan',
         subtitle: 'The most interesting places in the most fashion Italian city',
@@ -122,6 +126,10 @@ const messages = {
       duration: 'Durata',
       geometry: 'Geometria',
       readyMessage: 'Pronti? ...VIA!',
+      getThere: 'Posizione sulla mappa',
+      checkLocation: 'CHECK!',
+      locationChecked: 'CHECKED',
+      infoFromTheWeb: 'Altre info dal Web',
       by: 'di ',
       tour_0: {
         title: 'Un giorno a... Milano',

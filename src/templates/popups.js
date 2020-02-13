@@ -155,4 +155,41 @@ const getFinishPopup = function () {
   }
 }
 
-export { getCheckPopup, getPromoPopup, getShopPopup, getFinishPopup }
+
+const notEvenClosePopup = function (distance) {
+  return {
+    title: `Not even close`,
+    type: `error`,
+    html: `
+    <div class="popup-content">
+      Mmhhhh... are you sure you reached this place? <br/>
+      I checked and seems to me you are ${parseInt(distance)} meters away from here!
+    </div>`
+  }
+}
+
+const justOneStepPopup = function (distance) {
+  return {
+    title: `You are near here... but not here`,
+    type: `error`,
+    html: `
+    <div class="popup-content">
+      I checked and seems to me you are ${parseInt(distance)} meters away from here!<br/>
+      Try to get closer and try again!
+    </div>`
+  }
+}
+
+const geolocalizationNotActivePopup = function () {
+  return {
+    title: `Geolocalization not active`,
+    type: `info`,
+    html: `
+    <div class="popup-content">
+      We need to get your location to permit this software to work!
+    </div>`
+  }
+}
+
+
+export { getCheckPopup, getPromoPopup, getShopPopup, getFinishPopup, notEvenClosePopup, justOneStepPopup, geolocalizationNotActivePopup }

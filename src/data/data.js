@@ -5,6 +5,7 @@ const data = {
   version: 0.1,
   author: 'Marco Pavan',
   authorMail: 'marcopavan.mp@gmail.com',
+  scrolledSizeFromTourStarted: 0,
   tours:
   [
     {
@@ -18,6 +19,7 @@ const data = {
       avatarAuthorUrl: 'http://www.marcopavan.org/src/assets/images/Profile_Image.jpg',
       authorMail: 'marcopavan.mp@gmail.com',
       started: false,
+      stopsTotal: 7,
       socials: [
         {
           name: 'Email',
@@ -142,6 +144,8 @@ const data = {
           checked: false,
           promo: 'Noio',
           popup: 'promo',
+          latitude: 45.484642,
+          longitude: 9.202691,
           links: [
             {
               url: i18n.t('message.tour_0.stop_0_link_1_url'),

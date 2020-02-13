@@ -65,16 +65,18 @@ export default {
     overflow: hidden;
     box-shadow: 0px 0px 10px #AAAAAA;
     min-height: 280px;
+    font-family: 'Libre Franklin', sans-serif;
 }
 
 .marker {
     font-size: 750%;
     position: absolute;
     top: 0;
-    left: -20px;
+    left: -17px;
     line-height: 110px;
     opacity: .15;
     text-transform: capitalize;
+    text-shadow: 1px 1px 1px #fff;
 }
 
 .title {

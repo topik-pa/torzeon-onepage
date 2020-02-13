@@ -101,6 +101,48 @@ strong {
   font-style: italic;
 }
 
+button, a.btn {
+  display: inline-block;
+  font-weight: 400;
+  text-align: center;
+  vertical-align: middle;
+  background-color: transparent;
+  border: 2px solid transparent;
+  padding: .5rem 1rem;
+  font-size: 100%;
+  line-height: 1.4;
+  border-radius: 5px;    
+  outline: none;
+}
+button.primary, a.btn.primary {
+  color: #333;
+  background-color: rgb(245, 224, 0);
+  border-color: rgb(184, 170, 17);
+  font-weight: bold;
+}
+button.primary:hover, a.btn.primary:hover {
+  background-color: rgb(230, 212, 25)
+}
+button.primary.disabled, a.btn.primary-disabled {
+  color: #999;
+  background-color: transparent;
+  cursor: auto;
+}
+button.secondary, a.btn.secondary {
+  color: #333;
+  background-color: #fff;
+  border-color: #F8E627;
+  font-weight: bold;
+}
+button.secondary:hover, a.btn.secondary:hover {
+  background-color: #fafafa;
+}
+button.secondary.disabled, a.btn.secondary-disabled {
+  color: #999;
+  background-color: transparent;
+  cursor: auto;
+}
+
 @media screen and (max-width: 768px) {
   #app {
     font-size: 13px;

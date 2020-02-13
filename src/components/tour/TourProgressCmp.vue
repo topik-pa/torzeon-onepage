@@ -10,7 +10,6 @@
         </div>
       </div>
       <div id="stop-count">
-        <span class="title">Checkpoints:&nbsp;</span>
         <div>
           <div v-for="stop in stops" :key="stop.id">
             <i v-if="stop.checked" class="fas fa-star" :class="{'private': stop.type === 'private'}"></i>
@@ -32,7 +31,8 @@ export default {
   name: 'TourProgressCmp',
   data () {
     return {
-      progress: 0
+      progress: 0,
+      docTotalHeight: undefined
     }
   },
   props: {
@@ -47,11 +47,14 @@ export default {
   },
   methods: {
     scroller () {
-      let scrollPosition = window.scrollY
-      let scrollSize = window.innerHeight - document.documentElement.offsetHeight
-      let advanced = Math.round((scrollPosition * 100) / scrollSize)
-      this.progress = advanced
-    }
+      let stop = ( document.getElementById('ready').getBoundingClientRect().top + 300 ) + document.documentElement.scrollTop
+      let path = this.docTotalHeight - stop;
+      let scrolled = window.innerHeight - ( document.getElementById('ready').getBoundingClientRect().top + 300 )
+      this.progress = (scrolled / path) * 100;
+    },
+    getDocTotalHeight () {
+      this.docTotalHeight = Math.max( document.body.scrollHeight, document.body.offsetHeight, document.documentElement.clientHeight, document.documentElement.scrollHeight, document.documentElement.offsetHeight )
+    },
   },
   computed: {
     privateStop () {
@@ -67,7 +70,10 @@ export default {
     }
   },
   created () {
-    window.addEventListener('scroll', this.scroller)
+    window.addEventListener('scroll', this.scroller)    
+  },
+  mounted () {
+    this.getDocTotalHeight()
   },
   destroyed () {
     window.removeEventListener('scroll', this.scroller)
@@ -115,16 +121,18 @@ export default {
   }
 
   #progress progress::-webkit-progress-value {
-      background-color: #F8E627;
+      background-color: rgb(184, 170, 17);
   }
 
   #progress progress::-moz-progress-bar {
-      background-color: #F8E627;
+      background-color: rgb(184, 170, 17);
       border-radius: 4px;
   }
 
   #promocode {
-    padding: .5rem 0;
+    padding: .6rem 0;
+    margin-bottom: .6rem;
+    border-bottom: 1px solid rgb(219, 204, 33);;
   }
 
   #promocode div {
@@ -143,12 +151,11 @@ export default {
   }
 
   #stop-count i.private {
-    color: #000000;
+    color: #c42819;
   }
 
   .title {
-    margin-bottom: .3rem;
-    display: block;
+    margin-right: .5rem;
   }
 
   .fade-enter-active, .fade-leave-active {

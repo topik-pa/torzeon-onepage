@@ -1,9 +1,8 @@
 <template>
   <div class="stop" :class="{'private': stop.type=='private' }">
     <div class="title">
-      <h2>{{stop.name}}</h2>
-      <i class="icon material-icons">android</i>&nbsp;
-      <a target="_blank" :href="stop.gmapsLocation">{{labelGMapsLocation}}</a>
+      <h2>{{stop.id + 1}}<span>/{{this.$store.getters.getDefaultTour.stopsTotal}}</span> - {{stop.name}}</h2>       
+      <a target="_blank" class="btn secondary" :href="stop.gmapsLocation"><i class="fas fa-map-marker-alt"></i>&nbsp;{{ $t("message.getThere") }}</a>
     </div>
     <p class="description" v-html="stop.description"></p>
     <div class="gallery" v-if="stop.images.length">
@@ -17,7 +16,7 @@
     </div>
     <div class="links" v-if="stop.links.length">
       <div class="subtitle">
-        <h3><i class="icon material-icons">android</i>&nbsp;Other infos from the Web</h3>
+        <h3><i class="fas fa-globe"></i>&nbsp;{{ $t("message.infoFromTheWeb") }}</h3>
       </div>
       <ul>
         <li v-for="link in stop.links" :key="link.url">
@@ -26,22 +25,26 @@
       </ul>
     </div>
     <div class="check">
-      <small>Are you here?</small>
-      <cta-cmp :label="labelButtonCheck" :btnType="'primary'" :disabled="stop.checked" @clicked="checkStop"/>
+      <div>Are you here?</div>
+      <button class="primary" :class="{'disabled': stop.checked}" @click="checkStop">{{ isThisStopChecked ? $t('message.locationChecked') : $t('message.checkLocation')  }}</button>
     </div>
   </div>
 </template>
 
 <script>
-import CtaCmp from '@/components/shared/CtaCmp'
-import { getCheckPopup, getPromoPopup, getShopPopup, getFinishPopup } from '@/templates/popups.js'
+import { getCheckPopup, getPromoPopup, getShopPopup, getFinishPopup, notEvenClosePopup, justOneStepPopup, geolocalizationNotActivePopup } from '@/templates/popups.js'
+import i18n from '@/i18n.js'
 
 export default {
   name: 'TourStopCmp',
-  data: function () {
+  data () {
     return {
-      labelGMapsLocation: this.stop.id === 0 ? 'How to get there?' : 'Where am I?',
-      labelButtonCheck: 'CHECK THIS LOCATION!'
+      currentPosition: undefined,
+      currentDistanceFromStop: undefined,
+      stopPosition: {
+        latitude: this.stop.latitude,
+        longitude: this.stop.longitude,
+      }
     }
   },
   props: {
@@ -50,48 +53,113 @@ export default {
       required: true
     }
   },
-  components: {
-    CtaCmp
+  computed: {
+    isThisStopChecked () {
+      return this.stop.checked
+    }
   },
   methods: {
     checkStop () {
-      if (this.stop.checked) {
-        return
+      if (this.stop.checked) return
+
+      this.getCurrentPosition()
+
+    },
+    getCurrentPosition () {      
+      let that = this;
+      if (navigator.geolocation) {
+        new Promise(function(resolve, reject) {
+          navigator.geolocation.getCurrentPosition(function(position) {
+            that.currentPosition = {
+              latitude: position.coords.latitude,
+              longitude: position.coords.longitude
+            }
+            resolve()
+          }, function() {
+            let swalPopup = geolocalizationNotActivePopup()
+            that.$fire({
+              title: swalPopup.title,
+              type: swalPopup.type,
+              html: swalPopup.html
+            })
+          })   
+        }).then(function() {
+          that.isUserNearTheStop()
+        }).then(function() {
+          that.popUpTheDialogs()
+        }).catch(function() {
+          alert('Error getting Geolocation')
+        })
       }
-      this.stop.checked = true
-      this.labelButtonCheck = 'CHECKED!'
-      if (this.stop.popup === 'check') {
-        let swalPopup = getCheckPopup(this.stop.name, this.stop.path)
+    },
+    isUserNearTheStop () {
+      if (this.currentPosition) {        
+        let p1 = this.stopPosition
+        let p2 = this.currentPosition
+        let rad = function(x) {
+          return x * Math.PI / 180
+        }
+        let R = 6378137; // Earth’s mean radius in meter
+        let dLat = rad(p2.latitude - p1.latitude)
+        let dLong = rad(p2.longitude - p1.longitude)
+        let a = Math.sin(dLat / 2) * Math.sin(dLat / 2) +
+          Math.cos(rad(  p1.latitude )) * Math.cos(rad(  p2.latitude  )) *
+          Math.sin(dLong / 2) * Math.sin(dLong / 2)
+        let c = 2 * Math.atan2(Math.sqrt(a), Math.sqrt(1 - a))
+        let d = R * c
+        this.currentDistanceFromStop = d //--> the distance in meter
+      }
+    },
+    popUpTheDialogs () {
+      if (this.currentDistanceFromStop < 200) {
+        this.stop.checked = true
+        if (this.stop.popup === 'check') {
+          let swalPopup = getCheckPopup(this.stop.name, this.stop.path)
+          this.$fire({
+            title: swalPopup.title,
+            type: swalPopup.type,
+            html: swalPopup.html
+          })
+        }
+        if (this.stop.popup === 'promo') {
+          let swalPopup = getPromoPopup(this.stop.name, this.stop.promo, this.stop.path)
+          this.$fire({
+            title: swalPopup.title,
+            type: swalPopup.type,
+            html: swalPopup.html
+          })
+        }
+        if (this.stop.popup === 'shop') {
+          let swalPopup = getShopPopup(this.stop.name, this.stop.fbPage, this.stop.path)
+          this.$fire({
+            title: swalPopup.title,
+            type: swalPopup.type,
+            html: swalPopup.html
+          })
+        }
+        if (this.stop.popup === 'finish') {
+          let swalPopup = getFinishPopup()
+          this.$fire({
+            title: swalPopup.title,
+            type: swalPopup.type,
+            html: swalPopup.html
+          })
+        }
+      } else if (this.currentDistanceFromStop < 1000) {
+        let swalPopup = justOneStepPopup(this.currentDistanceFromStop)
         this.$fire({
           title: swalPopup.title,
           type: swalPopup.type,
           html: swalPopup.html
         })
-      }
-      if (this.stop.popup === 'promo') {
-        let swalPopup = getPromoPopup(this.stop.name, this.stop.promo, this.stop.path)
+      } else {
+        let swalPopup = notEvenClosePopup(this.currentDistanceFromStop)
         this.$fire({
           title: swalPopup.title,
           type: swalPopup.type,
           html: swalPopup.html
         })
-      }
-      if (this.stop.popup === 'shop') {
-        let swalPopup = getShopPopup(this.stop.name, this.stop.fbPage, this.stop.path)
-        this.$fire({
-          title: swalPopup.title,
-          type: swalPopup.type,
-          html: swalPopup.html
-        })
-      }
-      if (this.stop.popup === 'finish') {
-        let swalPopup = getFinishPopup()
-        this.$fire({
-          title: swalPopup.title,
-          type: swalPopup.type,
-          html: swalPopup.html
-        })
-      }
+      }    
     }
   }
 }
@@ -117,12 +185,18 @@ export default {
     font-size: 80%;
   }
 
+  .title span {
+    font-size: 55%;
+  }
+
   .description {
     margin: 2rem 0;
+    font-style: italic;
   }
 
   .image p {
     margin-bottom: 3rem;
+    font-size: 95%;
   }
 
   img {
@@ -134,11 +208,15 @@ export default {
     margin: 3rem 0;
   }
 
+  .links li {
+    margin: 1.5rem 1rem;
+  }
+
   .check {
     text-align: center;
   }
 
-  .check small {
+  .check div {
     color: #666;
     display: block;
     margin-bottom: .5rem;
