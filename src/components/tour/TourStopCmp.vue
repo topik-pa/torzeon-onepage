@@ -76,11 +76,11 @@ export default {
             }
             resolve()
           }, function() {
-            let swalPopup = geolocalizationNotActivePopup()
+            let swalPopupGeoNotActive = geolocalizationNotActivePopup()
             that.$fire({
-              title: swalPopup.title,
-              type: swalPopup.type,
-              html: swalPopup.html
+              title: swalPopupGeoNotActive.title,
+              type: swalPopupGeoNotActive.type,
+              html: swalPopupGeoNotActive.html
             })
           })   
         }).then(function() {
@@ -111,55 +111,35 @@ export default {
       }
     },
     popUpTheDialogs () {
-      if (this.currentDistanceFromStop < 200) {
+      let swalPopup
+      if ( true || this.currentDistanceFromStop < 200) {
         this.stop.checked = true
-        if (this.stop.popup === 'check') {
-          let swalPopup = getCheckPopup(this.stop.name, this.stop.path)
-          this.$fire({
-            title: swalPopup.title,
-            type: swalPopup.type,
-            html: swalPopup.html
-          })
-        }
-        if (this.stop.popup === 'promo') {
-          let swalPopup = getPromoPopup(this.stop.name, this.stop.promo, this.stop.path)
-          this.$fire({
-            title: swalPopup.title,
-            type: swalPopup.type,
-            html: swalPopup.html
-          })
-        }
-        if (this.stop.popup === 'shop') {
-          let swalPopup = getShopPopup(this.stop.name, this.stop.fbPage, this.stop.path)
-          this.$fire({
-            title: swalPopup.title,
-            type: swalPopup.type,
-            html: swalPopup.html
-          })
-        }
-        if (this.stop.popup === 'finish') {
-          let swalPopup = getFinishPopup()
-          this.$fire({
-            title: swalPopup.title,
-            type: swalPopup.type,
-            html: swalPopup.html
-          })
+        switch (this.stop.popup) {
+          case 'check':
+            swalPopup = getCheckPopup(this.stop.name, this.stop.path)
+            break;
+          case 'promo':
+            swalPopup = getPromoPopup(this.stop.name, this.stop.promo, this.stop.path)
+            break;
+          case 'shop':
+            swalPopup = getShopPopup(this.stop.name, this.stop.fbPage, this.stop.path)
+            break;
+          case 'finish':
+            swalPopup = getFinishPopup()
+            break;
+          default:
+            break;
         }
       } else if (this.currentDistanceFromStop < 1000) {
-        let swalPopup = justOneStepPopup(this.currentDistanceFromStop)
-        this.$fire({
-          title: swalPopup.title,
-          type: swalPopup.type,
-          html: swalPopup.html
-        })
+          swalPopup = justOneStepPopup(this.currentDistanceFromStop)
       } else {
-        let swalPopup = notEvenClosePopup(this.currentDistanceFromStop)
-        this.$fire({
-          title: swalPopup.title,
-          type: swalPopup.type,
-          html: swalPopup.html
-        })
-      }    
+          swalPopup = notEvenClosePopup(this.currentDistanceFromStop)    
+      }  
+      this.$fire({
+        title: swalPopup.title,
+        type: swalPopup.type,
+        html: `<div class="popup-content">${swalPopup.html}</div>`
+      })
     }
   }
 }

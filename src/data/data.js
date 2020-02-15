@@ -187,6 +187,8 @@ const data = {
           checked: false,
           promo: 'volevan',
           popup: 'promo',
+          latitude: 45.484642,
+          longitude: 9.202691,
           links: [
             {
               url: i18n.t('message.tour_0.stop_1_link_1_url'),
@@ -218,6 +220,8 @@ const data = {
           checked: false,
           promo: 'savuar',
           popup: 'shop',
+          latitude: 45.484642,
+          longitude: 9.202691,
           links: [
             {
               url: i18n.t('message.tour_0.stop_2_link_1_url'),
@@ -255,6 +259,8 @@ const data = {
           checked: false,
           promo: '',
           popup: 'check',
+          latitude: 45.484642,
+          longitude: 9.202691,
           links: [
             {
               url: i18n.t('message.tour_0.stop_3_link_1_url'),
@@ -292,6 +298,8 @@ const data = {
           checked: false,
           promo: '',
           popup: 'check',
+          latitude: 45.484642,
+          longitude: 9.202691,
           links: [
             {
               url: i18n.t('message.tour_0.stop_4_link_1_url'),
@@ -336,6 +344,8 @@ const data = {
           checked: false,
           promo: '',
           popup: 'check',
+          latitude: 45.484642,
+          longitude: 9.202691,
           links: [
             {
               url: i18n.t('message.tour_0.stop_5_link_1_url'),
@@ -373,6 +383,8 @@ const data = {
           checked: false,
           promo: '',
           popup: 'finish',
+          latitude: 45.484642,
+          longitude: 9.202691,
           links: [
             {
               url: i18n.t('message.tour_0.stop_6_link_1_url'),

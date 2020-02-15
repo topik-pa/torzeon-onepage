@@ -61,7 +61,7 @@ export default {
     font-weight: bold;
     max-width: 270px;
     margin: 0 auto 3rem;
-    padding: 4rem 1rem;
+    padding: 3.3rem 1rem;
     overflow: hidden;
     box-shadow: 0px 0px 10px #AAAAAA;
     min-height: 280px;
@@ -71,12 +71,13 @@ export default {
 .marker {
     font-size: 750%;
     position: absolute;
-    top: 0;
-    left: -17px;
+    top: -15px;
+    left: -15px;
     line-height: 110px;
     opacity: .15;
     text-transform: capitalize;
     text-shadow: 1px 1px 1px #fff;
+    font-style: italic;
 }
 
 .title {

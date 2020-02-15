@@ -1,52 +1,38 @@
-const getCheckPopup = function (stop, path) {
+import i18n from '@/i18n.js'
+
+const getCheckPopup = function (stop) {
   return {
-    title: `Congrats! You checked <br/> &#34;${stop}&#34;`,
+    title: i18n.t('message.popups.checkTitle', {stop: stop}),
     type: `success`,
-    html: `
-    <div class="popup-content">
-      <a target="_blank" href="${path}"><i class="icon material-icons">directions_walk</i>Reach next location</a>
-    </div>`
+    html: i18n.t('message.popups.checkText'),
   }
 }
 
-const getPromoPopup = function (stop, promo, path) {
+const getPromoPopup = function (stop, promo) {
   return {
-    title: `Congrats! You checked <br/> &#34;${stop}&#34;`,
+    title: i18n.t('message.popups.promoTitle', {stop: stop}),
     type: `success`,
-    html: `
-    <div class="popup-content">
-      You discovered the following piece of your promocode:
-      <strong style="font-size:200%">&#34;${promo}&#34;</strong>
-      <a target="_blank" href="${path}"><i class="icon material-icons">directions_walk</i>Reach next location</a>
-    </div>`
+    html: i18n.t('message.popups.promoText', {promo: promo}),
   }
 }
 
-const getShopPopup = function (stop, fbPage, path) {
+const getShopPopup = function (stop, fbPage) { //encodeURIComponent(fbPage)
   return {
-    title: `Congrats! You checked <br/> &#34;${stop}&#34;`,
+    title: i18n.t('message.popups.shopTitle', {stop: stop}),
     type: `success`,
-    html: `
-    <div class="popup-content">
-      Now you can use the promocode to <strong style="font-weight: bold;">get a 10% discount in this store</strong>. Hope you appreciate this!!
-      Did you like this shop? <br/>Please, like it on Facebook!
-      <iframe src="https://www.facebook.com/plugins/like.php?href=${encodeURIComponent(fbPage)}&width=224&layout=button_count&action=like&size=large&share=true&height=46&appId=238576103449837" width="224" height="46" style="border:none;overflow:hidden" scrolling="no" frameborder="0" allowTransparency="true" allow="encrypted-media"></iframe>          
-      <a target="_blank" href="${path}"><i class="icon material-icons">directions_walk</i>Reach next location</a>
-    </div>`
+    html: i18n.t('message.popups.shopText', {stop: stop, fbPage: fbPage}),
   }
 }
 
 const getFinishPopup = function () {
   return {
-    title: `Congrats! Your journey in complete!`,
+    title: i18n.t('message.popups.finishTitle'),
     type: `success`,
     html: `
-    <div class="popup-content">
-    Did you like the journey?
-    <br/>Please, share it on Facebook!
-    <iframe src="https://www.facebook.com/plugins/share_button.php?href=${encodeURIComponent(window.location.href)}&layout=button_count&size=large&appId=238576103449837&width=110&height=28" width="110" height="28" style="border:none;overflow:hidden" scrolling="no" frameborder="0" allowTransparency="true" allow="encrypted-media"></iframe>
-    Please rate this tour:
+    ${i18n.t('message.popups.finishText')}
     <br/>
+    <iframe src="https://www.facebook.com/plugins/share_button.php?href=${encodeURIComponent(window.location.href)}&layout=button_count&size=large&appId=238576103449837&width=110&height=28" width="110" height="28" style="border:none;overflow:hidden" scrolling="no" frameborder="0" allowTransparency="true" allow="encrypted-media"></iframe>
+    <br/><br/>
     <div class="container-rating">
         <div class="feedback">
             <div class="rating">
@@ -150,7 +136,6 @@ const getFinishPopup = function () {
             </div>
         </div>
       </div>
-    </div>
     `
   }
 }
@@ -158,36 +143,25 @@ const getFinishPopup = function () {
 
 const notEvenClosePopup = function (distance) {
   return {
-    title: `Not even close`,
+    title: i18n.t('message.popups.notEvenCloseTitle'),
     type: `error`,
-    html: `
-    <div class="popup-content">
-      Mmhhhh... are you sure you reached this place? <br/>
-      I checked and seems to me you are ${parseInt(distance)} meters away from here!
-    </div>`
+    html: i18n.t('message.popups.notEvenCloseText', {distance: parseInt(distance)}),
   }
 }
 
 const justOneStepPopup = function (distance) {
   return {
-    title: `You are near here... but not here`,
+    title: i18n.t('message.popups.nearHereButTitle'),
     type: `error`,
-    html: `
-    <div class="popup-content">
-      I checked and seems to me you are ${parseInt(distance)} meters away from here!<br/>
-      Try to get closer and try again!
-    </div>`
+    html: i18n.t('message.popups.nearHereButText', {distance: parseInt(distance)}),
   }
 }
 
 const geolocalizationNotActivePopup = function () {
   return {
-    title: `Geolocalization not active`,
+    title: i18n.t('message.popups.geolocalizationNotActiveTitle'),
     type: `info`,
-    html: `
-    <div class="popup-content">
-      We need to get your location to permit this software to work!
-    </div>`
+    html: i18n.t('message.popups.geolocalizationNotActiveText')
   }
 }
 

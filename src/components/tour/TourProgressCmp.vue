@@ -50,7 +50,7 @@ export default {
       let stop = ( document.getElementById('ready').getBoundingClientRect().top + 300 ) + document.documentElement.scrollTop
       let path = this.docTotalHeight - stop;
       let scrolled = window.innerHeight - ( document.getElementById('ready').getBoundingClientRect().top + 300 )
-      this.progress = (scrolled / path) * 100;
+      this.progress = ((scrolled / path) * 100);
     },
     getDocTotalHeight () {
       this.docTotalHeight = Math.max( document.body.scrollHeight, document.body.offsetHeight, document.documentElement.clientHeight, document.documentElement.scrollHeight, document.documentElement.offsetHeight )
@@ -93,9 +93,9 @@ export default {
     width: 100%;
     max-width: 1280px;
     box-shadow: 0px 0px 5px 0px #AAAAAA;
-    border-radius: 3px;
+    border-top-left-radius: 3px;
+    border-top-right-radius: 3px;
     text-align: center;
-    font-size: 110%;
     background-color: rgb(241, 226, 56);
   }
 
@@ -111,12 +111,11 @@ export default {
     -webkit-appearance: none;
     appearance: none;
     width: 100%;
-    height: .5rem;
-    border-top: 1px solid #AAA;
+    height: .4rem;
   }
 
   #progress progress::-webkit-progress-bar {
-      background-color: #faf7f3;
+      background-color: rgb(241, 226, 56);
       border-radius: 4px;
   }
 
@@ -137,7 +136,6 @@ export default {
 
   #promocode div {
     display: inline;
-    vertical-align: middle;
     font-weight: bold;
   }
 
@@ -156,6 +154,7 @@ export default {
 
   .title {
     margin-right: .5rem;
+    margin-bottom: .5rem;
   }
 
   .fade-enter-active, .fade-leave-active {

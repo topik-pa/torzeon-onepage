@@ -24,7 +24,7 @@ export default {
 </script>
 
 <style>
-@import url('https://fonts.googleapis.com/css?family=Montserrat:400,700&display=swap');
+@import url('https://fonts.googleapis.com/css?family=Libre+Franklin|Montserrat&display=swap');
 @import url('./assets/styles/font-awesome.min.css');
 
 #app {
