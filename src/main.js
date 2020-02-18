@@ -4,6 +4,7 @@ import Vue from 'vue'
 import App from './App'
 import router from './router'
 import VueSimpleAlert from 'vue-simple-alert'
+import VueLazyload from 'vue-lazyload'
 import store from '@/store.js'
 import i18n from '@/i18n.js'
 
@@ -11,6 +12,9 @@ import '@/assets/styles/reset.css'
 import '@/assets/styles/rating.css'
 
 Vue.use(VueSimpleAlert)
+Vue.use(VueLazyload, {
+  preLoad: 1
+})
 
 Vue.config.productionTip = false
 

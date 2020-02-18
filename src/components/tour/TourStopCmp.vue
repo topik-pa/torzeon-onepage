@@ -8,7 +8,7 @@
     <div class="gallery" v-if="stop.images.length">
       <div class="image" v-for="image in stop.images" :key="image.id">
         <figure>
-            <img :src="image.url" :alt="image.alt"/>
+            <img v-lazy="image.url" :alt="image.alt"/>
             <figcaption>{{image.name}}</figcaption>
         </figure>
         <p v-html="image.description"></p>

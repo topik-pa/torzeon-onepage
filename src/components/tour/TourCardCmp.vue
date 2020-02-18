@@ -1,8 +1,8 @@
 <template>
   <div class="card">
     <div v-if="marker" class="marker">{{marker}}</div>
-    <div v-if="image" class="image">
-      <img :src="image.src" :title="image.alt"/>
+    <div v-if="image" class="imagee">
+      <img :title="image.alt" v-lazy="image.src"/>
     </div>
     <div class="title">
       <h3>{{title}}</h3>

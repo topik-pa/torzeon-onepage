@@ -1,7 +1,7 @@
 <template>
   <div id="gallery">
     <div v-for="obj in imageObjects" :key="obj.id" :class="{'big': obj.big, 'small': !obj.big}">
-      <img v-if="obj.big" :alt="obj.alt" :src="obj.src"/>
+      <img v-if="obj.big" :alt="obj.alt" v-lazy="obj.src"/>
       <img v-else v-for="img in obj" :key="img.id" :alt="img.alt" :src="img.src"/>
     </div>
   </div>
