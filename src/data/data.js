@@ -20,6 +20,8 @@ const data = {
       authorMail: 'marcopavan.mp@gmail.com',
       started: false,
       stopsTotal: 7,
+      promocodeStepsTotal: 3,
+      promocodeStepsDone: 0,
       socials: [
         {
           name: 'Email',
@@ -174,6 +176,20 @@ const data = {
               url: 'https://www.artribune.com/wp-content/uploads/2016/03/La-Mela-Reintegrata-di-Pistoletto-in-Piazza-Duca-dAosta.jpg',
               alt: i18n.t('message.tour_0.stop_0_image_2_alt'),
               description: i18n.t('message.tour_0.stop_0_image_2_description')
+            }
+          ],
+          near: [
+            {
+              id: 0,
+              name: 'Via dei Georgofili',
+              image: 'https://www.artribune.com/wp-content/uploads/2016/03/La-Mela-Reintegrata-di-Pistoletto-in-Piazza-Duca-dAosta.jpg',
+              gmapsUrl: 'https://goo.gl/maps/4UesoB2u579WrBm68',
+            },
+            {
+              id: 1,
+              name: 'Via dei Georgofili 2',
+              image: 'https://www.artribune.com/wp-content/uploads/2016/03/La-Mela-Reintegrata-di-Pistoletto-in-Piazza-Duca-dAosta.jpg',
+              gmapsUrl: 'https://goo.gl/maps/4UesoB2u579WrBm68',
             }
           ]
         },

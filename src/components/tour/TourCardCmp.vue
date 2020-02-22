@@ -1,7 +1,7 @@
 <template>
   <div class="card">
     <div v-if="marker" class="marker">{{marker}}</div>
-    <div v-if="image" class="imagee">
+    <div v-if="image" class="image">
       <img :title="image.alt" v-lazy="image.src"/>
     </div>
     <div class="title">

@@ -16,6 +16,8 @@ const messages = {
       checkLocation: 'CHECK!',
       locationChecked: 'CHECKED',
       infoFromTheWeb: 'Some infos from the Web',
+      areYouHere: 'Are you here?',
+      nearHere: 'Near here...',
       popups: {
         notEvenCloseTitle: 'Not even close!',
         notEvenCloseText: 'Mmhhhh... are you sure you reached this place? <br/>I checked and seems to me you are <br/><strong>{distance} meters</strong><br/> away from here!',
@@ -27,6 +29,7 @@ const messages = {
         checkText: '<a target="_blank" href="{path}"><i class="icon material-icons">directions_walk</i>Reach next location</a>',
         promoTitle: 'Congrats! You checked <br/> &#34;{stop}&#34;',
         promoText: 'You discovered the following piece of your promocode:<strong style="font-size:200%">&#34;{promo}&#34;</strong><a target="_blank" href="{path}"><i class="icon material-icons">directions_walk</i>Reach next location</a>',
+        promoTextComplete: 'You discovered the following piece of your promocode:<br/><strong style="font-size:200%">&#34;{promo}&#34;</strong><br/><br/>Now you can use the complete promocode to get a 10% discount',
         shopTitle: 'Congrats! You checked <br/> &#34;{stop}&#34;',
         shopText: 'Now you can use the promocode to <strong style="font-weight: bold;">get a 10% discount in this store</strong>. Hope you appreciate this!!Did you like this shop? <br/>Please, like it on Facebook!<iframe src="https://www.facebook.com/plugins/like.php?href=${encodeURIComponent(fbPage)}&width=224&layout=button_count&action=like&size=large&share=true&height=46&appId=238576103449837" width="224" height="46" style="border:none;overflow:hidden" scrolling="no" frameborder="0" allowTransparency="true" allow="encrypted-media"></iframe><a target="_blank" href="${path}"><i class="icon material-icons">directions_walk</i>Reach next location</a>',
         finishTitle: 'Congrats! Your journey in complete!',
@@ -147,6 +150,8 @@ const messages = {
       checkLocation: 'CHECK!',
       locationChecked: 'CHECKED',
       infoFromTheWeb: 'Altre info dal Web',
+      areYouHere: 'Ti trovi qui?',
+      nearHere: 'Qui vicino...',
       popups: {
         notEvenCloseTitle: 'Not even close!',
         notEvenCloseText: 'Mmhhhh... are you sure you reached this place? <br/>I checked and seems to me you are <br/><strong>{distance} meters</strong><br/> away from here!',
@@ -158,6 +163,7 @@ const messages = {
         checkText: '',
         promoTitle: 'Congrats! You checked<br/>&#34;{stop}&#34;',
         promoText: 'You discovered the following piece of your promocode:<br/><strong style="font-size:200%">&#34;{promo}&#34;</strong>',
+        promoTextComplete: 'You discovered the following piece of your promocode:<br/><strong style="font-size:200%">&#34;{promo}&#34;</strong><br/><br/>Now you can use the complete promocode to get a 10% discount',
         shopTitle: 'Congrats! You checked<br/>&#34;{stop}&#34;',
         shopText: 'Now you can use the promocode to <strong style="font-weight: bold;"><br/>get a 10% discount in this store</strong>.<br/>Hope you appreciate this!!<br/><br/><br/><div>... did you like this shop? Please, <strong>like it on Facebook!</strong><iframe src="https://www.facebook.com/plugins/like.php?href={fbPage}&width=224&layout=button_count&action=like&size=large&share=true&height=46&appId=238576103449837" width="224" height="46" style="border:none;overflow:hidden" scrolling="no" frameborder="0" allowTransparency="true" allow="encrypted-media"></iframe></div>',
         finishTitle: 'Congrats! Your journey in complete!',

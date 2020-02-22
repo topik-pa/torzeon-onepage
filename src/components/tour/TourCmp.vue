@@ -14,7 +14,7 @@
       </div>
     </div>
     <div id="stops">
-      <tour-stop-cmp v-for="stop in tour.stops" :key="stop.id" :stop="stop"/>
+      <tour-stop-cmp v-for="stop in tour.stops" :key="stop.id" :stop="stop" :promocodeStepsDone="tour.promocodeStepsDone" :promocodeStepsTotal="tour.promocodeStepsTotal" @incrementPromocodeCounter="incrementPromocodeCounter" />
     </div>
     <tour-progress-cmp :stops="tour.stops" :started="tour.started"/>
   </section>
@@ -53,6 +53,9 @@ export default {
       } else {
         this.tour.started = true
       }
+    },
+    incrementPromocodeCounter() {
+      this.tour.promocodeStepsDone++
     }
   },
   created () {

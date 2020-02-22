@@ -73,9 +73,14 @@ h2 {
 }
 
 h3 {
-    font-size: 150%;
-    margin-bottom: 1rem;
-  }
+  font-size: 150%;
+  margin-bottom: 1rem;
+}
+
+h4 {
+  font-size: 120%;
+  margin-bottom: 1rem;
+}
 
 p {
   line-height: 150%;

@@ -8,11 +8,11 @@ const getCheckPopup = function (stop) {
   }
 }
 
-const getPromoPopup = function (stop, promo) {
+const getPromoPopup = function (stop, promo, promoComplete) {
   return {
     title: i18n.t('message.popups.promoTitle', {stop: stop}),
     type: `success`,
-    html: i18n.t('message.popups.promoText', {promo: promo}),
+    html: promoComplete ? i18n.t('message.popups.promoTextComplete', {promo: promo}) : i18n.t('message.popups.promoText', {promo: promo}),
   }
 }
 
