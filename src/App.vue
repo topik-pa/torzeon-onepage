@@ -69,11 +69,11 @@ h1 {
 h2 {
   font-weight: bold;
   margin-bottom: 1rem;
-  font-size: 120%;
+  font-size: 150%;
 }
 
 h3 {
-  font-size: 150%;
+  font-size: 130%;
   margin-bottom: 1rem;
 }
 

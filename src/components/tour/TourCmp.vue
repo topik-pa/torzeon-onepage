@@ -9,13 +9,12 @@
       <tour-card-cmp v-for="highlight in tour.highlights" :key="highlight.id" :marker="highlight.marker" :title="highlight.title" :image="highlight.image" :list="highlight.list" :text="highlight.text" :cta="highlight.cta"/>
     </aside>
     <div id="ready">
-      <div class="title">
-        <h2><i class="far fa-play-circle"></i>&nbsp;{{ $t('message.readyMessage') }}</h2>
-      </div>
+      <h2><i class="far fa-play-circle"></i>&nbsp;{{ $t('message.readyMessage') }}</h2>
     </div>
     <div id="stops">
       <tour-stop-cmp v-for="stop in tour.stops" :key="stop.id" :stop="stop" :promocodeStepsDone="tour.promocodeStepsDone" :promocodeStepsTotal="tour.promocodeStepsTotal" @incrementPromocodeCounter="incrementPromocodeCounter" />
     </div>
+    <tour-end-cmp :fbPost="tour.fbPost" :twPost="tour.twPost"/>
     <tour-progress-cmp :stops="tour.stops" :started="tour.started"/>
   </section>
 </template>
@@ -25,6 +24,7 @@ import TourShareCmp from './TourShareCmp'
 import TourGalleryCmp from './TourGalleryCmp'
 import TourStopCmp from './TourStopCmp'
 import TourCardCmp from './TourCardCmp'
+import TourEndCmp from './TourEndCmp'
 import TourProgressCmp from './TourProgressCmp'
 
 export default {
@@ -34,6 +34,7 @@ export default {
     TourGalleryCmp,
     TourCardCmp,
     TourStopCmp,
+    TourEndCmp,
     TourProgressCmp
   },
   props: {
@@ -77,7 +78,7 @@ p {
     font-size: 110%;
 }
 
-#ready {
+#ready{
   padding-top: 4rem;
 }
 

@@ -5,6 +5,7 @@ const data = {
   version: 0.1,
   author: 'Marco Pavan',
   authorMail: 'marcopavan.mp@gmail.com',
+  fbPage: 'https://www.facebook.com/Torzeon-103840521139047/',    
   scrolledSizeFromTourStarted: 0,
   tours:
   [
@@ -18,30 +19,22 @@ const data = {
       author: 'Marco Pavan',
       avatarAuthorUrl: 'http://www.marcopavan.org/src/assets/images/Profile_Image.jpg',
       authorMail: 'marcopavan.mp@gmail.com',
+      fbPost: 'https://www.facebook.com/permalink.php?story_fbid=133978121458620&id=103840521139047',
+      twPost: 'https://twitter.com/torzeon/status/1231515201557684225',
       started: false,
       stopsTotal: 7,
       promocodeStepsTotal: 3,
       promocodeStepsDone: 0,
       socials: [
         {
-          name: 'Email',
-          icon: 'fa fa-envelope',
-          href: `mailto:marcopavan.mp@gmail.com`
-        },
-        {
           name: 'Facebook',
           icon: 'fab fa-facebook-f',
-          href: '#'
-        },
-        {
-          name: 'Instagram',
-          icon: 'fab fa-instagram',
-          href: '#'
+          href: 'https://www.facebook.com/permalink.php?story_fbid=133978121458620&id=103840521139047'
         },
         {
           name: 'Twitter',
           icon: 'fab fa-twitter',
-          href: '#'
+          href: 'https://twitter.com/torzeon'
         }
       ],
       images: [
@@ -90,7 +83,7 @@ const data = {
             },
             {
               id: 1,
-              icon: 'fa fa-stop-circle',
+              icon: 'fas fa-flag-checkered',
               key: i18n.t('message.end'),
               value: 'Castello Sforzesco'
             },
@@ -98,19 +91,19 @@ const data = {
               id: 2,
               icon: 'fas fa-star-half-alt',
               key: i18n.t('message.rating'),
-              value: 4.6
+              value: 4.6 + '/5'
             },
             {
               id: 4,
               icon: 'fas fa-clock',
               key: i18n.t('message.duration'),
-              value: 240
+              value: 240 + i18n.t('message.minutes'),
             },
             {
               id: 5,
               icon: 'fas fa-route',
               key: i18n.t('message.geometry'),
-              value: 'Linear trip'
+              value: i18n.t('message.linearTrip')
             }
           ]
         },

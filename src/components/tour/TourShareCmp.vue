@@ -2,10 +2,11 @@
   <div id="share">
     <div class="author">
       <img :alt="author" :src="avatar"/>
-      <div>{{ $t('message.by') }}<a :title="$t('message.contactTourAuthor')" :href="'mailto:' + mail">{{author}}</a></div>
+      <div>{{ $t('message.by') }}<strong>{{author}}</strong></div>
     </div>
     <div class="socials">
-      <a v-for="social in socials" :key="social.name" :href="social.href" :title="$t('message.shareOn') + social.name">
+      {{ $t('message.followThisOn') }}
+      <a v-for="social in socials" :key="social.name" :href="social.href" :title="$t('message.followOn') + social.name">
         <i :class="social.icon"></i>
       </a>
     </div>
@@ -62,9 +63,14 @@ export default {
     height: 40px;
 }
 
+.socials {
+  font-size: 90%;
+}
+
 .socials i {
     margin: 0 .5rem;
     color: #333;
-    font-size: 140%;
+    font-size: 150%;
+    vertical-align: text-bottom;
 }
 </style>
