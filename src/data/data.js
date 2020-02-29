@@ -7,6 +7,7 @@ const data = {
   authorMail: 'marcopavan.mp@gmail.com',
   fbPage: 'https://www.facebook.com/Torzeon-103840521139047/',
   scrolledSizeFromTourStarted: 0,
+  promocode: 'Noio volevan savuar',
   tours:
   [
     {

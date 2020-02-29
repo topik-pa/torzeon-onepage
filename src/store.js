@@ -47,6 +47,9 @@ const getters = {
   },
   getProjectName: (state) => {
     return state.data.project
+  },
+  getPromocode: (state) => {
+    return state.data.promocode
   }
 }
 

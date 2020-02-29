@@ -8,20 +8,41 @@ const getCheckPopup = function (stop) {
   }
 }
 
-const getPromoPopup = function (stop, promo, promoComplete) {
-  return {
-    title: i18n.t('message.popups.promoTitle', {stop: stop}),
-    type: `success`,
-    html: promoComplete ? i18n.t('message.popups.promoTextComplete', {promo: promo}) : i18n.t('message.popups.promoText', {promo: promo})
+const getPromoPopup = function (stop, promo, promocode) {
+  let obj = {}
+
+  if (promocode) {
+    obj = {
+      title: i18n.t('message.popups.promoTitle', {stop: stop}),
+      type: `success`,
+      html: i18n.t('message.popups.promoTextComplete', {promo: promo, promocode: promocode})
+    }
+  } else {
+    obj = {
+      title: i18n.t('message.popups.promoTitle', {stop: stop}),
+      type: `success`,
+      html: i18n.t('message.popups.promoText', {promo: promo})
+    }
   }
+  return obj
 }
 
-const getShopPopup = function (stop, fbPage) { // encodeURIComponent(fbPage)
-  return {
-    title: i18n.t('message.popups.shopTitle', {stop: stop}),
-    type: `success`,
-    html: i18n.t('message.popups.shopText', {stop: stop, fbPage: fbPage})
+const getShopPopup = function (stop, promocode) {
+  let obj = {}
+  if (promocode) {
+    obj = {
+      title: i18n.t('message.popups.shopTitle', {stop: stop}),
+      type: `success`,
+      html: i18n.t('message.popups.shopText', {promocode: promocode})
+    }
+  } else {
+    obj = {
+      title: i18n.t('message.popups.shopTitle', {stop: stop}),
+      type: `success`,
+      html: i18n.t('message.popups.shopTextNoPromocode')
+    }
   }
+  return obj
 }
 
 const getFinishPopup = function () {
