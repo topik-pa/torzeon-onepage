@@ -1,7 +1,7 @@
 <template>
   <div class="stop" :class="{'private': stop.type=='private' }">
     <div class="title">
-      <h2>{{stop.id + 1}}<span>/{{this.$store.getters.getDefaultTour.stopsTotal}}</span> - {{stop.name}}</h2>       
+      <h2>{{stop.id + 1}}<span>/{{this.$store.getters.getDefaultTour.stopsTotal}}</span> - {{stop.name}}</h2>
       <a target="_blank" class="btn secondary" :href="stop.gmapsLocation"><i class="fas fa-map-marker-alt"></i>&nbsp;{{ $t("message.getThere") }}</a>
     </div>
     <p class="description" v-html="stop.description"></p>
@@ -34,7 +34,7 @@
         <div v-for="location in stop.near" :key="location.id" class="location">
           <a target="_blank" :href="location.gmapsUrl">
             <img :alt="location.name" v-lazy="location.image" />
-          </a>          
+          </a>
           <a target="_blank" :href="location.gmapsUrl"><i class="fas fa-map-marker-alt"></i>&nbsp;{{ location.name }}</a>
         </div>
       </div>
@@ -44,7 +44,6 @@
 
 <script>
 import { getCheckPopup, getPromoPopup, getShopPopup, getFinishPopup, notEvenClosePopup, justOneStepPopup, geolocalizationNotActivePopup } from '@/templates/popups.js'
-import i18n from '@/i18n.js'
 
 export default {
   name: 'TourStopCmp',
@@ -52,11 +51,13 @@ export default {
     return {
       currentPosition: undefined,
       currentDistanceFromStop: undefined,
+      minDistanceFromStop: 200,
+      oneStepDistanceFromStop: 1000,
       stopPosition: {
         latitude: this.stop.latitude,
-        longitude: this.stop.longitude,
+        longitude: this.stop.longitude
       },
-      swalPopup: undefined,
+      swalPopup: undefined
     }
   },
   props: {
@@ -84,37 +85,36 @@ export default {
       this.getCurrentPosition()
     },
 
-    getCurrentPosition () {      
-      let that = this;      
-
-      let checkBrowserSupportForGeolocation = function() {
-        return new Promise(function(resolve, reject) {
+    getCurrentPosition () {
+      let that = this
+      let checkBrowserSupportForGeolocation = () => {
+        return new Promise(function (resolve, reject) {
           if (navigator.geolocation) {
             resolve()
           } else {
-            reject('This Browser do not supports geolocation')
+            reject(new Error('This Browser do not supports geolocation'))
           }
-        }
-      )}
+        })
+      }
 
-      let getCurrentUserPositionAndDistanceFromCurrentStop = function() {
-        let getUserDistanceFromStop = function() {
+      let getCurrentUserPositionAndDistanceFromCurrentStop = () => {
+        let getUserDistanceFromStop = function () {
           let p1 = that.stopPosition
           let p2 = that.currentPosition
-          let rad = function(x) {
+          let rad = function (x) {
             return x * Math.PI / 180
           }
-          let R = 6378137; // Earth’s mean radius in meter
+          let R = 6378137 // Earth’s mean radius in meter
           let dLat = rad(p2.latitude - p1.latitude)
           let dLong = rad(p2.longitude - p1.longitude)
           let a = Math.sin(dLat / 2) * Math.sin(dLat / 2) +
-            Math.cos(rad(  p1.latitude )) * Math.cos(rad(  p2.latitude  )) *
+            Math.cos(rad(p1.latitude)) * Math.cos(rad(p2.latitude)) *
             Math.sin(dLong / 2) * Math.sin(dLong / 2)
           let c = 2 * Math.atan2(Math.sqrt(a), Math.sqrt(1 - a))
           let d = R * c
-          that.currentDistanceFromStop = d //--> the distance in meter
+          that.currentDistanceFromStop = d // --> the distance in meter
         }
-        return new Promise(function(resolve, reject) {
+        return new Promise(function (resolve, reject) {
           navigator.geolocation.getCurrentPosition((position) => {
             that.currentPosition = {
               latitude: position.coords.latitude,
@@ -124,64 +124,62 @@ export default {
             resolve()
           }, () => {
             that.swalPopup = geolocalizationNotActivePopup()
-            reject()
+            reject(new Error('Geolocalization not available'))
           })
-        }
-      )}
+        })
+      }
 
-
-      let checkTheStopAndIncrementPromocodeCouter = function() {
-        return new Promise(function(resolve, reject) {
-          if (true || that.currentDistanceFromStop < 200) { //true
+      let checkTheStopAndIncrementPromocodeCouter = () => {
+        return new Promise(function (resolve, reject) {
+          if (true || that.currentDistanceFromStop < that.minDistanceFromStop) { // true
             that.stop.checked = true
-            if(that.stop.popup === 'promo' || that.stop.popup == 'shop') {
+            if (that.stop.popup === 'promo' || that.stop.popup === 'shop') {
               that.$emit('incrementPromocodeCounter')
             }
-            resolve()          
+            resolve()
           } else {
-            if (that.currentDistanceFromStop < 1000) {
+            if (that.currentDistanceFromStop < that.oneStepDistanceFromStop) {
               that.swalPopup = justOneStepPopup(that.currentDistanceFromStop)
             } else {
-              that.swalPopup = notEvenClosePopup(that.currentDistanceFromStop) 
+              that.swalPopup = notEvenClosePopup(that.currentDistanceFromStop)
             }
             reject()
           }
           
-        }
-      )}
+        })
+      }
 
-
-      let setTheRightPopup = function() {
-        return new Promise(function(resolve, reject) {
+      let setTheRightPopup = () => {
+        return new Promise(function (resolve, reject) {
           switch (that.stop.popup) {
             case 'check':
               that.swalPopup = getCheckPopup(that.stop.name, that.stop.path)
-              break;
+              break
             case 'promo':
-              if(that.promocodeStepsDone === that.promocodeStepsTotal) {
+              if (that.promocodeStepsDone === that.promocodeStepsTotal) {
                 that.swalPopup = getPromoPopup(that.stop.name, that.stop.promo, true)
               } else {
                 that.swalPopup = getPromoPopup(that.stop.name, that.stop.promo, false)
               }
-              break;
+              break
             case 'shop':
-              if(that.promocodeStepsDone === that.promocodeStepsTotal) {
+              if (that.promocodeStepsDone === that.promocodeStepsTotal) {
                 that.swalPopup = getShopPopup(that.stop.name, that.stop.fbPage)
               } else {
                 that.swalPopup = getPromoPopup(that.stop.name, that.stop.promo)
               }
-              break;
+              break
             case 'finish':
               that.swalPopup = getFinishPopup()
-              break;
+              break
             default:
-              break;
+              break
           }
           resolve()
-        }
-      )}
+        })
+      }
 
-      let fireThePopup = function() {
+      let fireThePopup = () => {
         that.$fire({
           title: that.swalPopup.title,
           type: that.swalPopup.type,
@@ -189,14 +187,15 @@ export default {
         })
       }
 
-
       checkBrowserSupportForGeolocation()
-      .then(getCurrentUserPositionAndDistanceFromCurrentStop, () => {alert(error)})
-      .then(checkTheStopAndIncrementPromocodeCouter, () => {fireThePopup()})
-      .then(setTheRightPopup, () => {fireThePopup()})
-      .then(() => {fireThePopup()})
-      .catch(() => {alert('error')})
-    },
+        .then(getCurrentUserPositionAndDistanceFromCurrentStop, (error) => { alert(error) })
+        .then(checkTheStopAndIncrementPromocodeCouter, () => { fireThePopup() })
+        .then(setTheRightPopup, () => { fireThePopup() })
+        .then(() => { fireThePopup() })
+        .catch(() => {
+          alert('error, try again...')
+        })
+    }
   }
 }
 </script>

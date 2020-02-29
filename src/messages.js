@@ -1,7 +1,6 @@
 const messages = {
   en: {
     message: {
-      hello: 'hello world',
       promocode: 'Your Promocode: ',
       by: 'by ',
       contactTourAuthor: 'Contact the author with an email',
@@ -23,23 +22,35 @@ const messages = {
       locationChecked: 'CHECKED',
       infoFromTheWeb: 'Some infos from the Web',
       areYouHere: 'Are you here?',
-      nearHere: 'Near here...',      
+      nearHere: 'Near here...',
       popups: {
         notEvenCloseTitle: 'Not even close!',
         notEvenCloseText: 'Mmhhhh... are you sure you reached this place? <br/>I checked and seems to me you are <br/><strong>{distance} meters</strong><br/> away from here!',
-        nearHereButTitle : 'You are near here... but not here',
+        nearHereButTitle: 'You are near here... but not here',
         nearHereButText: 'I checked and seems to me you are {distance} meters away from here!<br/>Try to get closer and try again!',
         geolocalizationNotActiveTitle: 'Geolocalization not active',
         geolocalizationNotActiveText: 'We need to get your location to permit this software to work!',
         checkTitle: 'Congrats! You checked <br/> &#34;{stop}&#34;',
-        checkText: '<a target="_blank" href="{path}"><i class="icon material-icons">directions_walk</i>Reach next location</a>',
+        checkText: '',
         promoTitle: 'Congrats! You checked <br/> &#34;{stop}&#34;',
-        promoText: 'You discovered the following piece of your promocode:<strong style="font-size:200%">&#34;{promo}&#34;</strong><a target="_blank" href="{path}"><i class="icon material-icons">directions_walk</i>Reach next location</a>',
+        promoText: 'You discovered the following piece of your promocode:<strong style="font-size:200%">&#34;{promo}&#34;</strong>',
         promoTextComplete: 'You discovered the following piece of your promocode:<br/><strong style="font-size:200%">&#34;{promo}&#34;</strong><br/><br/>Now you can use the complete promocode to get a 10% discount',
         shopTitle: 'Congrats! You checked <br/> &#34;{stop}&#34;',
-        shopText: 'Now you can use the promocode to <strong style="font-weight: bold;">get a 10% discount in this store</strong>. Hope you appreciate this!!Did you like this shop? <br/>Please, like it on Facebook!<iframe src="https://www.facebook.com/plugins/like.php?href=${encodeURIComponent(fbPage)}&width=224&layout=button_count&action=like&size=large&share=true&height=46&appId=238576103449837" width="224" height="46" style="border:none;overflow:hidden" scrolling="no" frameborder="0" allowTransparency="true" allow="encrypted-media"></iframe><a target="_blank" href="${path}"><i class="icon material-icons">directions_walk</i>Reach next location</a>',
+        shopText: `
+          Now you can use the promocode to <strong style="font-weight: bold;"><br/>
+          get a 10% discount in this store</strong>.<br/>
+          Hope you appreciate this!!<br/><br/><br/>
+          <div>
+            ... did you like this shop? Please, <strong>like it on Facebook!</strong>
+            <iframe src="https://www.facebook.com/plugins/like.php?href={fbPage}&width=224&layout=button_count&action=like&size=large&share=true&height=46&appId=238576103449837" width="224" height="46" style="border:none;overflow:hidden" scrolling="no" frameborder="0" allowTransparency="true" allow="encrypted-media"></iframe>
+          </div>
+          <div>
+            Please add a review on Tripadvisor
+            <div id="TA_cdswritereviewnew61" class="TA_cdswritereviewnew"><ul id="u3sI0C" class="TA_links MVwmiNX"><li id="74XS8B3TPs" class="EjPCVU0brHAf"><a target="_blank" href="https://www.tripadvisor.it/"><img src="https://www.tripadvisor.it/img/cdsi/img2/branding/medium-logo-29834-2.png" alt="TripAdvisor"/></a></li></ul></div>
+          </div>
+          `,
         finishTitle: 'Congrats! Your journey in complete!',
-        finishText: 'Did you like the journey?<br/>Please, share it on Facebook and rate this tour!',
+        finishText: 'Did you like the journey?<br/>Please, share it on Facebook and rate this tour!'
       },
       tour_0: {
         title: 'A day in... Milan',
@@ -141,7 +152,6 @@ const messages = {
   },
   it: {
     message: {
-      hello: 'Ciao',
       promocode: 'Il tuo promocode: ',
       by: 'di ',
       contactTourAuthor: 'Invia una mail all\'autore',
@@ -167,7 +177,7 @@ const messages = {
       popups: {
         notEvenCloseTitle: 'Not even close!',
         notEvenCloseText: 'Mmhhhh... are you sure you reached this place? <br/>I checked and seems to me you are <br/><strong>{distance} meters</strong><br/> away from here!',
-        nearHereButTitle : 'You are near here... but not here',
+        nearHereButTitle: 'You are near here... but not here',
         nearHereButText: 'I checked and seems to me you are <br/><strong>{distance} meters</strong><br/> away from here!<br/><br/><strong>Try to get closer and try again!</strong>',
         geolocalizationNotActiveTitle: 'Geolocalization not active',
         geolocalizationNotActiveText: 'We need to get your location to permit this software to work!',
@@ -177,10 +187,27 @@ const messages = {
         promoText: 'You discovered the following piece of your promocode:<br/><strong style="font-size:200%">&#34;{promo}&#34;</strong>',
         promoTextComplete: 'You discovered the following piece of your promocode:<br/><strong style="font-size:200%">&#34;{promo}&#34;</strong><br/><br/>Now you can use the complete promocode to get a 10% discount',
         shopTitle: 'Congrats! You checked<br/>&#34;{stop}&#34;',
-        shopText: 'Now you can use the promocode to <strong style="font-weight: bold;"><br/>get a 10% discount in this store</strong>.<br/>Hope you appreciate this!!<br/><br/><br/><div>... did you like this shop? Please, <strong>like it on Facebook!</strong><iframe src="https://www.facebook.com/plugins/like.php?href={fbPage}&width=224&layout=button_count&action=like&size=large&share=true&height=46&appId=238576103449837" width="224" height="46" style="border:none;overflow:hidden" scrolling="no" frameborder="0" allowTransparency="true" allow="encrypted-media"></iframe></div>',
+        shopText: `
+          Now you can use the promocode to <strong style="font-weight: bold;"><br/>
+          get a 10% discount in this store</strong>.<br/>
+          Hope you appreciate this!!<br/><br/><br/>
+          <div class="social-widget-cointainer-popup">
+            <div id="TA_cdswritereviewlg1000" class="TA_cdswritereviewlg">
+              <iframe style="height:0;width:0;display:none;" src="https://p.travelsmarter.net/api/usersync/sync.html?api_key=TxLExUPOSpaM-4SJwXvYmQ&amp;publisher_browser_id=9fd4bf2e4d0cc4ba579656344c60d1c8693b349e&amp;cb=1582973083006"></iframe> 
+              <div id="CDSWIDWRL" class="widWRL "> 
+                <div class="widWRLData border "> 
+                  <div class="widWRLBranding"> <dl> <dt> <a target="_blank" href="https://www.tripadvisor.it/">
+                    <img src="https://www.tripadvisor.it/img/cdsi/img2/branding/medium-logo-12097-2.png" alt="Tripadvisor"></a> 
+                    </dt> <dt class="messaging">Informati meglio. Prenota meglio. Viaggia meglio.</dt> </dl> 
+                  </div> <div class="widWRLLink"> 
+                  <a target="_blank" href="https://www.tripadvisor.it/Restaurant_Review-g187849-d14156464-Reviews-OGGI_Officina_Gelato_Gusto_Italiano-Milan_Lombardy.html" onclick="ta.cds.handleTALink(12097,this);return true;" rel="nofollow">Scrivi una recensione su OGGI - Officina Gelato Gusto Italiano</a> 
+                  </div> 
+                  <form action="https://www.tripadvisor.it/UserReview-g187849-d14156464-m12097-OGGI_Officina_Gelato_Gusto_Italiano-Milan_Lombardy.html" target="_blank" name="cdsWRLForm1173" id="cdsWRLForm1173" onsubmit="ta.cds.handleTALink(12097,this);return false;"> <input type="hidden" id="rating01173" value="(Fai clic per votare)"> <input type="hidden" id="rating11173" value="Pessimo"> <input type="hidden" id="rating21173" value="Scarso"> <input type="hidden" id="rating31173" value="Nella media"> <input type="hidden" id="rating41173" value="Molto buono"> <input type="hidden" id="rating51173" value="Eccellente"> <input type="hidden" id="defaultTitle1173" value="Dai un titolo alla tua recensione - Riassumi la tua esperienza in una frase"> <input type="hidden" id="reviewTitle1173" name="ReviewTitle"> <div class="widWRLRating"> <input type="hidden" name="qid10" id="qid101173" value="0"> <span class="widWRLRate ui_bubble_rating bubble_0" id="ratingSpan" onclick="return selectRating(this, event, true, 1173);" onmousemove="return selectRating(this, event, false, 1173);" onmouseout="return lastSetRating(this, 1173);"> </span> <span id="ratingText1173" class="widWRLRatingTextSmall">(Fai clic per votare) </span> </div> <div class="widWRLReview"> <textarea id="taWRLTitle1173" onfocus="initTextArea(this);" rows="3" cols="30" onkeypress="limitLength(this, 120);">Dai un titolo alla tua recensione - Riassumi la tua esperienza in una frase</textarea> </div> <div class="widWRLButton"> <input type="submit" id="taWRLContinue1173" name="taWRLContinue1173" value="Continua" onclick="checkTextArea(1173);" style="background:url(https://static.tacdn.com/img2/sprites/yellow-button.png) 0 0 repeat-x #EA9523;"> </div> </form> </div> </div> </div>
+          </div>
+          `,
         finishTitle: 'Congrats! Your journey in complete!',
-        finishText: '<div>Did you like the journey?<br/>Please, <strong>share it on Facebook</strong> and <strong>rate this tour</strong>!</div>',
-      },      
+        finishText: '<div>Did you like the journey?<br/>Please, <strong>share it on Facebook</strong> and <strong>rate this tour</strong>!</div>'
+      },
       tour_0: {
         title: 'Un giorno a... Milano',
         subtitle: 'I luoghi più caratteristici, tra Storia e modernità',

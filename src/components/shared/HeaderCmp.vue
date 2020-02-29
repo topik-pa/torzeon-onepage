@@ -1,6 +1,6 @@
 <template>
-  <header :class="{'fixed': isFixedHeader && !isMobile }">
-    <logo-cmp/>
+  <header :class="{'fixed': isFixedHeader && !isMobile }" :style="headerInlineStyle">
+    <logo-cmp :project="project"/>
   </header>
 </template>
 
@@ -15,59 +15,72 @@ export default {
   },
   data () {
     return {
-      stopHeaderFixed: 280,
+      isMobile: false,
+      stopHeaderFixed: 120,
       isFixedHeader: true,
-      debounceInterval: 1
+      scrolledPosition: 0,
+      lastScrolled: 0,
+      debounceInterval: 5,
+      headerInlineStyle: {}
+    }
+  },
+  computed: {
+    project () {
+      return this.$store.getters.getProjectName
     }
   },
   mounted: function () {
-    let _this = this
-    let deabouncedScrollListener = JSUtils.debounce(function () {
-      let scrollPosition = window.scrollY
-      if (scrollPosition > _this.stopHeaderFixed) {
-        _this.isFixedHeader = false
+    if (screen.width <= 760) {
+      this.isMobile = true
+    }
+    let deabouncedScrollListener = JSUtils.debounce(() => {
+      if (this.isMobile) {
+        return
       }
-      if (scrollPosition <= _this.stopHeaderFixed) {
-        _this.isFixedHeader = true
+      this.scrolledPosition = window.scrollY
+      if (this.scrolledPosition > this.stopHeaderFixed) {
+        if (this.isFixedHeader) {
+          this.lastScrolled = this.scrolledPosition
+        }
+        this.isFixedHeader = false
+        this.headerInlineStyle = {top: this.lastScrolled + 'px'}
       }
-    }, _this.debounceInterval)
+      if (this.scrolledPosition <= this.stopHeaderFixed) {
+        this.isFixedHeader = true
+        this.headerInlineStyle = {}
+      }
+    }, this.debounceInterval)
     window.addEventListener('scroll', function () {
       deabouncedScrollListener()
     })
-  },
-  computed: {
-    isMobile: function () {
-      return screen.width <= 760
-    }
   }
 }
 </script>
 
 <style scoped>
-  header {
-    position: relative;
-    height: 5rem;
-    border-bottom: 1px solid #999;
-    background-color: #FFFFFF;
-    z-index: 99;
-    top: 280px;
-    display: flex;
-    justify-content: space-between;
-    align-items: center;
-  }
+header {
+  position: relative;
+  height: 5rem;
+  border-bottom: 1px solid #999;
+  background-color: #FFFFFF;
+  z-index: 99;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
 
-  header.fixed  {
-      position: fixed;
-      left: 0;
-      right: 0;
-      margin: 0 auto;
-      width: 100%;
-      top: 0;
-      max-width: 1280px;
+header.fixed  {
+    position: fixed;
+    left: 0;
+    right: 0;
+    margin: 0 auto;
+    width: 100%;
+    top: 0;
+    max-width: 1280px;
+}
+@media screen and (max-width: 768px) {
+  header {
+    top: 0;
   }
-  @media screen and (max-width: 768px) {
-    header {
-        top: 0;
-    }
 }
 </style>

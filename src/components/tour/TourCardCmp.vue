@@ -26,7 +26,7 @@ export default {
   props: {
     marker: {
       type: String,
-      required: false
+      required: true
     },
     title: {
       type: String,
@@ -55,11 +55,10 @@ export default {
 <style scoped>
 .card {
     background-color: #F8E627;
-    margin-bottom: 1rem;
     border-radius: 10px;
     position: relative;
     font-weight: bold;
-    max-width: 270px;
+    max-width: 240px;
     margin: 0 auto 3rem;
     padding: 3.3rem 1rem;
     overflow: hidden;
@@ -69,7 +68,7 @@ export default {
 }
 
 .marker {
-    font-size: 750%;
+    font-size: 650%;
     position: absolute;
     top: -15px;
     left: -15px;
@@ -113,5 +112,21 @@ li > span {
 
 .text {
   font-weight: normal;
+}
+
+@media screen and (max-width: 1024px) {
+  .marker {
+    font-size: 550%;
+  }
+  .card {
+    max-width: 200px;
+    padding: 2.3rem 1rem;
+  }
+}
+
+@media screen and (max-width: 768px) {
+  .card {
+    max-width: initial;
+  }
 }
 </style>

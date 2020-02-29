@@ -1,12 +1,9 @@
 /* eslint-disable */
-var Configs = (function () {
+var Configs = ( () => {
     return {
-        locale: function () {
-          if (navigator.language === 'it-IT') {
-            return 'it'
-          } else {
-            return 'en'
-          }
+        locale: () => {
+          let locale = navigator.language === 'it-IT' ? 'it' : 'en'
+          return locale
       }
     }; 
 })();

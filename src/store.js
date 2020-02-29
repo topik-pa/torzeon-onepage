@@ -44,6 +44,9 @@ const mutations = {
 const getters = {
   getDefaultTour: (state) => {
     return state.data.tours.find(tour => tour.default === true)
+  },
+  getProjectName: (state) => {
+    return state.data.project
   }
 }
 

@@ -43,8 +43,6 @@ export default {
       required: true
     }
   },
-  computed: {
-  },
   methods: {
     tourStarted () {
       let scrollSize = window.innerHeight - document.getElementById('ready').getBoundingClientRect().top
@@ -55,7 +53,7 @@ export default {
         this.tour.started = true
       }
     },
-    incrementPromocodeCounter() {
+    incrementPromocodeCounter () {
       this.tour.promocodeStepsDone++
     }
   },
@@ -74,8 +72,8 @@ section {
 }
 
 p {
-    padding-bottom: 2rem;
-    font-size: 110%;
+  padding-bottom: 2rem;
+  font-size: 110%;
 }
 
 #ready{
@@ -89,13 +87,20 @@ p {
 
 aside {
     position: absolute;
-    top: 30px;
-    right: 2rem;
+    top: -60px;
+    right: 0;
     z-index: 99;
+}
+
+@media screen and (max-width: 1024px) {
+  aside {
+    right: -2rem;
+  }
 }
 
 @media screen and (max-width: 768px) {
     aside {
+        top: initial;
         position: relative;
         right: initial;
     }

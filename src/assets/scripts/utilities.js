@@ -1,12 +1,12 @@
 /* eslint-disable */
-var JSUtils = (function () {
+var JSUtils = ( () => {
     return {
-        debounce: function (func, wait, immediate) {
+        debounce: (func, wait, immediate) => {
             var timeout;
-            return function () {
+            return () => {
                 var context = this,
                     args = arguments;
-                var later = function () {
+                var later = () => {
                     timeout = null;
                     if (!immediate) func.apply(context, args);
                 };

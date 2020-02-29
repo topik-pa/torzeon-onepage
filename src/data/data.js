@@ -5,7 +5,7 @@ const data = {
   version: 0.1,
   author: 'Marco Pavan',
   authorMail: 'marcopavan.mp@gmail.com',
-  fbPage: 'https://www.facebook.com/Torzeon-103840521139047/',    
+  fbPage: 'https://www.facebook.com/Torzeon-103840521139047/',
   scrolledSizeFromTourStarted: 0,
   tours:
   [
@@ -97,7 +97,7 @@ const data = {
               id: 4,
               icon: 'fas fa-clock',
               key: i18n.t('message.duration'),
-              value: 240 + i18n.t('message.minutes'),
+              value: 240 + i18n.t('message.minutes')
             },
             {
               id: 5,
@@ -176,13 +176,13 @@ const data = {
               id: 0,
               name: 'Via dei Georgofili',
               image: 'https://www.artribune.com/wp-content/uploads/2016/03/La-Mela-Reintegrata-di-Pistoletto-in-Piazza-Duca-dAosta.jpg',
-              gmapsUrl: 'https://goo.gl/maps/4UesoB2u579WrBm68',
+              gmapsUrl: 'https://goo.gl/maps/4UesoB2u579WrBm68'
             },
             {
               id: 1,
               name: 'Via dei Georgofili 2',
               image: 'https://www.artribune.com/wp-content/uploads/2016/03/La-Mela-Reintegrata-di-Pistoletto-in-Piazza-Duca-dAosta.jpg',
-              gmapsUrl: 'https://goo.gl/maps/4UesoB2u579WrBm68',
+              gmapsUrl: 'https://goo.gl/maps/4UesoB2u579WrBm68'
             }
           ]
         },

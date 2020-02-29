@@ -13,7 +13,7 @@ export default {
   name: 'ArticleCmp',
   data () {
     return {
-      stopExpandShadow: 220,
+      stopExpandShadow: 120,
       isShadowExpanded: false,
       stopArticleUp: 120,
       isArticleUp: false,
@@ -51,7 +51,7 @@ export default {
 article, .shadow {
     background: white;
     top: 420px;
-    padding: 2rem 2rem;
+    padding: 2rem 1rem;
     border-radius: 10px;
 }
 
@@ -62,7 +62,7 @@ article {
     transition: top 1s ease-out;
 }
 article.up {
-  top: 320px;
+  top: 180px;
 }
 
 .shadow {

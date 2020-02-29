@@ -47,14 +47,14 @@ export default {
   },
   methods: {
     scroller () {
-      let stop = ( document.getElementById('ready').getBoundingClientRect().top + 300 ) + document.documentElement.scrollTop
-      let path = this.docTotalHeight - stop;
-      let scrolled = window.innerHeight - ( document.getElementById('ready').getBoundingClientRect().top + 300 )
-      this.progress = ((scrolled / path) * 100);
+      let stop = (document.getElementById('ready').getBoundingClientRect().top + 300) + document.documentElement.scrollTop
+      let path = this.docTotalHeight - stop
+      let scrolled = window.innerHeight - (document.getElementById('ready').getBoundingClientRect().top + 300)
+      this.progress = ((scrolled / path) * 100)
     },
     getDocTotalHeight () {
-      this.docTotalHeight = Math.max( document.body.scrollHeight, document.body.offsetHeight, document.documentElement.clientHeight, document.documentElement.scrollHeight, document.documentElement.offsetHeight )
-    },
+      this.docTotalHeight = Math.max(document.body.scrollHeight, document.body.offsetHeight, document.documentElement.clientHeight, document.documentElement.scrollHeight, document.documentElement.offsetHeight)
+    }
   },
   computed: {
     privateStop () {
@@ -70,7 +70,7 @@ export default {
     }
   },
   created () {
-    window.addEventListener('scroll', this.scroller)    
+    window.addEventListener('scroll', this.scroller)
   },
   mounted () {
     this.getDocTotalHeight()

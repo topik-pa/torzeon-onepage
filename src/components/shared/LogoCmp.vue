@@ -1,16 +1,21 @@
 <template>
   <div>
-    <router-link :to="url">{{name}}</router-link>
+    <router-link :to="rootUrl">{{project}}</router-link>
   </div>
 </template>
 
 <script>
 export default {
   name: 'LogoCmp',
+  props: {
+    project: {
+      type: String,
+      required: true
+    }
+  },
   data () {
     return {
-      name: 'Torzeon',
-      url: '/'
+      rootUrl: '/'
     }
   }
 }
@@ -25,7 +30,6 @@ span {
   display: block;
   font-size: 80%;
 }
-
 @media screen and (max-width: 768px) {
   div {
     padding-left: 2rem;

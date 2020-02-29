@@ -46,6 +46,7 @@ export default {
 <style scoped>
 #gallery {
   display: flex;
+  margin-bottom: 3rem;
 }
 
 #gallery div.small {

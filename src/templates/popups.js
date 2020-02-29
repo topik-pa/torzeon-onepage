@@ -4,7 +4,7 @@ const getCheckPopup = function (stop) {
   return {
     title: i18n.t('message.popups.checkTitle', {stop: stop}),
     type: `success`,
-    html: i18n.t('message.popups.checkText'),
+    html: i18n.t('message.popups.checkText')
   }
 }
 
@@ -12,15 +12,15 @@ const getPromoPopup = function (stop, promo, promoComplete) {
   return {
     title: i18n.t('message.popups.promoTitle', {stop: stop}),
     type: `success`,
-    html: promoComplete ? i18n.t('message.popups.promoTextComplete', {promo: promo}) : i18n.t('message.popups.promoText', {promo: promo}),
+    html: promoComplete ? i18n.t('message.popups.promoTextComplete', {promo: promo}) : i18n.t('message.popups.promoText', {promo: promo})
   }
 }
 
-const getShopPopup = function (stop, fbPage) { //encodeURIComponent(fbPage)
+const getShopPopup = function (stop, fbPage) { // encodeURIComponent(fbPage)
   return {
     title: i18n.t('message.popups.shopTitle', {stop: stop}),
     type: `success`,
-    html: i18n.t('message.popups.shopText', {stop: stop, fbPage: fbPage}),
+    html: i18n.t('message.popups.shopText', {stop: stop, fbPage: fbPage})
   }
 }
 
@@ -140,12 +140,11 @@ const getFinishPopup = function () {
   }
 }
 
-
 const notEvenClosePopup = function (distance) {
   return {
     title: i18n.t('message.popups.notEvenCloseTitle'),
     type: `error`,
-    html: i18n.t('message.popups.notEvenCloseText', {distance: parseInt(distance)}),
+    html: i18n.t('message.popups.notEvenCloseText', {distance: parseInt(distance)})
   }
 }
 
@@ -153,7 +152,7 @@ const justOneStepPopup = function (distance) {
   return {
     title: i18n.t('message.popups.nearHereButTitle'),
     type: `error`,
-    html: i18n.t('message.popups.nearHereButText', {distance: parseInt(distance)}),
+    html: i18n.t('message.popups.nearHereButText', {distance: parseInt(distance)})
   }
 }
 
@@ -164,6 +163,5 @@ const geolocalizationNotActivePopup = function () {
     html: i18n.t('message.popups.geolocalizationNotActiveText')
   }
 }
-
 
 export { getCheckPopup, getPromoPopup, getShopPopup, getFinishPopup, notEvenClosePopup, justOneStepPopup, geolocalizationNotActivePopup }

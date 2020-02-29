@@ -25,7 +25,6 @@ export default {
 
 <style>
 @import url('https://fonts.googleapis.com/css?family=Libre+Franklin|Montserrat&display=swap');
-@import url('./assets/styles/font-awesome.min.css');
 
 #app {
   font-family: 'Montserrat', sans-serif;
@@ -106,6 +105,13 @@ strong {
   font-style: italic;
 }
 
+.social-widget-cointainer-popup {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-direction: column;
+}
+
 button, a.btn {
   display: inline-block;
   font-weight: 400;
@@ -116,7 +122,7 @@ button, a.btn {
   padding: .5rem 1rem;
   font-size: 100%;
   line-height: 1.4;
-  border-radius: 5px;    
+  border-radius: 5px;
   outline: none;
 }
 button.primary, a.btn.primary {

@@ -8,8 +8,10 @@ import VueLazyload from 'vue-lazyload'
 import store from '@/store.js'
 import i18n from '@/i18n.js'
 
-import '@/assets/styles/reset.css'
-import '@/assets/styles/rating.css'
+import '@/assets/styles/reset.min.css'
+import '@/assets/styles/font-awesome.min.css'
+import '@/assets/styles/rating.min.css'
+import '@/assets/styles/tripadvisor-widget.min.css'
 
 Vue.use(VueSimpleAlert)
 Vue.use(VueLazyload, {
