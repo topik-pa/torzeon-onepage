@@ -80,12 +80,12 @@ article.up {
 
 @media screen and (max-width: 768px) {
     article {
-        top: 360px;
+        top: 320px;
         padding: 2rem .5rem;
         margin: 0 1rem;
     }
     article.up {
-      top: 220px;
+      top: 120px;
     }
     .shadow {
         margin: 0;

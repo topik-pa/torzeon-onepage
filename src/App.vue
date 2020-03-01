@@ -25,6 +25,10 @@ export default {
 
 <style>
 @import url('https://fonts.googleapis.com/css?family=Libre+Franklin|Montserrat&display=swap');
+@import url('./assets/styles/reset.min.css');
+@import url('./assets/styles/font-awesome.min.css');
+@import url('./assets/styles/rating.min.css');
+@import url('./assets/styles/tripadvisor-widget.min.css');
 
 #app {
   font-family: 'Montserrat', sans-serif;

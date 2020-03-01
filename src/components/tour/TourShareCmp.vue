@@ -5,7 +5,7 @@
       <div>{{ $t('message.by') }}<strong>{{author}}</strong></div>
     </div>
     <div class="socials">
-      {{ $t('message.followThisOn') }}
+      {{ $t('message.followOn') }}
       <a v-for="social in socials" :key="social.name" :href="social.href" :title="$t('message.followOn') + social.name">
         <i :class="social.icon"></i>
       </a>
@@ -58,13 +58,15 @@ export default {
 
 .author img {
     border-radius: 50%;
-    margin-right: .5rem;
+    margin-right: .3rem;
     width: 40px;
     height: 40px;
 }
 
 .socials {
   font-size: 90%;
+  display: flex;
+  align-items: center;
 }
 
 .socials i {

@@ -112,6 +112,7 @@ li > span {
 
 .text {
   font-weight: normal;
+  font-size: 110%;
 }
 
 @media screen and (max-width: 1024px) {

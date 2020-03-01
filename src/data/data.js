@@ -41,32 +41,32 @@ const data = {
       images: [
         {
           id: 0,
-          src: 'https://placekitten.com/200/200',
+          src: 'https://placekitten.com/720/720',
           alt: 'Alt descriprion for this image'
         },
         {
           id: 1,
-          src: 'https://placekitten.com/300/300',
+          src: 'https://placekitten.com/720/720',
           alt: 'Alt descriprion for this image'
         },
         {
           id: 2,
-          src: 'https://placekitten.com/200/200',
+          src: 'https://placekitten.com/720/720',
           alt: 'Alt descriprion for this image'
         },
         {
           id: 3,
-          src: 'https://placekitten.com/400/400',
+          src: 'https://placekitten.com/720/720',
           alt: 'Alt descriprion for this image'
         },
         {
           id: 4,
-          src: 'https://placekitten.com/200/200',
+          src: 'https://placekitten.com/720/720',
           alt: 'Alt descriprion for this image'
         },
         {
           id: 5,
-          src: 'https://placekitten.com/400/400',
+          src: 'https://placekitten.com/720/720',
           alt: 'Alt descriprion for this image'
         }
       ],
@@ -113,7 +113,7 @@ const data = {
           marker: i18n.t('message.tour_0.places'),
           title: i18n.t('message.tour_0.youWillVisit'),
           image: {
-            src: 'https://cdn.getyourguide.com/img/tour_img-484465-146.jpg',
+            src: 'https://placekitten.com/720/445',
             alt: i18n.t('message.tour_0.placesImageInCardAltText')
           },
           text: i18n.t('message.tour_0.placesTextInCard')
@@ -123,7 +123,7 @@ const data = {
           marker: i18n.t('message.tour_0.relax'),
           title: i18n.t('message.tour_0.youWillTaste'),
           image: {
-            src: 'https://www.campagnamica.it/wp-content/uploads/sites/43/2017/09/oggi-gelato-03-1024x682.jpg',
+            src: 'https://placekitten.com/720/445',
             alt: i18n.t('message.tour_0.shopImageInCardAltText')
           },
           text: i18n.t('message.tour_0.shopTextInCard')
@@ -160,14 +160,14 @@ const data = {
             {
               id: 0,
               name: i18n.t('message.tour_0.stop_0_image_1_name'),
-              url: 'https://hips.hearstapps.com/hmg-prod.s3.amazonaws.com/images/gettyimages-923042218-1520434856.jpg?crop=1.00xw:0.847xh;0,0.0987xh&resize=480:*',
+              url: 'https://placekitten.com/720/445',
               alt: i18n.t('message.tour_0.stop_0_image_1_alt'),
               description: i18n.t('message.tour_0.stop_0_image_1_description')
             },
             {
               id: 1,
               name: i18n.t('message.tour_0.stop_0_image_2_name'),
-              url: 'https://www.artribune.com/wp-content/uploads/2016/03/La-Mela-Reintegrata-di-Pistoletto-in-Piazza-Duca-dAosta.jpg',
+              url: 'https://placekitten.com/720/445',
               alt: i18n.t('message.tour_0.stop_0_image_2_alt'),
               description: i18n.t('message.tour_0.stop_0_image_2_description')
             }
@@ -176,13 +176,13 @@ const data = {
             {
               id: 0,
               name: 'Via dei Georgofili',
-              image: 'https://www.artribune.com/wp-content/uploads/2016/03/La-Mela-Reintegrata-di-Pistoletto-in-Piazza-Duca-dAosta.jpg',
+              image: 'https://placekitten.com/250/154',
               gmapsUrl: 'https://goo.gl/maps/4UesoB2u579WrBm68'
             },
             {
               id: 1,
               name: 'Via dei Georgofili 2',
-              image: 'https://www.artribune.com/wp-content/uploads/2016/03/La-Mela-Reintegrata-di-Pistoletto-in-Piazza-Duca-dAosta.jpg',
+              image: 'https://placekitten.com/250/154',
               gmapsUrl: 'https://goo.gl/maps/4UesoB2u579WrBm68'
             }
           ]
@@ -213,7 +213,7 @@ const data = {
             {
               id: 0,
               name: i18n.t('message.tour_0.stop_1_image_1_name'),
-              url: 'https://www.gabetta-architetto-monza.com/images/news/gae-aulenti-milano.jpg',
+              url: 'https://placekitten.com/720/445',
               alt: i18n.t('message.tour_0.stop_1_image_1_alt'),
               description: i18n.t('message.tour_0.stop_1_image_1_description')
             }
@@ -246,14 +246,14 @@ const data = {
             {
               id: 0,
               name: i18n.t('message.tour_0.stop_2_image_1_name'),
-              url: 'https://media-cdn.tripadvisor.com/media/photo-s/13/40/4e/7e/oggi-officina-gelato.jpg',
+              url: 'https://placekitten.com/720/445',
               alt: i18n.t('message.tour_0.stop_2_image_1_alt'),
               description: i18n.t('message.tour_0.stop_2_image_1_description')
             },
             {
               id: 1,
               name: i18n.t('message.tour_0.stop_2_image_2_name'),
-              url: 'http://img.pgol.it/img/Z6/57/80/12/2/15003202.jpg',
+              url: 'https://placekitten.com/720/445',
               alt: i18n.t('message.tour_0.stop_2_image_2_alt'),
               description: i18n.t('message.tour_0.stop_2_image_2_description')
             }
@@ -285,14 +285,14 @@ const data = {
             {
               id: 0,
               name: i18n.t('message.tour_0.stop_3_image_1_name'),
-              url: 'https://upload.wikimedia.org/wikipedia/commons/7/7e/20110725_Castello_Sforzesco_Milan_5557.jpg',
+              url: 'https://placekitten.com/720/445',
               alt: i18n.t('message.tour_0.stop_3_image_1_alt'),
               description: i18n.t('message.tour_0.stop_3_image_1_description')
             },
             {
               id: 1,
               name: i18n.t('message.tour_0.stop_3_image_2_name'),
-              url: 'https://www.turismo.it/typo3temp/pics/24bd0ac83b.jpg',
+              url: 'https://placekitten.com/720/445',
               alt: i18n.t('message.tour_0.stop_3_image_2_alt'),
               description: i18n.t('message.tour_0.stop_3_image_2_description')
             }
@@ -324,21 +324,21 @@ const data = {
             {
               id: 0,
               name: i18n.t('message.tour_0.stop_4_image_1_name'),
-              url: 'https://i2.wp.com/www.maart.mi.it/wp-content/uploads/2017/04/Maart-Milano-Duomo.png',
+              url: 'https://placekitten.com/720/445',
               alt: i18n.t('message.tour_0.stop_4_image_1_alt'),
               description: i18n.t('message.tour_0.stop_4_image_1_description')
             },
             {
               id: 1,
               name: i18n.t('message.tour_0.stop_4_image_2_name'),
-              url: 'http://www.italia.it/fileadmin/src/img/cluster_gallery/Citta_d_arte_Milano/Duomo-Milano.jpg',
+              url: 'https://placekitten.com/720/445',
               alt: i18n.t('message.tour_0.stop_4_image_2_alt'),
               description: i18n.t('message.tour_0.stop_4_image_2_description')
             },
             {
               id: 3,
               name: i18n.t('message.tour_0.stop_4_image_3_name'),
-              url: 'https://www.eventiatmilano.it/wp-content/uploads/2014/12/statua_liberta_milano.jpg',
+              url: 'https://placekitten.com/720/445',
               alt: i18n.t('message.tour_0.stop_4_image_3_alt'),
               description: i18n.t('message.tour_0.stop_4_image_3_description')
             }
@@ -370,14 +370,14 @@ const data = {
             {
               id: 0,
               name: i18n.t('message.tour_0.stop_5_image_1_name'),
-              url: 'https://wips.plug.it/cips/initalia.virgilio.it/cms/2018/12/prima-teatro-alla-scala-milano.jpg',
+              url: 'https://placekitten.com/720/445',
               alt: i18n.t('message.tour_0.stop_5_image_1_alt'),
               description: i18n.t('message.tour_0.stop_5_image_1_description')
             },
             {
               id: 1,
               name: i18n.t('message.tour_0.stop_5_image_2_name'),
-              url: 'https://www.fotoeweb.it/milano/TeatroAllaScala/Statua%20Leonardo_Da_Vinci%20in%20PiazzadellaScala%20Milano.jpg',
+              url: 'https://placekitten.com/720/445',
               alt: i18n.t('message.tour_0.stop_5_image_2_alt'),
               description: i18n.t('message.tour_0.stop_5_image_2_description')
             }
@@ -405,7 +405,7 @@ const data = {
             {
               id: 0,
               name: i18n.t('message.tour_0.stop_6_image_1_name'),
-              url: 'https://media-cdn.tripadvisor.com/media/photo-s/07/58/99/ec/via-monte-napoleone.jpg',
+              url: 'https://placekitten.com/720/445',
               alt: i18n.t('message.tour_0.stop_6_image_1_alt'),
               description: i18n.t('message.tour_0.stop_6_image_1_description')
             }

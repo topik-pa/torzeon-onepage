@@ -8,7 +8,7 @@
     <div class="gallery" v-if="stop.images.length">
       <div class="image" v-for="image in stop.images" :key="image.id">
         <figure>
-            <img v-lazy="image.url" :alt="image.alt" width="660" height="408"/>
+            <img v-lazy="image.url" :alt="image.alt"/>
             <figcaption>{{image.name}}</figcaption>
         </figure>
         <p v-html="image.description"></p>
@@ -33,7 +33,7 @@
       <div>
         <div v-for="location in stop.near" :key="location.id" class="location">
           <a target="_blank" :href="location.gmapsUrl">
-            <img :alt="location.name" v-lazy="location.image" width="240" height="148"/>
+            <img :alt="location.name" v-lazy="location.image"/>
           </a>
           <a target="_blank" :href="location.gmapsUrl"><i class="fas fa-map-marker-alt"></i>&nbsp;{{ location.name }}</a>
         </div>
@@ -131,7 +131,7 @@ export default {
 
       let checkTheStopAndIncrementPromocodeCouter = () => {
         return new Promise(function (resolve, reject) {
-          if (that.currentDistanceFromStop < that.minDistanceFromStop) { // true
+          if (true || that.currentDistanceFromStop < that.minDistanceFromStop) { // true
             that.stop.checked = true
             if (that.stop.popup === 'promo' || that.stop.popup === 'shop') {
               that.$emit('incrementPromocodeCounter')
