@@ -22,6 +22,12 @@ const messages = {
       infoFromTheWeb: 'Some infos from the Web',
       areYouHere: 'Are you here?',
       nearHere: 'Near here...',
+      goals: {
+        promo: 'Goal: search for the promocode',
+        shop: 'Goal: get the complete promocode and take a rest',
+        check: 'Goal: complete the journey',
+        end: 'Goal: share your experience',
+      },
       popups: {
         notEvenCloseTitle: 'Not even close!',
         notEvenCloseText: 'Mmhhhh... are you sure you reached this place? <br/>I checked and seems to me you are <br/><strong>{distance} meters</strong><br/> away from here!',
@@ -59,7 +65,7 @@ const messages = {
         subtitle: 'The most interesting places in the most fashion Italian city',
         text: 'Il tour parte dalla storica Stazione Centrale, esempio di architettura del periodo Fascista, per attraversare i nuovi quartieri di piazza Gae Aulenti e Tre Torri, ma vedranno luoghi classici come il Duomo e il Castello Sforzesco. Una pausa per un gelato presso Oggi Gelato allieterà la giornata prima della conclusione del tour.',
         info: 'infos',
-        generalInfos: 'Tour infos',
+        generalInfos: 'Tour info',
         places: 'places',
         youWillVisit: 'You will visit...',
         placesImageInCardAltText: 'Alt image...',
@@ -175,6 +181,12 @@ const messages = {
       infoFromTheWeb: 'Altre info dal Web',
       areYouHere: 'Ti trovi qui?',
       nearHere: 'Qui vicino...',
+      goals: {
+        promo: 'Goal: search for the promocode',
+        shop: 'Goal: get the complete promocode and take a rest',
+        check: 'Goal: complete the journey',
+        end: 'Goal: share your experience',
+      },
       popups: {
         notEvenCloseTitle: 'Not even close!',
         notEvenCloseText: 'Mmhhhh... are you sure you reached this place? <br/>I checked and seems to me you are <br/><strong>{distance} meters</strong><br/> away from here!',

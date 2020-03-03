@@ -45,7 +45,7 @@ export default {
 main {
   background-repeat: no-repeat;
   min-height: 640px;
-  height: 640px;
+  height: 1280px;
   background-position: center 0;
   background-size: cover;
   width: 100%;
@@ -109,6 +109,10 @@ strong {
   font-style: italic;
 }
 
+.small {
+  font-size: 80%;
+}
+
 .social-widget-cointainer-popup {
   display: flex;
   justify-content: center;
@@ -158,6 +162,13 @@ button.secondary.disabled, a.btn.secondary-disabled {
   cursor: auto;
 }
 
+@media screen and (max-width: 1024) {
+  main {
+    margin-top: 0;
+    height: 1280px;
+  }
+}
+
 @media screen and (max-width: 768px) {
   #app {
     font-size: 13px;
@@ -165,6 +176,13 @@ button.secondary.disabled, a.btn.secondary-disabled {
 
   main {
     margin-top: 0;
+    height: 768px;
+  }
+}
+
+@media screen and (max-width: 414px) {
+  main {
+    height: 414px;
   }
 }
 </style>

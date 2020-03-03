@@ -63,6 +63,7 @@ article {
 }
 article.up {
   top: 180px;
+  padding: 2rem 0;
 }
 
 .shadow {

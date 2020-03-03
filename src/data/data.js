@@ -15,7 +15,7 @@ const data = {
       default: true,
       title: i18n.t('message.tour_0.title'),
       subtitle: i18n.t('message.tour_0.subtitle'),
-      cover: 'https://www.cinqueterre5.com/photos/milano-galleria-vittorio-emanuele-II_mobile.jpg',
+      cover: 'https://torzeon.s3.eu-central-1.amazonaws.com/tour_0/shareimage-min.jpg',
       text: i18n.t('message.tour_0.text'),
       author: 'Marco Pavan',
       avatarAuthorUrl: 'http://www.marcopavan.org/src/assets/images/Profile_Image.jpg',
@@ -92,7 +92,7 @@ const data = {
               id: 2,
               icon: 'fas fa-star-half-alt',
               key: i18n.t('message.rating'),
-              value: 4.6 + '/5'
+              value: 4.6 + '<span class="small">/5</span>'
             },
             {
               id: 4,

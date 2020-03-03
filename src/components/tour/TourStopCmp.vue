@@ -1,6 +1,9 @@
 <template>
   <div class="stop" :class="{'private': stop.type=='private' }">
     <div class="title">
+      <h3>
+        {{ $t("message.goals."+stop.popup) }}
+      </h3>
       <h2>{{stop.id + 1}}<span>/{{this.$store.getters.getDefaultTour.stopsTotal}}</span> - {{stop.name}}</h2>
       <a target="_blank" class="btn secondary" :href="stop.gmapsLocation"><i class="fas fa-map-marker-alt"></i>&nbsp;{{ $t("message.getThere") }}</a>
     </div>
@@ -34,8 +37,8 @@
         <div v-for="location in stop.near" :key="location.id" class="location">
           <a target="_blank" :href="location.gmapsUrl">
             <img :alt="location.name" v-lazy="location.image"/>
+            <i class="fas fa-map-marker-alt"></i>&nbsp;{{ location.name }}
           </a>
-          <a target="_blank" :href="location.gmapsUrl"><i class="fas fa-map-marker-alt"></i>&nbsp;{{ location.name }}</a>
         </div>
       </div>
     </div>
@@ -209,10 +212,12 @@ export default {
 
   .stop.private {
     background-color: #f1f1f1;
+    border-color: #971f15;
+    border-width: 4px;
   }
 
-  .title {
-    margin-bottom: 2rem;
+  .stop.private .title {
+    color: #971f15;
   }
 
   .title a {
@@ -221,11 +226,11 @@ export default {
   }
 
   .title span {
-    font-size: 55%;
+    font-size: 60%;
   }
 
   .description {
-    margin: 2rem 0;
+    margin: 1rem 0 2.5rem;
     font-style: italic;
   }
 
@@ -275,5 +280,19 @@ export default {
 
   .near img {
     margin-bottom: 1rem;
+  }
+
+  .near a {
+    min-height: 7rem;
+    display: block;
+    font-size: 85%;
+  }
+
+  h3 {
+    font-size: 90%;
+  }
+
+  h2 {
+    margin-bottom: 2rem;
   }
 </style>

@@ -13,7 +13,7 @@
     <div v-if="list" class="list">
       <ul>
         <li v-for="obj in list" :key="obj.id">
-          <i :class="obj.icon" :title="obj.key"></i>&nbsp;<span>{{obj.value}}</span>
+          <i :class="obj.icon"></i>{{obj.key}}:&nbsp;&nbsp;<span v-html="obj.value"></span>
         </li>
       </ul>
     </div>
@@ -68,7 +68,7 @@ export default {
 }
 
 .marker {
-    font-size: 650%;
+    font-size: 660%;
     position: absolute;
     top: -15px;
     left: -15px;
@@ -91,7 +91,7 @@ h3 {
 
 i {
   font-size: 200%;
-  vertical-align: middle;
+  vertical-align: sub;
   width: 2rem;
 }
 
@@ -117,7 +117,7 @@ li > span {
 
 @media screen and (max-width: 1024px) {
   .marker {
-    font-size: 550%;
+    font-size: 560%;
   }
   .card {
     max-width: 200px;
@@ -126,6 +126,9 @@ li > span {
 }
 
 @media screen and (max-width: 768px) {
+  .marker {
+    font-size: 760%;
+  }
   .card {
     max-width: initial;
   }
