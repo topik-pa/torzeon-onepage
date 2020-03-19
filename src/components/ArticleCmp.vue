@@ -59,7 +59,7 @@ article {
     position: relative;
     margin: 0 5rem;
     z-index: 99;
-    transition: top 1s ease-out;
+    transition: top 1s linear;
 }
 article.up {
   top: 180px;
@@ -72,7 +72,7 @@ article.up {
     right: 0;
     top: 0;
     height: 100%;
-    transition: margin 1s ease-out;
+    transition: margin 1s linear;
     z-index: -1;
 }
 .shadow.expanded {

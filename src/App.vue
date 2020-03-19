@@ -8,17 +8,51 @@
 </template>
 
 <script>
+import JSUtils from '@/assets/scripts/utilities.js'
 import HeaderCmp from '@/components/shared/HeaderCmp'
 
 export default {
   name: 'App',
+  data () {
+    return {
+      stopHeaderFixed: 120,
+      isFixedHeader: true,
+      scrolledPosition: 0,
+      debounceInterval: 5,
+    }
+  },
   computed: {
     cover () {
-      return `background-image: url("${this.$store.getters.getDefaultTour.cover}")`
+      if (this.isFixedHeader) {
+        return `background-image: url("${this.$store.getters.getDefaultTour.cover}")`
+      }
+      else {
+        return `background-image: url("${this.$store.getters.getDefaultTour.cover}"); background-position-y: -5rem`
+      }
     }
   },
   components: {
     HeaderCmp
+  },
+  mounted: function () {
+    if (screen.width <= 760) {
+      this.isMobile = true
+    }
+    let deabouncedScrollListener = JSUtils.debounce(() => {
+      if (this.isMobile) {
+        return
+      }
+      this.scrolledPosition = window.scrollY
+      if (this.scrolledPosition > this.stopHeaderFixed) {
+        this.isFixedHeader = false
+      }
+      if (this.scrolledPosition <= this.stopHeaderFixed) {
+        this.isFixedHeader = true
+      }
+    }, this.debounceInterval)
+    window.addEventListener('scroll', function () {
+      deabouncedScrollListener()
+    })
   }
 }
 </script>
@@ -160,6 +194,14 @@ button.secondary.disabled, a.btn.secondary-disabled {
   color: #999;
   background-color: transparent;
   cursor: auto;
+}
+
+
+article aside {
+  transition: top .8s ease-in-out;
+}
+article.up aside {
+  top: -120px;
 }
 
 @media screen and (max-width: 1024) {

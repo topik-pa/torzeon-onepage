@@ -26,7 +26,7 @@ const messages = {
         promo: 'Goal: search for the promocode',
         shop: 'Goal: get the complete promocode and take a rest',
         check: 'Goal: complete the journey',
-        end: 'Goal: share your experience',
+        finish: 'Goal: share your experience'
       },
       popups: {
         notEvenCloseTitle: 'Not even close!',
@@ -185,7 +185,7 @@ const messages = {
         promo: 'Goal: search for the promocode',
         shop: 'Goal: get the complete promocode and take a rest',
         check: 'Goal: complete the journey',
-        end: 'Goal: share your experience',
+        finish: 'Goal: share your experience'
       },
       popups: {
         notEvenCloseTitle: 'Not even close!',

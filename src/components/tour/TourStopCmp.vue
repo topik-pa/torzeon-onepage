@@ -134,7 +134,7 @@ export default {
 
       let checkTheStopAndIncrementPromocodeCouter = () => {
         return new Promise(function (resolve, reject) {
-          if (true || that.currentDistanceFromStop < that.minDistanceFromStop) { // true
+          if (that.currentDistanceFromStop < that.minDistanceFromStop) { // true
             that.stop.checked = true
             if (that.stop.popup === 'promo' || that.stop.popup === 'shop') {
               that.$emit('incrementPromocodeCounter')

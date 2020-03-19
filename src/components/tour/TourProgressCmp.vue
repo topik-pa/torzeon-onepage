@@ -12,8 +12,8 @@
       <div id="stop-count">
         <div>
           <div v-for="stop in stops" :key="stop.id">
-            <i v-if="stop.checked" class="fas fa-star" :class="{'private': stop.type === 'private', 'promo': stop.popup === 'promo'}"></i>
-            <i v-else class="far fa-star" :class="{'private': stop.type === 'private', 'promo': stop.popup === 'promo'}"></i>
+            <i v-if="stop.checked" class="far fa-check-circle" :class="{'private': stop.type === 'private', 'promo': stop.popup === 'promo'}"></i>
+            <i v-else class="far fa-circle" :class="{'private': stop.type === 'private', 'promo': stop.popup === 'promo'}"></i>
           </div>
         </div>
       </div>
