@@ -63,7 +63,7 @@ article {
 }
 article.up {
   top: 180px;
-  padding: 2rem 0;
+  padding: 2rem 1rem;
 }
 
 .shadow {
@@ -82,7 +82,7 @@ article.up {
 @media screen and (max-width: 768px) {
     article {
         top: 320px;
-        padding: 2rem .5rem;
+        padding: 2rem 1rem;
         margin: 0 1rem;
     }
     article.up {
@@ -90,7 +90,7 @@ article.up {
     }
     .shadow {
         margin: 0;
-        padding: 2rem .5rem;
+        padding: 2rem 1rem;
     }
     .shadow.expanded {
         margin: 0 -1rem;
