@@ -95,7 +95,6 @@ export default {
       let checkBrowserSupportForGeolocation = () => {
         return new Promise(function (resolve, reject) {
           if (navigator.geolocation) {
-            // that.stop.checked = true
             resolve()
           } else {
             reject(new Error('This Browser do not supports geolocation'))
@@ -120,9 +119,7 @@ export default {
           let d = R * c
           that.currentDistanceFromStop = d // --> the distance in meter
         }
-        // that.stop.checked = true
         return new Promise(function (resolve, reject) {
-          // that.stop.checked = true
           navigator.geolocation.getCurrentPosition((position) => {     
             // I can actually get the user current position
             that.currentPosition = {
@@ -131,10 +128,11 @@ export default {
             } 
             getUserDistanceFromStop()
             resolve()           
-          },() => {
+          },(error) => {
             // I cannot get user current position
             that.swalPopup = geolocalizationNotActivePopup()
-            reject(new Error('Geolocalization not available'))
+            fireThePopup()
+            that.isCheckingPosition = false
           })
         })
       }
@@ -198,7 +196,7 @@ export default {
 
       checkBrowserSupportForGeolocation()
         .then(getCurrentUserPositionAndDistanceFromCurrentStop, (error) => { alert(error) })
-        .then(checkTheStopAndIncrementPromocodeCouter, () => { fireThePopup() })
+        .then(checkTheStopAndIncrementPromocodeCouter)
         .then(setTheRightPopup, () => { fireThePopup() })
         .then(() => { fireThePopup() })
         .then(() => { dispatchEvent(new Event('load')) })
