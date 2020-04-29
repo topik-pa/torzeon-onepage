@@ -15,7 +15,7 @@
 		<meta property="og:title" content="Torzeon - Milano One Day QUEST-LIKE TOUR" />
 		<meta property="og:site_name" content="Torzeon" />
 		<meta property="og:description" content="A quest-like tour of Milano: follow the path and receive your 15% OFF Promocode"/>
-		<meta property="og:image" content="https://torzeon.s3.eu-central-1.amazonaws.com/tour_0/shareimage-min.jpg" />
+		<meta property="og:image" content="https://torzeon.s3.eu-central-1.amazonaws.com/tour_0/shareimage.min.jpg" />
     <meta property="fb:app_id" content="234626067544286"  />
     
     <link rel="shortcut icon" type="image/x-icon" href="https://torzeon.s3.eu-central-1.amazonaws.com/favicon.ico" />
@@ -45,9 +45,17 @@
       gtag('config', 'G-J8BX3L8W52');
     </script>
 
-    <!--Ttipadvisor-->
+    <!--Tripadvisor-->
     <!--TODO: make its params dynamic-->
     <script async src="https://www.jscache.com/wejs?wtype=cdsratingsonlynarrow&amp;uniq=363&amp;locationId=14156464&amp;lang=it&amp;border=true&amp;display_version=2" data-loadtrk onload="this.loadtrk=true"></script>
+
+
+    <script>
+      var tourrating = undefined;
+      var sendTorzeonRating = function(tour, rating) {
+        await fetch('http://tradingradar.net/message/torzeonrating?tour=' + tour + '&rating=' + rating)
+      }
+    </script>
 
   </body>
 </html>

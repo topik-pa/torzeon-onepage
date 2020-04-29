@@ -40,6 +40,9 @@ const state = {
   data
 }
 const mutations = {
+  setReview (state, review) {
+    state.data.review = review
+  }
 }
 const getters = {
   getDefaultTour: (state) => {
@@ -50,6 +53,9 @@ const getters = {
   },
   getPromocode: (state) => {
     return state.data.promocode
+  },
+  getReview: (state) => {
+    return state.data.review
   }
 }
 

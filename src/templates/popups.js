@@ -49,6 +49,7 @@ const getFinishPopup = function () {
   return {
     title: i18n.t('message.popups.finishTitle'),
     type: `success`,
+    lastPopup: true,
     html: `
     ${i18n.t('message.popups.finishText')}
     <br/>
@@ -57,15 +58,15 @@ const getFinishPopup = function () {
     <div class="container-rating">
         <div class="feedback">
             <div class="rating">
-                <input type="radio" name="rating" id="rating-5">
+                <input type="radio" name="rating" id="rating-5" onclick="tourrating = 5">
                 <label for="rating-5"></label>
-                <input type="radio" name="rating" id="rating-4">
+                <input type="radio" name="rating" id="rating-4" onclick="tourrating = 4">
                 <label for="rating-4"></label>
-                <input type="radio" name="rating" id="rating-3">
+                <input type="radio" name="rating" id="rating-3" onclick="tourrating = 3">
                 <label for="rating-3"></label>
-                <input type="radio" name="rating" id="rating-2">
+                <input type="radio" name="rating" id="rating-2" onclick="tourrating = 2">
                 <label for="rating-2"></label>
-                <input type="radio" name="rating" id="rating-1">
+                <input type="radio" name="rating" id="rating-1" onclick="tourrating = 1">
                 <label for="rating-1"></label>
                 <div class="emoji-wrapper">
                     <div class="emoji">

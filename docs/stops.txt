@@ -1,0 +1,93 @@
+Ciao Sara,
+
+Per vedere il sito, il link è https://topik-pa.github.io/#/un-giorno-a-milano
+Qui sotto trovi una scheda degli stop che compongono il percorso turistico di cui parlavamo tempo fa e qualche altro testo da modificare/creare.
+
+I testi dovranno essere abbastanza corti, i placeholder attuali servono a darti una idea della loro ampiezza.
+La prima frase dei paragrafi descrive il contenuto che vorrei metterci.
+Il tono deve essere informale/colloquiale a volte pure scherzoso (Per esempio: se sei a Km di distanza e provi a fare un check il sistema rispone "Non ci sei nemmeno vicino!")
+
+
+Ecco i testi che vorrei... 
+
+Sottotitolo - una idea? Chi legge deva capire subito che è un percorso/missione dove si deve scoprire un promocode mentre si visita la città
+Intro - ci sono già un paio di frasi: deve essere accattivante e spiegare meglio ciò che è solo accennato nel sottotitolo. Controllare e integrare, se il caso.
+
+1. Stazione Centrale di Milano (generale)
+   a. La facciata della Stazione (particolare)
+   b. La "Mela reintegrata" (particolare)
+   c. Il "Pirellone" (particolare)
+
+
+Metro - M3 Centrale FS (4 fermate) -> M3 Duomo
+
+
+2. Duomo
+  a. La facciata del Duomo (particolare)
+  b. Statua della Libertà (particolare)
+  c. Palazzo Reale (particolare)
+  d. Galleria Vittorio Emanuele (particolare)
+  e. Rinascente (near)
+  f. Pinacoteca Ambrosiana (near)
+
+
+Piedi - 200m
+
+
+3. Piazza della Scala
+  a. Statua di Leonardo (particolare)
+  b. Teatro alla Scala (particolare)
+  c. Gallerie d'Italia (particolare)
+  d. Casa del Manzoni (near)
+  e. Via Monte Napoleone (near) 
+
+
+Piedi - 600m
+
+
+4. Quartiere Brera
+  a. Le vie del quartiere Brera (particolare)
+  b. Pinacoteca di Brera (near)
+  c. Orto Botanico di Brera (near) 
+
+
+Piedi - 700m
+
+
+5. Castello Sforzesco
+  a. La torre del Filarete (particolare)
+  b. Fontana di Piazza Castello (particolare)
+  c. Parco Sempione (near)
+  d. Triennale di Milano (near)
+  e. Arco della Pace (near)
+  f. Basilica di San Ambrogio (near)
+  g. Museo del Cenacolo (near) 
+
+
+Piedi - 900m
+Metro - M1 Cairoli (1 fermata) -> M2 Moscova (2 fermate)
+
+
+6. OGGI Gelato
+  a. Testo 1 (particolare)
+  b. Testo 2 (particolare)
+  c. Via Moscova (near)
+  d. Corso Como (near)
+
+
+Piedi - 1000m
+Metro - M2 Moscova (1 fermata) -> M2 Garibaldi FS
+
+
+7. Piazza Gae Aulenti
+  a. Fontana di piazza Gae Aulenti (particolare)
+  b. Le trombe (particolare)
+  c. Grattacielo Unicredit (particolare)
+  d. Bosco verticale (near)
+  e. Parco Biblioteca degli Alberi (near)
+
+
+
+Schede gialle:
+Luoghi che visiterai... (rivedere e correggere)
+Ristoro e sapori... (un testo che non sia quello attuale ricopiato dal loro sito)

@@ -7,7 +7,7 @@ const data = {
   authorMail: 'marcopavan.mp@gmail.com',
   fbPage: 'https://www.facebook.com/Torzeon-103840521139047/',
   scrolledSizeFromTourStarted: 0,
-  promocode: 'Noio volevan savuar',
+  promocode: 'X P T R R 6',
   tours:
   [
     {
@@ -15,7 +15,7 @@ const data = {
       default: true,
       title: i18n.t('message.tour_0.title'),
       subtitle: i18n.t('message.tour_0.subtitle'),
-      cover: 'https://torzeon.s3.eu-central-1.amazonaws.com/tour_0/shareimage-min.jpg',
+      cover: 'https://torzeon.s3.eu-central-1.amazonaws.com/tour_0/shareimage.min.jpg',
       text: i18n.t('message.tour_0.text'),
       author: 'Marco Pavan',
       avatarAuthorUrl: 'http://www.marcopavan.org/src/assets/images/Profile_Image.jpg',
@@ -24,7 +24,7 @@ const data = {
       twPost: 'https://twitter.com/torzeon/status/1231515201557684225',
       started: false,
       stopsTotal: 7,
-      promocodeStepsTotal: 3,
+      promocodeStepsTotal: 6,
       promocodeStepsDone: 0,
       socials: [
         {
@@ -41,32 +41,32 @@ const data = {
       images: [
         {
           id: 0,
-          src: 'https://placekitten.com/720/720',
+          src: 'https://torzeon.s3.eu-central-1.amazonaws.com/tour_0/preview-5.min.jpg',
           alt: 'Alt descriprion for this image'
         },
         {
           id: 1,
-          src: 'https://placekitten.com/720/720',
+          src: 'https://torzeon.s3.eu-central-1.amazonaws.com/tour_0/preview-2.min.jpg',
           alt: 'Alt descriprion for this image'
         },
         {
           id: 2,
-          src: 'https://placekitten.com/720/720',
+          src: 'https://torzeon.s3.eu-central-1.amazonaws.com/tour_0/preview-3.min.jpg',
           alt: 'Alt descriprion for this image'
         },
         {
           id: 3,
-          src: 'https://placekitten.com/720/720',
+          src: 'https://torzeon.s3.eu-central-1.amazonaws.com/tour_0/preview-4.min.jpg',
           alt: 'Alt descriprion for this image'
         },
         {
           id: 4,
-          src: 'https://placekitten.com/720/720',
+          src: 'https://torzeon.s3.eu-central-1.amazonaws.com/tour_0/preview-1.min.jpg',
           alt: 'Alt descriprion for this image'
         },
         {
           id: 5,
-          src: 'https://placekitten.com/720/720',
+          src: 'https://torzeon.s3.eu-central-1.amazonaws.com/tour_0/preview-6.min.jpg',
           alt: 'Alt descriprion for this image'
         }
       ],
@@ -86,7 +86,7 @@ const data = {
               id: 1,
               icon: 'fas fa-flag-checkered',
               key: i18n.t('message.end'),
-              value: 'Castello Sforzesco'
+              value: 'Piazza Gae Aulenti'
             },
             {
               id: 2,
@@ -104,7 +104,7 @@ const data = {
               id: 5,
               icon: 'fas fa-route',
               key: i18n.t('message.geometry'),
-              value: i18n.t('message.linearTrip')
+              value: i18n.t('message.roundTrip')
             }
           ]
         },
@@ -113,7 +113,7 @@ const data = {
           marker: i18n.t('message.tour_0.places'),
           title: i18n.t('message.tour_0.youWillVisit'),
           image: {
-            src: 'https://placekitten.com/720/445',
+            src: 'https://torzeon.s3.eu-central-1.amazonaws.com/tour_0/card-1.min.jpg',
             alt: i18n.t('message.tour_0.placesImageInCardAltText')
           },
           text: i18n.t('message.tour_0.placesTextInCard')
@@ -132,264 +132,362 @@ const data = {
       stops: [
         {
           id: 0,
-          name: i18n.t('message.tour_0.stop_0_name'),
+          name: i18n.t('message.tour_0.stops.0.name'),
           type: 'public',
           gmapsLocation: 'https://goo.gl/maps/4UesoB2u579WrBm68',
-          path: 'https://goo.gl/maps/x8wrtAUp1XBz8J817',
-          description: i18n.t('message.tour_0.stop_0_description'),
+          description: i18n.t('message.tour_0.stops.0.description'),
           checked: false,
-          promo: 'Noio',
+          promo: 'X',
           popup: 'promo',
           latitude: 45.484642,
           longitude: 9.202691,
           links: [
             {
-              url: i18n.t('message.tour_0.stop_0_link_1_url'),
-              name: i18n.t('message.tour_0.stop_0_link_1_name')
+              url: i18n.t('message.tour_0.stops.0.links.0.url'),
+              text: i18n.t('message.tour_0.stops.0.links.0.text'),
             },
             {
-              url: i18n.t('message.tour_0.stop_0_link_2_url'),
-              name: i18n.t('message.tour_0.stop_0_link_2_name')
+              url: i18n.t('message.tour_0.stops.0.links.1.url'),
+              text: i18n.t('message.tour_0.stops.0.links.1.text'),
             },
             {
-              url: i18n.t('message.tour_0.stop_0_link_3_url'),
-              name: i18n.t('message.tour_0.stop_0_link_3_name')
+              url: i18n.t('message.tour_0.stops.0.links.2.url'),
+              text: i18n.t('message.tour_0.stops.0.links.2.text'),
             }
           ],
           images: [
             {
               id: 0,
-              name: i18n.t('message.tour_0.stop_0_image_1_name'),
-              url: 'https://placekitten.com/720/445',
-              alt: i18n.t('message.tour_0.stop_0_image_1_alt'),
-              description: i18n.t('message.tour_0.stop_0_image_1_description')
+              alt: i18n.t('message.tour_0.stops.0.images.0.alt'),
+              url: 'https://torzeon.s3.eu-central-1.amazonaws.com/tour_0/stazione-centrale-1.min.jpg',
+              description: i18n.t('message.tour_0.stops.0.images.0.description')
             },
-            {
-              id: 1,
-              name: i18n.t('message.tour_0.stop_0_image_2_name'),
-              url: 'https://placekitten.com/720/445',
-              alt: i18n.t('message.tour_0.stop_0_image_2_alt'),
-              description: i18n.t('message.tour_0.stop_0_image_2_description')
-            }
-          ],
-          near: [
             {
               id: 0,
-              name: 'Via dei Georgofili',
-              image: 'https://placekitten.com/250/154',
-              gmapsUrl: 'https://goo.gl/maps/4UesoB2u579WrBm68'
+              alt: i18n.t('message.tour_0.stops.0.images.1.alt'),
+              url: 'https://torzeon.s3.eu-central-1.amazonaws.com/tour_0/stazione-centrale-2.min.jpg',
+              description: i18n.t('message.tour_0.stops.0.images.1.description')
             },
             {
-              id: 1,
-              name: 'Via dei Georgofili 2',
-              image: 'https://placekitten.com/250/154',
-              gmapsUrl: 'https://goo.gl/maps/4UesoB2u579WrBm68'
+              id: 0,
+              alt: i18n.t('message.tour_0.stops.0.images.2.alt'),
+              url: 'https://torzeon.s3.eu-central-1.amazonaws.com/tour_0/stazione-centrale-3.min.jpg',
+              description: i18n.t('message.tour_0.stops.0.images.2.description')
             }
           ]
         },
         {
           id: 1,
-          name: i18n.t('message.tour_0.stop_1_name'),
+          name: i18n.t('message.tour_0.stops.1.name'),
           type: 'public',
           gmapsLocation: 'https://goo.gl/maps/wEoeadENmaBR5ymV6',
-          path: 'https://goo.gl/maps/QfHpUP7EZfizuZzV7',
-          description: i18n.t('message.tour_0.stop_1_description'),
+          description: i18n.t('message.tour_0.stops.1.description'),
           checked: false,
-          promo: 'volevan',
+          promo: 'P',
           popup: 'promo',
           latitude: 45.484642,
           longitude: 9.202691,
           links: [
             {
-              url: i18n.t('message.tour_0.stop_1_link_1_url'),
-              name: i18n.t('message.tour_0.stop_1_link_1_name')
+              url: i18n.t('message.tour_0.stops.1.links.0.url'),
+              text: i18n.t('message.tour_0.stops.1.links.0.text'),
             },
             {
-              url: i18n.t('message.tour_0.stop_1_link_2_url'),
-              name: i18n.t('message.tour_0.stop_1_link_2_name')
+              url: i18n.t('message.tour_0.stops.1.links.1.url'),
+              text: i18n.t('message.tour_0.stops.1.links.1.text'),
+            },
+            {
+              url: i18n.t('message.tour_0.stops.1.links.2.url'),
+              text: i18n.t('message.tour_0.stops.1.links.2.text'),
+            },
+            {
+              url: i18n.t('message.tour_0.stops.1.links.3.url'),
+              text: i18n.t('message.tour_0.stops.1.links.3.text'),
             }
           ],
           images: [
             {
               id: 0,
-              name: i18n.t('message.tour_0.stop_1_image_1_name'),
+              alt: i18n.t('message.tour_0.stops.1.images.0.alt'),
+              url: 'https://torzeon.s3.eu-central-1.amazonaws.com/tour_0/duomo-1.min.jpg',
+              description: i18n.t('message.tour_0.stops.1.images.0.description')
+            },
+            {
+              id: 1,
+              alt: i18n.t('message.tour_0.stops.1.images.1.alt'),
+              url: 'https://torzeon.s3.eu-central-1.amazonaws.com/tour_0/duomo-2.min.jpg',
+              description: i18n.t('message.tour_0.stops.1.images.1.description')
+            },
+            {
+              id: 2,
+              alt: i18n.t('message.tour_0.stops.1.images.2.alt'),
               url: 'https://placekitten.com/720/445',
-              alt: i18n.t('message.tour_0.stop_1_image_1_alt'),
-              description: i18n.t('message.tour_0.stop_1_image_1_description')
+              description: i18n.t('message.tour_0.stops.1.images.2.description')
+            },
+            {
+              id: 3,
+              alt: i18n.t('message.tour_0.stops.1.images.3.alt'),
+              url: 'https://torzeon.s3.eu-central-1.amazonaws.com/tour_0/duomo-4.min.jpg',
+              description: i18n.t('message.tour_0.stops.1.images.3.description')
+            },
+          ],
+          near: [
+            {
+              id: 0,
+              name: 'Magazzini La Rinascente',
+              image: 'https://placekitten.com/250/154',
+              gmapsUrl: 'https://goo.gl/maps/4UesoB2u579WrBm68'
+            },
+            {
+              id: 1,
+              name: 'Pinacoteca Ambrosiana',
+              image: 'https://placekitten.com/250/154',
+              gmapsUrl: 'https://goo.gl/maps/4UesoB2u579WrBm68'
             }
           ]
         },
         {
           id: 2,
-          name: i18n.t('message.tour_0.stop_2_name'),
-          type: 'private',
+          name: i18n.t('message.tour_0.stops.2.name'),
+          type: 'public',
           gmapsLocation: 'https://goo.gl/maps/UaFLa5gr9N1MFaf78',
-          path: 'https://goo.gl/maps/1FmPJkq8uGk9PkMR7',
           fbPage: 'https://www.facebook.com/Torzeon-103840521139047/',
-          description: i18n.t('message.tour_0.stop_2_description'),
+          description: i18n.t('message.tour_0.stops.2.description'),
           checked: false,
-          promo: 'savuar',
-          popup: 'shop',
+          promo: 'T',
+          popup: 'promo',
           latitude: 45.484642,
           longitude: 9.202691,
           links: [
             {
-              url: i18n.t('message.tour_0.stop_2_link_1_url'),
-              name: i18n.t('message.tour_0.stop_2_link_1_name')
+              url: i18n.t('message.tour_0.stops.2.links.0.url'),
+              text: i18n.t('message.tour_0.stops.2.links.0.text'),
             },
             {
-              url: i18n.t('message.tour_0.stop_2_link_2_url'),
-              name: i18n.t('message.tour_0.stop_2_link_2_name')
+              url: i18n.t('message.tour_0.stops.2.links.1.url'),
+              text: i18n.t('message.tour_0.stops.2.links.1.text'),
+            },
+            {
+              url: i18n.t('message.tour_0.stops.2.links.2.url'),
+              text: i18n.t('message.tour_0.stops.2.links.2.text'),
             }
           ],
           images: [
             {
               id: 0,
-              name: i18n.t('message.tour_0.stop_2_image_1_name'),
-              url: 'https://placekitten.com/720/445',
-              alt: i18n.t('message.tour_0.stop_2_image_1_alt'),
-              description: i18n.t('message.tour_0.stop_2_image_1_description')
+              alt: i18n.t('message.tour_0.stops.2.images.0.alt'),
+              url: 'https://torzeon.s3.eu-central-1.amazonaws.com/tour_0/piazza-della-scala-1.min.jpg',
+              description: i18n.t('message.tour_0.stops.2.images.0.description')
             },
             {
               id: 1,
-              name: i18n.t('message.tour_0.stop_2_image_2_name'),
+              alt: i18n.t('message.tour_0.stops.2.images.1.alt'),
+              url: 'https://torzeon.s3.eu-central-1.amazonaws.com/tour_0/piazza-della-scala-2.min.jpg',
+              description: i18n.t('message.tour_0.stops.2.images.1.description')
+            },
+            {
+              id: 2,
+              alt: i18n.t('message.tour_0.stops.2.images.2.alt'),
               url: 'https://placekitten.com/720/445',
-              alt: i18n.t('message.tour_0.stop_2_image_2_alt'),
-              description: i18n.t('message.tour_0.stop_2_image_2_description')
+              description: i18n.t('message.tour_0.stops.2.images.2.description')
+            }
+          ],
+          near: [
+            {
+              id: 0,
+              name: 'Casa del Manzoni',
+              image: 'https://placekitten.com/250/154',
+              gmapsUrl: 'https://goo.gl/maps/4UesoB2u579WrBm68'
+            },
+            {
+              id: 1,
+              name: 'Via Monte Napoleone',
+              image: 'https://placekitten.com/250/154',
+              gmapsUrl: 'https://goo.gl/maps/4UesoB2u579WrBm68'
             }
           ]
         },
         {
           id: 3,
-          name: i18n.t('message.tour_0.stop_3_name'),
+          name: i18n.t('message.tour_0.stops.3.name'),
           type: 'public',
           gmapsLocation: 'https://goo.gl/maps/DTBBdMfDpuGCLeHr5',
-          path: 'https://goo.gl/maps/U2YdNZVNfzvUmLuQA',
-          description: i18n.t('message.tour_0.stop_3_description'),
+          description: i18n.t('message.tour_0.stops.3.description'),
           checked: false,
-          promo: '',
-          popup: 'check',
+          promo: 'R',
+          popup: 'promo',
           latitude: 45.484642,
           longitude: 9.202691,
           links: [
             {
-              url: i18n.t('message.tour_0.stop_3_link_1_url'),
-              name: i18n.t('message.tour_0.stop_3_link_1_name')
-            },
-            {
-              url: i18n.t('message.tour_0.stop_3_link_2_url'),
-              name: i18n.t('message.tour_0.stop_3_link_2_name')
+              url: i18n.t('message.tour_0.stops.3.links.0.url'),
+              text: i18n.t('message.tour_0.stops.3.links.0.text'),
             }
           ],
           images: [
             {
               id: 0,
-              name: i18n.t('message.tour_0.stop_3_image_1_name'),
+              alt: i18n.t('message.tour_0.stops.3.images.0.alt'),
               url: 'https://placekitten.com/720/445',
-              alt: i18n.t('message.tour_0.stop_3_image_1_alt'),
-              description: i18n.t('message.tour_0.stop_3_image_1_description')
+              description: i18n.t('message.tour_0.stops.3.images.0.description')
+            }
+          ],
+          near: [
+            {
+              id: 0,
+              name: 'Pinacoteca di Brera',
+              image: 'https://placekitten.com/250/154',
+              gmapsUrl: 'https://goo.gl/maps/4UesoB2u579WrBm68'
             },
             {
               id: 1,
-              name: i18n.t('message.tour_0.stop_3_image_2_name'),
-              url: 'https://placekitten.com/720/445',
-              alt: i18n.t('message.tour_0.stop_3_image_2_alt'),
-              description: i18n.t('message.tour_0.stop_3_image_2_description')
+              name: 'Orto Botanico di Brera',
+              image: 'https://placekitten.com/250/154',
+              gmapsUrl: 'https://goo.gl/maps/4UesoB2u579WrBm68'
             }
           ]
         },
         {
           id: 4,
-          name: i18n.t('message.tour_0.stop_4_name'),
+          name: i18n.t('message.tour_0.stops.4.name'),
           type: 'public',
           gmapsLocation: 'https://goo.gl/maps/aWae9qkr1GasgJQs5',
-          path: 'https://goo.gl/maps/PXUDK6qhZfZAYKkD9',
-          description: i18n.t('message.tour_0.stop_4_description'),
+          description: i18n.t('message.tour_0.stops.4.description'),
           checked: false,
-          promo: '',
-          popup: 'check',
+          promo: 'R',
+          popup: 'promo',
           latitude: 45.484642,
           longitude: 9.202691,
           links: [
             {
-              url: i18n.t('message.tour_0.stop_4_link_1_url'),
-              name: i18n.t('message.tour_0.stop_4_link_1_name')
+              url: i18n.t('message.tour_0.stops.4.links.0.url'),
+              text: i18n.t('message.tour_0.stops.4.links.0.text'),
             },
             {
-              url: i18n.t('message.tour_0.stop_4_link_2_url'),
-              name: i18n.t('message.tour_0.stop_4_link_2_name')
+              url: i18n.t('message.tour_0.stops.4.links.1.url'),
+              text: i18n.t('message.tour_0.stops.4.links.1.text'),
             }
           ],
           images: [
             {
               id: 0,
-              name: i18n.t('message.tour_0.stop_4_image_1_name'),
-              url: 'https://placekitten.com/720/445',
-              alt: i18n.t('message.tour_0.stop_4_image_1_alt'),
-              description: i18n.t('message.tour_0.stop_4_image_1_description')
+              alt: i18n.t('message.tour_0.stops.4.images.0.alt'),
+              url: 'https://torzeon.s3.eu-central-1.amazonaws.com/tour_0/castello-sforzesco-1.min.jpg',
+              description: i18n.t('message.tour_0.stops.4.images.0.description')
             },
             {
               id: 1,
-              name: i18n.t('message.tour_0.stop_4_image_2_name'),
-              url: 'https://placekitten.com/720/445',
-              alt: i18n.t('message.tour_0.stop_4_image_2_alt'),
-              description: i18n.t('message.tour_0.stop_4_image_2_description')
+              alt: i18n.t('message.tour_0.stops.4.images.1.alt'),
+              url: 'https://torzeon.s3.eu-central-1.amazonaws.com/tour_0/castello-sforzesco-2.min.jpg',
+              description: i18n.t('message.tour_0.stops.4.images.1.description')
+            },
+          ],
+          near: [
+            {
+              id: 0,
+              name: 'Parco Sempione',
+              image: 'https://placekitten.com/250/154',
+              gmapsUrl: 'https://goo.gl/maps/4UesoB2u579WrBm68'
+            },
+            {
+              id: 1,
+              name: 'Triennale di Milano',
+              image: 'https://placekitten.com/250/154',
+              gmapsUrl: 'https://goo.gl/maps/4UesoB2u579WrBm68'
+            },
+            {
+              id: 2,
+              name: 'Arco della Pace',
+              image: 'https://torzeon.s3.eu-central-1.amazonaws.com/tour_0/castello-sforzesco-5.min.jpg',
+              gmapsUrl: 'https://goo.gl/maps/4UesoB2u579WrBm68'
             },
             {
               id: 3,
-              name: i18n.t('message.tour_0.stop_4_image_3_name'),
-              url: 'https://placekitten.com/720/445',
-              alt: i18n.t('message.tour_0.stop_4_image_3_alt'),
-              description: i18n.t('message.tour_0.stop_4_image_3_description')
+              name: 'Basilica di San Ambrogio',
+              image: 'https://placekitten.com/250/154',
+              gmapsUrl: 'https://goo.gl/maps/4UesoB2u579WrBm68'
+            },
+            {
+              id: 4,
+              name: 'Museo del Cenacolo',
+              image: 'https://placekitten.com/250/154',
+              gmapsUrl: 'https://goo.gl/maps/4UesoB2u579WrBm68'
             }
           ]
         },
         {
           id: 5,
-          name: i18n.t('message.tour_0.stop_5_name'),
-          type: 'public',
+          name: i18n.t('message.tour_0.stops.5.name'),
+          type: 'private',
           gmapsLocation: 'https://goo.gl/maps/KKV1hZgBgLhtEik17',
-          path: 'https://goo.gl/maps/PMhY5if3HA7NQy3m9',
-          description: i18n.t('message.tour_0.stop_5_description'),
+          description: i18n.t('message.tour_0.stops.5.description'),
           checked: false,
-          promo: '',
-          popup: 'check',
+          promo: '6',
+          popup: 'shop',
           latitude: 45.484642,
           longitude: 9.202691,
           links: [
             {
-              url: i18n.t('message.tour_0.stop_5_link_1_url'),
-              name: i18n.t('message.tour_0.stop_5_link_1_name')
+              url: i18n.t('message.tour_0.stops.5.links.0.url'),
+              text: i18n.t('message.tour_0.stops.5.links.0.text'),
             },
             {
-              url: i18n.t('message.tour_0.stop_5_link_2_url'),
-              name: i18n.t('message.tour_0.stop_5_link_2_name')
+              url: i18n.t('message.tour_0.stops.5.links.1.url'),
+              text: i18n.t('message.tour_0.stops.5.links.1.text'),
             }
+          ],
+          carousel: [
+            {
+              id: 0,
+              alt: i18n.t('message.tour_0.stops.5.images.0.alt'),
+              url: 'https://placekitten.com/720/445',
+            },
+            {
+              id: 1,
+              alt: i18n.t('message.tour_0.stops.5.images.0.alt'),
+              url: 'https://placekitten.com/720/445',
+            },
+            {
+              id: 2,
+              alt: i18n.t('message.tour_0.stops.5.images.0.alt'),
+              url: 'https://placekitten.com/720/445',
+            },
           ],
           images: [
             {
               id: 0,
-              name: i18n.t('message.tour_0.stop_5_image_1_name'),
+              alt: i18n.t('message.tour_0.stops.5.images.0.alt'),
               url: 'https://placekitten.com/720/445',
-              alt: i18n.t('message.tour_0.stop_5_image_1_alt'),
-              description: i18n.t('message.tour_0.stop_5_image_1_description')
+              description: i18n.t('message.tour_0.stops.5.images.0.description')
+            },
+            {
+              id: 0,
+              alt: i18n.t('message.tour_0.stops.5.images.1.alt'),
+              url: 'https://placekitten.com/720/445',
+              description: i18n.t('message.tour_0.stops.5.images.1.description')
+            },
+          ],
+          near: [
+            {
+              id: 0,
+              name: 'Via Moscova',
+              image: 'https://placekitten.com/250/154',
+              gmapsUrl: 'https://goo.gl/maps/4UesoB2u579WrBm68'
             },
             {
               id: 1,
-              name: i18n.t('message.tour_0.stop_5_image_2_name'),
-              url: 'https://placekitten.com/720/445',
-              alt: i18n.t('message.tour_0.stop_5_image_2_alt'),
-              description: i18n.t('message.tour_0.stop_5_image_2_description')
+              name: 'Corso Como',
+              image: 'https://placekitten.com/250/154',
+              gmapsUrl: 'https://goo.gl/maps/4UesoB2u579WrBm68'
             }
           ]
         },
         {
           id: 6,
-          name: i18n.t('message.tour_0.stop_6_name'),
+          name: i18n.t('message.tour_0.stops.6.name'),
           type: 'public',
           gmapsLocation: 'https://goo.gl/maps/K9M9CNVn1QS5BJPw5',
-          path: 'https://goo.gl/maps/4gT39cPCZkgvQkRd9',
-          description: i18n.t('message.tour_0.stop_6_description'),
+          description: i18n.t('message.tour_0.stops.6.description'),
           checked: false,
           promo: '',
           popup: 'finish',
@@ -397,17 +495,50 @@ const data = {
           longitude: 9.202691,
           links: [
             {
-              url: i18n.t('message.tour_0.stop_6_link_1_url'),
-              name: i18n.t('message.tour_0.stop_6_link_1_name')
+              url: i18n.t('message.tour_0.stops.6.links.0.url'),
+              text: i18n.t('message.tour_0.stops.6.links.0.text'),
+            },
+            {
+              url: i18n.t('message.tour_0.stops.6.links.1.url'),
+              text: i18n.t('message.tour_0.stops.6.links.1.text'),
+            },
+            {
+              url: i18n.t('message.tour_0.stops.6.links.2.url'),
+              text: i18n.t('message.tour_0.stops.6.links.2.text'),
             }
           ],
           images: [
             {
               id: 0,
-              name: i18n.t('message.tour_0.stop_6_image_1_name'),
-              url: 'https://placekitten.com/720/445',
-              alt: i18n.t('message.tour_0.stop_6_image_1_alt'),
-              description: i18n.t('message.tour_0.stop_6_image_1_description')
+              alt: i18n.t('message.tour_0.stops.6.images.0.alt'),
+              url: 'https://torzeon.s3.eu-central-1.amazonaws.com/tour_0/piazza-gae-aulenti-1.min.jpg',
+              description: i18n.t('message.tour_0.stops.6.images.0.description')
+            },
+            {
+              id: 1,
+              alt: i18n.t('message.tour_0.stops.6.images.1.alt'),
+              url: 'https://torzeon.s3.eu-central-1.amazonaws.com/tour_0/piazza-gae-aulenti-2.min.jpg',
+              description: i18n.t('message.tour_0.stops.6.images.1.description')
+            },
+            {
+              id: 2,
+              alt: i18n.t('message.tour_0.stops.6.images.2.alt'),
+              url: 'https://torzeon.s3.eu-central-1.amazonaws.com/tour_0/piazza-gae-aulenti-3.min.jpg',
+              description: i18n.t('message.tour_0.stops.6.images.2.description')
+            },
+          ],
+          near: [
+            {
+              id: 0,
+              name: 'Bosco verticale',
+              image: 'https://torzeon.s3.eu-central-1.amazonaws.com/tour_0/piazza-gae-aulenti-4.min.jpg',
+              gmapsUrl: 'https://goo.gl/maps/4UesoB2u579WrBm68'
+            },
+            {
+              id: 1,
+              name: 'Parco Biblioteca degli Alberi',
+              image: 'https://placekitten.com/250/154',
+              gmapsUrl: 'https://goo.gl/maps/4UesoB2u579WrBm68'
             }
           ]
         }

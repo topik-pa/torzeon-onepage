@@ -143,7 +143,7 @@ strong {
   font-style: italic;
 }
 
-.small {
+small, .small {
   font-size: 80%;
 }
 

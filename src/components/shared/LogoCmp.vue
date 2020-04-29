@@ -1,6 +1,6 @@
 <template>
   <div>
-    <img src="https://torzeon.s3.eu-central-1.amazonaws.com/torzeon-logo-half-min.png" :alt="project"/>
+    <img src="https://torzeon.s3.eu-central-1.amazonaws.com/torzeon-logo-half.min.png" :alt="project"/>
     <router-link :to="rootUrl">{{project}}</router-link>
   </div>
 </template>

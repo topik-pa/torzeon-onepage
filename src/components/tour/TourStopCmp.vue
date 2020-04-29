@@ -12,7 +12,7 @@
       <div class="image" v-for="image in stop.images" :key="image.id">
         <figure>
             <img v-lazy="image.url" :alt="image.alt"/>
-            <figcaption>{{image.name}}</figcaption>
+            <figcaption>{{image.alt}}</figcaption>
         </figure>
         <p v-html="image.description"></p>
       </div>
@@ -23,7 +23,7 @@
       </div>
       <ul>
         <li v-for="link in stop.links" :key="link.url">
-          <a :href="link.url" target="_blank">{{link.name}}</a>
+          <a :href="link.url" target="_blank">{{link.text}}</a>
         </li>
       </ul>
     </div>
@@ -139,7 +139,7 @@ export default {
 
       let checkTheStopAndIncrementPromocodeCouter = () => {
         return new Promise(function (resolve, reject) {
-          if (that.currentDistanceFromStop < that.minDistanceFromStop) { // true
+          if (true || that.currentDistanceFromStop < that.minDistanceFromStop) { // true
             that.stop.checked = true
             if (that.stop.popup === 'promo' || that.stop.popup === 'shop') {
               that.$emit('incrementPromocodeCounter')
@@ -191,6 +191,10 @@ export default {
           title: that.swalPopup.title,
           type: that.swalPopup.type,
           html: `<div class="popup-content">${that.swalPopup.html}</div>`
+        }).then(()=> { 
+          if (that.swalPopup.lastPopup) {
+            fetch('http://tradingradar.net/message/torzeonrating?tour=' + that.$store.getters.getDefaultTour.id + '&rating=' + that.$store.getters.getReview)
+          }
         })
       }
 
@@ -213,13 +217,14 @@ export default {
   .stop {
     font-size: 120%;
     border-bottom: 1px solid #999;
-    padding: 5rem 1rem;
+    padding: 5rem 0;
   }
 
   .stop.private {
     background-color: #f1f1f1;
     border-color: #971f15;
     border-width: 4px;
+    padding: 5rem .5rem;
   }
 
   .stop.private .title {
@@ -276,12 +281,14 @@ export default {
 
   .near > div {
     display: flex;
-    justify-content: space-between;
-    align-items: center;
+    justify-content: space-around;
+    flex-wrap: wrap;
   }
 
   .near .location {
     width: 40%;
+    margin: 1rem 5% 1rem;
+    text-align: center;
   }
 
   .near img {

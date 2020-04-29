@@ -2,7 +2,7 @@
   <section>
     <h2>{{tour.subtitle}}</h2>
     <h1>{{tour.title}}</h1>
-    <p>{{tour.text}}</p>
+    <p v-html="tour.text"/>
     <tour-share-cmp :author="tour.author" :avatar="tour.avatarAuthorUrl" :mail="tour.authorMail" :socials="tour.socials"/>
     <tour-gallery-cmp :images="tour.images"/>
     <aside>
