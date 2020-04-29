@@ -8,6 +8,17 @@
       <a target="_blank" class="btn secondary" :href="stop.gmapsLocation"><i class="fas fa-map-marker-alt"></i>&nbsp;{{ $t("message.getThere") }}</a>
     </div>
     <p class="description" v-html="stop.description"></p>
+
+    <swiper v-if="stop.carousel" ref="mySwiper" :options="swiperOptions">
+      <swiper-slide v-for="image in stop.carousel" :key="image.id">
+        <div class="swiper-slide-wrapper">
+          <img :src="image.url" :alt="image.alt"/>
+          <span v-html="image.alt"/>
+        </div> 
+      </swiper-slide>
+      <div class="swiper-pagination" slot="pagination"></div>
+    </swiper>
+
     <div class="gallery" v-if="stop.images.length">
       <div class="image" v-for="image in stop.images" :key="image.id">
         <figure>
@@ -61,7 +72,20 @@ export default {
         latitude: this.stop.latitude,
         longitude: this.stop.longitude
       },
-      swalPopup: undefined
+      swalPopup: undefined,
+      swiperOptions: {
+        spaceBetween: 30,
+        loop: true,
+        slidesPerView: 1,
+        pagination: {
+          el: '.swiper-pagination',
+          clickable: true
+        },
+        autoplay: {
+          delay: 2500,
+          disableOnInteraction: false,
+        }
+      }
     }
   },
   props: {
@@ -217,14 +241,14 @@ export default {
   .stop {
     font-size: 120%;
     border-bottom: 1px solid #999;
-    padding: 5rem 0;
+    padding: 3rem 0;
   }
 
   .stop.private {
     background-color: #f1f1f1;
     border-color: #971f15;
     border-width: 4px;
-    padding: 5rem .5rem;
+    padding: 3rem .5rem;
   }
 
   .stop.private .title {
@@ -308,4 +332,24 @@ export default {
   h2 {
     margin-bottom: 2rem;
   }
+
+  .swiper-slide-wrapper span {
+    display: inline-block;
+    background-color: rgba(0,0,0,0.2);
+    width: 100%;
+    text-align: center;
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    line-height: 2rem;
+    color: #ffffff;
+    text-shadow: 1px 1px 1px #000;
+    font-style: italic;
+  }
+  
+  .swiper-container {
+    margin-bottom: 2rem;
+  }
+
 </style>

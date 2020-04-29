@@ -223,6 +223,17 @@ const messages = {
           5: {
             name: 'OGGI Gelato',
             description: 'Presentazione attività dello sponsor OGGI Gelato Lorem ipsum dolor sit amet, consectetur adipiscing elit. Fusce vel purus sollicitudin, congue libero id, suscipit nisl. Cras posuere facilisis erat interdum commodo. Phasellus vitae lobortis nisi, sit amet pretium lectus.',
+            carousel: {
+              0: {
+                alt: 'Gelato al cioccolato',
+              },
+              1: {
+                alt: 'Coppa del nonno',
+              },
+              2: {
+                alt: 'La cremeria',
+              }
+            },
             images: {
               0: {
                 alt: 'Oggi Gelato - Gelato al cioccolato',
@@ -504,6 +515,17 @@ const messages = {
           5: {
             name: 'OGGI Gelato',
             description: 'Presentazione attività dello sponsor OGGI Gelato Lorem ipsum dolor sit amet, consectetur adipiscing elit. Fusce vel purus sollicitudin, congue libero id, suscipit nisl. Cras posuere facilisis erat interdum commodo. Phasellus vitae lobortis nisi, sit amet pretium lectus.',
+            carousel: {
+              0: {
+                alt: 'Gelato al cioccolato',
+              },
+              1: {
+                alt: 'Coppa del nonno',
+              },
+              2: {
+                alt: 'La cremeria',
+              }
+            },
             images: {
               0: {
                 alt: 'Oggi Gelato - Gelato al cioccolato',

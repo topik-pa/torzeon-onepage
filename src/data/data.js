@@ -439,17 +439,17 @@ const data = {
           carousel: [
             {
               id: 0,
-              alt: i18n.t('message.tour_0.stops.5.images.0.alt'),
+              alt: i18n.t('message.tour_0.stops.5.carousel.0.alt'),
               url: 'https://placekitten.com/720/445',
             },
             {
               id: 1,
-              alt: i18n.t('message.tour_0.stops.5.images.0.alt'),
+              alt: i18n.t('message.tour_0.stops.5.carousel.1.alt'),
               url: 'https://placekitten.com/720/445',
             },
             {
               id: 2,
-              alt: i18n.t('message.tour_0.stops.5.images.0.alt'),
+              alt: i18n.t('message.tour_0.stops.5.carousel.2.alt'),
               url: 'https://placekitten.com/720/445',
             },
           ],
