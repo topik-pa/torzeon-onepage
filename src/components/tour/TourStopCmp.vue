@@ -65,8 +65,8 @@ export default {
     return {
       currentPosition: undefined,
       currentDistanceFromStop: undefined,
-      minDistanceFromStop: 200,
-      oneStepDistanceFromStop: 1000,
+      minDistanceFromStop: 333,
+      oneStepDistanceFromStop: 666,
       isCheckingPosition: false,
       stopPosition: {
         latitude: this.stop.latitude,
@@ -165,6 +165,7 @@ export default {
         return new Promise(function (resolve, reject) {
           if (true || that.currentDistanceFromStop < that.minDistanceFromStop) { // true
             that.stop.checked = true
+            that.promocodeStepsDone++
             if (that.stop.popup === 'promo' || that.stop.popup === 'shop') {
               that.$emit('incrementPromocodeCounter')
             }
@@ -217,7 +218,7 @@ export default {
           html: `<div class="popup-content">${that.swalPopup.html}</div>`
         }).then(()=> { 
           if (that.swalPopup.lastPopup) {
-            fetch('http://tradingradar.net/message/torzeonrating?tour=' + that.$store.getters.getDefaultTour.id + '&rating=' + that.$store.getters.getReview)
+            fetch('http://tradingradar.net/message/torzeonrating?tour=' + that.$store.getters.getDefaultTour.id + '&rating=' + tourrating + '&donestops=' + that.promocodeStepsDone)
           }
         })
       }
@@ -253,6 +254,7 @@ export default {
 
   .stop.private .title {
     color: #971f15;
+    text-shadow: 1px 1px 1px #ccc;
   }
 
   .title a {

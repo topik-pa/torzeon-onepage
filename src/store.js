@@ -53,9 +53,6 @@ const getters = {
   },
   getPromocode: (state) => {
     return state.data.promocode
-  },
-  getReview: (state) => {
-    return state.data.review
   }
 }
 

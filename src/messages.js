@@ -129,6 +129,14 @@ const messages = {
                 description: 'La Galleria Vittorio Emanuele. Lorem ipsum dolor sit amet, consectetur adipiscing elit. Fusce vel purus sollicitudin, congue libero id, suscipit nisl. Cras posuere facilisis erat interdum commodo. Phasellus vitae lobortis nisi, sit amet pretium lectus. Curabitur nisi ex, venenatis non diam et, aliquam fringilla massa. Fusce imperdiet viverra elit, non facilisis dolor ultrices sit amet. Vestibulum at sagittis nibh. Mauris a felis a dolor tincidunt sagittis et at velit. Donec sem mauris, rhoncus non quam in, rhoncus lobortis enim. Sed cursus mauris ac massa fermentum, vel sagittis arcu venenatis.'
               }              
             },
+            nears: {
+              0: {
+                name: 'Magazzini La Rinascente'
+              },
+              1: {
+                name: 'PInacoteca Ambrosiana'
+              }
+            },
             links: {
               0: {
                 text: 'Duomo di Milano - sito ufficiale',
@@ -165,6 +173,14 @@ const messages = {
                 description: 'Descrizione Gallerie d\'Italia. Lorem ipsum dolor sit amet, consectetur adipiscing elit. Fusce vel purus sollicitudin, congue libero id, suscipit nisl. Cras posuere facilisis erat interdum commodo. Phasellus vitae lobortis nisi, sit amet pretium lectus. Curabitur nisi ex, venenatis non diam et, aliquam fringilla massa. Fusce imperdiet viverra elit, non facilisis dolor ultrices sit amet. Vestibulum at sagittis nibh.'
               }
             },
+            nears: {
+              0: {
+                name: 'Casa del Manzoni'
+              },
+              1: {
+                name: 'Via Monte Napoleone'
+              }
+            },
             links: {
               0: {
                 text: 'Quel "litter in quatter" che celebra Leonardo in piazza Scala',
@@ -189,6 +205,14 @@ const messages = {
                 description: 'Descrizione della vita nel quartiere tra caffè e shopping. Lorem ipsum dolor sit amet, consectetur adipiscing elit. Fusce vel purus sollicitudin, congue libero id, suscipit nisl. Cras posuere facilisis erat interdum commodo. Phasellus vitae lobortis nisi, sit amet pretium lectus. Curabitur nisi ex, venenatis non diam et, aliquam fringilla massa. Fusce imperdiet viverra elit, non facilisis dolor ultrices sit amet. Vestibulum at sagittis nibh. Mauris a felis a dolor tincidunt sagittis et at velit. Donec sem mauris, rhoncus non quam in, rhoncus lobortis enim. Sed cursus mauris ac massa fermentum, vel sagittis arcu venenatis.'
               }
             },
+            nears: {
+              0: {
+                name: 'Pinacoteca di Brera'
+              },
+              1: {
+                name: 'Orto Botanico di Brera'
+              }
+            },            
             links: {
               0: {
                 text: 'COSE DA VEDERE A MILANO: Quartiere Brera',
@@ -209,6 +233,23 @@ const messages = {
                 description: 'Info su Fontana di Piazza Castello. Lorem ipsum dolor sit amet, consectetur adipiscing elit. Fusce vel purus sollicitudin, congue libero id, suscipit nisl. Cras posuere facilisis erat interdum commodo. Phasellus vitae lobortis nisi, sit amet pretium lectus. Curabitur nisi ex, venenatis non diam et, aliquam fringilla massa. Fusce imperdiet viverra elit, non facilisis dolor ultrices sit amet. Vestibulum at sagittis nibh.'
               }
             },
+            nears: {
+              0: {
+                name: 'Parco Sempione'
+              },
+              1: {
+                name: 'Triennale di Milano'
+              },
+              2: {
+                name: 'Arco della Pace'
+              },
+              3: {
+                name: 'Basilica di san Ambrogio'
+              },
+              4: {
+                name: 'Museo del Cenacolo'
+              }
+            },            
             links: {
               0: {
                 text: 'Castello Sforzesco - sito ufficiale',
@@ -244,6 +285,14 @@ const messages = {
                 description: 'Lista dei servizi ulteriori (wi-fi, accesso disabili, altre info utili prese dal loro sito e di interesse per i possibili avventori)'
               }
             },
+            nears: {
+              0: {
+                name: 'Via Moscova'
+              },
+              1: {
+                name: 'Corso Como'
+              }
+            },             
             links: {
               0: {
                 text: 'OGGI - Officina Gelato Gusto Italiano',
@@ -265,13 +314,21 @@ const messages = {
               },
               1: {
                 alt: 'Le trombe di piazza Gae Aulenti',
-                description: 'Alcune info sul questa particolare opera (le trombe...). Lorem ipsum dolor sit amet, consectetur adipiscing elit. Fusce vel purus sollicitudin, congue libero id, suscipit nisl. Cras posuere facilisis erat interdum commodo. Phasellus vitae lobortis nisi, sit amet pretium lectus. Curabitur nisi ex, venenatis non diam et, aliquam fringilla massa. Fusce imperdiet viverra elit, non facilisis dolor ultrices sit amet. Vestibulum at sagittis nibh.'
+                description: 'Alcune info sul questa particolare opera (le trombe). Lorem ipsum dolor sit amet, consectetur adipiscing elit. Fusce vel purus sollicitudin, congue libero id, suscipit nisl. Cras posuere facilisis erat interdum commodo. Phasellus vitae lobortis nisi, sit amet pretium lectus. Curabitur nisi ex, venenatis non diam et, aliquam fringilla massa. Fusce imperdiet viverra elit, non facilisis dolor ultrices sit amet. Vestibulum at sagittis nibh.'
               },
               2: {
-                alt: 'Il Grattacielo Unicredit - Photo by Matthieu Joannon on Unsplash',
+                alt: 'Il Grattacielo Unicredit',
                 description: 'Alcune info sul Grattacielo Unicredit. Lorem ipsum dolor sit amet, consectetur adipiscing elit. Fusce vel purus sollicitudin, congue libero id, suscipit nisl. Cras posuere facilisis erat interdum commodo. Phasellus vitae lobortis nisi, sit amet pretium lectus. Curabitur nisi ex, venenatis non diam et, aliquam fringilla massa. Fusce imperdiet viverra elit, non facilisis dolor ultrices sit amet. Vestibulum at sagittis nibh.'
               }
             },
+            nears: {
+              0: {
+                name: 'Bosco verticale'
+              },
+              1: {
+                name: 'Parco Biblioteca degli Alberi'
+              }
+            },              
             links: {
               0: {
                 text: 'La Fontana di piazza Gae Aulenti',
@@ -421,6 +478,14 @@ const messages = {
                 description: 'La Galleria Vittorio Emanuele. Lorem ipsum dolor sit amet, consectetur adipiscing elit. Fusce vel purus sollicitudin, congue libero id, suscipit nisl. Cras posuere facilisis erat interdum commodo. Phasellus vitae lobortis nisi, sit amet pretium lectus. Curabitur nisi ex, venenatis non diam et, aliquam fringilla massa. Fusce imperdiet viverra elit, non facilisis dolor ultrices sit amet. Vestibulum at sagittis nibh. Mauris a felis a dolor tincidunt sagittis et at velit. Donec sem mauris, rhoncus non quam in, rhoncus lobortis enim. Sed cursus mauris ac massa fermentum, vel sagittis arcu venenatis.'
               }              
             },
+            nears: {
+              0: {
+                name: 'Magazzini La Rinascente'
+              },
+              1: {
+                name: 'PInacoteca Ambrosiana'
+              }
+            },
             links: {
               0: {
                 text: 'Duomo di Milano - sito ufficiale',
@@ -457,6 +522,14 @@ const messages = {
                 description: 'Descrizione Gallerie d\'Italia. Lorem ipsum dolor sit amet, consectetur adipiscing elit. Fusce vel purus sollicitudin, congue libero id, suscipit nisl. Cras posuere facilisis erat interdum commodo. Phasellus vitae lobortis nisi, sit amet pretium lectus. Curabitur nisi ex, venenatis non diam et, aliquam fringilla massa. Fusce imperdiet viverra elit, non facilisis dolor ultrices sit amet. Vestibulum at sagittis nibh.'
               }
             },
+            nears: {
+              0: {
+                name: 'Casa del Manzoni'
+              },
+              1: {
+                name: 'Via Monte Napoleone'
+              }
+            },
             links: {
               0: {
                 text: 'Quel "litter in quatter" che celebra Leonardo in piazza Scala',
@@ -481,6 +554,14 @@ const messages = {
                 description: 'Descrizione della vita nel quartiere tra caffè e shopping. Lorem ipsum dolor sit amet, consectetur adipiscing elit. Fusce vel purus sollicitudin, congue libero id, suscipit nisl. Cras posuere facilisis erat interdum commodo. Phasellus vitae lobortis nisi, sit amet pretium lectus. Curabitur nisi ex, venenatis non diam et, aliquam fringilla massa. Fusce imperdiet viverra elit, non facilisis dolor ultrices sit amet. Vestibulum at sagittis nibh. Mauris a felis a dolor tincidunt sagittis et at velit. Donec sem mauris, rhoncus non quam in, rhoncus lobortis enim. Sed cursus mauris ac massa fermentum, vel sagittis arcu venenatis.'
               }
             },
+            nears: {
+              0: {
+                name: 'Pinacoteca di Brera'
+              },
+              1: {
+                name: 'Orto Botanico di Brera'
+              }
+            },            
             links: {
               0: {
                 text: 'COSE DA VEDERE A MILANO: Quartiere Brera',
@@ -501,6 +582,23 @@ const messages = {
                 description: 'Info su Fontana di Piazza Castello. Lorem ipsum dolor sit amet, consectetur adipiscing elit. Fusce vel purus sollicitudin, congue libero id, suscipit nisl. Cras posuere facilisis erat interdum commodo. Phasellus vitae lobortis nisi, sit amet pretium lectus. Curabitur nisi ex, venenatis non diam et, aliquam fringilla massa. Fusce imperdiet viverra elit, non facilisis dolor ultrices sit amet. Vestibulum at sagittis nibh.'
               }
             },
+            nears: {
+              0: {
+                name: 'Parco Sempione'
+              },
+              1: {
+                name: 'Triennale di Milano'
+              },
+              2: {
+                name: 'Arco della Pace'
+              },
+              3: {
+                name: 'Basilica di san Ambrogio'
+              },
+              4: {
+                name: 'Museo del Cenacolo'
+              }
+            },            
             links: {
               0: {
                 text: 'Castello Sforzesco - sito ufficiale',
@@ -536,6 +634,14 @@ const messages = {
                 description: 'Lista dei servizi ulteriori (wi-fi, accesso disabili, altre info utili prese dal loro sito e di interesse per i possibili avventori)'
               }
             },
+            nears: {
+              0: {
+                name: 'Via Moscova'
+              },
+              1: {
+                name: 'Corso Como'
+              }
+            },             
             links: {
               0: {
                 text: 'OGGI - Officina Gelato Gusto Italiano',
@@ -564,6 +670,14 @@ const messages = {
                 description: 'Alcune info sul Grattacielo Unicredit. Lorem ipsum dolor sit amet, consectetur adipiscing elit. Fusce vel purus sollicitudin, congue libero id, suscipit nisl. Cras posuere facilisis erat interdum commodo. Phasellus vitae lobortis nisi, sit amet pretium lectus. Curabitur nisi ex, venenatis non diam et, aliquam fringilla massa. Fusce imperdiet viverra elit, non facilisis dolor ultrices sit amet. Vestibulum at sagittis nibh.'
               }
             },
+            nears: {
+              0: {
+                name: 'Bosco verticale'
+              },
+              1: {
+                name: 'Parco Biblioteca degli Alberi'
+              }
+            },              
             links: {
               0: {
                 text: 'La Fontana di piazza Gae Aulenti',
