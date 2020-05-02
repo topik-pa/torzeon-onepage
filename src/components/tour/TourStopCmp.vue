@@ -222,7 +222,10 @@ export default {
           html: `<div class="popup-content">${that.swalPopup.html}</div>`
         }).then(() => {
           if (that.swalPopup.lastPopup) {
-            fetch('https://tradingradar.net/message/torzeonrating?tour=' + that.$store.getters.getDefaultTour.id + '&rating=' + window.tourrating + '&donestops=' + that.stopsDone)
+            var customHeaders = {
+              'Origin': 'https://topik-pa.github.io'
+            }
+            fetch('https://www.tradingradar.net/message/torzeonrating?tour=' + that.$store.getters.getDefaultTour.id + '&rating=' + window.tourrating + '&donestops=' + that.stopsDone, {headers: customHeaders})
           }
         })
       }

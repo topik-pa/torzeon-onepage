@@ -38,8 +38,8 @@ const messages = {
         checkTitle: 'Congrats! You checked <br/> &#34;{stop}&#34;',
         checkText: '',
         promoTitle: 'Congrats! You checked <br/> &#34;{stop}&#34;',
-        promoText: 'You discovered the following piece of your promocode:<strong style="font-size:200%">&#34;{promo}&#34;</strong>',
-        promoTextComplete: 'You discovered the following piece of your promocode:<br/><strong style="font-size:200%">&#34;{promo}&#34;</strong><br/><br/>Now you can use the complete promocode to get a 10% discount',
+        promoText: 'You discovered the following piece of your promocode:<strong style="font-size:200%; color: #35b742"">{promo}</strong>',
+        promoTextComplete: 'You discovered the following piece of your promocode:<br/><strong style="font-size:200%; color: #35b742"">{promo}</strong><br/><br/>Now you can use the complete promocode to get a 10% discount',
         shopTitle: 'Congrats! You checked <br/> &#34;{stop}&#34;',
         shopText: `
           Now you can use the promocode {promocode} to <strong style="font-weight: bold;"><br/>
@@ -383,14 +383,14 @@ const messages = {
         nearHereButText: 'Ho controllato e sembra che tu sia a <br/><strong>{distance} metri</strong><br/> da qui.<br/><br/><strong>Prova a cambiare posizione e riprova a fare CHECK!</strong>',
         geolocalizationNotActiveTitle: 'IL tuo browser non ha la geolocalizzazione attiva',
         geolocalizationNotActiveText: 'We need to get your location to permit this software to work!',
-        checkTitle: 'Congrats! You checked<br/>&#34;{stop}&#34;',
+        checkTitle: 'Congratulazioni! Hai fatto CHECK su:<br/>&#34;{stop}&#34;',
         checkText: '',
-        promoTitle: 'Congrats! You checked<br/>&#34;{stop}&#34;',
-        promoText: 'You discovered the following piece of your promocode:<br/><strong style="font-size:200%">&#34;{promo}&#34;</strong>',
-        promoTextComplete: 'You discovered the following piece of your promocode:<br/><strong style="font-size:200%">&#34;{promo}&#34;</strong><br/><br/>Now you can use the complete promocode {promocode} to get a 10% discount',
-        shopTitle: 'Congrats! You checked<br/>&#34;{stop}&#34;',
+        promoTitle: 'Congratulazioni!<br/>Hai fatto CHECK su:<br/>&#34;{stop}&#34;',
+        promoText: '<strong style="font-size:200%; color: #35b742"">{promo}</strong><br/>Hai scoperto una parte del promocode segreto<br/><br/>Continua il Tour per scoprire le parti rimanenti!',
+        promoTextComplete: 'You discovered the following piece of your promocode:<br/><strong style="font-size:200%; color: #35b742">{promo}</strong><br/><br/>Now you can use the complete promocode {promocode} to get a 10% discount',
+        shopTitle: 'Congratulazioni!<br/>Hai fatto CHECK su:<br/>&#34;{stop}&#34;',
         shopText: `
-          Now you can use the promocode {promocode} to <strong style="font-weight: bold;"><br/>
+          <br/>Now you can use the promocode <br/>{promocode} <br/>to <strong style="font-weight: bold;"><br/>
           get a 10% discount in this store</strong>.<br/>
           Hope you appreciate this!!<br/><br/><br/>
           <div class="social-widget-cointainer-popup">
@@ -406,7 +406,7 @@ const messages = {
           </div>
         `,
         finishTitle: 'Congrats! Your journey in complete!',
-        finishText: '<div>Did you like the journey?<br/>Please, <strong>share it on Facebook</strong> and <strong>rate this tour</strong>!</div>'
+        finishText: '<br/><div>Did you like the journey?<br/>Please, <strong>share it on Facebook</strong> and <strong>rate this tour</strong>!</div>'
       },
       tour_0: {
         title: 'Un giorno a... Milano',
