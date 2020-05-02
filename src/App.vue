@@ -18,15 +18,14 @@ export default {
       stopHeaderFixed: 120,
       isFixedHeader: true,
       scrolledPosition: 0,
-      debounceInterval: 5,
+      debounceInterval: 5
     }
   },
   computed: {
     cover () {
       if (this.isFixedHeader) {
         return `background-image: url("${this.$store.getters.getDefaultTour.cover}")`
-      }
-      else {
+      } else {
         return `background-image: url("${this.$store.getters.getDefaultTour.cover}"); background-position-y: -5rem`
       }
     }
@@ -213,7 +212,6 @@ button.loading {
   0% { transform: rotate(0deg); }
   100% { transform: rotate(360deg); }
 }
-
 
 article aside {
   transition: top .8s ease-in-out;

@@ -12,7 +12,7 @@
       <h2><i class="far fa-play-circle"></i>&nbsp;{{ $t('message.readyMessage') }}</h2>
     </div>
     <div id="stops">
-      <tour-stop-cmp v-for="stop in tour.stops" :key="stop.id" :stop="stop" :promocodeStepsDone="tour.promocodeStepsDone" :promocodeStepsTotal="tour.promocodeStepsTotal" @incrementPromocodeCounter="incrementPromocodeCounter" />
+      <tour-stop-cmp v-for="stop in tour.stops" :key="stop.id" :stop="stop" :promocodeStepsDone="tour.promocodeStepsDone" :promocodeStepsTotal="tour.promocodeStepsTotal" :stopsDone="tour.stopsDone" @incrementPromocodeCounter="incrementPromocodeCounter" @incrementStopsDone="incrementStopsDone" />
     </div>
     <tour-end-cmp :fbPost="tour.fbPost" :twPost="tour.twPost"/>
     <tour-progress-cmp :stops="tour.stops" :started="tour.started"/>
@@ -55,6 +55,9 @@ export default {
     },
     incrementPromocodeCounter () {
       this.tour.promocodeStepsDone++
+    },
+    incrementStopsDone () {
+      this.tour.stopsDone++
     }
   },
   created () {

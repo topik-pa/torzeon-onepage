@@ -24,6 +24,7 @@ const data = {
       twPost: 'https://twitter.com/torzeon/status/1231515201557684225',
       started: false,
       stopsTotal: 7,
+      stopsDone: 0,
       promocodeStepsTotal: 6,
       promocodeStepsDone: 0,
       socials: [
@@ -144,15 +145,15 @@ const data = {
           links: [
             {
               url: i18n.t('message.tour_0.stops.0.links.0.url'),
-              text: i18n.t('message.tour_0.stops.0.links.0.text'),
+              text: i18n.t('message.tour_0.stops.0.links.0.text')
             },
             {
               url: i18n.t('message.tour_0.stops.0.links.1.url'),
-              text: i18n.t('message.tour_0.stops.0.links.1.text'),
+              text: i18n.t('message.tour_0.stops.0.links.1.text')
             },
             {
               url: i18n.t('message.tour_0.stops.0.links.2.url'),
-              text: i18n.t('message.tour_0.stops.0.links.2.text'),
+              text: i18n.t('message.tour_0.stops.0.links.2.text')
             }
           ],
           images: [
@@ -163,13 +164,13 @@ const data = {
               description: i18n.t('message.tour_0.stops.0.images.0.description')
             },
             {
-              id: 0,
+              id: 1,
               alt: i18n.t('message.tour_0.stops.0.images.1.alt'),
               url: 'https://torzeon.s3.eu-central-1.amazonaws.com/tour_0/stazione-centrale-2.min.jpg',
               description: i18n.t('message.tour_0.stops.0.images.1.description')
             },
             {
-              id: 0,
+              id: 2,
               alt: i18n.t('message.tour_0.stops.0.images.2.alt'),
               url: 'https://torzeon.s3.eu-central-1.amazonaws.com/tour_0/stazione-centrale-3.min.jpg',
               description: i18n.t('message.tour_0.stops.0.images.2.description')
@@ -190,19 +191,19 @@ const data = {
           links: [
             {
               url: i18n.t('message.tour_0.stops.1.links.0.url'),
-              text: i18n.t('message.tour_0.stops.1.links.0.text'),
+              text: i18n.t('message.tour_0.stops.1.links.0.text')
             },
             {
               url: i18n.t('message.tour_0.stops.1.links.1.url'),
-              text: i18n.t('message.tour_0.stops.1.links.1.text'),
+              text: i18n.t('message.tour_0.stops.1.links.1.text')
             },
             {
               url: i18n.t('message.tour_0.stops.1.links.2.url'),
-              text: i18n.t('message.tour_0.stops.1.links.2.text'),
+              text: i18n.t('message.tour_0.stops.1.links.2.text')
             },
             {
               url: i18n.t('message.tour_0.stops.1.links.3.url'),
-              text: i18n.t('message.tour_0.stops.1.links.3.text'),
+              text: i18n.t('message.tour_0.stops.1.links.3.text')
             }
           ],
           images: [
@@ -229,7 +230,7 @@ const data = {
               alt: i18n.t('message.tour_0.stops.1.images.3.alt'),
               url: 'https://torzeon.s3.eu-central-1.amazonaws.com/tour_0/duomo-4.min.jpg',
               description: i18n.t('message.tour_0.stops.1.images.3.description')
-            },
+            }
           ],
           near: [
             {
@@ -261,15 +262,15 @@ const data = {
           links: [
             {
               url: i18n.t('message.tour_0.stops.2.links.0.url'),
-              text: i18n.t('message.tour_0.stops.2.links.0.text'),
+              text: i18n.t('message.tour_0.stops.2.links.0.text')
             },
             {
               url: i18n.t('message.tour_0.stops.2.links.1.url'),
-              text: i18n.t('message.tour_0.stops.2.links.1.text'),
+              text: i18n.t('message.tour_0.stops.2.links.1.text')
             },
             {
               url: i18n.t('message.tour_0.stops.2.links.2.url'),
-              text: i18n.t('message.tour_0.stops.2.links.2.text'),
+              text: i18n.t('message.tour_0.stops.2.links.2.text')
             }
           ],
           images: [
@@ -321,7 +322,7 @@ const data = {
           links: [
             {
               url: i18n.t('message.tour_0.stops.3.links.0.url'),
-              text: i18n.t('message.tour_0.stops.3.links.0.text'),
+              text: i18n.t('message.tour_0.stops.3.links.0.text')
             }
           ],
           images: [
@@ -361,11 +362,11 @@ const data = {
           links: [
             {
               url: i18n.t('message.tour_0.stops.4.links.0.url'),
-              text: i18n.t('message.tour_0.stops.4.links.0.text'),
+              text: i18n.t('message.tour_0.stops.4.links.0.text')
             },
             {
               url: i18n.t('message.tour_0.stops.4.links.1.url'),
-              text: i18n.t('message.tour_0.stops.4.links.1.text'),
+              text: i18n.t('message.tour_0.stops.4.links.1.text')
             }
           ],
           images: [
@@ -380,7 +381,7 @@ const data = {
               alt: i18n.t('message.tour_0.stops.4.images.1.alt'),
               url: 'https://torzeon.s3.eu-central-1.amazonaws.com/tour_0/castello-sforzesco-2.min.jpg',
               description: i18n.t('message.tour_0.stops.4.images.1.description')
-            },
+            }
           ],
           near: [
             {
@@ -429,29 +430,29 @@ const data = {
           links: [
             {
               url: i18n.t('message.tour_0.stops.5.links.0.url'),
-              text: i18n.t('message.tour_0.stops.5.links.0.text'),
+              text: i18n.t('message.tour_0.stops.5.links.0.text')
             },
             {
               url: i18n.t('message.tour_0.stops.5.links.1.url'),
-              text: i18n.t('message.tour_0.stops.5.links.1.text'),
+              text: i18n.t('message.tour_0.stops.5.links.1.text')
             }
           ],
           carousel: [
             {
               id: 0,
               alt: i18n.t('message.tour_0.stops.5.carousel.0.alt'),
-              url: 'https://placekitten.com/720/445',
+              url: 'https://placekitten.com/720/445'
             },
             {
               id: 1,
               alt: i18n.t('message.tour_0.stops.5.carousel.1.alt'),
-              url: 'https://placekitten.com/720/445',
+              url: 'https://placekitten.com/720/445'
             },
             {
               id: 2,
               alt: i18n.t('message.tour_0.stops.5.carousel.2.alt'),
-              url: 'https://placekitten.com/720/445',
-            },
+              url: 'https://placekitten.com/720/445'
+            }
           ],
           images: [
             {
@@ -461,11 +462,11 @@ const data = {
               description: i18n.t('message.tour_0.stops.5.images.0.description')
             },
             {
-              id: 0,
+              id: 1,
               alt: i18n.t('message.tour_0.stops.5.images.1.alt'),
               url: 'https://placekitten.com/720/445',
               description: i18n.t('message.tour_0.stops.5.images.1.description')
-            },
+            }
           ],
           near: [
             {
@@ -496,15 +497,15 @@ const data = {
           links: [
             {
               url: i18n.t('message.tour_0.stops.6.links.0.url'),
-              text: i18n.t('message.tour_0.stops.6.links.0.text'),
+              text: i18n.t('message.tour_0.stops.6.links.0.text')
             },
             {
               url: i18n.t('message.tour_0.stops.6.links.1.url'),
-              text: i18n.t('message.tour_0.stops.6.links.1.text'),
+              text: i18n.t('message.tour_0.stops.6.links.1.text')
             },
             {
               url: i18n.t('message.tour_0.stops.6.links.2.url'),
-              text: i18n.t('message.tour_0.stops.6.links.2.text'),
+              text: i18n.t('message.tour_0.stops.6.links.2.text')
             }
           ],
           images: [
@@ -525,7 +526,7 @@ const data = {
               alt: i18n.t('message.tour_0.stops.6.images.2.alt'),
               url: 'https://torzeon.s3.eu-central-1.amazonaws.com/tour_0/piazza-gae-aulenti-3.min.jpg',
               description: i18n.t('message.tour_0.stops.6.images.2.description')
-            },
+            }
           ],
           near: [
             {

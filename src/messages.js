@@ -74,7 +74,6 @@ const messages = {
         youWillTaste: 'You will taste...',
         shopImageInCardAltText: 'Alt image...',
         shopTextInCard: 'Il punto di ristoro è la <strong>Gelateria Oggi di Corso Garibaldi</strong>. Immagina di entrare in un mondo di eccellenze, di profumi, di gusto e di artigianalità… e vedere gli ingredienti, freschissimi e rigorosamente selezionati a seconda della stagionalità, pronti ad essere lavorati sul tavolo e poi fusi insieme nella cucina dell’Officina di OGGI Gelato.<br/><br/>Utilizza qui il <strong>promocode</strong> che scoprirai durante il tour!',
-        
         stops: {
           0: {
             name: 'Stazione Centrale di Milano',
@@ -105,7 +104,7 @@ const messages = {
               2: {
                 text: '"Grattacielo Pirelli": storia, altezza e curiosità',
                 url: 'https://www.milanoweekend.it/articoli/pirellone-storia-altezza-grattacielo-pirelli/'
-              },
+              }
             }
           },
           1: {
@@ -123,11 +122,11 @@ const messages = {
               2: {
                 alt: 'Il Palazzo Reale',
                 description: 'Il Palazzo Reale. Lorem ipsum dolor sit amet, consectetur adipiscing elit. Fusce vel purus sollicitudin, congue libero id, suscipit nisl. Cras posuere facilisis erat interdum commodo. Phasellus vitae lobortis nisi, sit amet pretium lectus. Curabitur nisi ex, venenatis non diam et, aliquam fringilla massa. Fusce imperdiet viverra elit, non facilisis dolor ultrices sit amet. Vestibulum at sagittis nibh. Mauris a felis a dolor tincidunt sagittis et at velit. Donec sem mauris, rhoncus non quam in, rhoncus lobortis enim. Sed cursus mauris ac massa fermentum, vel sagittis arcu venenatis.'
-              },              
+              },
               3: {
                 alt: 'La Galleria Vittorio Emanuele',
                 description: 'La Galleria Vittorio Emanuele. Lorem ipsum dolor sit amet, consectetur adipiscing elit. Fusce vel purus sollicitudin, congue libero id, suscipit nisl. Cras posuere facilisis erat interdum commodo. Phasellus vitae lobortis nisi, sit amet pretium lectus. Curabitur nisi ex, venenatis non diam et, aliquam fringilla massa. Fusce imperdiet viverra elit, non facilisis dolor ultrices sit amet. Vestibulum at sagittis nibh. Mauris a felis a dolor tincidunt sagittis et at velit. Donec sem mauris, rhoncus non quam in, rhoncus lobortis enim. Sed cursus mauris ac massa fermentum, vel sagittis arcu venenatis.'
-              }              
+              }
             },
             nears: {
               0: {
@@ -193,7 +192,7 @@ const messages = {
               2: {
                 text: 'Gallerie d\'Italia - sito ufficiale',
                 url: 'https://www.gallerieditalia.com/'
-              },
+              }
             }
           },
           3: {
@@ -212,14 +211,14 @@ const messages = {
               1: {
                 name: 'Orto Botanico di Brera'
               }
-            },            
+            },
             links: {
               0: {
                 text: 'COSE DA VEDERE A MILANO: Quartiere Brera',
                 url: 'https://www.3giorniamilano.it/brera'
               }
             }
-          }, 
+          },
           4: {
             name: 'Castello Sforzesco',
             description: 'Info generali sul Castello Sforzesco. Lorem ipsum dolor sit amet, consectetur adipiscing elit. Fusce vel purus sollicitudin, congue libero id, suscipit nisl. Cras posuere facilisis erat interdum commodo. Phasellus vitae lobortis nisi, sit amet pretium lectus. Curabitur nisi ex, venenatis non diam et, aliquam fringilla massa. Fusce imperdiet viverra elit, non facilisis dolor ultrices sit amet.',
@@ -249,7 +248,7 @@ const messages = {
               4: {
                 name: 'Museo del Cenacolo'
               }
-            },            
+            },
             links: {
               0: {
                 text: 'Castello Sforzesco - sito ufficiale',
@@ -260,19 +259,19 @@ const messages = {
                 url: 'http://www.fontanedimilano.it/piazza-castello/'
               }
             }
-          } ,                
+          },
           5: {
             name: 'OGGI Gelato',
             description: 'Presentazione attività dello sponsor OGGI Gelato Lorem ipsum dolor sit amet, consectetur adipiscing elit. Fusce vel purus sollicitudin, congue libero id, suscipit nisl. Cras posuere facilisis erat interdum commodo. Phasellus vitae lobortis nisi, sit amet pretium lectus.',
             carousel: {
               0: {
-                alt: 'Gelato al cioccolato',
+                alt: 'Gelato al cioccolato'
               },
               1: {
-                alt: 'Coppa del nonno',
+                alt: 'Coppa del nonno'
               },
               2: {
-                alt: 'La cremeria',
+                alt: 'La cremeria'
               }
             },
             images: {
@@ -292,7 +291,7 @@ const messages = {
               1: {
                 name: 'Corso Como'
               }
-            },             
+            },
             links: {
               0: {
                 text: 'OGGI - Officina Gelato Gusto Italiano',
@@ -328,7 +327,7 @@ const messages = {
               1: {
                 name: 'Parco Biblioteca degli Alberi'
               }
-            },              
+            },
             links: {
               0: {
                 text: 'La Fontana di piazza Gae Aulenti',
@@ -341,10 +340,10 @@ const messages = {
               2: {
                 text: 'Il Grattacielo Unicredit',
                 url: 'https://www.grattacielimilano.it/it/unicredit-tower/'
-              },
+              }
             }
-          } 
-        },                    
+          }
+        }
       }
     }
   },
@@ -423,7 +422,6 @@ const messages = {
         youWillTaste: 'Ristoro e sapori...',
         shopImageInCardAltText: 'Alt image...',
         shopTextInCard: 'Il punto di ristoro è la <strong>Gelateria Oggi di Corso Garibaldi</strong>. Immagina di entrare in un mondo di eccellenze, di profumi, di gusto e di artigianalità… e vedere gli ingredienti, freschissimi e rigorosamente selezionati a seconda della stagionalità, pronti ad essere lavorati sul tavolo e poi fusi insieme nella cucina dell’Officina di OGGI Gelato.<br/><br/>Utilizza qui il <strong>promocode</strong> che scoprirai durante il tour!',
-        
         stops: {
           0: {
             name: 'Stazione Centrale di Milano',
@@ -454,7 +452,7 @@ const messages = {
               2: {
                 text: '"Grattacielo Pirelli": storia, altezza e curiosità',
                 url: 'https://www.milanoweekend.it/articoli/pirellone-storia-altezza-grattacielo-pirelli/'
-              },
+              }
             }
           },
           1: {
@@ -472,11 +470,11 @@ const messages = {
               2: {
                 alt: 'Il Palazzo Reale',
                 description: 'Il Palazzo Reale. Lorem ipsum dolor sit amet, consectetur adipiscing elit. Fusce vel purus sollicitudin, congue libero id, suscipit nisl. Cras posuere facilisis erat interdum commodo. Phasellus vitae lobortis nisi, sit amet pretium lectus. Curabitur nisi ex, venenatis non diam et, aliquam fringilla massa. Fusce imperdiet viverra elit, non facilisis dolor ultrices sit amet. Vestibulum at sagittis nibh. Mauris a felis a dolor tincidunt sagittis et at velit. Donec sem mauris, rhoncus non quam in, rhoncus lobortis enim. Sed cursus mauris ac massa fermentum, vel sagittis arcu venenatis.'
-              },              
+              },
               3: {
                 alt: 'La Galleria Vittorio Emanuele',
                 description: 'La Galleria Vittorio Emanuele. Lorem ipsum dolor sit amet, consectetur adipiscing elit. Fusce vel purus sollicitudin, congue libero id, suscipit nisl. Cras posuere facilisis erat interdum commodo. Phasellus vitae lobortis nisi, sit amet pretium lectus. Curabitur nisi ex, venenatis non diam et, aliquam fringilla massa. Fusce imperdiet viverra elit, non facilisis dolor ultrices sit amet. Vestibulum at sagittis nibh. Mauris a felis a dolor tincidunt sagittis et at velit. Donec sem mauris, rhoncus non quam in, rhoncus lobortis enim. Sed cursus mauris ac massa fermentum, vel sagittis arcu venenatis.'
-              }              
+              }
             },
             nears: {
               0: {
@@ -542,7 +540,7 @@ const messages = {
               2: {
                 text: 'Gallerie d\'Italia - sito ufficiale',
                 url: 'https://www.gallerieditalia.com/'
-              },
+              }
             }
           },
           3: {
@@ -561,14 +559,14 @@ const messages = {
               1: {
                 name: 'Orto Botanico di Brera'
               }
-            },            
+            },
             links: {
               0: {
                 text: 'COSE DA VEDERE A MILANO: Quartiere Brera',
                 url: 'https://www.3giorniamilano.it/brera'
               }
             }
-          }, 
+          },
           4: {
             name: 'Castello Sforzesco',
             description: 'Info generali sul Castello Sforzesco. Lorem ipsum dolor sit amet, consectetur adipiscing elit. Fusce vel purus sollicitudin, congue libero id, suscipit nisl. Cras posuere facilisis erat interdum commodo. Phasellus vitae lobortis nisi, sit amet pretium lectus. Curabitur nisi ex, venenatis non diam et, aliquam fringilla massa. Fusce imperdiet viverra elit, non facilisis dolor ultrices sit amet.',
@@ -598,7 +596,7 @@ const messages = {
               4: {
                 name: 'Museo del Cenacolo'
               }
-            },            
+            },
             links: {
               0: {
                 text: 'Castello Sforzesco - sito ufficiale',
@@ -609,19 +607,19 @@ const messages = {
                 url: 'http://www.fontanedimilano.it/piazza-castello/'
               }
             }
-          } ,                
+          },
           5: {
             name: 'OGGI Gelato',
             description: 'Presentazione attività dello sponsor OGGI Gelato Lorem ipsum dolor sit amet, consectetur adipiscing elit. Fusce vel purus sollicitudin, congue libero id, suscipit nisl. Cras posuere facilisis erat interdum commodo. Phasellus vitae lobortis nisi, sit amet pretium lectus.',
             carousel: {
               0: {
-                alt: 'Gelato al cioccolato',
+                alt: 'Gelato al cioccolato'
               },
               1: {
-                alt: 'Coppa del nonno',
+                alt: 'Coppa del nonno'
               },
               2: {
-                alt: 'La cremeria',
+                alt: 'La cremeria'
               }
             },
             images: {
@@ -641,7 +639,7 @@ const messages = {
               1: {
                 name: 'Corso Como'
               }
-            },             
+            },
             links: {
               0: {
                 text: 'OGGI - Officina Gelato Gusto Italiano',
@@ -677,7 +675,7 @@ const messages = {
               1: {
                 name: 'Parco Biblioteca degli Alberi'
               }
-            },              
+            },
             links: {
               0: {
                 text: 'La Fontana di piazza Gae Aulenti',
@@ -690,10 +688,10 @@ const messages = {
               2: {
                 text: 'Il Grattacielo Unicredit',
                 url: 'https://www.grattacielimilano.it/it/unicredit-tower/'
-              },
+              }
             }
-          } 
-        },                    
+          }
+        }
       }
     }
   }

@@ -14,7 +14,7 @@
         <div class="swiper-slide-wrapper">
           <img :src="image.url" :alt="image.alt"/>
           <span v-html="image.alt"/>
-        </div> 
+        </div>
       </swiper-slide>
       <div class="swiper-pagination" slot="pagination"></div>
     </swiper>
@@ -83,7 +83,7 @@ export default {
         },
         autoplay: {
           delay: 2500,
-          disableOnInteraction: false,
+          disableOnInteraction: false
         }
       }
     }
@@ -94,6 +94,10 @@ export default {
       required: true
     },
     promocodeStepsDone: {
+      type: Number,
+      required: true
+    },
+    stopsDone: {
       type: Number,
       required: true
     },
@@ -144,17 +148,17 @@ export default {
           that.currentDistanceFromStop = d // --> the distance in meter
         }
         return new Promise(function (resolve, reject) {
-          navigator.geolocation.getCurrentPosition((position) => {     
+          navigator.geolocation.getCurrentPosition((position) => {
             // I can actually get the user current position
             that.currentPosition = {
               latitude: position.coords.latitude,
               longitude: position.coords.longitude
-            } 
+            }
             getUserDistanceFromStop()
-            resolve()           
-          },(error) => {
+            resolve()
+          }, (error) => {
             // I cannot get user current position
-            that.swalPopup = geolocalizationNotActivePopup()
+            that.swalPopup = geolocalizationNotActivePopup(error)
             fireThePopup()
             that.isCheckingPosition = false
           })
@@ -165,7 +169,7 @@ export default {
         return new Promise(function (resolve, reject) {
           if (true || that.currentDistanceFromStop < that.minDistanceFromStop) { // true
             that.stop.checked = true
-            that.promocodeStepsDone++
+            that.$emit('incrementStopsDone')
             if (that.stop.popup === 'promo' || that.stop.popup === 'shop') {
               that.$emit('incrementPromocodeCounter')
             }
@@ -216,9 +220,9 @@ export default {
           title: that.swalPopup.title,
           type: that.swalPopup.type,
           html: `<div class="popup-content">${that.swalPopup.html}</div>`
-        }).then(()=> { 
+        }).then(() => {
           if (that.swalPopup.lastPopup) {
-            fetch('http://tradingradar.net/message/torzeonrating?tour=' + that.$store.getters.getDefaultTour.id + '&rating=' + tourrating + '&donestops=' + that.promocodeStepsDone)
+            fetch('https://tradingradar.net/message/torzeonrating?tour=' + that.$store.getters.getDefaultTour.id + '&rating=' + window.tourrating + '&donestops=' + that.stopsDone)
           }
         })
       }
@@ -349,7 +353,6 @@ export default {
     text-shadow: 1px 1px 1px #000;
     font-style: italic;
   }
-  
   .swiper-container {
     margin-bottom: 2rem;
   }

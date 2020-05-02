@@ -178,11 +178,11 @@ const justOneStepPopup = function (distance) {
   }
 }
 
-const geolocalizationNotActivePopup = function () {
+const geolocalizationNotActivePopup = function (error) {
   return {
     title: i18n.t('message.popups.geolocalizationNotActiveTitle'),
     type: `info`,
-    html: i18n.t('message.popups.geolocalizationNotActiveText')
+    html: i18n.t('message.popups.geolocalizationNotActiveText') + '<br/><br/>' + error.message
   }
 }
 
