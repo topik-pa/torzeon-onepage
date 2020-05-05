@@ -58,7 +58,7 @@ export default {
     border-radius: 10px;
     position: relative;
     font-weight: bold;
-    max-width: 240px;
+    max-width: 260px;
     margin: 0 auto 3rem;
     padding: 3.3rem 1rem;
     overflow: hidden;

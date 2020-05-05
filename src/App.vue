@@ -82,7 +82,6 @@ main {
   background-position: center 0;
   background-size: cover;
   width: 100%;
-  margin-top: 5rem;
 }
 
 #stops .stop:last-child {

@@ -613,13 +613,13 @@ const messages = {
             description: 'Presentazione attività dello sponsor OGGI Gelato Lorem ipsum dolor sit amet, consectetur adipiscing elit. Fusce vel purus sollicitudin, congue libero id, suscipit nisl. Cras posuere facilisis erat interdum commodo. Phasellus vitae lobortis nisi, sit amet pretium lectus.',
             carousel: {
               0: {
-                alt: 'Gelato al cioccolato'
+                alt: 'Descizione 1'
               },
               1: {
-                alt: 'Coppa del nonno'
+                alt: 'Descizione 2'
               },
               2: {
-                alt: 'La cremeria'
+                alt: 'Descizione 3'
               }
             },
             images: {

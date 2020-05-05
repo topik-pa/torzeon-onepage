@@ -441,17 +441,17 @@ const data = {
             {
               id: 0,
               alt: i18n.t('message.tour_0.stops.5.carousel.0.alt'),
-              url: 'https://placekitten.com/720/445'
+              url: 'https://torzeon.s3.eu-central-1.amazonaws.com/tour_0/slider-1.min.jpg'
             },
             {
               id: 1,
               alt: i18n.t('message.tour_0.stops.5.carousel.1.alt'),
-              url: 'https://placekitten.com/720/445'
+              url: 'https://torzeon.s3.eu-central-1.amazonaws.com/tour_0/slider-2.min.jpg'
             },
             {
               id: 2,
               alt: i18n.t('message.tour_0.stops.5.carousel.2.alt'),
-              url: 'https://placekitten.com/720/445'
+              url: 'https://torzeon.s3.eu-central-1.amazonaws.com/tour_0/slider-3.min.jpg'
             }
           ],
           images: [
