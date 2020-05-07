@@ -1,5 +1,5 @@
 <template>
-  <div class="stop" :class="{'private': stop.type=='private' }">
+  <div :id="'stop-'+stop.id" class="stop" :class="{'private': stop.type=='private' }">
     <div class="title">
       <h3>
         {{ $t("message.goals."+stop.popup) }}
@@ -22,7 +22,8 @@
     <div class="gallery" v-if="stop.images.length">
       <div class="image" v-for="image in stop.images" :key="image.id">
         <figure>
-            <img v-lazy="image.url" :alt="image.alt"/>
+            <img :src="getBgImage(image.orientation, 0)" alt="Background white image" />
+            <img v-lazy="image.url" :alt="image.alt" class="front-image"/>
             <figcaption>{{image.alt}}</figcaption>
         </figure>
         <p v-html="image.description"></p>
@@ -47,7 +48,8 @@
       <div>
         <div v-for="location in stop.near" :key="location.id" class="location">
           <a target="_blank" :href="location.gmapsUrl">
-            <img :alt="location.name" v-lazy="location.image"/>
+            <img :src="getBgImage(location.orientation, 1)" alt="Background white image" />
+            <img :alt="location.name" v-lazy="location.image" class="front-image"/>
             <i class="fas fa-map-marker-alt"></i>&nbsp;{{ location.name }}
           </a>
         </div>
@@ -116,6 +118,10 @@ export default {
       if (this.stop.checked) return
       this.isCheckingPosition = true
       this.getCurrentPosition()
+    },
+
+    getBgImage(o, t) {
+      return `https://torzeon.s3.eu-central-1.amazonaws.com/blank-${t}-${o}-min.png`
     },
 
     getCurrentPosition () {
@@ -202,7 +208,7 @@ export default {
               if (that.promocodeStepsDone === that.promocodeStepsTotal) {
                 that.swalPopup = getShopPopup(that.stop.name, that.$store.getters.getPromocode)
               } else {
-                that.swalPopup = getShopPopup(that.stop.name)
+                that.swalPopup = getShopPopup(that.stop.name, undefined, that.stop.promo)
               }
               break
             case 'finish':
@@ -274,7 +280,7 @@ export default {
   }
 
   .description {
-    margin: 1rem 0 2.5rem;
+    margin: 1.5rem 0 2.5rem;
     font-style: italic;
   }
 
@@ -286,6 +292,12 @@ export default {
   img {
     border: 1px solid #AAA;
     box-shadow: 0px 0px 5px #AAAAAA;
+  }
+
+  .front-image {
+    position: absolute;
+    top:0;
+    left:0;
   }
 
   .links {
@@ -324,6 +336,10 @@ export default {
     text-align: center;
   }
 
+  .near a {
+    position: relative;
+  }
+
   .near img {
     margin-bottom: 1rem;
   }
@@ -339,7 +355,7 @@ export default {
   }
 
   h2 {
-    margin-bottom: 2rem;
+    margin-bottom: 1rem;
   }
 
   .swiper-slide-wrapper span {

@@ -12,8 +12,10 @@
       <div id="stop-count">
         <div>
           <div v-for="stop in stops" :key="stop.id">
-            <i v-if="stop.checked" class="far fa-check-circle" :class="{'private': stop.type === 'private', 'promo': stop.popup === 'promo'}"></i>
-            <i v-else class="far fa-circle" :class="{'private': stop.type === 'private', 'promo': stop.popup === 'promo'}"></i>
+            <a @click="emitScrollTo('stop-'+stop.id)">
+              <i v-if="stop.checked" class="far fa-check-circle" :class="{'private': stop.type === 'private', 'promo': stop.popup === 'promo'}"></i>
+              <i v-else class="far fa-circle" :class="{'private': stop.type === 'private', 'promo': stop.popup === 'promo'}"></i>
+            </a>
           </div>
         </div>
       </div>
@@ -50,10 +52,14 @@ export default {
       let stop = (document.getElementById('ready').getBoundingClientRect().top + 300) + document.documentElement.scrollTop
       let path = this.docTotalHeight - stop
       let scrolled = window.innerHeight - (document.getElementById('ready').getBoundingClientRect().top + 300)
-      this.progress = ((scrolled / path) * 100)
+      this.progress = (((scrolled / path) * 100) + 0.3).toFixed(3)
     },
     getDocTotalHeight () {
       this.docTotalHeight = Math.max(document.body.scrollHeight, document.body.offsetHeight, document.documentElement.clientHeight, document.documentElement.scrollHeight, document.documentElement.offsetHeight)
+    },
+    emitScrollTo (id) {
+      var element = document.getElementById(id)
+      element.scrollIntoView({behavior: 'smooth'})
     }
   },
   computed: {
@@ -111,7 +117,8 @@ export default {
     -webkit-appearance: none;
     appearance: none;
     width: 100%;
-    height: .4rem;
+    height: .5rem;
+    box-shadow: 0px 1px 2px 1px #b8aa11;
   }
 
   #progress progress::-webkit-progress-bar {
@@ -124,7 +131,7 @@ export default {
   }
 
   #progress progress::-moz-progress-bar {
-      background-color: rgb(184, 170, 17);
+      background-color: #b8aa11;
       border-radius: 4px;
   }
 
@@ -150,6 +157,7 @@ export default {
 
   #stop-count i {
     color: #555555;
+    cursor: pointer;
   }
 
   #stop-count i.promo {

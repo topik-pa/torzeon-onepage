@@ -27,7 +27,7 @@ const getPromoPopup = function (stop, promo, promocode) {
   return obj
 }
 
-const getShopPopup = function (stop, promocode) {
+const getShopPopup = function (stop, promocode, promo) {
   let obj = {}
   if (promocode) {
     obj = {
@@ -39,7 +39,7 @@ const getShopPopup = function (stop, promocode) {
     obj = {
       title: i18n.t('message.popups.shopTitle', {stop: stop}),
       type: `success`,
-      html: i18n.t('message.popups.shopTextNoPromocode')
+      html: i18n.t('message.popups.shopTextNoPromocode', {promo: promo})
     }
   }
   return obj
@@ -52,9 +52,7 @@ const getFinishPopup = function () {
     lastPopup: true,
     html: `
     ${i18n.t('message.popups.finishText')}
-    <br/>
-    <iframe src="https://www.facebook.com/plugins/share_button.php?href=${encodeURIComponent(window.location.href)}&layout=button_count&size=large&appId=238576103449837&width=110&height=28" width="110" height="28" style="border:none;overflow:hidden" scrolling="no" frameborder="0" allowTransparency="true" allow="encrypted-media"></iframe>
-    <br/><br/>
+    <br/>    
     <div class="container-rating">
         <div class="feedback">
             <div class="rating">
@@ -158,6 +156,8 @@ const getFinishPopup = function () {
             </div>
         </div>
       </div>
+      <br/><br/>
+      <iframe src="https://www.facebook.com/plugins/share_button.php?href=${encodeURIComponent(window.location.href)}&layout=button_count&size=large&appId=238576103449837&width=110&height=28" width="110" height="28" style="border:none;overflow:hidden" scrolling="no" frameborder="0" allowTransparency="true" allow="encrypted-media"></iframe>  
     `
   }
 }

@@ -1,17 +1,3 @@
-Ciao Sara,
-
-Per vedere il sito, il link è https://topik-pa.github.io/#/un-giorno-a-milano
-Qui sotto trovi una scheda degli stop che compongono il percorso turistico di cui parlavamo tempo fa e qualche altro testo da modificare/creare.
-
-I testi dovranno essere abbastanza corti, i placeholder attuali servono a darti una idea della loro ampiezza.
-La prima frase dei paragrafi descrive il contenuto che vorrei metterci.
-Il tono deve essere informale/colloquiale a volte pure scherzoso (Per esempio: se sei a Km di distanza e provi a fare un check il sistema rispone "Non ci sei nemmeno vicino!")
-
-
-Ecco i testi che vorrei... 
-
-Sottotitolo - una idea? Chi legge deva capire subito che è un percorso/missione dove si deve scoprire un promocode mentre si visita la città
-Intro - ci sono già un paio di frasi: deve essere accattivante e spiegare meglio ciò che è solo accennato nel sottotitolo. Controllare e integrare, se il caso.
 
 1. Stazione Centrale di Milano (generale)
    a. La facciata della Stazione (particolare)
@@ -85,9 +71,3 @@ Metro - M2 Moscova (1 fermata) -> M2 Garibaldi FS
   c. Grattacielo Unicredit (particolare)
   d. Bosco verticale (near)
   e. Parco Biblioteca degli Alberi (near)
-
-
-
-Schede gialle:
-Luoghi che visiterai... (rivedere e correggere)
-Ristoro e sapori... (un testo che non sia quello attuale ricopiato dal loro sito)

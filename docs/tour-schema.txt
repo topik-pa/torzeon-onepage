@@ -1,0 +1,13 @@
+TOUR SCHEMA 
+
+Golden ratio: 1.618
+
+img-cover: 1280x640
+img-author: 80x80
+img-card: 720x445
+img-preview: 720x720
+img-next: 260x160 h
+img-next: 260x420 v
+
+img-stop: 720x540 h
+img-stop: 720x960 v

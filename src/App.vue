@@ -123,6 +123,7 @@ p {
 
 figure {
   margin-bottom: 1rem;
+  position: relative;
 }
 
 figcaption {
@@ -217,6 +218,11 @@ article aside {
 }
 article.up aside {
   top: -120px;
+}
+
+.promoletter {
+  font-size: 200%;
+  text-shadow: 2px 2px 4px #F8E627;
 }
 
 @media screen and (max-width: 1024) {
