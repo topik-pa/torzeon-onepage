@@ -131,6 +131,7 @@ export default {
           if (navigator.geolocation) {
             resolve()
           } else {
+            ga('send', 'event', 'Tour', 'check', 'Browser without Geolocation');
             reject(new Error('This Browser do not supports geolocation'))
           }
         })
@@ -164,6 +165,7 @@ export default {
             resolve()
           }, (error) => {
             // I cannot get user current position
+            ga('send', 'event', 'Tour', 'check', 'No Geolocation permission');
             that.swalPopup = geolocalizationNotActivePopup(error)
             fireThePopup()
             that.isCheckingPosition = false
@@ -173,7 +175,7 @@ export default {
 
       let checkTheStopAndIncrementPromocodeCouter = () => {
         return new Promise(function (resolve, reject) {
-          if (true || that.currentDistanceFromStop < that.minDistanceFromStop) { // true
+          if (true || that.currentDistanceFromStop < that.minDistanceFromStop) { // true            
             that.stop.checked = true
             that.$emit('incrementStopsDone')
             if (that.stop.popup === 'promo' || that.stop.popup === 'shop') {
@@ -183,7 +185,9 @@ export default {
           } else {
             if (that.currentDistanceFromStop < that.oneStepDistanceFromStop) {
               that.swalPopup = justOneStepPopup(that.currentDistanceFromStop)
+              ga('send', 'event', 'Tour', 'check', 'User not so close');
             } else {
+              ga('send', 'event', 'Tour', 'check', 'User too far away');
               that.swalPopup = notEvenClosePopup(that.currentDistanceFromStop)
             }
             reject(new Error('User too far far away...'))
@@ -195,23 +199,29 @@ export default {
         return new Promise(function (resolve, reject) {
           switch (that.stop.popup) {
             case 'check':
+              ga('send', 'event', 'Tour', 'check', 'Stop checked: CHECK');
               that.swalPopup = getCheckPopup(that.stop.name, that.stop.path)
               break
             case 'promo':
+              ga('send', 'event', 'Tour', 'check', 'Stop checked: PROMO');
               if (that.promocodeStepsDone === that.promocodeStepsTotal) {
                 that.swalPopup = getPromoPopup(that.stop.name, that.stop.promo, that.$store.getters.getPromocode)
+                ga('send', 'event', 'Tour', 'check', 'Stop checked: PROMOCODE COMPLETE');
               } else {
                 that.swalPopup = getPromoPopup(that.stop.name, that.stop.promo)
               }
               break
             case 'shop':
+              ga('send', 'event', 'Tour', 'check', 'Stop checked: SHOP');
               if (that.promocodeStepsDone === that.promocodeStepsTotal) {
+                ga('send', 'event', 'Tour', 'check', 'Stop checked: PROMOCODE COMPLETE');
                 that.swalPopup = getShopPopup(that.stop.name, that.$store.getters.getPromocode)
               } else {
                 that.swalPopup = getShopPopup(that.stop.name, undefined, that.stop.promo)
               }
               break
             case 'finish':
+              ga('send', 'event', 'Tour', 'check', 'Stop checked: FINISHED');
               that.swalPopup = getFinishPopup()
               break
             default:
