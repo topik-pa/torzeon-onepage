@@ -1,6 +1,6 @@
 # torzeon-onepage
 
-> A Vue.js project
+> Torzeon: a Vue.js project
 
 ## Build Setup
 
