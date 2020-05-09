@@ -5,7 +5,7 @@
         {{ $t("message.goals."+stop.popup) }}
       </h3>
       <h2>{{stop.id + 1}}<span>/{{this.$store.getters.getDefaultTour.stopsTotal}}</span> - {{stop.name}}</h2>
-      <a target="_blank" class="btn secondary" :href="stop.gmapsLocation"><i class="fas fa-map-marker-alt"></i>&nbsp;{{ $t("message.getThere") }}</a>
+      <a target="_blank" class="btn secondary" :href="stop.gmapsLocation" @click="$ga.event('Tour', 'Other', 'User needs Maps')"><i class="fas fa-map-marker-alt"></i>&nbsp;{{ $t("message.getThere") }}</a>
     </div>
     <p class="description" v-html="stop.description"></p>
 
@@ -131,7 +131,7 @@ export default {
           if (navigator.geolocation) {
             resolve()
           } else {
-            ga('send', 'event', 'Tour', 'check', 'Browser without Geolocation');
+            that.$ga.event('Tour', 'Check', 'Browser without Geolocation', this.stop.id)
             reject(new Error('This Browser do not supports geolocation'))
           }
         })
@@ -165,7 +165,7 @@ export default {
             resolve()
           }, (error) => {
             // I cannot get user current position
-            ga('send', 'event', 'Tour', 'check', 'No Geolocation permission');
+            that.$ga.event('Tour', 'Check', 'No Geolocation permission', this.stop.id)
             that.swalPopup = geolocalizationNotActivePopup(error)
             fireThePopup()
             that.isCheckingPosition = false
@@ -185,11 +185,10 @@ export default {
           } else {
             if (that.currentDistanceFromStop < that.oneStepDistanceFromStop) {
               that.swalPopup = justOneStepPopup(that.currentDistanceFromStop)
-              ga('send', 'event', 'Tour', 'check', 'User not so close');
             } else {
-              ga('send', 'event', 'Tour', 'check', 'User too far away');
               that.swalPopup = notEvenClosePopup(that.currentDistanceFromStop)
             }
+            that.$ga.event('Tour', 'Check', 'User too far', Math.round(that.currentDistanceFromStop))
             reject(new Error('User too far far away...'))
           }
         })
@@ -197,31 +196,27 @@ export default {
 
       let setTheRightPopup = () => {
         return new Promise(function (resolve, reject) {
+          that.$ga.event('Tour', 'Check', 'Stop CHECKED!', that.stop.id)
           switch (that.stop.popup) {
             case 'check':
-              ga('send', 'event', 'Tour', 'check', 'Stop checked: CHECK');
               that.swalPopup = getCheckPopup(that.stop.name, that.stop.path)
               break
             case 'promo':
-              ga('send', 'event', 'Tour', 'check', 'Stop checked: PROMO');
               if (that.promocodeStepsDone === that.promocodeStepsTotal) {
                 that.swalPopup = getPromoPopup(that.stop.name, that.stop.promo, that.$store.getters.getPromocode)
-                ga('send', 'event', 'Tour', 'check', 'Stop checked: PROMOCODE COMPLETE');
               } else {
                 that.swalPopup = getPromoPopup(that.stop.name, that.stop.promo)
               }
               break
             case 'shop':
-              ga('send', 'event', 'Tour', 'check', 'Stop checked: SHOP');
+              that.$ga.event('Tour', 'Check', 'Stop CHECKED! User on SHOP', that.stop.id)
               if (that.promocodeStepsDone === that.promocodeStepsTotal) {
-                ga('send', 'event', 'Tour', 'check', 'Stop checked: PROMOCODE COMPLETE');
                 that.swalPopup = getShopPopup(that.stop.name, that.$store.getters.getPromocode)
               } else {
                 that.swalPopup = getShopPopup(that.stop.name, undefined, that.stop.promo)
               }
               break
             case 'finish':
-              ga('send', 'event', 'Tour', 'check', 'Stop checked: FINISHED');
               that.swalPopup = getFinishPopup()
               break
             default:
