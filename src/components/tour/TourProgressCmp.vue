@@ -5,7 +5,7 @@
         <span class="title">{{ $t("message.promocode") }}</span>
         <div v-for="stop in stopsWPromo" :key="stop.name">
           <span v-if="stop.checked" >{{stop.promo}}</span>
-          <span v-else><i class="fas fa-asterisk"></i></span>
+          <span v-else>&#95;</span>
           &nbsp;
         </div>
       </div>
@@ -136,14 +136,15 @@ export default {
   }
 
   #promocode {
-    padding: .6rem 0;
-    margin-bottom: .6rem;
+    padding: .4rem 0;
+    margin-bottom: .4rem;
     border-bottom: 1px solid rgb(219, 204, 33);;
   }
 
   #promocode div {
     display: inline;
-    font-weight: bold;
+    font-family: monospace;
+    letter-spacing: -0.2rem;
   }
 
   #stop-count > div {
@@ -151,7 +152,7 @@ export default {
     justify-content: space-between;
     width: 20%;
     margin: 0 auto;
-    margin-bottom: 1rem;
+    margin-bottom: .8rem;
     min-width: 240px;
   }
 
@@ -183,10 +184,6 @@ export default {
     section {
       width: 100vw;
       right: inherit;
-    }
-
-    .title {
-      display: block;
     }
   }
 </style>

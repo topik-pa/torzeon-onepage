@@ -94,7 +94,7 @@ export default {
   },
   mounted () {
     for (let i = 0; i < this.tour.promocode.length; i++) {
-      this.tour.revealedPromocode += '*'
+      this.tour.revealedPromocode += '_'
     }
   },
   created () {

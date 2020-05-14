@@ -29,6 +29,7 @@
         <p v-html="image.description"></p>
       </div>
     </div>
+
     <div class="links" v-if="stop.links.length">
       <div class="subtitle">
         <h3><i class="fas fa-globe"></i>&nbsp;{{ $t("message.infoFromTheWeb") }}</h3>
@@ -39,10 +40,12 @@
         </li>
       </ul>
     </div>
+
     <div class="check">
       <div>{{ $t('message.areYouHere') }}</div>
       <button class="primary" :class="{'disabled': stop.checked, 'loading': isCheckingPosition}" @click="checkStop">{{ isCheckingPosition ? '' : isThisStopChecked ? $t('message.locationChecked') : $t('message.checkLocation')  }}</button>
     </div>
+
     <div class="near" v-if="stop.near">
       <h4><i class="fas fa-map-marked"></i>&nbsp;{{ $t('message.nearHere') }}</h4>
       <div>
@@ -55,6 +58,7 @@
         </div>
       </div>
     </div>
+
   </div>
 </template>
 
@@ -179,7 +183,7 @@ export default {
 
       let checkTheStopAndIncrementPromocodeCouter = () => {
         return new Promise(function (resolve, reject) {
-          if (that.currentDistanceFromStop < that.minDistanceFromStop) { // true
+          if (true || that.currentDistanceFromStop < that.minDistanceFromStop) { // true
             that.stop.checked = true
             that.$emit('incrementStopsDone')
             that.$emit('updateRevealedPromocode', that.stop.id)
