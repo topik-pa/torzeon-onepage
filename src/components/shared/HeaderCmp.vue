@@ -31,8 +31,7 @@ export default {
       this.scrolledPosition = window.scrollY
       if (this.scrolledPosition > this.stopHideHeader) {
         this.showHeader = false
-      }
-      else {
+      } else {
         this.showHeader = true
       }
     }, this.debounceInterval)
@@ -50,7 +49,7 @@ header {
   right: 0;
   margin: 0 auto;
   width: 100%;
-  max-width: 1280px; 
+  max-width: 1280px;
   height: 5rem;
   border-bottom: 1px solid #999;
   background-color: #FFFFFF;
@@ -62,6 +61,6 @@ header {
   top: -5rem;
 }
 header.show  {
-   top: 0; 
+   top: 0;
 }
 </style>

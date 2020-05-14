@@ -8,7 +8,6 @@
 </template>
 
 <script>
-import JSUtils from '@/assets/scripts/utilities.js'
 import HeaderCmp from '@/components/shared/HeaderCmp'
 
 export default {
@@ -83,7 +82,7 @@ h1 {
 h2 {
   font-weight: bold;
   font-size: 150%;
-  margin-bottom: 1rem;  
+  margin-bottom: 1rem;
 }
 
 h3 {
@@ -143,7 +142,6 @@ article aside {
 article.up aside {
   top: -120px;
 }
-
 
 @media screen and (max-width: 1024) {
   main {

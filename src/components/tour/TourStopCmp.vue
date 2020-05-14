@@ -95,8 +95,8 @@ export default {
       type: Object,
       required: true
     },
-    promocodeStepsDone: {
-      type: Number,
+    promocode: {
+      type: String,
       required: true
     },
     stopsDone: {
@@ -124,7 +124,7 @@ export default {
       this.getCurrentPosition()
     },
 
-    getBgImage(o, t) {
+    getBgImage (o, t) {
       return `https://torzeon.s3.eu-central-1.amazonaws.com/blank-${t}-${o}-min.png`
     },
 
@@ -179,12 +179,11 @@ export default {
 
       let checkTheStopAndIncrementPromocodeCouter = () => {
         return new Promise(function (resolve, reject) {
-          if (true || that.currentDistanceFromStop < that.minDistanceFromStop) { // true            
+          if (that.currentDistanceFromStop < that.minDistanceFromStop) { // true
             that.stop.checked = true
             that.$emit('incrementStopsDone')
-            if (that.stop.popup === 'promo' || that.stop.popup === 'shop') {
-              that.$emit('incrementPromocodeCounter')
-            }
+            that.$emit('updateRevealedPromocode', that.stop.id)
+            that.$ga.event('Tour', 'Check', 'Stop CHECKED!', that.stop.id)
             resolve()
           } else {
             if (that.currentDistanceFromStop < that.oneStepDistanceFromStop) {
@@ -199,27 +198,26 @@ export default {
       }
 
       let setTheRightPopup = () => {
-
         return new Promise(function (resolve, reject) {
-          that.$ga.event('Tour', 'Check', 'Stop CHECKED!', that.stop.id)
-          that.$emit('updateRevealedPromocode', that.stop.id)
           switch (that.stop.popup) {
             case 'check':
               that.swalPopup = getCheckPopup(that.stop.name, that.stop.path)
               break
             case 'promo':
-              if (that.promocodeStepsDone === that.promocodeStepsTotal) {
-                that.swalPopup = getPromoPopup(that.stop.name, that.$store.getters.getRevealedPromocode, true)
+              if (that.promocode === that.revealedPromocode) {
+                that.$ga.event('Tour', 'Check', 'Promocode completed!', that.stop.id)
+                that.swalPopup = getPromoPopup(that.stop.name, that.revealedPromocode, true)
               } else {
-                that.swalPopup = getPromoPopup(that.stop.name, that.$store.getters.getRevealedPromocode)
+                that.swalPopup = getPromoPopup(that.stop.name, that.revealedPromocode)
               }
               break
             case 'shop':
-              that.$ga.event('Tour', 'Check', 'Stop CHECKED! User on SHOP', that.stop.id)              
-              if (that.promocodeStepsDone === that.promocodeStepsTotal) {
-                that.swalPopup = getShopPopup(that.stop.name, that.$store.getters.getRevealedPromocode, true)
+              that.$ga.event('Tour', 'Check', 'User on SHOP!', that.stop.id)
+              if (that.promocode === that.revealedPromocode) {
+                that.$ga.event('Tour', 'Check', 'Promocode completed!', that.stop.id)
+                that.swalPopup = getShopPopup(that.stop.name, that.revealedPromocode, true)
               } else {
-                that.swalPopup = getShopPopup(that.stop.name, that.$store.getters.getRevealedPromocode)
+                that.swalPopup = getShopPopup(that.stop.name, that.revealedPromocode)
               }
               break
             case 'finish':

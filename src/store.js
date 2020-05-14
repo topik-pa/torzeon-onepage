@@ -18,10 +18,6 @@ const getters = {
   getPromocode: (state) => {
     let defaultTour = state.data.tours.find(tour => tour.default === true)
     return defaultTour.promocode
-  },
-  getRevealedPromocode: (state) => {
-    let defaultTour = state.data.tours.find(tour => tour.default === true)
-    return defaultTour.revealedPromocode
   }
 }
 

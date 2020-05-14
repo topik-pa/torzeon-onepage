@@ -33,11 +33,10 @@
         v-for="stop in tour.stops"
         :key="stop.id"
         :stop="stop"
-        :promocodeStepsDone="tour.promocodeStepsDone"
+        :promocode="tour.promocode"
         :promocodeStepsTotal="tour.promocodeStepsTotal"
         :revealedPromocode="tour.revealedPromocode"
         :stopsDone="tour.stopsDone"
-        @incrementPromocodeCounter="incrementPromocodeCounter"
         @incrementStopsDone="incrementStopsDone"
         @updateRevealedPromocode="updateRevealedPromocode"
       />
@@ -48,15 +47,15 @@
 </template>
 
 <script>
-import TourShareCmp from "./TourShareCmp";
-import TourGalleryCmp from "./TourGalleryCmp";
-import TourStopCmp from "./TourStopCmp";
-import TourCardCmp from "./TourCardCmp";
-import TourEndCmp from "./TourEndCmp";
-import TourProgressCmp from "./TourProgressCmp";
+import TourShareCmp from './TourShareCmp'
+import TourGalleryCmp from './TourGalleryCmp'
+import TourStopCmp from './TourStopCmp'
+import TourCardCmp from './TourCardCmp'
+import TourEndCmp from './TourEndCmp'
+import TourProgressCmp from './TourProgressCmp'
 
 export default {
-  name: "TourCmp",
+  name: 'TourCmp',
   components: {
     TourShareCmp,
     TourGalleryCmp,
@@ -72,46 +71,39 @@ export default {
     }
   },
   methods: {
-    tourStarted() {
-      let scrollSize =
-        window.innerHeight -
-        document.getElementById("ready").getBoundingClientRect().top;
-      let padding = 300;
+    tourStarted () {
+      let scrollSize = window.innerHeight - document.getElementById('ready').getBoundingClientRect().top
+      let padding = 300
       if (scrollSize < padding) {
-        this.tour.started = false;
+        this.tour.started = false
       } else {
-        this.tour.started = true;
+        this.tour.started = true
       }
     },
-    incrementPromocodeCounter() {
-      this.tour.promocodeStepsDone++;
+    incrementStopsDone () {
+      this.tour.stopsDone++
     },
-    incrementStopsDone() {
-      this.tour.stopsDone++;
-    },
-    updateRevealedPromocode(index) {
-      let replaceAt = function(string, i, replace) {
-        return string.substring(0, i) + replace + string.substring(i + 1);
+    updateRevealedPromocode (index) {
+      let replaceAt = function (string, i, replace) {
+        return string.substring(0, i) + replace + string.substring(i + 1)
       }
-      
-      if(this.tour.promocode[index]) {
+      if (this.tour.promocode[index]) {
         this.tour.revealedPromocode = replaceAt(this.tour.revealedPromocode, index, this.tour.promocode[index])
       }
-      
     }
   },
-  mounted() {
+  mounted () {
     for (let i = 0; i < this.tour.promocode.length; i++) {
-      this.tour.revealedPromocode += "*";
+      this.tour.revealedPromocode += '*'
     }
   },
-  created() {
-    window.addEventListener("scroll", this.tourStarted);
+  created () {
+    window.addEventListener('scroll', this.tourStarted)
   },
-  destroyed() {
-    window.removeEventListener("scroll", this.tourStarted);
+  destroyed () {
+    window.removeEventListener('scroll', this.tourStarted)
   }
-};
+}
 </script>
 
 <style scoped>

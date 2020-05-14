@@ -8,7 +8,7 @@ import VueLazyload from 'vue-lazyload'
 import store from '@/store.js'
 import i18n from '@/i18n.js'
 import VueAwesomeSwiper from 'vue-awesome-swiper'
-import VueAnalytics from 'vue-analytics';
+import VueAnalytics from 'vue-analytics'
 import Configs from '@/assets/scripts/configs.js'
 
 import 'swiper/css/swiper.css'
@@ -21,10 +21,11 @@ Vue.use(VueAwesomeSwiper)
 Vue.use(VueAnalytics, {
   id: 'UA-158721348-1',
   router
-});
+})
 
 Vue.config.productionTip = false
 
+/* eslint-disable no-new */
 new Vue({
   created () {
     const html = document.documentElement

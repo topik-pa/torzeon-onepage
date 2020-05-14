@@ -27,10 +27,9 @@ const data = {
       stopsDone: 0,
       promocode: PROMOCODE_01,
       revealedPromocode: '',
-      get promocodeStepsTotal() {
+      get promocodeStepsTotal () {
         return this.promocode.length
       },
-      promocodeStepsDone: 0,
       socials: [
         {
           name: 'Facebook',
@@ -142,7 +141,7 @@ const data = {
           gmapsLocation: 'https://goo.gl/maps/X1ML1Pv5TAHBnEQy8',
           description: i18n.t('message.tour_0.stops.0.description'),
           checked: false,
-          get promo() {
+          get promo () {
             return PROMOCODE_01[this.id]
           },
           popup: 'promo',
@@ -193,7 +192,7 @@ const data = {
           gmapsLocation: 'https://goo.gl/maps/2ozFNbPpZo2D9JKj9',
           description: i18n.t('message.tour_0.stops.1.description'),
           checked: false,
-          get promo() {
+          get promo () {
             return PROMOCODE_01[this.id]
           },
           popup: 'promo',
@@ -272,7 +271,7 @@ const data = {
           torzeonFbPage: 'https://www.facebook.com/Torzeon-103840521139047/',
           description: i18n.t('message.tour_0.stops.2.description'),
           checked: false,
-          get promo() {
+          get promo () {
             return PROMOCODE_01[this.id]
           },
           popup: 'promo',
@@ -339,7 +338,7 @@ const data = {
           gmapsLocation: 'https://goo.gl/maps/kTtD3cF5DkrKa8Md8',
           description: i18n.t('message.tour_0.stops.3.description'),
           checked: false,
-          get promo() {
+          get promo () {
             return PROMOCODE_01[this.id]
           },
           popup: 'promo',
@@ -384,7 +383,7 @@ const data = {
           gmapsLocation: 'https://goo.gl/maps/Undw8xN83jaZDJjj7',
           description: i18n.t('message.tour_0.stops.4.description'),
           checked: false,
-          get promo() {
+          get promo () {
             return PROMOCODE_01[this.id]
           },
           popup: 'promo',
@@ -461,7 +460,7 @@ const data = {
           gmapsLocation: 'https://g.page/oggigelatomilano?share',
           description: i18n.t('message.tour_0.stops.5.description'),
           checked: false,
-          get promo() {
+          get promo () {
             return PROMOCODE_01[this.id]
           },
           popup: 'shop',
@@ -482,19 +481,19 @@ const data = {
               id: 0,
               alt: i18n.t('message.tour_0.stops.5.carousel.0.alt'),
               url: 'https://placekitten.com/720/540',
-              orientation: 'h',
+              orientation: 'h'
             },
             {
               id: 1,
               alt: i18n.t('message.tour_0.stops.5.carousel.1.alt'),
               url: 'https://placekitten.com/720/540',
-              orientation: 'h',
+              orientation: 'h'
             },
             {
               id: 2,
               alt: i18n.t('message.tour_0.stops.5.carousel.2.alt'),
               url: 'https://placekitten.com/720/540',
-              orientation: 'h',
+              orientation: 'h'
             }
           ],
           images: [
@@ -537,7 +536,7 @@ const data = {
           gmapsLocation: 'https://goo.gl/maps/MXwbYow29AjM76tg6',
           description: i18n.t('message.tour_0.stops.6.description'),
           checked: false,
-          get promo() {
+          get promo () {
             return ''
           },
           popup: 'finish',
