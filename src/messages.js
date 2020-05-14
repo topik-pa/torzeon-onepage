@@ -1,6 +1,7 @@
 const messages = {
   en: {
     message: {
+      projectName: 'Torzeon',
       promocode: 'Your Promocode: ',
       by: 'by ',
       contactTourAuthor: 'Contact the author with an email',
@@ -349,6 +350,7 @@ const messages = {
   },
   it: {
     message: {
+      projectName: 'Torzeon',
       promocode: 'Promocode: ',
       by: 'di ',
       contactTourAuthor: 'Invia una mail al responsabile',
@@ -387,10 +389,10 @@ const messages = {
         checkText: '',
         promoTitle: 'Congratulazioni!<br/>Hai fatto CHECK su:<br/>&#34;{stop}&#34;',
         promoText: '<strong class="promoletter">{promo}</strong><br/>Hai scoperto una parte del promocode segreto<br/><br/><small>Continua il Tour per scoprire le parti rimanenti!</small>',
-        promoTextComplete: 'You discovered the following piece of your promocode:<br/><strong style="font-size:200%; color: #35b742">{promo}</strong><br/><br/>Now you can use the complete promocode {promocode} to get a 10% discount',
+        promoTextComplete: 'You discovered the following piece of your promocode:<br/><strong style="font-size:200%; color: #35b742">{promo}</strong><br/><br/>Now you can use the complete promocode to get a 10% discount',
         shopTitle: 'Congratulazioni!<br/>Hai fatto CHECK su:<br/>&#34;{stop}&#34;',
         shopText: `
-          <br/>Now you can use the promocode <br/><span class="promoletter">{promocode}</span> <br/>to <strong style="font-weight: bold;"><br/>
+          <br/>Now you can use the promocode <br/><span class="promoletter">{promo}</span> <br/>to <strong style="font-weight: bold;"><br/>
           get a 10% discount in this store</strong>.<br/>
           Hope you appreciate this!!<br/><br/><br/>
           <div class="social-widget-cointainer-popup">

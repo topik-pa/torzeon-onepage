@@ -18,50 +18,27 @@ export default {
       stopHeaderFixed: 120,
       isFixedHeader: true,
       scrolledPosition: 0,
-      debounceInterval: 5
+      debounceInterval: 50
     }
   },
   computed: {
     cover () {
-      if (this.isFixedHeader) {
-        return `background-image: url("${this.$store.getters.getDefaultTour.cover}")`
-      } else {
-        return `background-image: url("${this.$store.getters.getDefaultTour.cover}"); background-position-y: -5rem`
-      }
+      return `background-image: url("${this.$store.getters.getDefaultTour.cover}")`
     }
   },
   components: {
     HeaderCmp
-  },
-  mounted: function () {
-    if (screen.width <= 760) {
-      this.isMobile = true
-    }
-    let deabouncedScrollListener = JSUtils.debounce(() => {
-      if (this.isMobile) {
-        return
-      }
-      this.scrolledPosition = window.scrollY
-      if (this.scrolledPosition > this.stopHeaderFixed) {
-        this.isFixedHeader = false
-      }
-      if (this.scrolledPosition <= this.stopHeaderFixed) {
-        this.isFixedHeader = true
-      }
-    }, this.debounceInterval)
-    window.addEventListener('scroll', function () {
-      deabouncedScrollListener()
-    })
   }
 }
 </script>
 
 <style>
-@import url('https://fonts.googleapis.com/css?family=Libre+Franklin|Montserrat&display=swap');
+@import url('./assets/styles/google-imported-fonts.css');
 @import url('./assets/styles/reset.min.css');
 @import url('./assets/styles/font-awesome.min.css');
 @import url('./assets/styles/rating.min.css');
 @import url('./assets/styles/tripadvisor-widget.min.css');
+@import url('./assets/styles/buttons.css');
 
 #app {
   font-family: 'Montserrat', sans-serif;
@@ -69,6 +46,8 @@ export default {
   font-size: 14px;
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
+  text-rendering: optimizelegibility;
+  text-shadow:0 0 0 #666, 0 0 1px transparent;
   margin: 0 auto;
   width: 100%;
   max-width: 1280px;
@@ -103,8 +82,8 @@ h1 {
 
 h2 {
   font-weight: bold;
-  margin-bottom: 1rem;
   font-size: 150%;
+  margin-bottom: 1rem;  
 }
 
 h3 {
@@ -113,16 +92,16 @@ h3 {
 }
 
 h4 {
-  font-size: 120%;
+  font-size: 115%;
   margin-bottom: 1rem;
 }
 
 p {
-  line-height: 150%;
+  line-height: 140%;
 }
 
 figure {
-  margin-bottom: 1rem;
+  margin-bottom: 1.5rem;
   position: relative;
 }
 
@@ -130,11 +109,11 @@ figcaption {
   text-align: center;
   color: #666;
   font-style: italic;
+  margin-top: .1rem;
 }
 
 img {
   width: 100%;
-  box-sizing: border-box;
 }
 
 strong {
@@ -146,72 +125,17 @@ small, .small {
   font-size: 80%;
 }
 
-.social-widget-cointainer-popup {
+/*.social-widget-cointainer-popup {
   display: flex;
   justify-content: center;
   align-items: center;
   flex-direction: column;
 }
-
-button, a.btn {
-  display: inline-block;
-  font-weight: 400;
-  text-align: center;
-  vertical-align: middle;
-  background-color: transparent;
-  border: 2px solid transparent;
-  padding: .5rem 1rem;
-  font-size: 100%;
-  line-height: 1.4;
-  border-radius: 5px;
-  outline: none;
+.promoletter {
+  font-size: 200%;
+  text-shadow: 2px 2px 4px #F8E627;
 }
-button.primary, a.btn.primary {
-  color: #333;
-  background-color: rgb(245, 224, 0);
-  border-color: rgb(184, 170, 17);
-  font-weight: bold;
-}
-button.primary:hover, a.btn.primary:hover {
-  background-color: rgb(230, 212, 25)
-}
-button.primary.disabled, a.btn.primary-disabled {
-  color: #999;
-  background-color: transparent;
-  cursor: auto;
-}
-button.secondary, a.btn.secondary {
-  color: #333;
-  background-color: #fff;
-  border-color: #F8E627;
-  font-weight: bold;
-}
-button.secondary:hover, a.btn.secondary:hover {
-  background-color: #fafafa;
-}
-button.secondary.disabled, a.btn.secondary-disabled {
-  color: #999;
-  background-color: transparent;
-  cursor: auto;
-}
-button.loading {
-  border: 8px solid #f3f3f3;
-  border-radius: 50%;
-  border-top: 8px solid #3498db;
-  width: 60px;
-  height: 60px;
-  -webkit-animation: spin 2s linear infinite; /* Safari */
-  animation: spin 2s linear infinite;
-}
-@-webkit-keyframes spin {
-  0% { -webkit-transform: rotate(0deg); }
-  100% { -webkit-transform: rotate(360deg); }
-}
-
-@keyframes spin {
-  0% { transform: rotate(0deg); }
-  100% { transform: rotate(360deg); }
-}
+*/
 
 article aside {
   transition: top .8s ease-in-out;
@@ -220,10 +144,6 @@ article.up aside {
   top: -120px;
 }
 
-.promoletter {
-  font-size: 200%;
-  text-shadow: 2px 2px 4px #F8E627;
-}
 
 @media screen and (max-width: 1024) {
   main {
@@ -236,7 +156,6 @@ article.up aside {
   #app {
     font-size: 13px;
   }
-
   main {
     margin-top: 0;
     height: 768px;

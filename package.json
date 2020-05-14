@@ -1,7 +1,7 @@
 {
   "name": "torzeon-onepage",
   "version": "1.0.0",
-  "description": "A Vue.js project",
+  "description": "torzeon.com - a travel experience",
   "author": "Marco Pavan <marcopavan.mp@gmail.com>",
   "private": true,
   "scripts": {

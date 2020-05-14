@@ -17,7 +17,7 @@ export default {
       isShadowExpanded: false,
       stopArticleUp: 120,
       isArticleUp: false,
-      debounceInterval: 10
+      debounceInterval: 50
     }
   },
   components: {
@@ -54,13 +54,13 @@ article, .shadow {
     padding: 2rem 1rem;
     border-radius: 10px;
 }
-
 article {
     position: relative;
     margin: 0 5rem;
     z-index: 99;
     transition: top 1s linear;
 }
+
 article.up {
   top: 180px;
   padding: 2rem 1rem;

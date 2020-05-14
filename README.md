@@ -1,6 +1,6 @@
 # torzeon-onepage
 
-> Torzeon: a Vue.js project
+torzeon.com - a travel experience
 
 ## Build Setup
 

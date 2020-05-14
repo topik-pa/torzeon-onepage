@@ -11,3 +11,38 @@ img-next: 260x420 v
 
 img-stop: 720x540 h
 img-stop: 720x960 v
+
+
+
+/*
+const state = {
+  name: 'Pippo',
+  count: 0,
+  todos: [
+    { id: 1, text: '...', done: true },
+    { id: 2, text: '...', done: false }
+  ]
+}
+*/
+
+/*
+const mutations = {
+  increment (state, n) {
+    state.count += n
+  }
+}
+*/
+
+/*
+const getters = {
+  doneTodos: state => {
+    return state.todos.filter(todo => todo.done)
+  },
+  doneTodosCount: (state, getters) => {
+    return getters.doneTodos.length
+  },
+  getTodoById: (state) => (id) => {
+    return state.todos.find(todo => todo.id === id)
+  }
+}
+*/

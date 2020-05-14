@@ -106,6 +106,10 @@ export default {
     promocodeStepsTotal: {
       type: Number,
       required: true
+    },
+    revealedPromocode: {
+      type: String,
+      required: true
     }
   },
   computed: {
@@ -195,25 +199,27 @@ export default {
       }
 
       let setTheRightPopup = () => {
+
         return new Promise(function (resolve, reject) {
           that.$ga.event('Tour', 'Check', 'Stop CHECKED!', that.stop.id)
+          that.$emit('updateRevealedPromocode', that.stop.id)
           switch (that.stop.popup) {
             case 'check':
               that.swalPopup = getCheckPopup(that.stop.name, that.stop.path)
               break
             case 'promo':
               if (that.promocodeStepsDone === that.promocodeStepsTotal) {
-                that.swalPopup = getPromoPopup(that.stop.name, that.stop.promo, that.$store.getters.getPromocode)
+                that.swalPopup = getPromoPopup(that.stop.name, that.$store.getters.getRevealedPromocode, true)
               } else {
-                that.swalPopup = getPromoPopup(that.stop.name, that.stop.promo)
+                that.swalPopup = getPromoPopup(that.stop.name, that.$store.getters.getRevealedPromocode)
               }
               break
             case 'shop':
-              that.$ga.event('Tour', 'Check', 'Stop CHECKED! User on SHOP', that.stop.id)
+              that.$ga.event('Tour', 'Check', 'Stop CHECKED! User on SHOP', that.stop.id)              
               if (that.promocodeStepsDone === that.promocodeStepsTotal) {
-                that.swalPopup = getShopPopup(that.stop.name, that.$store.getters.getPromocode)
+                that.swalPopup = getShopPopup(that.stop.name, that.$store.getters.getRevealedPromocode, true)
               } else {
-                that.swalPopup = getShopPopup(that.stop.name, undefined, that.stop.promo)
+                that.swalPopup = getShopPopup(that.stop.name, that.$store.getters.getRevealedPromocode)
               }
               break
             case 'finish':

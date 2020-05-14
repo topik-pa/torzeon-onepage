@@ -1,13 +1,13 @@
 import i18n from '@/i18n.js'
 
+const PROMOCODE_01 = 'XPTRR6'
+
 const data = {
-  project: 'Torzeon',
+  project: i18n.t('message.projectName'),
   version: 0.1,
   author: 'Marco Pavan',
   authorMail: 'marcopavan.mp@gmail.com',
-  fbPage: 'https://www.facebook.com/Torzeon-103840521139047/',
-  scrolledSizeFromTourStarted: 0,
-  promocode: 'X P T R R 6',
+  torzeonFbPage: 'https://www.facebook.com/Torzeon-103840521139047/',
   tours:
   [
     {
@@ -25,7 +25,11 @@ const data = {
       started: false,
       stopsTotal: 7,
       stopsDone: 0,
-      promocodeStepsTotal: 6,
+      promocode: PROMOCODE_01,
+      revealedPromocode: '',
+      get promocodeStepsTotal() {
+        return this.promocode.length
+      },
       promocodeStepsDone: 0,
       socials: [
         {
@@ -138,7 +142,9 @@ const data = {
           gmapsLocation: 'https://goo.gl/maps/X1ML1Pv5TAHBnEQy8',
           description: i18n.t('message.tour_0.stops.0.description'),
           checked: false,
-          promo: 'X',
+          get promo() {
+            return PROMOCODE_01[this.id]
+          },
           popup: 'promo',
           latitude: 45.487825,
           longitude: 9.206766,
@@ -187,7 +193,9 @@ const data = {
           gmapsLocation: 'https://goo.gl/maps/2ozFNbPpZo2D9JKj9',
           description: i18n.t('message.tour_0.stops.1.description'),
           checked: false,
-          promo: 'P',
+          get promo() {
+            return PROMOCODE_01[this.id]
+          },
           popup: 'promo',
           latitude: 45.464165,
           longitude: 9.190467,
@@ -261,10 +269,12 @@ const data = {
           name: i18n.t('message.tour_0.stops.2.name'),
           type: 'public',
           gmapsLocation: 'https://goo.gl/maps/AL9kjtvAKbkFbPdg7',
-          fbPage: 'https://www.facebook.com/Torzeon-103840521139047/',
+          torzeonFbPage: 'https://www.facebook.com/Torzeon-103840521139047/',
           description: i18n.t('message.tour_0.stops.2.description'),
           checked: false,
-          promo: 'T',
+          get promo() {
+            return PROMOCODE_01[this.id]
+          },
           popup: 'promo',
           latitude: 45.466971,
           longitude: 9.189869,
@@ -329,7 +339,9 @@ const data = {
           gmapsLocation: 'https://goo.gl/maps/kTtD3cF5DkrKa8Md8',
           description: i18n.t('message.tour_0.stops.3.description'),
           checked: false,
-          promo: 'R',
+          get promo() {
+            return PROMOCODE_01[this.id]
+          },
           popup: 'promo',
           latitude: 45.471326,
           longitude: 9.187450,
@@ -372,7 +384,9 @@ const data = {
           gmapsLocation: 'https://goo.gl/maps/Undw8xN83jaZDJjj7',
           description: i18n.t('message.tour_0.stops.4.description'),
           checked: false,
-          promo: 'R',
+          get promo() {
+            return PROMOCODE_01[this.id]
+          },
           popup: 'promo',
           latitude: 45.470612,
           longitude: 9.179300,
@@ -447,7 +461,9 @@ const data = {
           gmapsLocation: 'https://g.page/oggigelatomilano?share',
           description: i18n.t('message.tour_0.stops.5.description'),
           checked: false,
-          promo: '6',
+          get promo() {
+            return PROMOCODE_01[this.id]
+          },
           popup: 'shop',
           latitude: 45.475852,
           longitude: 9.183850,
@@ -521,7 +537,9 @@ const data = {
           gmapsLocation: 'https://goo.gl/maps/MXwbYow29AjM76tg6',
           description: i18n.t('message.tour_0.stops.6.description'),
           checked: false,
-          promo: '',
+          get promo() {
+            return ''
+          },
           popup: 'finish',
           latitude: 45.483756,
           longitude: 9.189713,

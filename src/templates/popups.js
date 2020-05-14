@@ -8,14 +8,14 @@ const getCheckPopup = function (stop) {
   }
 }
 
-const getPromoPopup = function (stop, promo, promocode) {
+const getPromoPopup = function (stop, promo, complete) {
   let obj = {}
 
-  if (promocode) {
+  if (complete) {
     obj = {
       title: i18n.t('message.popups.promoTitle', {stop: stop}),
       type: `success`,
-      html: i18n.t('message.popups.promoTextComplete', {promo: promo, promocode: promocode})
+      html: i18n.t('message.popups.promoTextComplete', {promo: promo})
     }
   } else {
     obj = {
@@ -27,13 +27,13 @@ const getPromoPopup = function (stop, promo, promocode) {
   return obj
 }
 
-const getShopPopup = function (stop, promocode, promo) {
+const getShopPopup = function (stop, promo, complete) {
   let obj = {}
-  if (promocode) {
+  if (complete) {
     obj = {
       title: i18n.t('message.popups.shopTitle', {stop: stop}),
       type: `success`,
-      html: i18n.t('message.popups.shopText', {promocode: promocode})
+      html: i18n.t('message.popups.shopText', {promo: promo})
     }
   } else {
     obj = {

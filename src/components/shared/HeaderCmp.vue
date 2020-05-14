@@ -1,6 +1,6 @@
 <template>
   <header :class="{'show': showHeader}">
-    <logo-cmp :project="project"/>
+    <logo-cmp :projectName="projectName"/>
   </header>
 </template>
 
@@ -22,11 +22,11 @@ export default {
     }
   },
   computed: {
-    project () {
+    projectName () {
       return this.$store.getters.getProjectName
     }
   },
-  mounted: function () {
+  mounted () {
     let deabouncedScrollListener = JSUtils.debounce(() => {
       this.scrolledPosition = window.scrollY
       if (this.scrolledPosition > this.stopHideHeader) {

@@ -17,7 +17,7 @@ Vue.use(VueSimpleAlert)
 Vue.use(VueLazyload, {
   preLoad: 1.3
 })
-Vue.use(VueAwesomeSwiper /* { default options with global component } */)
+Vue.use(VueAwesomeSwiper)
 Vue.use(VueAnalytics, {
   id: 'UA-158721348-1',
   router
@@ -25,7 +25,6 @@ Vue.use(VueAnalytics, {
 
 Vue.config.productionTip = false
 
-/* eslint-disable no-new */
 new Vue({
   created () {
     const html = document.documentElement

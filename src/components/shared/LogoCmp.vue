@@ -1,7 +1,7 @@
 <template>
   <div>
-    <img src="https://torzeon.s3.eu-central-1.amazonaws.com/torzeon-logo-half.min.png" :alt="project"/>
-    <router-link :to="rootUrl">{{project}}</router-link>
+    <img src="https://torzeon.s3.eu-central-1.amazonaws.com/torzeon-logo-half.min.png" :alt="projectName"/>
+    <router-link :to="rootUrl">{{projectName}}</router-link>
   </div>
 </template>
 
@@ -9,7 +9,7 @@
 export default {
   name: 'LogoCmp',
   props: {
-    project: {
+    projectName: {
       type: String,
       required: true
     }
@@ -24,14 +24,14 @@ export default {
 
 <style scoped>
 div {
-    font-size: 180%;
+    font-size: 1.5rem;
     padding-left: 5rem;
     display: flex;
     align-items: center;
 }
 span {
   display: block;
-  font-size: 80%;
+  font-size: .8rem;
 }
 img {
   width: 32px;
