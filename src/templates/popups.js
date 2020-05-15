@@ -13,13 +13,13 @@ const getPromoPopup = function (stop, promo, complete) {
 
   if (complete) {
     obj = {
-      title: i18n.t('message.popups.promoTitle', {stop: stop}),
+      title: i18n.t('message.popups.checkTitle', {stop: stop}),
       type: `success`,
       html: i18n.t('message.popups.promoTextComplete', {promo: promo})
     }
   } else {
     obj = {
-      title: i18n.t('message.popups.promoTitle', {stop: stop}),
+      title: i18n.t('message.popups.checkTitle', {stop: stop}),
       type: `success`,
       html: i18n.t('message.popups.promoText', {promo: promo})
     }
@@ -31,23 +31,23 @@ const getShopPopup = function (stop, promo, complete) {
   let obj = {}
   if (complete) {
     obj = {
-      title: i18n.t('message.popups.shopTitle', {stop: stop}),
+      title: i18n.t('message.popups.checkTitle', {stop: stop}),
       type: `success`,
-      html: i18n.t('message.popups.shopText', {promo: promo})
+      html: i18n.t('message.popups.shopText', {promo: promo, stop: stop})
     }
   } else {
     obj = {
-      title: i18n.t('message.popups.shopTitle', {stop: stop}),
+      title: i18n.t('message.popups.checkTitle', {stop: stop}),
       type: `success`,
-      html: i18n.t('message.popups.shopTextNoPromocode', {promo: promo})
+      html: i18n.t('message.popups.shopTextNoPromocode', {promo: promo, stop: stop})
     }
   }
   return obj
 }
 
-const getFinishPopup = function () {
+const getFinishPopup = function (stop) {
   return {
-    title: i18n.t('message.popups.finishTitle'),
+    title: i18n.t('message.popups.finishTitle', {stop: stop}),
     type: `success`,
     lastPopup: true,
     html: `

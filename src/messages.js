@@ -2,78 +2,77 @@ const messages = {
   en: {
     message: {
       projectName: 'Torzeon',
-      promocode: 'Your Promocode: ',
-      by: 'by ',
-      contactTourAuthor: 'Contact the author with an email',
-      shareOn: 'Share on ',
-      followOn: 'follow on ',
-      congrats: 'Check our Socials to keep updated!',
-      shareIt: 'Condividi la tua esperienza e scopri cosa ne pensa ha già fatto questo Tour!',
-      start: 'Start',
-      end: 'End',
+      promocode: 'Il tuo promocode: ',
+      by: 'di ',
+      contactTourAuthor: 'Invia una mail al responsabile',
+      shareOn: 'Condividi su ',
+      followOn: 'Segui su: ',
+      congrats: 'Congratulazioni, hai completato il Tour!',
+      shareIt: 'Condividi la tua esperienza e scopri cosa ne pensa chi ha già fatto questo Tour!',
+      start: 'Inizio',
+      end: 'Fine',
       rating: 'Rating',
-      duration: 'Duration',
-      geometry: 'Geometry',
+      duration: 'Durata',
+      geometry: 'Geometria',
       minutes: ' minuti (circa)',
-      linearTrip: 'Linear trip',
-      roundTrip: 'Round trip',
-      readyMessage: 'Are you ready? ...Let\'s START!',
-      getThere: 'Location on map',
+      linearTrip: 'Tragitto lineare',
+      roundTrip: 'Tragitto circolare',
+      readyMessage: 'Pronti? ...VIA!',
+      getThere: 'Localizza sulla mappa',
       checkLocation: 'CHECK!',
-      locationChecked: 'CHECKED',
-      infoFromTheWeb: 'Some infos from the Web',
-      areYouHere: 'Are you here?',
-      nearHere: 'Near here...',
+      locationChecked: 'Hai fatto check!',
+      infoFromTheWeb: 'Maggiori info dal Web',
+      areYouHere: 'Ti trovi qui?',
+      nearHere: 'Scopri altri luoghi qui vicino...',
       goals: {
-        promo: 'Goal: search for the promocode',
-        shop: 'Goal: get the complete promocode and take a rest',
-        check: 'Goal: complete the journey',
-        finish: 'Goal: share your experience'
+        promo: 'Obiettivo: trova parte del Promocode',
+        shop: 'Obiettivo: ottieni il promocode completo e usalo per goderti un momento di relax!',
+        check: 'Obiettivo: completa il tragitto',
+        finish: 'Obiettivo: condividi la tua esperienza!'
       },
       popups: {
-        notEvenCloseTitle: 'Not even close!',
-        notEvenCloseText: 'Mmhhhh... are you sure you reached this place? <br/>I checked and seems to me you are <br/><strong>{distance} meters</strong><br/> away from here!',
-        nearHereButTitle: 'You are near here... but not here',
-        nearHereButText: 'I checked and seems to me you are {distance} meters away from here!<br/>Try to get closer and try again!',
-        geolocalizationNotActiveTitle: 'Geolocalization not active',
+        notEvenCloseTitle: 'Non sei nemmeno vicino!',
+        notEvenCloseText: 'Mmhhhh... sei sicuro di essere in questo luogo? <br/>Ho controllato e sembra che tu sia a <br/><strong>{distance} metri </strong><br/> da qui.',
+        nearHereButTitle: 'Sei vicino... ma non troppo!',
+        nearHereButText: 'Ho controllato e sembra che tu sia a <br/><strong>{distance} metri</strong><br/> da qui.<br/><br/><strong>Prova a cambiare posizione e riprova a fare CHECK!</strong>',
+        geolocalizationNotActiveTitle: 'IL tuo browser non ha la geolocalizzazione attiva',
         geolocalizationNotActiveText: 'We need to get your location to permit this software to work!',
-        checkTitle: 'Congrats! You checked <br/> &#34;{stop}&#34;',
+        checkTitle: 'Congratulazioni! Hai fatto CHECK su:<br/>&#34;{stop}&#34;',
         checkText: '',
-        promoTitle: 'Congrats! You checked <br/> &#34;{stop}&#34;',
-        promoText: 'You discovered the following piece of your promocode:<strong style="font-size:200%; color: #35b742"">{promo}</strong>',
-        promoTextComplete: 'You discovered the following piece of your promocode:<br/><strong style="font-size:200%; color: #35b742"">{promo}</strong><br/><br/>Now you can use the complete promocode to get a 10% discount',
-        shopTitle: 'Congrats! You checked <br/> &#34;{stop}&#34;',
+        promoText: '<strong class="promoletter">{promo}</strong><br/>Hai scoperto una parte del promocode segreto<br/><br/><small>Continua il Tour per scoprire le parti rimanenti!</small>',
+        promoTextComplete: 'You discovered the following piece of your promocode:<br/><strong style="font-size:200%; color: #35b742">{promo}</strong><br/><br/>Now you can use the complete promocode to get a 15% discount',
         shopText: `
-          Now you can use the promocode <sapn class="">{promocode}</span> to <strong style="font-weight: bold;"><br/>
-          get a 10% discount in this store</strong>.<br/>
+          <br/>Now you can use the promocode <br/><span class="promoletter">{promo}</span> <br/>to <strong style="font-weight: bold;"><br/>
+          get a 15% discount in this store</strong>.<br/>
           Hope you appreciate this!!<br/><br/><br/>
           <div class="social-widget-cointainer-popup">
             <div id="TA_cdsratingsonlynarrow363" class="TA_cdsratingsonlynarrow"><ul id="QynJUXF4" class="TA_links nxneR81"><li id="2Rxm5agCk" class="J1fcr2cdc"><a target="_blank" href="https://www.tripadvisor.it/"><img src="https://www.tripadvisor.it/img/cdsi/img2/branding/tripadvisor_logo_transp_340x80-18034-2.png" alt="TripAdvisor"/></a></li></ul></div>
           </div>
         `,
         shopTextNoPromocode: `
+          <strong class="promoletter">{promo}</strong><br/>Hai scoperto una parte del promocode segreto<br/><br/>
           Visit all the places to complete the promocode and <strong style="font-weight: bold;"><br/>
-          get a 10% discount in this store</strong>.<br/>
+          get a 15% discount in this store</strong>.<br/>
           <br/><br/><br/>
           <div class="social-widget-cointainer-popup">
             <div id="TA_cdsratingsonlynarrow363" class="TA_cdsratingsonlynarrow"><ul id="QynJUXF4" class="TA_links nxneR81"><li id="2Rxm5agCk" class="J1fcr2cdc"><a target="_blank" href="https://www.tripadvisor.it/"><img src="https://www.tripadvisor.it/img/cdsi/img2/branding/tripadvisor_logo_transp_340x80-18034-2.png" alt="TripAdvisor"/></a></li></ul></div>
           </div>
         `,
-        finishTitle: 'Congrats! Your journey in complete!',
-        finishText: 'Did you like the journey?<br/>Please, share it on Facebook and rate this tour!'
+        finishTitle: 'Congratulazioni! <br/>Hai concluso il tuo tour!',
+        finishText: '<br/><div>Ti è piaciuta questa esperienza? <strong>Lascia una tua valutazione</strong> e <strong>condividi questa pagina su Facebook</strong>!</div>'
       },
       tour_0: {
-        title: 'A day in... Milan',
-        subtitle: 'The most interesting places in the most fashion Italian city',
-        text: 'Il tour parte dalla storica Stazione Centrale, esempio di architettura del periodo Fascista, per attraversare i nuovi quartieri di piazza Gae Aulenti e Tre Torri, ma vedranno luoghi classici come il Duomo e il Castello Sforzesco. Una pausa per un gelato presso Oggi Gelato allieterà la giornata prima della conclusione del tour.',
-        info: 'infos',
-        generalInfos: 'Tour info',
-        places: 'places',
-        youWillVisit: 'You will visit...',
+        title: 'Un giorno a... Milano',
+        subtitle: 'Visita tutti i luoghi del nostro Itinerario e scopri il promocode segreto!',
+        text: 'Ogni volta che effettuerai un <strong>check</strong> di un luogo del nostro itinerario otterrai un parte del <strong>promocode segreto</strong> utile per ottenere sconti e vantaggi nel luogo di ristoro da noi suggerito.<br/><br/> Il Tour di Milano prende in considerazione punti di interesse turistico storico, religioso e culturale, ma ci porterà a visitare anche quegli aspetti della Milano più contemporanea e ambiziosa. E\'previta una pausa per un gelato presso <strong>Oggi Gelato</strong> in Corso Garibaldi per un ristoro che allieterà la fase conclusiva del Tour.',
+        info: 'info',
+        generalInfos: 'Informazioni itinerario',
+        places: 'Luoghi',
+        youWillVisit: 'Luoghi che visiterai...',
         placesImageInCardAltText: 'Galleria Vittorio Emanuele - Photo by Fernando Meloni on Unsplash',
         placesTextInCard: 'Il tour comprende la <strong>Stazione Centrale</strong>, una passeggiata verso il quartiere moderno <strong>Gae Aulenti</strong>, una visita verso il centro città attraverso <strong>Corso Como</strong> per arrivare presso il <strong>Castello Sforzesco</strong>. Proseguiremo per il <strong>Duomo</strong> e la <strong>Galleria Vittorio Emanuele</strong> e verso <strong>Piazza San Fedele</strong> e poi verso il <strong>Quartiere della Moda</strong> con via Montenapoleone e via della Spiga. <br/><br/><small>Photo by Fernando Meloni on Unsplash</small>',
         relax: 'Relax',
-        youWillTaste: 'You will taste...',
+        youWillTaste: 'Ristoro e sapori...',
         shopImageInCardAltText: 'Alt image...',
         shopTextInCard: 'Il punto di ristoro è la <strong>Gelateria Oggi di Corso Garibaldi</strong>. Immagina di entrare in un mondo di eccellenze, di profumi, di gusto e di artigianalità… e vedere gli ingredienti, freschissimi e rigorosamente selezionati a seconda della stagionalità, pronti ad essere lavorati sul tavolo e poi fusi insieme nella cucina dell’Officina di OGGI Gelato.<br/><br/>Utilizza qui il <strong>promocode</strong> che scoprirai durante il tour!',
         stops: {
@@ -267,13 +266,13 @@ const messages = {
             description: 'Presentazione attività dello sponsor OGGI Gelato Lorem ipsum dolor sit amet, consectetur adipiscing elit. Fusce vel purus sollicitudin, congue libero id, suscipit nisl. Cras posuere facilisis erat interdum commodo. Phasellus vitae lobortis nisi, sit amet pretium lectus.',
             carousel: {
               0: {
-                alt: 'Gelato al cioccolato'
+                alt: 'Descizione 1'
               },
               1: {
-                alt: 'Coppa del nonno'
+                alt: 'Descizione 2'
               },
               2: {
-                alt: 'La cremeria'
+                alt: 'Descizione 3'
               }
             },
             images: {
@@ -382,36 +381,35 @@ const messages = {
       },
       popups: {
         notEvenCloseTitle: 'Non sei nemmeno vicino!',
-        notEvenCloseText: 'Mmhhhh... sei sicuro di essere in questo luogo? <br/>Ho controllato e sembra che tu sia a <br/><strong>{distance} metri </strong><br/> da qui.',
+        notEvenCloseText: 'Mmhhhh... sei sicuro di essere in questo luogo? <br/><br/>Ho controllato e sembra che tu sia a <br/><strong>{distance} metri </strong><br/> da qui.<br/><br/>Se vuoi scoprire il tuo promocode <strong>devi percorrere realmente questo Tour</strong>',
         nearHereButTitle: 'Sei vicino... ma non troppo!',
-        nearHereButText: 'Ho controllato e sembra che tu sia a <br/><strong>{distance} metri</strong><br/> da qui.<br/><br/><strong>Prova a cambiare posizione e riprova a fare CHECK!</strong>',
+        nearHereButText: 'Ho controllato e sembra che tu sia a <br/><strong>{distance} metri</strong><br/> da qui.<br/><br/><strong>Prova ad avvicinarti di più e premi nuovamente CHECK!</strong><br/><br/><small>Puoi aiutarti con il pulsante "Localizza sulla mappa" per avere la posizione esatta di questo Stop</small>',
         geolocalizationNotActiveTitle: 'IL tuo browser non ha la geolocalizzazione attiva',
         geolocalizationNotActiveText: 'We need to get your location to permit this software to work!',
-        checkTitle: 'Congratulazioni! Hai fatto CHECK su:<br/>&#34;{stop}&#34;',
+        checkTitle: 'Congratulazioni!<br/>Hai fatto CHECK su:<br/><span class="popup stopname">{stop}</span>',
         checkText: '',
-        promoTitle: 'Congratulazioni!<br/>Hai fatto CHECK su:<br/>&#34;{stop}&#34;',
-        promoText: '<strong class="promoletter">{promo}</strong><br/>Hai scoperto una parte del promocode segreto<br/><br/><small>Continua il Tour per scoprire le parti rimanenti!</small>',
-        promoTextComplete: 'You discovered the following piece of your promocode:<br/><strong style="font-size:200%; color: #35b742">{promo}</strong><br/><br/>Now you can use the complete promocode to get a 10% discount',
-        shopTitle: 'Congratulazioni!<br/>Hai fatto CHECK su:<br/>&#34;{stop}&#34;',
+        promoText: '<span class="popup promocode">{promo}</span><br/>Hai scoperto una parte del promocode segreto<br/><br/><strong>Continua il Tour per scoprire le parti rimanenti!</strong>',
+        promoTextComplete: '<br/>You discovered the following piece of your promocode:<br/><span class="popup promocode">{promo}</span><br/><br/><strong>Now you can use the complete promocode to get a 15% discount!</strong>',
         shopText: `
-          <br/>Now you can use the promocode <br/><span class="promoletter">{promo}</span> <br/>to <strong style="font-weight: bold;"><br/>
-          get a 10% discount in this store</strong>.<br/>
+          <br/>Now you can use the promocode <br/><span class="promocode">{promo}</span> <br/>to <strong><br/>
+          get a 15% discount in this store</strong>.<br/><br/>
           Hope you appreciate this!!<br/><br/><br/>
-          <div class="social-widget-cointainer-popup">
+          <h3>{stop} sui Social</h3>
+          <div class="social-section-popup">
             <div id="TA_cdsratingsonlynarrow363" class="TA_cdsratingsonlynarrow"><ul id="QynJUXF4" class="TA_links nxneR81"><li id="2Rxm5agCk" class="J1fcr2cdc"><a target="_blank" href="https://www.tripadvisor.it/"><img src="https://www.tripadvisor.it/img/cdsi/img2/branding/tripadvisor_logo_transp_340x80-18034-2.png" alt="TripAdvisor"/></a></li></ul></div>
           </div>
         `,
         shopTextNoPromocode: `
-          <strong class="promoletter">{promo}</strong><br/>Hai scoperto una parte del promocode segreto<br/><br/>
-          Visit all the places to complete the promocode and <strong style="font-weight: bold;"><br/>
-          get a 10% discount in this store</strong>.<br/>
-          <br/><br/><br/>
-          <div class="social-widget-cointainer-popup">
+          <span class="popup promocode">{promo}</span><br/>Hai scoperto una parte del promocode segreto<br/><br/>
+          Visit all the places to complete the promocode and <strong><br/>
+          get a 15% discount in this store</strong>.<br/><br/><br/>
+          <h3>{stop} sui Social</h3>
+          <div class="social-section-popup">
             <div id="TA_cdsratingsonlynarrow363" class="TA_cdsratingsonlynarrow"><ul id="QynJUXF4" class="TA_links nxneR81"><li id="2Rxm5agCk" class="J1fcr2cdc"><a target="_blank" href="https://www.tripadvisor.it/"><img src="https://www.tripadvisor.it/img/cdsi/img2/branding/tripadvisor_logo_transp_340x80-18034-2.png" alt="TripAdvisor"/></a></li></ul></div>
           </div>
         `,
-        finishTitle: 'Congratulazioni! <br/>Hai concluso il tuo tour!',
-        finishText: '<br/><div>Ti è piaciuta questa esperienza? <strong>Lascia una tua valutazione</strong> e <strong>condividi questa pagina su Facebook</strong>!</div>'
+        finishTitle: '<span class="popup stopname">{stop}</span> era l\'ultima tappa del nostro Tour<br/>',
+        finishText: 'Ti è piaciuta questa esperienza?<br/><br/><strong>Lascia una tua valutazione</strong> e <strong>condividi questa pagina su Facebook</strong>!</div>'
       },
       tour_0: {
         title: 'Un giorno a... Milano',

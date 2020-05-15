@@ -225,7 +225,7 @@ export default {
               }
               break
             case 'finish':
-              that.swalPopup = getFinishPopup()
+              that.swalPopup = getFinishPopup(that.stop.name)
               break
             default:
               break

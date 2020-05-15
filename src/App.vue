@@ -124,23 +124,36 @@ small, .small {
   font-size: 80%;
 }
 
-/*.social-widget-cointainer-popup {
+.social-section-popup {
   display: flex;
   justify-content: center;
   align-items: center;
   flex-direction: column;
 }
-.promoletter {
-  font-size: 200%;
-  text-shadow: 2px 2px 4px #F8E627;
-}
-*/
 
 article aside {
   transition: top .8s ease-in-out;
 }
 article.up aside {
   top: -120px;
+}
+
+.popup.stopname {
+  display: inline-block;
+  margin-top: .5rem;
+  text-decoration: underline;
+  text-shadow: 2px 2px 4px #F8E627;
+}
+.popup.promocode {
+  font-family: monospace;
+  font-size: 200%;
+  margin: 1.5rem 0;
+  display: inline-block;
+  letter-spacing: 1rem;
+  font-style: italic;
+}
+.swal2-title {
+  display:initial!important;
 }
 
 @media screen and (max-width: 1024) {
