@@ -27,6 +27,17 @@ export default new Router({
       path: '/a-day-in-milan',
       name: 'Tour-EN',
       component: ArticleCmp
+    },
+    {
+      path: '*',
+      name: '404',
+      redirect: to => {
+        if (Configs.locale() === 'it') {
+          return '/un-giorno-a-milano'
+        } else {
+          return '/a-day-in-milan'
+        }
+      }
     }
   ]
 })
