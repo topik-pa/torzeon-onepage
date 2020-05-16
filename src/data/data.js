@@ -15,10 +15,10 @@ const data = {
       default: true,
       title: i18n.t('message.tour_0.title'),
       subtitle: i18n.t('message.tour_0.subtitle'),
-      cover: 'https://torzeon.s3.eu-central-1.amazonaws.com/tour_0/shareimage.min.jpg',
+      cover: 'https://torzeon.s3.eu-central-1.amazonaws.com/tour_0/share-min.jpg',
       text: i18n.t('message.tour_0.text'),
       author: 'Marco Pavan',
-      avatarAuthorUrl: 'http://www.marcopavan.org/src/assets/images/Profile_Image.jpg',
+      avatarAuthorUrl: 'https://torzeon.s3.eu-central-1.amazonaws.com/tour_0/author-min.jpg',
       authorMail: 'marcopavan.mp@gmail.com',
       fbPost: 'https://www.facebook.com/permalink.php?story_fbid=133978121458620&id=103840521139047',
       twPost: 'https://twitter.com/torzeon/status/1231515201557684225',
@@ -45,32 +45,32 @@ const data = {
       images: [
         {
           id: 0,
-          src: 'https://torzeon.s3.eu-central-1.amazonaws.com/tour_0/preview-5.min.jpg',
+          src: 'https://torzeon.s3.eu-central-1.amazonaws.com/tour_0/preview-1-min.jpg',
           alt: i18n.t('message.tour_0.stops.1.images.3.alt')
         },
         {
           id: 1,
-          src: 'https://torzeon.s3.eu-central-1.amazonaws.com/tour_0/preview-2.min.jpg',
+          src: 'https://torzeon.s3.eu-central-1.amazonaws.com/tour_0/preview-2-min.jpg',
           alt: i18n.t('message.tour_0.stops.2.images.1.alt')
         },
         {
           id: 2,
-          src: 'https://torzeon.s3.eu-central-1.amazonaws.com/tour_0/preview-3.min.jpg',
+          src: 'https://torzeon.s3.eu-central-1.amazonaws.com/tour_0/preview-3-min.jpg',
           alt: i18n.t('message.tour_0.stops.1.images.0.alt')
         },
         {
           id: 3,
-          src: 'https://torzeon.s3.eu-central-1.amazonaws.com/tour_0/preview-4.min.jpg',
+          src: 'https://torzeon.s3.eu-central-1.amazonaws.com/tour_0/preview-4-min.jpg',
           alt: i18n.t('message.tour_0.stops.6.images.0.alt')
         },
         {
           id: 4,
-          src: 'https://torzeon.s3.eu-central-1.amazonaws.com/tour_0/preview-1.min.jpg',
+          src: 'https://torzeon.s3.eu-central-1.amazonaws.com/tour_0/preview-5-min.jpg',
           alt: i18n.t('message.tour_0.stops.4.images.1.alt')
         },
         {
           id: 5,
-          src: 'https://torzeon.s3.eu-central-1.amazonaws.com/tour_0/preview-6.min.jpg',
+          src: 'https://torzeon.s3.eu-central-1.amazonaws.com/tour_0/preview-6-min.jpg',
           alt: i18n.t('message.tour_0.stops.0.images.2.alt')
         }
       ],
@@ -117,7 +117,7 @@ const data = {
           marker: i18n.t('message.tour_0.places'),
           title: i18n.t('message.tour_0.youWillVisit'),
           image: {
-            src: 'https://torzeon.s3.eu-central-1.amazonaws.com/tour_0/card-1.min.jpg',
+            src: 'https://torzeon.s3.eu-central-1.amazonaws.com/tour_0/card-1-min.jpg',
             alt: i18n.t('message.tour_0.placesImageInCardAltText')
           },
           text: i18n.t('message.tour_0.placesTextInCard')
@@ -127,7 +127,7 @@ const data = {
           marker: i18n.t('message.tour_0.relax'),
           title: i18n.t('message.tour_0.youWillTaste'),
           image: {
-            src: 'https://placekitten.com/720/445',
+            src: 'https://torzeon.s3.eu-central-1.amazonaws.com/tour_0/card-2-min.jpg',
             alt: i18n.t('message.tour_0.shopImageInCardAltText')
           },
           text: i18n.t('message.tour_0.shopTextInCard')
@@ -165,22 +165,22 @@ const data = {
             {
               id: 0,
               alt: i18n.t('message.tour_0.stops.0.images.0.alt'),
-              url: 'https://placekitten.com/720/540',
+              url: 'https://torzeon.s3.eu-central-1.amazonaws.com/tour_0/stop-1-1-min.jpg',
               orientation: 'h',
               description: i18n.t('message.tour_0.stops.0.images.0.description')
             },
             {
               id: 1,
               alt: i18n.t('message.tour_0.stops.0.images.1.alt'),
-              url: 'https://placekitten.com/720/540',
+              url: 'https://torzeon.s3.eu-central-1.amazonaws.com/tour_0/stop-1-2-min.jpg',
               orientation: 'h',
               description: i18n.t('message.tour_0.stops.0.images.1.description')
             },
             {
               id: 2,
               alt: i18n.t('message.tour_0.stops.0.images.2.alt'),
-              url: 'https://placekitten.com/720/540',
-              orientation: 'h',
+              url: 'https://torzeon.s3.eu-central-1.amazonaws.com/tour_0/stop-1-3-min.jpg',
+              orientation: 'v',
               description: i18n.t('message.tour_0.stops.0.images.2.description')
             }
           ]
@@ -220,29 +220,29 @@ const data = {
             {
               id: 0,
               alt: i18n.t('message.tour_0.stops.1.images.0.alt'),
-              url: 'https://placekitten.com/720/540',
+              url: 'https://torzeon.s3.eu-central-1.amazonaws.com/tour_0/stop-2-1-min.jpg',
               orientation: 'h',
               description: i18n.t('message.tour_0.stops.1.images.0.description')
             },
             {
               id: 1,
               alt: i18n.t('message.tour_0.stops.1.images.1.alt'),
-              url: 'https://placekitten.com/720/540',
-              orientation: 'h',
+              url: 'https://torzeon.s3.eu-central-1.amazonaws.com/tour_0/stop-2-2-min.jpg',
+              orientation: 'v',
               description: i18n.t('message.tour_0.stops.1.images.1.description')
             },
             {
               id: 2,
               alt: i18n.t('message.tour_0.stops.1.images.2.alt'),
-              url: 'https://placekitten.com/720/540',
+              url: 'https://placekitten.com/718/444',
               orientation: 'h',
               description: i18n.t('message.tour_0.stops.1.images.2.description')
             },
             {
               id: 3,
               alt: i18n.t('message.tour_0.stops.1.images.3.alt'),
-              url: 'https://placekitten.com/720/540',
-              orientation: 'h',
+              url: 'https://torzeon.s3.eu-central-1.amazonaws.com/tour_0/stop-2-4-min.jpg',
+              orientation: 'v',
               description: i18n.t('message.tour_0.stops.1.images.3.description')
             }
           ],
@@ -295,21 +295,21 @@ const data = {
             {
               id: 0,
               alt: i18n.t('message.tour_0.stops.2.images.0.alt'),
-              url: 'https://placekitten.com/720/540',
+              url: 'https://torzeon.s3.eu-central-1.amazonaws.com/tour_0/stop-3-1-min.jpg',
               orientation: 'h',
               description: i18n.t('message.tour_0.stops.2.images.0.description')
             },
             {
               id: 1,
               alt: i18n.t('message.tour_0.stops.2.images.1.alt'),
-              url: 'https://placekitten.com/720/540',
+              url: 'https://torzeon.s3.eu-central-1.amazonaws.com/tour_0/stop-3-1-min.jpg',
               orientation: 'h',
               description: i18n.t('message.tour_0.stops.2.images.1.description')
             },
             {
               id: 2,
               alt: i18n.t('message.tour_0.stops.2.images.2.alt'),
-              url: 'https://placekitten.com/720/540',
+              url: 'https://placekitten.com/718/444',
               orientation: 'h',
               description: i18n.t('message.tour_0.stops.2.images.2.description')
             }
@@ -354,7 +354,7 @@ const data = {
             {
               id: 0,
               alt: i18n.t('message.tour_0.stops.3.images.0.alt'),
-              url: 'https://placekitten.com/720/540',
+              url: 'https://placekitten.com/718/444',
               orientation: 'h',
               description: i18n.t('message.tour_0.stops.3.images.0.description')
             }
@@ -403,15 +403,15 @@ const data = {
             {
               id: 0,
               alt: i18n.t('message.tour_0.stops.4.images.0.alt'),
-              url: 'https://placekitten.com/720/540',
+              url: 'https://torzeon.s3.eu-central-1.amazonaws.com/tour_0/stop-5-1-min.jpg',
               orientation: 'h',
               description: i18n.t('message.tour_0.stops.4.images.0.description')
             },
             {
               id: 1,
               alt: i18n.t('message.tour_0.stops.4.images.1.alt'),
-              url: 'https://placekitten.com/720/540',
-              orientation: 'h',
+              url: 'https://torzeon.s3.eu-central-1.amazonaws.com/tour_0/stop-5-2-min.jpg',
+              orientation: 'v',
               description: i18n.t('message.tour_0.stops.4.images.1.description')
             }
           ],
@@ -480,19 +480,19 @@ const data = {
             {
               id: 0,
               alt: i18n.t('message.tour_0.stops.5.carousel.0.alt'),
-              url: 'https://placekitten.com/720/540',
+              url: 'https://torzeon.s3.eu-central-1.amazonaws.com/tour_0/slider-1-min.jpg',
               orientation: 'h'
             },
             {
               id: 1,
               alt: i18n.t('message.tour_0.stops.5.carousel.1.alt'),
-              url: 'https://placekitten.com/720/540',
+              url: 'https://torzeon.s3.eu-central-1.amazonaws.com/tour_0/slider-2-min.jpg',
               orientation: 'h'
             },
             {
               id: 2,
               alt: i18n.t('message.tour_0.stops.5.carousel.2.alt'),
-              url: 'https://placekitten.com/720/540',
+              url: 'https://torzeon.s3.eu-central-1.amazonaws.com/tour_0/slider-3-min.jpg',
               orientation: 'h'
             }
           ],
@@ -500,7 +500,7 @@ const data = {
             {
               id: 0,
               alt: i18n.t('message.tour_0.stops.5.images.0.alt'),
-              url: 'https://placekitten.com/720/540',
+              url: 'https://torzeon.s3.eu-central-1.amazonaws.com/tour_0/stop-6-1-min.jpg',
               orientation: 'h',
               description: i18n.t('message.tour_0.stops.5.images.0.description')
             }
@@ -553,22 +553,22 @@ const data = {
             {
               id: 0,
               alt: i18n.t('message.tour_0.stops.6.images.0.alt'),
-              url: 'https://placekitten.com/720/540',
+              url: 'https://torzeon.s3.eu-central-1.amazonaws.com/tour_0/stop-7-1-min.jpg',
               orientation: 'h',
               description: i18n.t('message.tour_0.stops.6.images.0.description')
             },
             {
               id: 1,
               alt: i18n.t('message.tour_0.stops.6.images.1.alt'),
-              url: 'https://placekitten.com/720/540',
+              url: 'https://torzeon.s3.eu-central-1.amazonaws.com/tour_0/stop-7-2-min.jpg',
               orientation: 'h',
               description: i18n.t('message.tour_0.stops.6.images.1.description')
             },
             {
               id: 2,
               alt: i18n.t('message.tour_0.stops.6.images.2.alt'),
-              url: 'https://placekitten.com/720/540',
-              orientation: 'h',
+              url: 'https://torzeon.s3.eu-central-1.amazonaws.com/tour_0/stop-7-3-min.jpg',
+              orientation: 'v',
               description: i18n.t('message.tour_0.stops.6.images.2.description')
             }
           ],

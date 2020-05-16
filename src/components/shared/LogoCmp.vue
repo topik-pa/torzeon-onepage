@@ -1,6 +1,6 @@
 <template>
   <div>
-    <img src="https://torzeon.s3.eu-central-1.amazonaws.com/torzeon-logo-half.min.png" :alt="projectName"/>
+    <img src="https://torzeon.s3.eu-central-1.amazonaws.com/torzeon-logo-min.png" :alt="projectName"/>
     <span>{{projectName}}</span>
   </div>
 </template>

@@ -6,7 +6,7 @@
         <xhtml:link rel="alternate" hreflang="en" href="https://www.torzeon.com/#/a-day-in-milan"/>
 
         <image:image>
-            <image:loc>https://torzeon.s3.eu-central-1.amazonaws.com/torzeon-logo-half.min.png</image:loc>
+            <image:loc>https://torzeon.s3.eu-central-1.amazonaws.com/torzeon-logo.min.png</image:loc>
             <image:caption>
                 torzeon.com main logo
             </image:caption>
