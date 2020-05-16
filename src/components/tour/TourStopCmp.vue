@@ -42,7 +42,7 @@
     </div>
 
     <div class="check">
-      <div>{{ $t('message.areYouHere') }}</div>
+      <div v-html="$t('message.areYouHere')"></div>
       <button class="primary" :class="{'disabled': stop.checked, 'loading': isCheckingPosition}" @click="checkStop">{{ isCheckingPosition ? '' : isThisStopChecked ? $t('message.locationChecked') : $t('message.checkLocation')  }}</button>
     </div>
 
@@ -183,7 +183,7 @@ export default {
 
       let checkTheStopAndIncrementPromocodeCouter = () => {
         return new Promise(function (resolve, reject) {
-          if (true || that.currentDistanceFromStop < that.minDistanceFromStop) { // true
+          if (that.currentDistanceFromStop < that.minDistanceFromStop) { // true
             that.stop.checked = true
             that.$emit('incrementStopsDone')
             that.$emit('updateRevealedPromocode', that.stop.id)
@@ -328,7 +328,7 @@ export default {
   .check div {
     color: #666;
     display: block;
-    margin-bottom: .5rem;
+    margin-bottom: 1rem;
   }
 
   .near {

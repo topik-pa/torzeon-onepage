@@ -1,14 +1,12 @@
 const messages = {
   en: {
     message: {
-      projectName: 'Torzeon',
+      projectName: 'torzeon.com',
       promocode: 'Il tuo promocode: ',
       by: 'di ',
-      contactTourAuthor: 'Invia una mail al responsabile',
-      shareOn: 'Condividi su ',
       followOn: 'Segui su: ',
       congrats: 'Congratulazioni, hai completato il Tour!',
-      shareIt: 'Condividi la tua esperienza e scopri cosa ne pensa chi ha già fatto questo Tour!',
+      shareIt: 'Condividi la tua esperienza e scopri cosa dicono gli altri utenti',
       start: 'Inizio',
       end: 'Fine',
       rating: 'Rating',
@@ -21,8 +19,8 @@ const messages = {
       getThere: 'Localizza sulla mappa',
       checkLocation: 'CHECK!',
       locationChecked: 'Hai fatto check!',
-      infoFromTheWeb: 'Maggiori info dal Web',
-      areYouHere: 'Ti trovi qui?',
+      infoFromTheWeb: 'Approfondimenti',
+      areYouHere: 'Ti trovi qui?<br/>Fai il <strong>Check</strong> di questo Stop!',
       nearHere: 'Scopri altri luoghi qui vicino...',
       goals: {
         promo: 'Obiettivo: trova parte del Promocode',
@@ -31,66 +29,73 @@ const messages = {
         finish: 'Obiettivo: condividi la tua esperienza!'
       },
       popups: {
-        notEvenCloseTitle: 'Non sei nemmeno vicino!',
-        notEvenCloseText: 'Mmhhhh... sei sicuro di essere in questo luogo? <br/>Ho controllato e sembra che tu sia a <br/><strong>{distance} metri </strong><br/> da qui.',
+        notEvenCloseTitle: 'Non ci sei nemmeno vicino!',
+        notEvenCloseText: 'Mmhhhh... sei sicuro di essere in questo luogo? <br/><br/>Ho controllato e sembra che tu sia a <br/><strong>{distance} metri </strong><br/> da qui.<br/><br/>Se vuoi scoprire il tuo promocode <strong>devi percorrere realmente questo Tour</strong>',
         nearHereButTitle: 'Sei vicino... ma non troppo!',
-        nearHereButText: 'Ho controllato e sembra che tu sia a <br/><strong>{distance} metri</strong><br/> da qui.<br/><br/><strong>Prova a cambiare posizione e riprova a fare CHECK!</strong>',
-        geolocalizationNotActiveTitle: 'IL tuo browser non ha la geolocalizzazione attiva',
-        geolocalizationNotActiveText: 'We need to get your location to permit this software to work!',
-        checkTitle: 'Congratulazioni! Hai fatto CHECK su:<br/>&#34;{stop}&#34;',
+        nearHereButText: 'Ho controllato e sembra che tu sia a <br/><strong>{distance} metri</strong><br/> da qui.<br/><br/><strong>Prova ad avvicinarti di più e premi nuovamente CHECK!</strong><br/><br/><small>Puoi aiutarti con il pulsante "Localizza sulla mappa" per avere la posizione esatta di questo Stop</small>',
+        geolocalizationNotActiveTitle: 'Il tuo browser non ha la geolocalizzazione attiva',
+        geolocalizationNotActiveText: 'E\' necessario conoscere la tua posizione per permettere a questa applicazione di funzionare!',
+        checkTitle: 'Congratulazioni!<br/>Hai fatto CHECK su:<br/><span class="popup stopname">{stop}</span>',
         checkText: '',
-        promoText: '<strong class="promoletter">{promo}</strong><br/>Hai scoperto una parte del promocode segreto<br/><br/><small>Continua il Tour per scoprire le parti rimanenti!</small>',
-        promoTextComplete: 'You discovered the following piece of your promocode:<br/><strong style="font-size:200%; color: #35b742">{promo}</strong><br/><br/>Now you can use the complete promocode to get a 15% discount',
+        promoText: '<span class="popup promocode">{promo}</span><br/>Hai scoperto una parte del promocode segreto<br/><br/><strong>Continua il Tour per scoprire le parti rimanenti!</strong>',
+        promoTextComplete: '<br/>Hai svelato il promocode!<br/><span class="popup promocode">{promo}</span><br/><br/>Ora puoi usare il tuo promocode per ottenere <strong>uno sconto del 15%</strong> sulla tua consumazione presso <strong>{stop}</strong>!<br/><br/>Basterà comunicarlo alla cassa oppure alla persona che ti servirà.<br/>Buon appetito!!!',
         shopText: `
-          <br/>Now you can use the promocode <br/><span class="promoletter">{promo}</span> <br/>to <strong style="font-weight: bold;"><br/>
-          get a 15% discount in this store</strong>.<br/>
-          Hope you appreciate this!!<br/><br/><br/>
-          <div class="social-widget-cointainer-popup">
+          <br/>Ora puoi usare il tuo promocode<br/><span class="promocode">{promo}</span><br/>
+          per ottenere <strong>uno sconto del 15%</strong> sulla tua consumazione in questa attività.<br/><br/>
+          Riferisci questo promocode alla cassa o alla persona che ti servirà e... Buon appetito!!!<br/><br/><br/>
+          <h3>{stop} sui Social</h3>
+          <div class="social-section-popup">
             <div id="TA_cdsratingsonlynarrow363" class="TA_cdsratingsonlynarrow"><ul id="QynJUXF4" class="TA_links nxneR81"><li id="2Rxm5agCk" class="J1fcr2cdc"><a target="_blank" href="https://www.tripadvisor.it/"><img src="https://www.tripadvisor.it/img/cdsi/img2/branding/tripadvisor_logo_transp_340x80-18034-2.png" alt="TripAdvisor"/></a></li></ul></div>
           </div>
         `,
         shopTextNoPromocode: `
-          <strong class="promoletter">{promo}</strong><br/>Hai scoperto una parte del promocode segreto<br/><br/>
-          Visit all the places to complete the promocode and <strong style="font-weight: bold;"><br/>
-          get a 15% discount in this store</strong>.<br/>
-          <br/><br/><br/>
-          <div class="social-widget-cointainer-popup">
+          <span class="popup promocode">{promo}</span><br/>Hai scoperto una parte del promocode segreto!<br/><br/>
+          Visita tutti i luoghi di questo Tour per completare il promocode segreto e<br/>
+          <strong>ottenere uno sconto del 15% in questa attività</strong>.<br/><br/><br/>
+          <h3>{stop} sui Social</h3>
+          <div class="social-section-popup">
             <div id="TA_cdsratingsonlynarrow363" class="TA_cdsratingsonlynarrow"><ul id="QynJUXF4" class="TA_links nxneR81"><li id="2Rxm5agCk" class="J1fcr2cdc"><a target="_blank" href="https://www.tripadvisor.it/"><img src="https://www.tripadvisor.it/img/cdsi/img2/branding/tripadvisor_logo_transp_340x80-18034-2.png" alt="TripAdvisor"/></a></li></ul></div>
           </div>
         `,
-        finishTitle: 'Congratulazioni! <br/>Hai concluso il tuo tour!',
-        finishText: '<br/><div>Ti è piaciuta questa esperienza? <strong>Lascia una tua valutazione</strong> e <strong>condividi questa pagina su Facebook</strong>!</div>'
+        finishTitle: '<span class="popup stopname">{stop}</span> era l\'ultima tappa del nostro Tour<br/>',
+        finishText: 'Ti è piaciuta questa esperienza?<br/><br/><strong>Lascia una tua valutazione</strong> e <strong>condividi questa pagina su Facebook</strong>!</div>'
       },
       tour_0: {
         title: 'Un giorno a... Milano',
-        subtitle: 'Visita tutti i luoghi del nostro Itinerario e scopri il promocode segreto!',
-        text: 'Ogni volta che effettuerai un <strong>check</strong> di un luogo del nostro itinerario otterrai un parte del <strong>promocode segreto</strong> utile per ottenere sconti e vantaggi nel luogo di ristoro da noi suggerito.<br/><br/> Il Tour di Milano prende in considerazione punti di interesse turistico storico, religioso e culturale, ma ci porterà a visitare anche quegli aspetti della Milano più contemporanea e ambiziosa. E\'previta una pausa per un gelato presso <strong>Oggi Gelato</strong> in Corso Garibaldi per un ristoro che allieterà la fase conclusiva del Tour.',
+        subtitle: 'Visita i luoghi del nostro itinerario e scopri il promocode segreto!',
+        text: `Effettua un <strong>check</strong> nei luoghi dell'itinerario e ottieni un parte del <strong>promocode segreto</strong>: conquista tutti gli <strong>sconti</strong> e scopri quali vantaggi hai guadagnato nel luogo di ristoro previsto.<br><br/>
+        Il Tour di Milano prende in considerazione non solo punti di interesse turistico, storico, religioso e culturale ma anche quei luoghi che oggi rendono Milano una città contemporanea e ambiziosa. <br/>
+        È prevista <strong>una pausa presso la golosa gelateria Oggi Gelato</strong> che si trova in Corso Garibaldi, un delizioso ristoro che addolcirà la fase conclusiva del Tour.
+        `,
         info: 'info',
         generalInfos: 'Informazioni itinerario',
         places: 'Luoghi',
-        youWillVisit: 'Luoghi che visiterai...',
+        youWillVisit: 'Luoghi che visiterai!',
         placesImageInCardAltText: 'Galleria Vittorio Emanuele - Photo by Fernando Meloni on Unsplash',
-        placesTextInCard: 'Il tour comprende la <strong>Stazione Centrale</strong>, una passeggiata verso il quartiere moderno <strong>Gae Aulenti</strong>, una visita verso il centro città attraverso <strong>Corso Como</strong> per arrivare presso il <strong>Castello Sforzesco</strong>. Proseguiremo per il <strong>Duomo</strong> e la <strong>Galleria Vittorio Emanuele</strong> e verso <strong>Piazza San Fedele</strong> e poi verso il <strong>Quartiere della Moda</strong> con via Montenapoleone e via della Spiga. <br/><br/><small>Photo by Fernando Meloni on Unsplash</small>',
+        placesTextInCard: 'Il tour comprende una passeggiata che parte dalla maestosa <strong>Stazione Centrale</strong> fino al <strong>Duomo</strong>, simbolo del capoluogo lombardo, e al passaggio coperto della <strong>Galleria Vittorio Emanuele II</strong>. Dopo aver scoperto la grandiosità della <strong>Piazza della Scala</strong>, il giro prosegue verso l’affascinante <strong>quartiere Brera</strong> e il complesso fortificato del <strong>Castello Sforzesco</strong>, pronti per raggiungere l’ultima tappa del circuito rappresentata dalla modernità di <strong>piazza Gae Aulenti</strong>.',
         relax: 'Relax',
-        youWillTaste: 'Ristoro e sapori...',
-        shopImageInCardAltText: 'Alt image...',
-        shopTextInCard: 'Il punto di ristoro è la <strong>Gelateria Oggi di Corso Garibaldi</strong>. Immagina di entrare in un mondo di eccellenze, di profumi, di gusto e di artigianalità… e vedere gli ingredienti, freschissimi e rigorosamente selezionati a seconda della stagionalità, pronti ad essere lavorati sul tavolo e poi fusi insieme nella cucina dell’Officina di OGGI Gelato.<br/><br/>Utilizza qui il <strong>promocode</strong> che scoprirai durante il tour!',
+        youWillTaste: 'Ristoro e sapori',
+        shopImageInCardAltText: 'OGGI Gelato in Corso Garibaldi',
+        shopTextInCard: 'Il punto di ristoro di questo tour è la <strong>Gelateria Oggi di Corso Garibaldi</strong>.<br/>Un favoloso mondo di sapori, profumi e artigianalità dove sarà possibile scoprire la lavorazione dei freschissimi ingredienti che vengono amalgamati nella cucina dell’Officina di Oggi Gelato per dar vita a dolci emozioni.<br/><br/><strong>Utilizza qui il promocode che scoprirai durante il tour!</strong>',
         stops: {
           0: {
             name: 'Stazione Centrale di Milano',
-            description: 'Info generali sulla Stazione. Lorem ipsum dolor sit amet, consectetur adipiscing elit. Fusce vel purus sollicitudin, congue libero id, suscipit nisl. Cras posuere facilisis erat interdum commodo. Phasellus vitae lobortis nisi, sit amet pretium lectus. Curabitur nisi ex, venenatis non diam et, aliquam fringilla massa. Fusce imperdiet viverra elit, non facilisis dolor ultrices sit amet.',
+            description: `La Stazione Centrale di Milano è la seconda più trafficata in Italia: tutti i giorni circa 600 treni circolano nella stazione ferroviaria che ha 24 binari tronchi coperti da una grande tettoia lunga più di 340 metri e composta da ben cinque volte in ferro e vetro.<br/>
+            Sul lato sud-est della stazione c’è un’entrata che viene aperta in alcune occasioni speciali e che un tempo portava nell’area riservata alla famiglia reale dei Savoia. C’è anche un passaggio segreto (dietro lo specchio in bagno!).`,
             images: {
               0: {
-                alt: 'Stazione Centrale - la facciata principale',
-                description: 'Descrizione architettonica della facciata della Stazione. Lorem ipsum dolor sit amet, consectetur adipiscing elit. Fusce vel purus sollicitudin, congue libero id, suscipit nisl. Cras posuere facilisis erat interdum commodo. Phasellus vitae lobortis nisi, sit amet pretium lectus. Curabitur nisi ex, venenatis non diam et, aliquam fringilla massa. Fusce imperdiet viverra elit, non facilisis dolor ultrices sit amet. Vestibulum at sagittis nibh. Mauris a felis a dolor tincidunt sagittis et at velit. Donec sem mauris, rhoncus non quam in, rhoncus lobortis enim. Sed cursus mauris ac massa fermentum, vel sagittis arcu venenatis.'
+                alt: 'Stazione Centrale - La facciata della Stazione',
+                description: `Archi, statue, terrazze, decorazioni: è impossibile non cogliere il fascino senza tempo del complesso monumentale realizzato da Ulisse Stacchini e inaugurato nel 1931. La solida struttura in marmo e cemento rende la costruzione ancora più possente (assieme all’acciaio che ricopre le gallerie) e raccoglie il mix di stili del corpo frontale. Liberty, Art Decò e Neoclassico rendono unica la cattedrale del movimento che ogni giorno vede passare più di 300mila viaggiatori.`
               },
               1: {
-                alt: 'La "Mela Reintegrata" di Michelangelo Pistoletto',
-                description: 'Alcune info sulla Mela Reintegrata. Lorem ipsum dolor sit amet, consectetur adipiscing elit. Fusce vel purus sollicitudin, congue libero id, suscipit nisl. Cras posuere facilisis erat interdum commodo. Phasellus vitae lobortis nisi, sit amet pretium lectus. Curabitur nisi ex, venenatis non diam et, aliquam fringilla massa. Fusce imperdiet viverra elit, non facilisis dolor ultrices sit amet. Vestibulum at sagittis nibh.'
+                alt: 'La "Mela Reintegrata"',
+                description: `La scultura realizzata da Michelangelo Pistoletto è stata installata nel 2015 nella piazza antistante la Stazione in occasione dell’apertura dell'EXPO. È alta 8 metri, 7 metri di diametro e 11 tonnellate di peso. Il monumento candido e marmoreo ha una struttura in acciaio e un’intonaco in argilla, è un’opera che rappresenta il passaggio evolutivo della società umana, l’ingresso in un’era in cui natura e mondo artificiale finalmente si congiungono in equilibrio.`
               },
               2: {
-                alt: 'Il Grattacielo Pirelli',
-                description: 'Alcune info sul Grattacielo Pirelli. Lorem ipsum dolor sit amet, consectetur adipiscing elit. Fusce vel purus sollicitudin, congue libero id, suscipit nisl. Cras posuere facilisis erat interdum commodo. Phasellus vitae lobortis nisi, sit amet pretium lectus. Curabitur nisi ex, venenatis non diam et, aliquam fringilla massa. Fusce imperdiet viverra elit, non facilisis dolor ultrices sit amet. Vestibulum at sagittis nibh.'
+                alt: 'Il "Pirellone"',
+                description: `Il grattacielo Pirelli è un palazzo di 31 piani che era stato progettato per ospitare gli uffici della famosa azienda di pneumatici ma nel 1978 è stato acquistato dalla Regione Lombardia. Oggi il Pirellone è la sede del Consiglio Regionale della Lombardia.<br/>
+                Sui suoi 710 scalini si svolgono corse run up con gli atleti che salgono dal primo all’ultimo piano da dove, tra l’altro, in alcune giornate si può ammirare il panorama sulla città.
+                `
               }
             },
             links: {
@@ -109,24 +114,30 @@ const messages = {
             }
           },
           1: {
-            name: 'Il Duomo',
-            description: 'Info generali sul Duomo. Lorem ipsum dolor sit amet, consectetur adipiscing elit. Fusce vel purus sollicitudin, congue libero id, suscipit nisl. Cras posuere facilisis erat interdum commodo. Phasellus vitae lobortis nisi, sit amet pretium lectus. Curabitur nisi ex, venenatis non diam et, aliquam fringilla massa. Fusce imperdiet viverra elit, non facilisis dolor ultrices sit amet.',
+            name: 'Duomo',
+            description: `Il Duomo di Milano è la terza chiesa cattolica nel mondo: il meraviglioso stile Gotico si esprime in ogni guglia e particolare che è stato realizzato con il marmo bianco di Condoglia, una cava del Lago Maggiore. Ci sono voluti 500 anni per ultimarla, cosa che è successa alla fine del 1800, e ancora oggi la chiesa sorge sul territorio sacro che un tempo ospitava il tempio di Minerva.`,
             images: {
               0: {
-                alt: 'La facciata in stile classico-barocco',
-                description: 'La facciata del Duomo in stile classico-barocco. Lorem ipsum dolor sit amet, consectetur adipiscing elit. Fusce vel purus sollicitudin, congue libero id, suscipit nisl. Cras posuere facilisis erat interdum commodo. Phasellus vitae lobortis nisi, sit amet pretium lectus.'
+                alt: 'La facciata del Duomo',
+                description: `Il monumento simbolo del capoluogo lombardo è stato dedicato a Santa Maria Nascente. La sua facciata testimonia il tempo e gli stili che si sono susseguiti nella sua realizzazione, secoli di scultura e architettura italiana.<br/>
+                I portali e le finestre soprastanti, il timpano spezzato, i portali in bassorilievo, i basamenti e i rilievi, i finestroni neogotici, le statue: lo stile neogotico, quello tardo rinascimentale e il barocco si susseguono dando vita alla straordinaria facciata del Duomo.
+                `
               },
               1: {
-                alt: 'La "Statua della Libertà"',
-                description: 'Una particolare statua del Duomo è stata presa a modello per la più famosa statua di New York... due righe su tale argomento. Lorem ipsum dolor sit amet, consectetur adipiscing elit. Fusce vel purus sollicitudin, congue libero id, suscipit nisl. Cras posuere facilisis erat interdum commodo. Phasellus vitae lobortis nisi, sit amet pretium lectus.'
+                alt: 'Statua della Libertà',
+                description: `Le statue ottocentesche di Apostoli e Profeti si trovano sulle mensole frontali e ornano la balaustra già dall’inizio dell’Ottocento. È proprio La Legge Nuova di Pacetti a destare una certa attenzione: la somiglianza con la Statua della Libertà di New York è incredibile!<br/>
+                Sono in molti, infatti, a credere che la scultura napoleonica milanese ne sia stata l’ispirazione.
+                `
               },
               2: {
-                alt: 'Il Palazzo Reale',
-                description: 'Il Palazzo Reale. Lorem ipsum dolor sit amet, consectetur adipiscing elit. Fusce vel purus sollicitudin, congue libero id, suscipit nisl. Cras posuere facilisis erat interdum commodo. Phasellus vitae lobortis nisi, sit amet pretium lectus. Curabitur nisi ex, venenatis non diam et, aliquam fringilla massa. Fusce imperdiet viverra elit, non facilisis dolor ultrices sit amet. Vestibulum at sagittis nibh. Mauris a felis a dolor tincidunt sagittis et at velit. Donec sem mauris, rhoncus non quam in, rhoncus lobortis enim. Sed cursus mauris ac massa fermentum, vel sagittis arcu venenatis.'
+                alt: 'Palazzo Reale ',
+                description: `Il Palazzo Reale rappresenta in modo elegante l’architettura classica. Oggi al suo interno si svolgono le maggiori mostre del capoluogo lombardo ma un tempo il Palazzo del Broletto Vecchio (un tempo era noto così) è stato la sede del governo di Milano, del Regno del Lombardo-veneto e persino residenza reale.`
               },
               3: {
-                alt: 'La Galleria Vittorio Emanuele',
-                description: 'La Galleria Vittorio Emanuele. Lorem ipsum dolor sit amet, consectetur adipiscing elit. Fusce vel purus sollicitudin, congue libero id, suscipit nisl. Cras posuere facilisis erat interdum commodo. Phasellus vitae lobortis nisi, sit amet pretium lectus. Curabitur nisi ex, venenatis non diam et, aliquam fringilla massa. Fusce imperdiet viverra elit, non facilisis dolor ultrices sit amet. Vestibulum at sagittis nibh. Mauris a felis a dolor tincidunt sagittis et at velit. Donec sem mauris, rhoncus non quam in, rhoncus lobortis enim. Sed cursus mauris ac massa fermentum, vel sagittis arcu venenatis.'
+                alt: 'Galleria Vittorio Emanuele II',
+                description: `L’originario splendore della Galleria Vittorio Emanuele II è stato ripristinato nel 2015, in occasione dell’Expo: stupendi affreschi, stucchi e decorazioni in ferro ornano la costruzione che fu progettata dall’architetto emiliano Giuseppe Mengoni. Egli purtroppo morì proprio durante una ispezione sul cantiere (incidente o suicidio?).<br/>
+                Due cose da fare: osservare le lunette dipinte in cima alle pareti, che rappresentano i 4 continenti, e eseguire il rito scaramantico di far ruotare il tallone del piede destro sul mosaico dei genitali del toro.
+                `
               }
             },
             nears: {
@@ -134,7 +145,7 @@ const messages = {
                 name: 'Magazzini La Rinascente'
               },
               1: {
-                name: 'PInacoteca Ambrosiana'
+                name: 'Pinacoteca Ambrosiana'
               }
             },
             links: {
@@ -158,19 +169,23 @@ const messages = {
           },
           2: {
             name: 'Piazza della Scala',
-            description: 'Info generali sulla Piazza della Scala. Lorem ipsum dolor sit amet, consectetur adipiscing elit. Fusce vel purus sollicitudin, congue libero id, suscipit nisl. Cras posuere facilisis erat interdum commodo. Phasellus vitae lobortis nisi, sit amet pretium lectus. Curabitur nisi ex, venenatis non diam et, aliquam fringilla massa. Fusce imperdiet viverra elit, non facilisis dolor ultrices sit amet.',
+            description: `Nel centro storico milanese spicca l’imponenza di Piazza della Scala, un quadrato contornato da eleganti edifici più o meno recenti (il più antico è Palazzo Marino, della metà del 1500) collegato alla Galleria Vittorio Emanuele II.<br/>
+            La vecchia via denominata contrada della Scala divenne una piazza quando vennero demoliti diversi caseggiati tra cui quello in cui aveva sede il famoso Caffè Martini.
+            `,
             images: {
               0: {
-                alt: 'Statua di Leonardo in Piazza della Scala',
-                description: 'Statua di Leonardo in Piazza della Scala. Lorem ipsum dolor sit amet, consectetur adipiscing elit. Fusce vel purus sollicitudin, congue libero id, suscipit nisl. Cras posuere facilisis erat interdum commodo. Phasellus vitae lobortis nisi, sit amet pretium lectus. Curabitur nisi ex, venenatis non diam et, aliquam fringilla massa. Fusce imperdiet viverra elit, non facilisis dolor ultrices sit amet. Vestibulum at sagittis nibh. Mauris a felis a dolor tincidunt sagittis et at velit. Donec sem mauris, rhoncus non quam in, rhoncus lobortis enim. Sed cursus mauris ac massa fermentum, vel sagittis arcu venenatis.'
+                alt: 'Statua di Leonardo',
+                description: `In Piazza della Scala si trova la statua dedicata a Leonardo Da Vinci (1872) che in dialetto è soprannominata “on litter in quatter”, un litro in quattro. Questo perché per i milanesi l’artista, che visse e lavorò per un quarto di secolo a Milano, sembra un bottiglione di vino e i suoi quattro discepoli assomigliano a quattro bicchierini.`
               },
               1: {
                 alt: 'Teatro alla Scala',
-                description: 'Alcune info sul Teatro alla Scala. Lorem ipsum dolor sit amet, consectetur adipiscing elit. Fusce vel purus sollicitudin, congue libero id, suscipit nisl. Cras posuere facilisis erat interdum commodo. Phasellus vitae lobortis nisi, sit amet pretium lectus. Curabitur nisi ex, venenatis non diam et, aliquam fringilla massa. Fusce imperdiet viverra elit, non facilisis dolor ultrices sit amet. Vestibulum at sagittis nibh.'
+                description: `Costruito sulle ceneri del Teatro Ducale, nel 1776 nasce il Teatro della Scala, inaugurato due anni dopo. Il nome deriva dal luogo dove è stato realizzato, un tempo sito della chiesa di Santa Maria alla Scala.<br/>
+                Un simbolo del melodramma italiano, del balletto, delle opere e più in generale di tutta l’arte italiana: tutti gli anni la stagione della Scala si apre nel giorno di Sant’Ambrogio che è il patrono di Milano, 7 dicembre.
+                `
               },
               2: {
                 alt: 'Gallerie d\'Italia',
-                description: 'Descrizione Gallerie d\'Italia. Lorem ipsum dolor sit amet, consectetur adipiscing elit. Fusce vel purus sollicitudin, congue libero id, suscipit nisl. Cras posuere facilisis erat interdum commodo. Phasellus vitae lobortis nisi, sit amet pretium lectus. Curabitur nisi ex, venenatis non diam et, aliquam fringilla massa. Fusce imperdiet viverra elit, non facilisis dolor ultrices sit amet. Vestibulum at sagittis nibh.'
+                description: `Gallerie d’Italia è il simbolo di Progetto Cultura, l’insieme degli spazi espositivi di Intesa Sanpaolo. Uno dei palazzi storici della banca si trova proprio nella Piazza della Scala, un luogo di enorme patrimonio artistico e architettonico dove è possibile visionare le opere rappresentative dell’Ottocento italiano.`
               }
             },
             nears: {
@@ -198,11 +213,11 @@ const messages = {
           },
           3: {
             name: 'Quartiere Brera',
-            description: 'Info generali sulla quartiere. Lorem ipsum dolor sit amet, consectetur adipiscing elit. Fusce vel purus sollicitudin, congue libero id, suscipit nisl. Cras posuere facilisis erat interdum commodo. Phasellus vitae lobortis nisi, sit amet pretium lectus. Curabitur nisi ex, venenatis non diam et, aliquam fringilla massa. Fusce imperdiet viverra elit, non facilisis dolor ultrices sit amet.',
+            description: `Unisci architettura, storia e cultura e ottieni il quartiere Brera: questo è uno dei luoghi più visitati di Milano, un posto ricco di charme e fascino che deve il suo nome a “braida”, distesa di terra incolta. Già oltre cent’anni fa il quartiere era frequentato dagli artisti dell’Accademia di Belle Arti che si spostavano dal Palazzo Brera alla Pinacoteca, dall’Orto Botanico al Mercatino.`,
             images: {
               0: {
                 alt: 'Le vie del quartiere Brera',
-                description: 'Descrizione della vita nel quartiere tra caffè e shopping. Lorem ipsum dolor sit amet, consectetur adipiscing elit. Fusce vel purus sollicitudin, congue libero id, suscipit nisl. Cras posuere facilisis erat interdum commodo. Phasellus vitae lobortis nisi, sit amet pretium lectus. Curabitur nisi ex, venenatis non diam et, aliquam fringilla massa. Fusce imperdiet viverra elit, non facilisis dolor ultrices sit amet. Vestibulum at sagittis nibh. Mauris a felis a dolor tincidunt sagittis et at velit. Donec sem mauris, rhoncus non quam in, rhoncus lobortis enim. Sed cursus mauris ac massa fermentum, vel sagittis arcu venenatis.'
+                description: `Strade strette con i ciottoli, cortili magnifici, palazzi d’epoca, botteghe e boutique: è nelle vie del quartiere Brera che gli appassionati dello shopping si dirigono per cercare le migliori occasioni tra gli oggetti più originali del momento. E, dopo gli acquisti, impossibile evitare una sosta in uno dei molti locali inseriti in questa cornice bohemien.`
               }
             },
             nears: {
@@ -222,15 +237,17 @@ const messages = {
           },
           4: {
             name: 'Castello Sforzesco',
-            description: 'Info generali sul Castello Sforzesco. Lorem ipsum dolor sit amet, consectetur adipiscing elit. Fusce vel purus sollicitudin, congue libero id, suscipit nisl. Cras posuere facilisis erat interdum commodo. Phasellus vitae lobortis nisi, sit amet pretium lectus. Curabitur nisi ex, venenatis non diam et, aliquam fringilla massa. Fusce imperdiet viverra elit, non facilisis dolor ultrices sit amet.',
+            description: `Oggi il Castello Sforzesco è uno degli edifici più rappresentativi di Milano ma per secoli ha rappresentato il simbolo del dominio straniero. Con l’Unita d’Italia si è trasformato in un luogo in cui storia, arte e cultura si incontrano e dove si possono trovare alcuni tra i maggiori musei cittadini.<br/>
+            Famosissimi i cortili, le torri e gli ambienti di origine sforzesca.
+            `,
             images: {
               0: {
                 alt: 'La torre del Filarete',
-                description: 'Descrizione architettonica della torre del Filarete. Lorem ipsum dolor sit amet, consectetur adipiscing elit. Fusce vel purus sollicitudin, congue libero id, suscipit nisl. Cras posuere facilisis erat interdum commodo. Phasellus vitae lobortis nisi, sit amet pretium lectus. Curabitur nisi ex, venenatis non diam et, aliquam fringilla massa. Fusce imperdiet viverra elit, non facilisis dolor ultrices sit amet. Vestibulum at sagittis nibh. Mauris a felis a dolor tincidunt sagittis et at velit. Donec sem mauris, rhoncus non quam in, rhoncus lobortis enim. Sed cursus mauris ac massa fermentum, vel sagittis arcu venenatis.'
+                description: `È di Antonio Averulino detto il Filarete il progetto della elegante Torre che porta il suo nome e che è stata ideata nel 1452. Neanche un secolo dopo, però, la Torre del Filarete crollò quando era un deposito di polvere da sparo, quindi venne ricreata dopo un’attenta ricerca da parte dell’architetto Luca Beltrami che volle ricreare il suo aspetto rinascimentale e che aggiunse il famoso orologio con il sole raggiante.`
               },
               1: {
                 alt: 'Fontana di Piazza Castello',
-                description: 'Info su Fontana di Piazza Castello. Lorem ipsum dolor sit amet, consectetur adipiscing elit. Fusce vel purus sollicitudin, congue libero id, suscipit nisl. Cras posuere facilisis erat interdum commodo. Phasellus vitae lobortis nisi, sit amet pretium lectus. Curabitur nisi ex, venenatis non diam et, aliquam fringilla massa. Fusce imperdiet viverra elit, non facilisis dolor ultrices sit amet. Vestibulum at sagittis nibh.'
+                description: `La funtana di spus (torta nuziale, per la sua forma somigliante), poi diventata de Craxi nel periodo dopo tangentopoli, è ricca di storia ma anche di leggende metropolitane: quando fu smontata per consentire la prosecuzione dei lavori della metropolitana, nel 1960, si diffuse la voce che fosse stata trafugata ed esposta da Craxi nei giardini di Hammamet.`
               }
             },
             nears: {
@@ -244,7 +261,7 @@ const messages = {
                 name: 'Arco della Pace'
               },
               3: {
-                name: 'Basilica di san Ambrogio'
+                name: 'Basilica di San Ambrogio'
               },
               4: {
                 name: 'Museo del Cenacolo'
@@ -263,7 +280,9 @@ const messages = {
           },
           5: {
             name: 'OGGI Gelato',
-            description: 'Presentazione attività dello sponsor OGGI Gelato Lorem ipsum dolor sit amet, consectetur adipiscing elit. Fusce vel purus sollicitudin, congue libero id, suscipit nisl. Cras posuere facilisis erat interdum commodo. Phasellus vitae lobortis nisi, sit amet pretium lectus.',
+            description: `OGGI Gelato produce golosi coni e coppe gelato artigianali senza coloranti e conservanti aggiunti. Il gelato sano e naturale viene realizzato con ottime materie prime stagionali dall’Officina Gelato Gusto Italiano: da oltre sei anni OGGI suggerisce ai suoi clienti le migliori dolci proposte all’interno dei suoi negozi.<br/>
+            Gli ingredienti selezionati, eccellenze del territorio italiano, sono il segreto della gelateria artigianale. I mantecati e le creme spalmabili di OGGI Gelato sono prodotti unici che vengono realizzati per offrire ai clienti il gusto originale di ogni gelato.
+            `,
             carousel: {
               0: {
                 alt: 'Descizione 1'
@@ -277,12 +296,8 @@ const messages = {
             },
             images: {
               0: {
-                alt: 'Oggi Gelato - Gelato al cioccolato',
-                description: 'Lista e descrizione di ciò che di maggior interesse si può ordinare in questa gelateria.'
-              },
-              1: {
-                alt: 'Oggi Gelato - interni',
-                description: 'Lista dei servizi ulteriori (wi-fi, accesso disabili, altre info utili prese dal loro sito e di interesse per i possibili avventori)'
+                alt: 'Oggi Gelato - descrizione attività',
+                description: `OGGI Gelato è una delle prime gelaterie italiane a utilizzare il logo Campa Amica di Coldiretti, un progetto che promuove la filiera agricola completamente italiana. Ma non solo! L’Officina Gelato Gusto Italiano è stata scelta per essere il fornitore ufficiale del Papa, l’unica gelateria a produrre il gelato per la Santa Sede.`
               }
             },
             nears: {
@@ -306,19 +321,27 @@ const messages = {
           },
           6: {
             name: 'Piazza Gae Aulenti',
-            description: 'Info generali sulla Piazza Gae Aulenti. Lorem ipsum dolor sit amet, consectetur adipiscing elit. Fusce vel purus sollicitudin, congue libero id, suscipit nisl. Cras posuere facilisis erat interdum commodo. Phasellus vitae lobortis nisi, sit amet pretium lectus. Curabitur nisi ex, venenatis non diam et, aliquam fringilla massa. Fusce imperdiet viverra elit, non facilisis dolor ultrices sit amet.',
+            description: `Una delle piazze più recenti (2012) eppure più simboliche di Milano è sicuramente Gae Aulenti: in questo luogo si incontrano la zona finanziaria e quella centrale. Un progetto futuristico con un design moderno che è opera dell’architetto Cesar Pelli e dalla quale è possibile ammirare lo skyline milanese.<br/>
+            La piazza è stata realizzata dieci metri sopra il livello stradale e sotto sono presenti il parcheggio e la metropolitana.
+            `,
             images: {
               0: {
-                alt: 'Fontana di piazza Gae Aulenti',
-                description: 'Qualche info sulla Fontana di piazza Gae Aulenti. Lorem ipsum dolor sit amet, consectetur adipiscing elit. Fusce vel purus sollicitudin, congue libero id, suscipit nisl. Cras posuere facilisis erat interdum commodo. Phasellus vitae lobortis nisi, sit amet pretium lectus. Curabitur nisi ex, venenatis non diam et, aliquam fringilla massa. Fusce imperdiet viverra elit, non facilisis dolor ultrices sit amet. Vestibulum at sagittis nibh. Mauris a felis a dolor tincidunt sagittis et at velit. Donec sem mauris, rhoncus non quam in, rhoncus lobortis enim. Sed cursus mauris ac massa fermentum, vel sagittis arcu venenatis.'
+                alt: 'Fontana di Piazza Gae Aulenti',
+                description: `Sono tantissime le fontane presenti a Milano: tra queste quella di Piazza Gae Aulenti che si trova ai piedi dei grattacieli e a sei metri dalla strada. Un gioco di riflessi e specchi che rende enigmatica, romantica e bellissima la piazza e che attira sempre i turisti (ma anche i cittadini).<br/>
+                È possibile attraversare la piazza camminando sull’acqua (ma non fare il bagno).
+                `
               },
               1: {
-                alt: 'Le trombe di piazza Gae Aulenti',
-                description: 'Alcune info sul questa particolare opera (le trombe). Lorem ipsum dolor sit amet, consectetur adipiscing elit. Fusce vel purus sollicitudin, congue libero id, suscipit nisl. Cras posuere facilisis erat interdum commodo. Phasellus vitae lobortis nisi, sit amet pretium lectus. Curabitur nisi ex, venenatis non diam et, aliquam fringilla massa. Fusce imperdiet viverra elit, non facilisis dolor ultrices sit amet. Vestibulum at sagittis nibh.'
+                alt: 'Le trombe',
+                description: `Ventitre tubi di alluminio estruso ossidato ottone collegano l’interno della piazza con la sua superficie: un dettaglio urbano insolito che attira i turisti a bisbigliare al loro interno. Ecco perché le trombe sono state chiamate le Voci della città, a dimostrazione che un’opera scultorea può diventare un’attrattiva con cui interagire.<br/>
+                Il progetto è stato realizzato per permettere il ricircolo dell’aria tra i piani.
+                `
               },
               2: {
-                alt: 'Il Grattacielo Unicredit',
-                description: 'Alcune info sul Grattacielo Unicredit. Lorem ipsum dolor sit amet, consectetur adipiscing elit. Fusce vel purus sollicitudin, congue libero id, suscipit nisl. Cras posuere facilisis erat interdum commodo. Phasellus vitae lobortis nisi, sit amet pretium lectus. Curabitur nisi ex, venenatis non diam et, aliquam fringilla massa. Fusce imperdiet viverra elit, non facilisis dolor ultrices sit amet. Vestibulum at sagittis nibh.'
+                alt: 'Grattacielo Unicredit',
+                description: `Questo è il grattacielo più alto d’Italia, 231 metri che rappresentano la ristrutturazione urbana milanese dei primi anni del 2000. L’Unicredit Tower si trova nel cuore del Centro Direzionale di Milano e proprio qui lavorano circa 4mila persone.
+                La guglia laica è composta da una serie di edifici ecosostenibili costruiti in vetro e acciaio traforato che la rendono in grado di sopportare ghiaccio e vento.
+                `
               }
             },
             nears: {
@@ -350,14 +373,12 @@ const messages = {
   },
   it: {
     message: {
-      projectName: 'Torzeon',
+      projectName: 'torzeon.com',
       promocode: 'Il tuo promocode: ',
       by: 'di ',
-      contactTourAuthor: 'Invia una mail al responsabile',
-      shareOn: 'Condividi su ',
       followOn: 'Segui su: ',
       congrats: 'Congratulazioni, hai completato il Tour!',
-      shareIt: 'Condividi la tua esperienza e scopri cosa ne pensa chi ha già fatto questo Tour!',
+      shareIt: 'Condividi la tua esperienza e scopri cosa dicono gli altri utenti',
       start: 'Inizio',
       end: 'Fine',
       rating: 'Rating',
@@ -370,8 +391,8 @@ const messages = {
       getThere: 'Localizza sulla mappa',
       checkLocation: 'CHECK!',
       locationChecked: 'Hai fatto check!',
-      infoFromTheWeb: 'Maggiori info dal Web',
-      areYouHere: 'Ti trovi qui?',
+      infoFromTheWeb: 'Approfondimenti',
+      areYouHere: 'Ti trovi qui?<br/>Fai il <strong>Check</strong> di questo Stop!',
       nearHere: 'Scopri altri luoghi qui vicino...',
       goals: {
         promo: 'Obiettivo: trova parte del Promocode',
@@ -380,29 +401,29 @@ const messages = {
         finish: 'Obiettivo: condividi la tua esperienza!'
       },
       popups: {
-        notEvenCloseTitle: 'Non sei nemmeno vicino!',
+        notEvenCloseTitle: 'Non ci sei nemmeno vicino!',
         notEvenCloseText: 'Mmhhhh... sei sicuro di essere in questo luogo? <br/><br/>Ho controllato e sembra che tu sia a <br/><strong>{distance} metri </strong><br/> da qui.<br/><br/>Se vuoi scoprire il tuo promocode <strong>devi percorrere realmente questo Tour</strong>',
         nearHereButTitle: 'Sei vicino... ma non troppo!',
         nearHereButText: 'Ho controllato e sembra che tu sia a <br/><strong>{distance} metri</strong><br/> da qui.<br/><br/><strong>Prova ad avvicinarti di più e premi nuovamente CHECK!</strong><br/><br/><small>Puoi aiutarti con il pulsante "Localizza sulla mappa" per avere la posizione esatta di questo Stop</small>',
-        geolocalizationNotActiveTitle: 'IL tuo browser non ha la geolocalizzazione attiva',
-        geolocalizationNotActiveText: 'We need to get your location to permit this software to work!',
+        geolocalizationNotActiveTitle: 'Il tuo browser non ha la geolocalizzazione attiva',
+        geolocalizationNotActiveText: 'E\' necessario conoscere la tua posizione per permettere a questa applicazione di funzionare!',
         checkTitle: 'Congratulazioni!<br/>Hai fatto CHECK su:<br/><span class="popup stopname">{stop}</span>',
         checkText: '',
         promoText: '<span class="popup promocode">{promo}</span><br/>Hai scoperto una parte del promocode segreto<br/><br/><strong>Continua il Tour per scoprire le parti rimanenti!</strong>',
-        promoTextComplete: '<br/>You discovered the following piece of your promocode:<br/><span class="popup promocode">{promo}</span><br/><br/><strong>Now you can use the complete promocode to get a 15% discount!</strong>',
+        promoTextComplete: '<br/>Hai svelato il promocode!<br/><span class="popup promocode">{promo}</span><br/><br/>Ora puoi usare il tuo promocode per ottenere <strong>uno sconto del 15%</strong> sulla tua consumazione presso <strong>{stop}</strong>!<br/><br/>Basterà comunicarlo alla cassa oppure alla persona che ti servirà.<br/>Buon appetito!!!',
         shopText: `
-          <br/>Now you can use the promocode <br/><span class="promocode">{promo}</span> <br/>to <strong><br/>
-          get a 15% discount in this store</strong>.<br/><br/>
-          Hope you appreciate this!!<br/><br/><br/>
+          <br/>Ora puoi usare il tuo promocode<br/><span class="promocode">{promo}</span><br/>
+          per ottenere <strong>uno sconto del 15%</strong> sulla tua consumazione in questa attività.<br/><br/>
+          Riferisci questo promocode alla cassa o alla persona che ti servirà e... Buon appetito!!!<br/><br/><br/>
           <h3>{stop} sui Social</h3>
           <div class="social-section-popup">
             <div id="TA_cdsratingsonlynarrow363" class="TA_cdsratingsonlynarrow"><ul id="QynJUXF4" class="TA_links nxneR81"><li id="2Rxm5agCk" class="J1fcr2cdc"><a target="_blank" href="https://www.tripadvisor.it/"><img src="https://www.tripadvisor.it/img/cdsi/img2/branding/tripadvisor_logo_transp_340x80-18034-2.png" alt="TripAdvisor"/></a></li></ul></div>
           </div>
         `,
         shopTextNoPromocode: `
-          <span class="popup promocode">{promo}</span><br/>Hai scoperto una parte del promocode segreto<br/><br/>
-          Visit all the places to complete the promocode and <strong><br/>
-          get a 15% discount in this store</strong>.<br/><br/><br/>
+          <span class="popup promocode">{promo}</span><br/>Hai scoperto una parte del promocode segreto!<br/><br/>
+          Visita tutti i luoghi di questo Tour per completare il promocode segreto e<br/>
+          <strong>ottenere uno sconto del 15% in questa attività</strong>.<br/><br/><br/>
           <h3>{stop} sui Social</h3>
           <div class="social-section-popup">
             <div id="TA_cdsratingsonlynarrow363" class="TA_cdsratingsonlynarrow"><ul id="QynJUXF4" class="TA_links nxneR81"><li id="2Rxm5agCk" class="J1fcr2cdc"><a target="_blank" href="https://www.tripadvisor.it/"><img src="https://www.tripadvisor.it/img/cdsi/img2/branding/tripadvisor_logo_transp_340x80-18034-2.png" alt="TripAdvisor"/></a></li></ul></div>
@@ -413,34 +434,40 @@ const messages = {
       },
       tour_0: {
         title: 'Un giorno a... Milano',
-        subtitle: 'Visita tutti i luoghi del nostro Itinerario e scopri il promocode segreto!',
-        text: 'Ogni volta che effettuerai un <strong>check</strong> di un luogo del nostro itinerario otterrai un parte del <strong>promocode segreto</strong> utile per ottenere sconti e vantaggi nel luogo di ristoro da noi suggerito.<br/><br/> Il Tour di Milano prende in considerazione punti di interesse turistico storico, religioso e culturale, ma ci porterà a visitare anche quegli aspetti della Milano più contemporanea e ambiziosa. E\'previta una pausa per un gelato presso <strong>Oggi Gelato</strong> in Corso Garibaldi per un ristoro che allieterà la fase conclusiva del Tour.',
+        subtitle: 'Visita i luoghi del nostro itinerario e scopri il promocode segreto!',
+        text: `Effettua un <strong>check</strong> nei luoghi dell'itinerario e ottieni un parte del <strong>promocode segreto</strong>: conquista tutti gli <strong>sconti</strong> e scopri quali vantaggi hai guadagnato nel luogo di ristoro previsto.<br><br/>
+        Il Tour di Milano prende in considerazione non solo punti di interesse turistico, storico, religioso e culturale ma anche quei luoghi che oggi rendono Milano una città contemporanea e ambiziosa. <br/>
+        È prevista <strong>una pausa presso la golosa gelateria Oggi Gelato</strong> che si trova in Corso Garibaldi, un delizioso ristoro che addolcirà la fase conclusiva del Tour.
+        `,
         info: 'info',
         generalInfos: 'Informazioni itinerario',
         places: 'Luoghi',
-        youWillVisit: 'Luoghi che visiterai...',
+        youWillVisit: 'Luoghi che visiterai!',
         placesImageInCardAltText: 'Galleria Vittorio Emanuele - Photo by Fernando Meloni on Unsplash',
-        placesTextInCard: 'Il tour comprende la <strong>Stazione Centrale</strong>, una passeggiata verso il quartiere moderno <strong>Gae Aulenti</strong>, una visita verso il centro città attraverso <strong>Corso Como</strong> per arrivare presso il <strong>Castello Sforzesco</strong>. Proseguiremo per il <strong>Duomo</strong> e la <strong>Galleria Vittorio Emanuele</strong> e verso <strong>Piazza San Fedele</strong> e poi verso il <strong>Quartiere della Moda</strong> con via Montenapoleone e via della Spiga. <br/><br/><small>Photo by Fernando Meloni on Unsplash</small>',
+        placesTextInCard: 'Il tour comprende una passeggiata che parte dalla maestosa <strong>Stazione Centrale</strong> fino al <strong>Duomo</strong>, simbolo del capoluogo lombardo, e al passaggio coperto della <strong>Galleria Vittorio Emanuele II</strong>. Dopo aver scoperto la grandiosità della <strong>Piazza della Scala</strong>, il giro prosegue verso l’affascinante <strong>quartiere Brera</strong> e il complesso fortificato del <strong>Castello Sforzesco</strong>, pronti per raggiungere l’ultima tappa del circuito rappresentata dalla modernità di <strong>piazza Gae Aulenti</strong>.',
         relax: 'Relax',
-        youWillTaste: 'Ristoro e sapori...',
-        shopImageInCardAltText: 'Alt image...',
-        shopTextInCard: 'Il punto di ristoro è la <strong>Gelateria Oggi di Corso Garibaldi</strong>. Immagina di entrare in un mondo di eccellenze, di profumi, di gusto e di artigianalità… e vedere gli ingredienti, freschissimi e rigorosamente selezionati a seconda della stagionalità, pronti ad essere lavorati sul tavolo e poi fusi insieme nella cucina dell’Officina di OGGI Gelato.<br/><br/>Utilizza qui il <strong>promocode</strong> che scoprirai durante il tour!',
+        youWillTaste: 'Ristoro e sapori',
+        shopImageInCardAltText: 'OGGI Gelato in Corso Garibaldi',
+        shopTextInCard: 'Il punto di ristoro di questo tour è la <strong>Gelateria Oggi di Corso Garibaldi</strong>.<br/>Un favoloso mondo di sapori, profumi e artigianalità dove sarà possibile scoprire la lavorazione dei freschissimi ingredienti che vengono amalgamati nella cucina dell’Officina di Oggi Gelato per dar vita a dolci emozioni.<br/><br/><strong>Utilizza qui il promocode che scoprirai durante il tour!</strong>',
         stops: {
           0: {
             name: 'Stazione Centrale di Milano',
-            description: 'Info generali sulla Stazione. Lorem ipsum dolor sit amet, consectetur adipiscing elit. Fusce vel purus sollicitudin, congue libero id, suscipit nisl. Cras posuere facilisis erat interdum commodo. Phasellus vitae lobortis nisi, sit amet pretium lectus. Curabitur nisi ex, venenatis non diam et, aliquam fringilla massa. Fusce imperdiet viverra elit, non facilisis dolor ultrices sit amet.',
+            description: `La Stazione Centrale di Milano è la seconda più trafficata in Italia: tutti i giorni circa 600 treni circolano nella stazione ferroviaria che ha 24 binari tronchi coperti da una grande tettoia lunga più di 340 metri e composta da ben cinque volte in ferro e vetro.<br/>
+            Sul lato sud-est della stazione c’è un’entrata che viene aperta in alcune occasioni speciali e che un tempo portava nell’area riservata alla famiglia reale dei Savoia. C’è anche un passaggio segreto (dietro lo specchio in bagno!).`,
             images: {
               0: {
-                alt: 'Stazione Centrale - la facciata principale',
-                description: 'Descrizione architettonica della facciata della Stazione. Lorem ipsum dolor sit amet, consectetur adipiscing elit. Fusce vel purus sollicitudin, congue libero id, suscipit nisl. Cras posuere facilisis erat interdum commodo. Phasellus vitae lobortis nisi, sit amet pretium lectus. Curabitur nisi ex, venenatis non diam et, aliquam fringilla massa. Fusce imperdiet viverra elit, non facilisis dolor ultrices sit amet. Vestibulum at sagittis nibh. Mauris a felis a dolor tincidunt sagittis et at velit. Donec sem mauris, rhoncus non quam in, rhoncus lobortis enim. Sed cursus mauris ac massa fermentum, vel sagittis arcu venenatis.'
+                alt: 'Stazione Centrale - La facciata della Stazione',
+                description: `Archi, statue, terrazze, decorazioni: è impossibile non cogliere il fascino senza tempo del complesso monumentale realizzato da Ulisse Stacchini e inaugurato nel 1931. La solida struttura in marmo e cemento rende la costruzione ancora più possente (assieme all’acciaio che ricopre le gallerie) e raccoglie il mix di stili del corpo frontale. Liberty, Art Decò e Neoclassico rendono unica la cattedrale del movimento che ogni giorno vede passare più di 300mila viaggiatori.`
               },
               1: {
-                alt: 'La "Mela Reintegrata" di Michelangelo Pistoletto',
-                description: 'Alcune info sulla Mela Reintegrata. Lorem ipsum dolor sit amet, consectetur adipiscing elit. Fusce vel purus sollicitudin, congue libero id, suscipit nisl. Cras posuere facilisis erat interdum commodo. Phasellus vitae lobortis nisi, sit amet pretium lectus. Curabitur nisi ex, venenatis non diam et, aliquam fringilla massa. Fusce imperdiet viverra elit, non facilisis dolor ultrices sit amet. Vestibulum at sagittis nibh.'
+                alt: 'La "Mela Reintegrata"',
+                description: `La scultura realizzata da Michelangelo Pistoletto è stata installata nel 2015 nella piazza antistante la Stazione in occasione dell’apertura dell'EXPO. È alta 8 metri, 7 metri di diametro e 11 tonnellate di peso. Il monumento candido e marmoreo ha una struttura in acciaio e un’intonaco in argilla, è un’opera che rappresenta il passaggio evolutivo della società umana, l’ingresso in un’era in cui natura e mondo artificiale finalmente si congiungono in equilibrio.`
               },
               2: {
-                alt: 'Il Grattacielo Pirelli',
-                description: 'Alcune info sul Grattacielo Pirelli. Lorem ipsum dolor sit amet, consectetur adipiscing elit. Fusce vel purus sollicitudin, congue libero id, suscipit nisl. Cras posuere facilisis erat interdum commodo. Phasellus vitae lobortis nisi, sit amet pretium lectus. Curabitur nisi ex, venenatis non diam et, aliquam fringilla massa. Fusce imperdiet viverra elit, non facilisis dolor ultrices sit amet. Vestibulum at sagittis nibh.'
+                alt: 'Il "Pirellone"',
+                description: `Il grattacielo Pirelli è un palazzo di 31 piani che era stato progettato per ospitare gli uffici della famosa azienda di pneumatici ma nel 1978 è stato acquistato dalla Regione Lombardia. Oggi il Pirellone è la sede del Consiglio Regionale della Lombardia.<br/>
+                Sui suoi 710 scalini si svolgono corse run up con gli atleti che salgono dal primo all’ultimo piano da dove, tra l’altro, in alcune giornate si può ammirare il panorama sulla città.
+                `
               }
             },
             links: {
@@ -459,24 +486,30 @@ const messages = {
             }
           },
           1: {
-            name: 'Il Duomo',
-            description: 'Info generali sul Duomo. Lorem ipsum dolor sit amet, consectetur adipiscing elit. Fusce vel purus sollicitudin, congue libero id, suscipit nisl. Cras posuere facilisis erat interdum commodo. Phasellus vitae lobortis nisi, sit amet pretium lectus. Curabitur nisi ex, venenatis non diam et, aliquam fringilla massa. Fusce imperdiet viverra elit, non facilisis dolor ultrices sit amet.',
+            name: 'Duomo',
+            description: `Il Duomo di Milano è la terza chiesa cattolica nel mondo: il meraviglioso stile Gotico si esprime in ogni guglia e particolare che è stato realizzato con il marmo bianco di Condoglia, una cava del Lago Maggiore. Ci sono voluti 500 anni per ultimarla, cosa che è successa alla fine del 1800, e ancora oggi la chiesa sorge sul territorio sacro che un tempo ospitava il tempio di Minerva.`,
             images: {
               0: {
-                alt: 'La facciata in stile classico-barocco',
-                description: 'La facciata del Duomo in stile classico-barocco. Lorem ipsum dolor sit amet, consectetur adipiscing elit. Fusce vel purus sollicitudin, congue libero id, suscipit nisl. Cras posuere facilisis erat interdum commodo. Phasellus vitae lobortis nisi, sit amet pretium lectus.'
+                alt: 'La facciata del Duomo',
+                description: `Il monumento simbolo del capoluogo lombardo è stato dedicato a Santa Maria Nascente. La sua facciata testimonia il tempo e gli stili che si sono susseguiti nella sua realizzazione, secoli di scultura e architettura italiana.<br/>
+                I portali e le finestre soprastanti, il timpano spezzato, i portali in bassorilievo, i basamenti e i rilievi, i finestroni neogotici, le statue: lo stile neogotico, quello tardo rinascimentale e il barocco si susseguono dando vita alla straordinaria facciata del Duomo.
+                `
               },
               1: {
-                alt: 'La "Statua della Libertà"',
-                description: 'Una particolare statua del Duomo è stata presa a modello per la più famosa statua di New York... due righe su tale argomento. Lorem ipsum dolor sit amet, consectetur adipiscing elit. Fusce vel purus sollicitudin, congue libero id, suscipit nisl. Cras posuere facilisis erat interdum commodo. Phasellus vitae lobortis nisi, sit amet pretium lectus.'
+                alt: 'Statua della Libertà',
+                description: `Le statue ottocentesche di Apostoli e Profeti si trovano sulle mensole frontali e ornano la balaustra già dall’inizio dell’Ottocento. È proprio La Legge Nuova di Pacetti a destare una certa attenzione: la somiglianza con la Statua della Libertà di New York è incredibile!<br/>
+                Sono in molti, infatti, a credere che la scultura napoleonica milanese ne sia stata l’ispirazione.
+                `
               },
               2: {
-                alt: 'Il Palazzo Reale',
-                description: 'Il Palazzo Reale. Lorem ipsum dolor sit amet, consectetur adipiscing elit. Fusce vel purus sollicitudin, congue libero id, suscipit nisl. Cras posuere facilisis erat interdum commodo. Phasellus vitae lobortis nisi, sit amet pretium lectus. Curabitur nisi ex, venenatis non diam et, aliquam fringilla massa. Fusce imperdiet viverra elit, non facilisis dolor ultrices sit amet. Vestibulum at sagittis nibh. Mauris a felis a dolor tincidunt sagittis et at velit. Donec sem mauris, rhoncus non quam in, rhoncus lobortis enim. Sed cursus mauris ac massa fermentum, vel sagittis arcu venenatis.'
+                alt: 'Palazzo Reale ',
+                description: `Il Palazzo Reale rappresenta in modo elegante l’architettura classica. Oggi al suo interno si svolgono le maggiori mostre del capoluogo lombardo ma un tempo il Palazzo del Broletto Vecchio (un tempo era noto così) è stato la sede del governo di Milano, del Regno del Lombardo-veneto e persino residenza reale.`
               },
               3: {
-                alt: 'La Galleria Vittorio Emanuele',
-                description: 'La Galleria Vittorio Emanuele. Lorem ipsum dolor sit amet, consectetur adipiscing elit. Fusce vel purus sollicitudin, congue libero id, suscipit nisl. Cras posuere facilisis erat interdum commodo. Phasellus vitae lobortis nisi, sit amet pretium lectus. Curabitur nisi ex, venenatis non diam et, aliquam fringilla massa. Fusce imperdiet viverra elit, non facilisis dolor ultrices sit amet. Vestibulum at sagittis nibh. Mauris a felis a dolor tincidunt sagittis et at velit. Donec sem mauris, rhoncus non quam in, rhoncus lobortis enim. Sed cursus mauris ac massa fermentum, vel sagittis arcu venenatis.'
+                alt: 'Galleria Vittorio Emanuele II',
+                description: `L’originario splendore della Galleria Vittorio Emanuele II è stato ripristinato nel 2015, in occasione dell’Expo: stupendi affreschi, stucchi e decorazioni in ferro ornano la costruzione che fu progettata dall’architetto emiliano Giuseppe Mengoni. Egli purtroppo morì proprio durante una ispezione sul cantiere (incidente o suicidio?).<br/>
+                Due cose da fare: osservare le lunette dipinte in cima alle pareti, che rappresentano i 4 continenti, e eseguire il rito scaramantico di far ruotare il tallone del piede destro sul mosaico dei genitali del toro.
+                `
               }
             },
             nears: {
@@ -484,7 +517,7 @@ const messages = {
                 name: 'Magazzini La Rinascente'
               },
               1: {
-                name: 'PInacoteca Ambrosiana'
+                name: 'Pinacoteca Ambrosiana'
               }
             },
             links: {
@@ -508,19 +541,23 @@ const messages = {
           },
           2: {
             name: 'Piazza della Scala',
-            description: 'Info generali sulla Piazza della Scala. Lorem ipsum dolor sit amet, consectetur adipiscing elit. Fusce vel purus sollicitudin, congue libero id, suscipit nisl. Cras posuere facilisis erat interdum commodo. Phasellus vitae lobortis nisi, sit amet pretium lectus. Curabitur nisi ex, venenatis non diam et, aliquam fringilla massa. Fusce imperdiet viverra elit, non facilisis dolor ultrices sit amet.',
+            description: `Nel centro storico milanese spicca l’imponenza di Piazza della Scala, un quadrato contornato da eleganti edifici più o meno recenti (il più antico è Palazzo Marino, della metà del 1500) collegato alla Galleria Vittorio Emanuele II.<br/>
+            La vecchia via denominata contrada della Scala divenne una piazza quando vennero demoliti diversi caseggiati tra cui quello in cui aveva sede il famoso Caffè Martini.
+            `,
             images: {
               0: {
-                alt: 'Statua di Leonardo in Piazza della Scala',
-                description: 'Statua di Leonardo in Piazza della Scala. Lorem ipsum dolor sit amet, consectetur adipiscing elit. Fusce vel purus sollicitudin, congue libero id, suscipit nisl. Cras posuere facilisis erat interdum commodo. Phasellus vitae lobortis nisi, sit amet pretium lectus. Curabitur nisi ex, venenatis non diam et, aliquam fringilla massa. Fusce imperdiet viverra elit, non facilisis dolor ultrices sit amet. Vestibulum at sagittis nibh. Mauris a felis a dolor tincidunt sagittis et at velit. Donec sem mauris, rhoncus non quam in, rhoncus lobortis enim. Sed cursus mauris ac massa fermentum, vel sagittis arcu venenatis.'
+                alt: 'Statua di Leonardo',
+                description: `In Piazza della Scala si trova la statua dedicata a Leonardo Da Vinci (1872) che in dialetto è soprannominata “on litter in quatter”, un litro in quattro. Questo perché per i milanesi l’artista, che visse e lavorò per un quarto di secolo a Milano, sembra un bottiglione di vino e i suoi quattro discepoli assomigliano a quattro bicchierini.`
               },
               1: {
                 alt: 'Teatro alla Scala',
-                description: 'Alcune info sul Teatro alla Scala. Lorem ipsum dolor sit amet, consectetur adipiscing elit. Fusce vel purus sollicitudin, congue libero id, suscipit nisl. Cras posuere facilisis erat interdum commodo. Phasellus vitae lobortis nisi, sit amet pretium lectus. Curabitur nisi ex, venenatis non diam et, aliquam fringilla massa. Fusce imperdiet viverra elit, non facilisis dolor ultrices sit amet. Vestibulum at sagittis nibh.'
+                description: `Costruito sulle ceneri del Teatro Ducale, nel 1776 nasce il Teatro della Scala, inaugurato due anni dopo. Il nome deriva dal luogo dove è stato realizzato, un tempo sito della chiesa di Santa Maria alla Scala.<br/>
+                Un simbolo del melodramma italiano, del balletto, delle opere e più in generale di tutta l’arte italiana: tutti gli anni la stagione della Scala si apre nel giorno di Sant’Ambrogio che è il patrono di Milano, 7 dicembre.
+                `
               },
               2: {
                 alt: 'Gallerie d\'Italia',
-                description: 'Descrizione Gallerie d\'Italia. Lorem ipsum dolor sit amet, consectetur adipiscing elit. Fusce vel purus sollicitudin, congue libero id, suscipit nisl. Cras posuere facilisis erat interdum commodo. Phasellus vitae lobortis nisi, sit amet pretium lectus. Curabitur nisi ex, venenatis non diam et, aliquam fringilla massa. Fusce imperdiet viverra elit, non facilisis dolor ultrices sit amet. Vestibulum at sagittis nibh.'
+                description: `Gallerie d’Italia è il simbolo di Progetto Cultura, l’insieme degli spazi espositivi di Intesa Sanpaolo. Uno dei palazzi storici della banca si trova proprio nella Piazza della Scala, un luogo di enorme patrimonio artistico e architettonico dove è possibile visionare le opere rappresentative dell’Ottocento italiano.`
               }
             },
             nears: {
@@ -548,11 +585,11 @@ const messages = {
           },
           3: {
             name: 'Quartiere Brera',
-            description: 'Info generali sulla quartiere. Lorem ipsum dolor sit amet, consectetur adipiscing elit. Fusce vel purus sollicitudin, congue libero id, suscipit nisl. Cras posuere facilisis erat interdum commodo. Phasellus vitae lobortis nisi, sit amet pretium lectus. Curabitur nisi ex, venenatis non diam et, aliquam fringilla massa. Fusce imperdiet viverra elit, non facilisis dolor ultrices sit amet.',
+            description: `Unisci architettura, storia e cultura e ottieni il quartiere Brera: questo è uno dei luoghi più visitati di Milano, un posto ricco di charme e fascino che deve il suo nome a “braida”, distesa di terra incolta. Già oltre cent’anni fa il quartiere era frequentato dagli artisti dell’Accademia di Belle Arti che si spostavano dal Palazzo Brera alla Pinacoteca, dall’Orto Botanico al Mercatino.`,
             images: {
               0: {
                 alt: 'Le vie del quartiere Brera',
-                description: 'Descrizione della vita nel quartiere tra caffè e shopping. Lorem ipsum dolor sit amet, consectetur adipiscing elit. Fusce vel purus sollicitudin, congue libero id, suscipit nisl. Cras posuere facilisis erat interdum commodo. Phasellus vitae lobortis nisi, sit amet pretium lectus. Curabitur nisi ex, venenatis non diam et, aliquam fringilla massa. Fusce imperdiet viverra elit, non facilisis dolor ultrices sit amet. Vestibulum at sagittis nibh. Mauris a felis a dolor tincidunt sagittis et at velit. Donec sem mauris, rhoncus non quam in, rhoncus lobortis enim. Sed cursus mauris ac massa fermentum, vel sagittis arcu venenatis.'
+                description: `Strade strette con i ciottoli, cortili magnifici, palazzi d’epoca, botteghe e boutique: è nelle vie del quartiere Brera che gli appassionati dello shopping si dirigono per cercare le migliori occasioni tra gli oggetti più originali del momento. E, dopo gli acquisti, impossibile evitare una sosta in uno dei molti locali inseriti in questa cornice bohemien.`
               }
             },
             nears: {
@@ -572,15 +609,17 @@ const messages = {
           },
           4: {
             name: 'Castello Sforzesco',
-            description: 'Info generali sul Castello Sforzesco. Lorem ipsum dolor sit amet, consectetur adipiscing elit. Fusce vel purus sollicitudin, congue libero id, suscipit nisl. Cras posuere facilisis erat interdum commodo. Phasellus vitae lobortis nisi, sit amet pretium lectus. Curabitur nisi ex, venenatis non diam et, aliquam fringilla massa. Fusce imperdiet viverra elit, non facilisis dolor ultrices sit amet.',
+            description: `Oggi il Castello Sforzesco è uno degli edifici più rappresentativi di Milano ma per secoli ha rappresentato il simbolo del dominio straniero. Con l’Unita d’Italia si è trasformato in un luogo in cui storia, arte e cultura si incontrano e dove si possono trovare alcuni tra i maggiori musei cittadini.<br/>
+            Famosissimi i cortili, le torri e gli ambienti di origine sforzesca.
+            `,
             images: {
               0: {
                 alt: 'La torre del Filarete',
-                description: 'Descrizione architettonica della torre del Filarete. Lorem ipsum dolor sit amet, consectetur adipiscing elit. Fusce vel purus sollicitudin, congue libero id, suscipit nisl. Cras posuere facilisis erat interdum commodo. Phasellus vitae lobortis nisi, sit amet pretium lectus. Curabitur nisi ex, venenatis non diam et, aliquam fringilla massa. Fusce imperdiet viverra elit, non facilisis dolor ultrices sit amet. Vestibulum at sagittis nibh. Mauris a felis a dolor tincidunt sagittis et at velit. Donec sem mauris, rhoncus non quam in, rhoncus lobortis enim. Sed cursus mauris ac massa fermentum, vel sagittis arcu venenatis.'
+                description: `È di Antonio Averulino detto il Filarete il progetto della elegante Torre che porta il suo nome e che è stata ideata nel 1452. Neanche un secolo dopo, però, la Torre del Filarete crollò quando era un deposito di polvere da sparo, quindi venne ricreata dopo un’attenta ricerca da parte dell’architetto Luca Beltrami che volle ricreare il suo aspetto rinascimentale e che aggiunse il famoso orologio con il sole raggiante.`
               },
               1: {
                 alt: 'Fontana di Piazza Castello',
-                description: 'Info su Fontana di Piazza Castello. Lorem ipsum dolor sit amet, consectetur adipiscing elit. Fusce vel purus sollicitudin, congue libero id, suscipit nisl. Cras posuere facilisis erat interdum commodo. Phasellus vitae lobortis nisi, sit amet pretium lectus. Curabitur nisi ex, venenatis non diam et, aliquam fringilla massa. Fusce imperdiet viverra elit, non facilisis dolor ultrices sit amet. Vestibulum at sagittis nibh.'
+                description: `La funtana di spus (torta nuziale, per la sua forma somigliante), poi diventata de Craxi nel periodo dopo tangentopoli, è ricca di storia ma anche di leggende metropolitane: quando fu smontata per consentire la prosecuzione dei lavori della metropolitana, nel 1960, si diffuse la voce che fosse stata trafugata ed esposta da Craxi nei giardini di Hammamet.`
               }
             },
             nears: {
@@ -594,7 +633,7 @@ const messages = {
                 name: 'Arco della Pace'
               },
               3: {
-                name: 'Basilica di san Ambrogio'
+                name: 'Basilica di San Ambrogio'
               },
               4: {
                 name: 'Museo del Cenacolo'
@@ -613,7 +652,9 @@ const messages = {
           },
           5: {
             name: 'OGGI Gelato',
-            description: 'Presentazione attività dello sponsor OGGI Gelato Lorem ipsum dolor sit amet, consectetur adipiscing elit. Fusce vel purus sollicitudin, congue libero id, suscipit nisl. Cras posuere facilisis erat interdum commodo. Phasellus vitae lobortis nisi, sit amet pretium lectus.',
+            description: `OGGI Gelato produce golosi coni e coppe gelato artigianali senza coloranti e conservanti aggiunti. Il gelato sano e naturale viene realizzato con ottime materie prime stagionali dall’Officina Gelato Gusto Italiano: da oltre sei anni OGGI suggerisce ai suoi clienti le migliori dolci proposte all’interno dei suoi negozi.<br/>
+            Gli ingredienti selezionati, eccellenze del territorio italiano, sono il segreto della gelateria artigianale. I mantecati e le creme spalmabili di OGGI Gelato sono prodotti unici che vengono realizzati per offrire ai clienti il gusto originale di ogni gelato.
+            `,
             carousel: {
               0: {
                 alt: 'Descizione 1'
@@ -627,12 +668,8 @@ const messages = {
             },
             images: {
               0: {
-                alt: 'Oggi Gelato - Gelato al cioccolato',
-                description: 'Lista e descrizione di ciò che di maggior interesse si può ordinare in questa gelateria.'
-              },
-              1: {
-                alt: 'Oggi Gelato - interni',
-                description: 'Lista dei servizi ulteriori (wi-fi, accesso disabili, altre info utili prese dal loro sito e di interesse per i possibili avventori)'
+                alt: 'Oggi Gelato - descrizione attività',
+                description: `OGGI Gelato è una delle prime gelaterie italiane a utilizzare il logo Campa Amica di Coldiretti, un progetto che promuove la filiera agricola completamente italiana. Ma non solo! L’Officina Gelato Gusto Italiano è stata scelta per essere il fornitore ufficiale del Papa, l’unica gelateria a produrre il gelato per la Santa Sede.`
               }
             },
             nears: {
@@ -656,19 +693,27 @@ const messages = {
           },
           6: {
             name: 'Piazza Gae Aulenti',
-            description: 'Info generali sulla Piazza Gae Aulenti. Lorem ipsum dolor sit amet, consectetur adipiscing elit. Fusce vel purus sollicitudin, congue libero id, suscipit nisl. Cras posuere facilisis erat interdum commodo. Phasellus vitae lobortis nisi, sit amet pretium lectus. Curabitur nisi ex, venenatis non diam et, aliquam fringilla massa. Fusce imperdiet viverra elit, non facilisis dolor ultrices sit amet.',
+            description: `Una delle piazze più recenti (2012) eppure più simboliche di Milano è sicuramente Gae Aulenti: in questo luogo si incontrano la zona finanziaria e quella centrale. Un progetto futuristico con un design moderno che è opera dell’architetto Cesar Pelli e dalla quale è possibile ammirare lo skyline milanese.<br/>
+            La piazza è stata realizzata dieci metri sopra il livello stradale e sotto sono presenti il parcheggio e la metropolitana.
+            `,
             images: {
               0: {
-                alt: 'Fontana di piazza Gae Aulenti',
-                description: 'Qualche info sulla Fontana di piazza Gae Aulenti. Lorem ipsum dolor sit amet, consectetur adipiscing elit. Fusce vel purus sollicitudin, congue libero id, suscipit nisl. Cras posuere facilisis erat interdum commodo. Phasellus vitae lobortis nisi, sit amet pretium lectus. Curabitur nisi ex, venenatis non diam et, aliquam fringilla massa. Fusce imperdiet viverra elit, non facilisis dolor ultrices sit amet. Vestibulum at sagittis nibh. Mauris a felis a dolor tincidunt sagittis et at velit. Donec sem mauris, rhoncus non quam in, rhoncus lobortis enim. Sed cursus mauris ac massa fermentum, vel sagittis arcu venenatis.'
+                alt: 'Fontana di Piazza Gae Aulenti',
+                description: `Sono tantissime le fontane presenti a Milano: tra queste quella di Piazza Gae Aulenti che si trova ai piedi dei grattacieli e a sei metri dalla strada. Un gioco di riflessi e specchi che rende enigmatica, romantica e bellissima la piazza e che attira sempre i turisti (ma anche i cittadini).<br/>
+                È possibile attraversare la piazza camminando sull’acqua (ma non fare il bagno).
+                `
               },
               1: {
-                alt: 'Le trombe di piazza Gae Aulenti',
-                description: 'Alcune info sul questa particolare opera (le trombe). Lorem ipsum dolor sit amet, consectetur adipiscing elit. Fusce vel purus sollicitudin, congue libero id, suscipit nisl. Cras posuere facilisis erat interdum commodo. Phasellus vitae lobortis nisi, sit amet pretium lectus. Curabitur nisi ex, venenatis non diam et, aliquam fringilla massa. Fusce imperdiet viverra elit, non facilisis dolor ultrices sit amet. Vestibulum at sagittis nibh.'
+                alt: 'Le trombe',
+                description: `Ventitre tubi di alluminio estruso ossidato ottone collegano l’interno della piazza con la sua superficie: un dettaglio urbano insolito che attira i turisti a bisbigliare al loro interno. Ecco perché le trombe sono state chiamate le Voci della città, a dimostrazione che un’opera scultorea può diventare un’attrattiva con cui interagire.<br/>
+                Il progetto è stato realizzato per permettere il ricircolo dell’aria tra i piani.
+                `
               },
               2: {
-                alt: 'Il Grattacielo Unicredit',
-                description: 'Alcune info sul Grattacielo Unicredit. Lorem ipsum dolor sit amet, consectetur adipiscing elit. Fusce vel purus sollicitudin, congue libero id, suscipit nisl. Cras posuere facilisis erat interdum commodo. Phasellus vitae lobortis nisi, sit amet pretium lectus. Curabitur nisi ex, venenatis non diam et, aliquam fringilla massa. Fusce imperdiet viverra elit, non facilisis dolor ultrices sit amet. Vestibulum at sagittis nibh.'
+                alt: 'Grattacielo Unicredit',
+                description: `Questo è il grattacielo più alto d’Italia, 231 metri che rappresentano la ristrutturazione urbana milanese dei primi anni del 2000. L’Unicredit Tower si trova nel cuore del Centro Direzionale di Milano e proprio qui lavorano circa 4mila persone.
+                La guglia laica è composta da una serie di edifici ecosostenibili costruiti in vetro e acciaio traforato che la rendono in grado di sopportare ghiaccio e vento.
+                `
               }
             },
             nears: {

@@ -15,7 +15,7 @@ const getPromoPopup = function (stop, promo, complete) {
     obj = {
       title: i18n.t('message.popups.checkTitle', {stop: stop}),
       type: `success`,
-      html: i18n.t('message.popups.promoTextComplete', {promo: promo})
+      html: i18n.t('message.popups.promoTextComplete', {promo: promo, stop: stop})
     }
   } else {
     obj = {
@@ -163,18 +163,20 @@ const getFinishPopup = function (stop) {
 }
 
 const notEvenClosePopup = function (distance) {
+  let formattedDistance = parseInt(distance).toLocaleString()
   return {
     title: i18n.t('message.popups.notEvenCloseTitle'),
     type: `error`,
-    html: i18n.t('message.popups.notEvenCloseText', {distance: parseInt(distance)})
+    html: i18n.t('message.popups.notEvenCloseText', {distance: formattedDistance})
   }
 }
 
 const justOneStepPopup = function (distance) {
+  let formattedDistance = parseInt(distance).toLocaleString()
   return {
     title: i18n.t('message.popups.nearHereButTitle'),
     type: `error`,
-    html: i18n.t('message.popups.nearHereButText', {distance: parseInt(distance)})
+    html: i18n.t('message.popups.nearHereButText', {distance: formattedDistance})
   }
 }
 

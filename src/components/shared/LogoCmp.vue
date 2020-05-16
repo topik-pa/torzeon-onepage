@@ -1,7 +1,7 @@
 <template>
   <div>
     <img src="https://torzeon.s3.eu-central-1.amazonaws.com/torzeon-logo-half.min.png" :alt="projectName"/>
-    <router-link :to="rootUrl">{{projectName}}</router-link>
+    <span>{{projectName}}</span>
   </div>
 </template>
 
@@ -30,8 +30,10 @@ div {
     align-items: center;
 }
 span {
-  display: block;
-  font-size: .8rem;
+  text-decoration: none;
+  color: #666;
+  outline: none;
+  cursor: default;
 }
 img {
   width: 32px;

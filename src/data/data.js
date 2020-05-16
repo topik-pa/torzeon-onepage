@@ -503,13 +503,6 @@ const data = {
               url: 'https://placekitten.com/720/540',
               orientation: 'h',
               description: i18n.t('message.tour_0.stops.5.images.0.description')
-            },
-            {
-              id: 1,
-              alt: i18n.t('message.tour_0.stops.5.images.1.alt'),
-              url: 'https://placekitten.com/720/540',
-              orientation: 'h',
-              description: i18n.t('message.tour_0.stops.5.images.1.description')
             }
           ],
           near: [
