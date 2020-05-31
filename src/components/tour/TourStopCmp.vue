@@ -30,6 +30,16 @@
       </div>
     </div>
 
+    <div class="socials" v-if="stop.socials">
+      <div class="subtitle">
+        <h3><i class="fas fa-hashtag"></i>&nbsp;{{stop.name}}{{ $t("message.onSocials") }}</h3>
+      </div>
+      <div class="wrap">
+        <div class="social" v-for="social in stop.socials" :key="social.id" v-html="social.code">
+        </div>
+      </div>
+    </div>
+
     <div class="links" v-if="stop.links.length">
       <div class="subtitle">
         <h3><i class="fas fa-globe"></i>&nbsp;{{ $t("message.infoFromTheWeb") }}</h3>
@@ -319,7 +329,18 @@ export default {
 
   .links li {
     margin: 1.5rem 1rem;
-    font-size: .8rem;
+    font-size: .9rem;
+  }
+
+  .socials .wrap {
+    display: flex;
+    flex-direction: column;
+    justify-content: space-around;
+    align-items: center;
+  }
+
+  .socials .social {
+    margin: 2rem 0;
   }
 
   .check {
@@ -362,10 +383,6 @@ export default {
     min-height: 7rem;
     display: block;
     font-size: 85%;
-  }
-
-  h3 {
-    font-size: 80%;
   }
 
   h2 {

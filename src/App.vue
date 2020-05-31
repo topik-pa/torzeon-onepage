@@ -125,13 +125,6 @@ small, .small {
   font-size: 80%;
 }
 
-.social-section-popup {
-  display: flex;
-  justify-content: center;
-  align-items: center;
-  flex-direction: column;
-}
-
 article aside {
   transition: top .8s ease-in-out;
 }
@@ -155,6 +148,10 @@ article.up aside {
 }
 .swal2-title {
   display:initial!important;
+}
+
+#instagram-embed-0 {
+  min-width: inherit!important;
 }
 
 @media screen and (max-width: 1024) {

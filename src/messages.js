@@ -5,6 +5,7 @@ const messages = {
       promocode: 'Your Promocode: ',
       by: 'by ',
       followOn: 'Follow on: ',
+      onSocials: ' on Socials',
       congrats: 'Congrats! Your Tour is complete!',
       shareIt: 'Share your experience.',
       start: 'Start',
@@ -43,19 +44,11 @@ const messages = {
           <br/>Ora puoi usare il tuo promocode<br/><span class="promocode">{promo}</span><br/>
           per ottenere <strong>uno sconto del 15%</strong> sulla tua consumazione in questa attività.<br/><br/>
           Riferisci questo promocode alla cassa o alla persona che ti servirà e... Buon appetito!!!<br/><br/><br/>
-          <h3>{stop} sui Social</h3>
-          <div class="social-section-popup">
-            <div id="TA_cdsratingsonlynarrow363" class="TA_cdsratingsonlynarrow"><ul id="QynJUXF4" class="TA_links nxneR81"><li id="2Rxm5agCk" class="J1fcr2cdc"><a target="_blank" href="https://www.tripadvisor.it/"><img src="https://www.tripadvisor.it/img/cdsi/img2/branding/tripadvisor_logo_transp_340x80-18034-2.png" alt="TripAdvisor"/></a></li></ul></div>
-          </div>
         `,
         shopTextNoPromocode: `
           <span class="popup promocode">{promo}</span><br/>Hai scoperto una parte del promocode segreto!<br/><br/>
           Visita tutti i luoghi di questo Tour per completare il promocode segreto e<br/>
           <strong>ottenere uno sconto del 15% in questa attività</strong>.<br/><br/><br/>
-          <h3>{stop} sui Social</h3>
-          <div class="social-section-popup">
-            <div id="TA_cdsratingsonlynarrow363" class="TA_cdsratingsonlynarrow"><ul id="QynJUXF4" class="TA_links nxneR81"><li id="2Rxm5agCk" class="J1fcr2cdc"><a target="_blank" href="https://www.tripadvisor.it/"><img src="https://www.tripadvisor.it/img/cdsi/img2/branding/tripadvisor_logo_transp_340x80-18034-2.png" alt="TripAdvisor"/></a></li></ul></div>
-          </div>
         `,
         finishTitle: '<span class="popup stopname">{stop}</span> era l\'ultima tappa del nostro Tour<br/>',
         finishText: 'Ti è piaciuta questa esperienza?<br/><br/><strong>Lascia una tua valutazione</strong> e <strong>condividi questa pagina su Facebook</strong>!</div>'
@@ -308,7 +301,7 @@ const messages = {
             images: {
               0: {
                 alt: 'Oggi Gelato - descrizione attività',
-                description: `OGGI Gelato è una delle prime gelaterie italiane a utilizzare il logo Campa Amica di Coldiretti, un progetto che promuove la filiera agricola completamente italiana. Ma non solo! L’Officina Gelato Gusto Italiano è stata scelta per essere il fornitore ufficiale del Papa, l’unica gelateria a produrre il gelato per la Santa Sede.`
+                description: `OGGI Gelato è una delle prime gelaterie italiane a utilizzare il logo Campagna Amica di Coldiretti, un progetto che promuove la filiera agricola completamente italiana. Ma non solo! L’Officina Gelato Gusto Italiano è stata scelta per essere il fornitore ufficiale del Papa, l’unica gelateria a produrre il gelato per la Santa Sede.`
               }
             },
             nears: {
@@ -392,6 +385,7 @@ const messages = {
       promocode: 'Il tuo promocode: ',
       by: 'di ',
       followOn: 'Segui su: ',
+      onSocials: ' sui Social',
       congrats: 'Congratulazioni, hai completato il Tour!',
       shareIt: 'Condividi la tua esperienza e scopri cosa dicono gli altri utenti',
       start: 'Inizio',
@@ -430,19 +424,11 @@ const messages = {
           <br/>Ora puoi usare il tuo promocode<br/><span class="promocode">{promo}</span><br/>
           per ottenere <strong>uno sconto del 15%</strong> sulla tua consumazione in questa attività.<br/><br/>
           Riferisci questo promocode alla cassa o alla persona che ti servirà e... Buon appetito!!!<br/><br/><br/>
-          <h3>{stop} sui Social</h3>
-          <div class="social-section-popup">
-            <div id="TA_cdsratingsonlynarrow363" class="TA_cdsratingsonlynarrow"><ul id="QynJUXF4" class="TA_links nxneR81"><li id="2Rxm5agCk" class="J1fcr2cdc"><a target="_blank" href="https://www.tripadvisor.it/"><img src="https://www.tripadvisor.it/img/cdsi/img2/branding/tripadvisor_logo_transp_340x80-18034-2.png" alt="TripAdvisor"/></a></li></ul></div>
-          </div>
         `,
         shopTextNoPromocode: `
           <span class="popup promocode">{promo}</span><br/>Hai scoperto una parte del promocode segreto!<br/><br/>
           Visita tutti i luoghi di questo Tour per completare il promocode segreto e<br/>
           <strong>ottenere uno sconto del 15% in questa attività</strong>.<br/><br/><br/>
-          <h3>{stop} sui Social</h3>
-          <div class="social-section-popup">
-            <div id="TA_cdsratingsonlynarrow363" class="TA_cdsratingsonlynarrow"><ul id="QynJUXF4" class="TA_links nxneR81"><li id="2Rxm5agCk" class="J1fcr2cdc"><a target="_blank" href="https://www.tripadvisor.it/"><img src="https://www.tripadvisor.it/img/cdsi/img2/branding/tripadvisor_logo_transp_340x80-18034-2.png" alt="TripAdvisor"/></a></li></ul></div>
-          </div>
         `,
         finishTitle: '<span class="popup stopname">{stop}</span> era l\'ultima tappa del nostro Tour<br/>',
         finishText: 'Ti è piaciuta questa esperienza?<br/><br/><strong>Lascia una tua valutazione</strong> e <strong>condividi questa pagina su Facebook</strong>!</div>'
@@ -695,7 +681,7 @@ const messages = {
             images: {
               0: {
                 alt: 'Oggi Gelato - il punto vendita di Corso Garibaldi',
-                description: `OGGI Gelato è una delle prime gelaterie italiane a utilizzare il logo Campa Amica di Coldiretti, un progetto che promuove la filiera agricola completamente italiana. Ma non solo! L’Officina Gelato Gusto Italiano è stata scelta per essere il fornitore ufficiale del Papa, l’unica gelateria a produrre il gelato per la Santa Sede.`
+                description: `OGGI Gelato è una delle prime gelaterie italiane a utilizzare il logo Campagna Amica di Coldiretti, un progetto che promuove la filiera agricola completamente italiana. Ma non solo! L’Officina Gelato Gusto Italiano è stata scelta per essere il fornitore ufficiale del Papa, l’unica gelateria a produrre il gelato per la Santa Sede.`
               }
             },
             nears: {
