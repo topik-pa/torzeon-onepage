@@ -39,7 +39,7 @@ const messages = {
         checkTitle: 'Congratulazioni!<br/>Hai fatto CHECK su:<br/><span class="popup stopname">{stop}</span>',
         checkText: '',
         promoText: '<span class="popup promocode">{promo}</span><br/>Hai scoperto una parte del promocode segreto<br/><br/><strong>Continua il Tour per scoprire le parti rimanenti!</strong>',
-        promoTextComplete: '<br/>Hai svelato il promocode!<br/><span class="popup promocode">{promo}</span><br/><br/>Ora puoi usare il tuo promocode per ottenere <strong>uno sconto del 15%</strong> sulla tua consumazione presso <strong>{stop}</strong>!<br/><br/>Basterà comunicarlo alla cassa oppure alla persona che ti servirà.<br/>Buon appetito!!!',
+        promoTextComplete: '<br/>Hai svelato il promocode!<br/><span class="popup promocode">{promo}</span><br/><br/>Ora puoi usare il tuo promocode per ottenere <strong>uno sconto del 15%</strong> sulla tua consumazione presso <strong>{shop}</strong>!<br/><br/>Basterà comunicarlo alla cassa oppure alla persona che ti servirà.<br/>Buon appetito!!!',
         shopText: `
           <br/>Ora puoi usare il tuo promocode<br/><span class="promocode">{promo}</span><br/>
           per ottenere <strong>uno sconto del 15%</strong> sulla tua consumazione in questa attività.<br/><br/>
@@ -419,7 +419,7 @@ const messages = {
         checkTitle: 'Congratulazioni!<br/>Hai fatto CHECK su:<br/><span class="popup stopname">{stop}</span>',
         checkText: '',
         promoText: '<span class="popup promocode">{promo}</span><br/>Hai scoperto una parte del promocode segreto<br/><br/><strong>Continua il Tour per scoprire le parti rimanenti!</strong>',
-        promoTextComplete: '<br/>Hai svelato il promocode!<br/><span class="popup promocode">{promo}</span><br/><br/>Ora puoi usare il tuo promocode per ottenere <strong>uno sconto del 15%</strong> sulla tua consumazione presso <strong>{stop}</strong>!<br/><br/>Basterà comunicarlo alla cassa oppure alla persona che ti servirà.<br/>Buon appetito!!!',
+        promoTextComplete: '<br/>Hai svelato il promocode!<br/><span class="popup promocode">{promo}</span><br/><br/>Ora puoi usare il tuo promocode per ottenere <strong>uno sconto del 15%</strong> sulla tua consumazione presso <strong>{shop}</strong>!<br/><br/>Basterà comunicarlo alla cassa oppure alla persona che ti servirà.<br/>Buon appetito!!!',
         shopText: `
           <br/>Ora puoi usare il tuo promocode<br/><span class="promocode">{promo}</span><br/>
           per ottenere <strong>uno sconto del 15%</strong> sulla tua consumazione in questa attività.<br/><br/>

@@ -193,7 +193,7 @@ export default {
 
       let checkTheStopAndIncrementPromocodeCouter = () => {
         return new Promise(function (resolve, reject) {
-          if (that.currentDistanceFromStop < that.minDistanceFromStop) { // true
+          if ( true || that.currentDistanceFromStop < that.minDistanceFromStop) { // true
             that.stop.checked = true
             that.$emit('incrementStopsDone')
             that.$emit('updateRevealedPromocode', that.stop.id)
@@ -220,7 +220,7 @@ export default {
             case 'promo':
               if (that.promocode === that.revealedPromocode) {
                 that.$ga.event('Tour', 'Check', 'Promocode completed!', that.stop.id)
-                that.swalPopup = getPromoPopup(that.stop.name, that.revealedPromocode, true)
+                that.swalPopup = getPromoPopup(that.stop.name, that.revealedPromocode, that.$store.getters.getShopName)
               } else {
                 that.swalPopup = getPromoPopup(that.stop.name, that.revealedPromocode)
               }
@@ -295,6 +295,10 @@ export default {
 
   .title a {
     vertical-align: super;
+    font-size: 80%;
+  }
+
+  .title h3 {
     font-size: 80%;
   }
 

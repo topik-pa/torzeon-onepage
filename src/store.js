@@ -18,6 +18,10 @@ const getters = {
   getPromocode: (state) => {
     let defaultTour = state.data.tours.find(tour => tour.default === true)
     return defaultTour.promocode
+  },
+  getShopName: (state) => {
+    let defaultTour = state.data.tours.find(tour => tour.default === true)
+    return Object.values(defaultTour.stops).find(stop => stop['type'] === 'private').name
   }
 }
 
