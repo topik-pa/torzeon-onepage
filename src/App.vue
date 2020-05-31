@@ -108,7 +108,7 @@ figcaption {
   text-align: center;
   color: #666;
   font-style: italic;
-  margin-top: .1rem;
+  margin-top: .5rem;
   font-size: 0.8rem;
 }
 

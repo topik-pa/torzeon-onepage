@@ -104,13 +104,13 @@ const data = {
               value: 0 + '<span class="small">/5</span>'
             },
             {
-              id: 4,
+              id: 3,
               icon: 'fas fa-clock',
               key: i18n.t('message.duration'),
               value: 240 + i18n.t('message.minutes')
             },
             {
-              id: 5,
+              id: 4,
               icon: 'fas fa-route',
               key: i18n.t('message.geometry'),
               value: i18n.t('message.roundTrip')
