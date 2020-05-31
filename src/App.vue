@@ -109,6 +109,7 @@ figcaption {
   color: #666;
   font-style: italic;
   margin-top: .1rem;
+  font-size: 0.8rem;
 }
 
 img {

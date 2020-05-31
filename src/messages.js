@@ -2,31 +2,31 @@ const messages = {
   en: {
     message: {
       projectName: 'torzeon.com',
-      promocode: 'Il tuo promocode: ',
-      by: 'di ',
-      followOn: 'Segui su: ',
-      congrats: 'Congratulazioni, hai completato il Tour!',
-      shareIt: 'Condividi la tua esperienza e scopri cosa dicono gli altri utenti',
-      start: 'Inizio',
-      end: 'Fine',
+      promocode: 'Your Promocode: ',
+      by: 'by ',
+      followOn: 'Follow on: ',
+      congrats: 'Congrats! Your Tour is complete!',
+      shareIt: 'Share your experience.',
+      start: 'Start',
+      end: 'End',
       rating: 'Rating',
-      duration: 'Durata',
-      geometry: 'Geometria',
-      minutes: ' minuti (circa)',
-      linearTrip: 'Tragitto lineare',
-      roundTrip: 'Tragitto circolare',
-      readyMessage: 'Pronti? ...VIA!',
-      getThere: 'Localizza sulla mappa',
+      duration: 'Duration',
+      geometry: 'Geometry',
+      minutes: ' minutes',
+      linearTrip: 'Linear path',
+      roundTrip: 'Round path',
+      readyMessage: 'Ready? ...GO!',
+      getThere: 'Find on Maps',
       checkLocation: 'CHECK!',
-      locationChecked: 'Hai fatto check!',
-      infoFromTheWeb: 'Approfondimenti',
-      areYouHere: 'Ti trovi qui?<br/>Fai il <strong>Check</strong> di questo Stop!',
-      nearHere: 'Scopri altri luoghi qui vicino...',
+      locationChecked: 'Checked!',
+      infoFromTheWeb: 'More info from the Web',
+      areYouHere: 'Are you here?<br/> <strong>Check</strong> this Place!',
+      nearHere: 'Find other places near here...',
       goals: {
-        promo: 'Obiettivo: trova parte del Promocode',
-        shop: 'Obiettivo: ottieni il promocode completo e usalo per goderti un momento di relax!',
-        check: 'Obiettivo: completa il tragitto',
-        finish: 'Obiettivo: condividi la tua esperienza!'
+        promo: 'Goal: find Promocode',
+        shop: 'Goal: get the complete Promocode and take a relaxing rest!',
+        check: 'Goal: complete your Journey',
+        finish: 'Goal: share your experience!'
       },
       popups: {
         notEvenCloseTitle: 'Non ci sei nemmeno vicino!',
@@ -71,7 +71,7 @@ const messages = {
         generalInfos: 'Informazioni itinerario',
         places: 'Luoghi',
         youWillVisit: 'Luoghi che visiterai!',
-        placesImageInCardAltText: 'Galleria Vittorio Emanuele - Photo by Fernando Meloni on Unsplash',
+        placesImageInCardAltText: 'Galleria Vittorio Emanuele',
         placesTextInCard: 'Il tour comprende una passeggiata che parte dalla maestosa <strong>Stazione Centrale</strong> fino al <strong>Duomo</strong>, simbolo del capoluogo lombardo, e al passaggio coperto della <strong>Galleria Vittorio Emanuele II</strong>. Dopo aver scoperto la grandiosità della <strong>Piazza della Scala</strong>, il giro prosegue verso l’affascinante <strong>quartiere Brera</strong> e il complesso fortificato del <strong>Castello Sforzesco</strong>, pronti per raggiungere l’ultima tappa del circuito rappresentata dalla modernità di <strong>piazza Gae Aulenti</strong>.',
         relax: 'Relax',
         youWillTaste: 'Ristoro e sapori',
@@ -130,7 +130,7 @@ const messages = {
                 `
               },
               2: {
-                alt: 'Palazzo Reale ',
+                alt: 'Palazzo Reale - WillyCortez (CC BY-SA 4.0)',
                 description: `Il Palazzo Reale rappresenta in modo elegante l’architettura classica. Oggi al suo interno si svolgono le maggiori mostre del capoluogo lombardo ma un tempo il Palazzo del Broletto Vecchio (un tempo era noto così) è stato la sede del governo di Milano, del Regno del Lombardo-veneto e persino residenza reale.`
               },
               3: {
@@ -142,10 +142,12 @@ const messages = {
             },
             nears: {
               0: {
-                name: 'Magazzini La Rinascente'
+                name: 'Magazzini La Rinascente',
+                alt: 'Magazzini La Rinascente'
               },
               1: {
-                name: 'Pinacoteca Ambrosiana'
+                name: 'Pinacoteca Ambrosiana',
+                alt: 'Pinacoteca Ambrosiana - Gampe (CC BY-SA 4.0)'
               }
             },
             links: {
@@ -184,16 +186,18 @@ const messages = {
                 `
               },
               2: {
-                alt: 'Gallerie d\'Italia',
+                alt: 'Gallerie d\'Italia - Paolobon140 (CC BY-SA 4.0)',
                 description: `Gallerie d’Italia è il simbolo di Progetto Cultura, l’insieme degli spazi espositivi di Intesa Sanpaolo. Uno dei palazzi storici della banca si trova proprio nella Piazza della Scala, un luogo di enorme patrimonio artistico e architettonico dove è possibile visionare le opere rappresentative dell’Ottocento italiano.`
               }
             },
             nears: {
               0: {
-                name: 'Casa del Manzoni'
+                name: 'Casa del Manzoni',
+                alt: 'Casa del Manzoni - Fabiopic81 (CC BY-SA 4.0)'
               },
               1: {
-                name: 'Via Monte Napoleone'
+                name: 'Via Monte Napoleone',
+                alt: 'Casa del Manzoni - Warburg (CC BY-SA 4.0)'
               }
             },
             links: {
@@ -216,16 +220,18 @@ const messages = {
             description: `Unisci architettura, storia e cultura e ottieni il quartiere Brera: questo è uno dei luoghi più visitati di Milano, un posto ricco di charme e fascino che deve il suo nome a “braida”, distesa di terra incolta. Già oltre cent’anni fa il quartiere era frequentato dagli artisti dell’Accademia di Belle Arti che si spostavano dal Palazzo Brera alla Pinacoteca, dall’Orto Botanico al Mercatino.`,
             images: {
               0: {
-                alt: 'Le vie del quartiere Brera',
+                alt: 'Le vie del quartiere Brera - RoseHAN (CC BY-SA 4.0)',
                 description: `Strade strette con i ciottoli, cortili magnifici, palazzi d’epoca, botteghe e boutique: è nelle vie del quartiere Brera che gli appassionati dello shopping si dirigono per cercare le migliori occasioni tra gli oggetti più originali del momento. E, dopo gli acquisti, impossibile evitare una sosta in uno dei molti locali inseriti in questa cornice bohemien.`
               }
             },
             nears: {
               0: {
-                name: 'Pinacoteca di Brera'
+                name: 'Pinacoteca di Brera',
+                alt: 'Pinacoteca di Brera'
               },
               1: {
-                name: 'Orto Botanico di Brera'
+                name: 'Orto Botanico di Brera',
+                alt: 'Orto Botanico di Brera - Daniel Ventura (CC BY-SA 4.0)'
               }
             },
             links: {
@@ -252,19 +258,24 @@ const messages = {
             },
             nears: {
               0: {
-                name: 'Parco Sempione'
+                name: 'Parco Sempione',
+                alt: 'Parco Sempione'
               },
               1: {
-                name: 'Triennale di Milano'
+                name: 'Triennale di Milano',
+                alt: 'Triennale di Milano'
               },
               2: {
-                name: 'Arco della Pace'
+                name: 'Arco della Pace',
+                alt: 'Arco della Pace'
               },
               3: {
-                name: 'Basilica di San Ambrogio'
+                name: 'Basilica di San Ambrogio',
+                alt: 'Basilica di San Ambrogio'
               },
               4: {
-                name: 'Museo del Cenacolo'
+                name: 'Museo del Cenacolo',
+                alt: 'Museo del Cenacolo'
               }
             },
             links: {
@@ -302,10 +313,12 @@ const messages = {
             },
             nears: {
               0: {
-                name: 'Via Moscova'
+                name: 'Via Moscova',
+                alt: 'Via Moscova'
               },
               1: {
-                name: 'Corso Como'
+                name: 'Corso Como',
+                alt: 'Corso Como'
               }
             },
             links: {
@@ -346,10 +359,12 @@ const messages = {
             },
             nears: {
               0: {
-                name: 'Bosco verticale'
+                name: 'Bosco verticale',
+                alt: 'Bosco verticale'
               },
               1: {
-                name: 'Parco Biblioteca degli Alberi'
+                name: 'Parco Biblioteca degli Alberi',
+                alt: 'Parco Biblioteca degli Alberi'
               }
             },
             links: {
@@ -443,7 +458,7 @@ const messages = {
         generalInfos: 'Informazioni itinerario',
         places: 'Luoghi',
         youWillVisit: 'Luoghi che visiterai!',
-        placesImageInCardAltText: 'Galleria Vittorio Emanuele - Photo by Fernando Meloni on Unsplash',
+        placesImageInCardAltText: 'Galleria Vittorio Emanuele II',
         placesTextInCard: 'Il tour comprende una passeggiata che parte dalla maestosa <strong>Stazione Centrale</strong> fino al <strong>Duomo</strong>, simbolo del capoluogo lombardo, e al passaggio coperto della <strong>Galleria Vittorio Emanuele II</strong>. Dopo aver scoperto la grandiosità della <strong>Piazza della Scala</strong>, il giro prosegue verso l’affascinante <strong>quartiere Brera</strong> e il complesso fortificato del <strong>Castello Sforzesco</strong>, pronti per raggiungere l’ultima tappa del circuito rappresentata dalla modernità di <strong>piazza Gae Aulenti</strong>.',
         relax: 'Relax',
         youWillTaste: 'Ristoro e sapori',
@@ -451,12 +466,12 @@ const messages = {
         shopTextInCard: 'Il punto di ristoro di questo tour è la <strong>Gelateria Oggi di Corso Garibaldi</strong>.<br/>Un favoloso mondo di sapori, profumi e artigianalità dove sarà possibile scoprire la lavorazione dei freschissimi ingredienti che vengono amalgamati nella cucina dell’Officina di Oggi Gelato per dar vita a dolci emozioni.<br/><br/><strong>Utilizza qui il promocode che scoprirai durante il tour!</strong>',
         stops: {
           0: {
-            name: 'Stazione Centrale di Milano',
+            name: 'Stazione Centrale',
             description: `La Stazione Centrale di Milano è la seconda più trafficata in Italia: tutti i giorni circa 600 treni circolano nella stazione ferroviaria che ha 24 binari tronchi coperti da una grande tettoia lunga più di 340 metri e composta da ben cinque volte in ferro e vetro.<br/>
             Sul lato sud-est della stazione c’è un’entrata che viene aperta in alcune occasioni speciali e che un tempo portava nell’area riservata alla famiglia reale dei Savoia. C’è anche un passaggio segreto (dietro lo specchio in bagno!).`,
             images: {
               0: {
-                alt: 'Stazione Centrale - La facciata della Stazione',
+                alt: 'Stazione Centrale di Milano',
                 description: `Archi, statue, terrazze, decorazioni: è impossibile non cogliere il fascino senza tempo del complesso monumentale realizzato da Ulisse Stacchini e inaugurato nel 1931. La solida struttura in marmo e cemento rende la costruzione ancora più possente (assieme all’acciaio che ricopre le gallerie) e raccoglie il mix di stili del corpo frontale. Liberty, Art Decò e Neoclassico rendono unica la cattedrale del movimento che ogni giorno vede passare più di 300mila viaggiatori.`
               },
               1: {
@@ -490,7 +505,7 @@ const messages = {
             description: `Il Duomo di Milano è la terza chiesa cattolica nel mondo: il meraviglioso stile Gotico si esprime in ogni guglia e particolare che è stato realizzato con il marmo bianco di Condoglia, una cava del Lago Maggiore. Ci sono voluti 500 anni per ultimarla, cosa che è successa alla fine del 1800, e ancora oggi la chiesa sorge sul territorio sacro che un tempo ospitava il tempio di Minerva.`,
             images: {
               0: {
-                alt: 'La facciata del Duomo',
+                alt: 'Il Duomo',
                 description: `Il monumento simbolo del capoluogo lombardo è stato dedicato a Santa Maria Nascente. La sua facciata testimonia il tempo e gli stili che si sono susseguiti nella sua realizzazione, secoli di scultura e architettura italiana.<br/>
                 I portali e le finestre soprastanti, il timpano spezzato, i portali in bassorilievo, i basamenti e i rilievi, i finestroni neogotici, le statue: lo stile neogotico, quello tardo rinascimentale e il barocco si susseguono dando vita alla straordinaria facciata del Duomo.
                 `
@@ -502,7 +517,7 @@ const messages = {
                 `
               },
               2: {
-                alt: 'Palazzo Reale ',
+                alt: 'Palazzo Reale - WillyCortez (CC BY-SA 4.0)',
                 description: `Il Palazzo Reale rappresenta in modo elegante l’architettura classica. Oggi al suo interno si svolgono le maggiori mostre del capoluogo lombardo ma un tempo il Palazzo del Broletto Vecchio (un tempo era noto così) è stato la sede del governo di Milano, del Regno del Lombardo-veneto e persino residenza reale.`
               },
               3: {
@@ -514,10 +529,12 @@ const messages = {
             },
             nears: {
               0: {
-                name: 'Magazzini La Rinascente'
+                name: 'Magazzini La Rinascente',
+                alt: 'Magazzini La Rinascente'
               },
               1: {
-                name: 'Pinacoteca Ambrosiana'
+                name: 'Pinacoteca Ambrosiana',
+                alt: 'Pinacoteca Ambrosiana - Gampe (CC BY-SA 4.0)'
               }
             },
             links: {
@@ -562,10 +579,12 @@ const messages = {
             },
             nears: {
               0: {
-                name: 'Casa del Manzoni'
+                name: 'Casa del Manzoni',
+                alt: 'Casa del Manzoni - Fabiopic81 (CC BY-SA 4.0)'
               },
               1: {
-                name: 'Via Monte Napoleone'
+                name: 'Via Monte Napoleone',
+                alt: 'Casa del Manzoni - Warburg (CC BY-SA 4.0)'
               }
             },
             links: {
@@ -594,10 +613,12 @@ const messages = {
             },
             nears: {
               0: {
-                name: 'Pinacoteca di Brera'
+                name: 'Pinacoteca di Brera',
+                alt: 'Pinacoteca di Brera'
               },
               1: {
-                name: 'Orto Botanico di Brera'
+                name: 'Orto Botanico di Brera',
+                alt: 'Orto Botanico di Brera - Daniel Ventura (CC BY-SA 4.0)'
               }
             },
             links: {
@@ -624,19 +645,24 @@ const messages = {
             },
             nears: {
               0: {
-                name: 'Parco Sempione'
+                name: 'Parco Sempione',
+                alt: 'Parco Sempione'
               },
               1: {
-                name: 'Triennale di Milano'
+                name: 'Triennale di Milano',
+                alt: 'Triennale di Milano'
               },
               2: {
-                name: 'Arco della Pace'
+                name: 'Arco della Pace',
+                alt: 'Arco della Pace'
               },
               3: {
-                name: 'Basilica di San Ambrogio'
+                name: 'Basilica di San Ambrogio',
+                alt: 'Basilica di San Ambrogio'
               },
               4: {
-                name: 'Museo del Cenacolo'
+                name: 'Museo del Cenacolo',
+                alt: 'Museo del Cenacolo'
               }
             },
             links: {
@@ -657,27 +683,29 @@ const messages = {
             `,
             carousel: {
               0: {
-                alt: 'Descizione 1'
+                alt: 'Fragola, crema di mascarpone e prima nota cacao'
               },
               1: {
-                alt: 'Descizione 2'
+                alt: 'PAOLINA, una delle nostre creme spalmabili'
               },
               2: {
-                alt: 'Descizione 3'
+                alt: 'Il nostro tiramisù'
               }
             },
             images: {
               0: {
-                alt: 'Oggi Gelato - descrizione attività',
+                alt: 'Oggi Gelato - il punto vendita di Corso Garibaldi',
                 description: `OGGI Gelato è una delle prime gelaterie italiane a utilizzare il logo Campa Amica di Coldiretti, un progetto che promuove la filiera agricola completamente italiana. Ma non solo! L’Officina Gelato Gusto Italiano è stata scelta per essere il fornitore ufficiale del Papa, l’unica gelateria a produrre il gelato per la Santa Sede.`
               }
             },
             nears: {
               0: {
-                name: 'Via Moscova'
+                name: 'Via Moscova',
+                alt: 'Via Moscova'
               },
               1: {
-                name: 'Corso Como'
+                name: 'Corso Como',
+                alt: 'Corso Como'
               }
             },
             links: {
@@ -718,10 +746,12 @@ const messages = {
             },
             nears: {
               0: {
-                name: 'Bosco verticale'
+                name: 'Bosco verticale',
+                alt: 'Bosco verticale'
               },
               1: {
-                name: 'Parco Biblioteca degli Alberi'
+                name: 'Parco Biblioteca degli Alberi',
+                alt: 'Parco Biblioteca degli Alberi'
               }
             },
             links: {

@@ -52,7 +52,7 @@
         <div v-for="location in stop.near" :key="location.id" class="location">
           <a target="_blank" :href="location.gmapsUrl">
             <img :src="getBgImage(location.orientation, 1)" alt="Background white image" />
-            <img :alt="location.name" v-lazy="location.image" class="front-image"/>
+            <img :alt="location.alt" v-lazy="location.image" class="front-image"/>
             <i class="fas fa-map-marker-alt"></i>&nbsp;{{ location.name }}
           </a>
         </div>
@@ -319,6 +319,7 @@ export default {
 
   .links li {
     margin: 1.5rem 1rem;
+    font-size: .8rem;
   }
 
   .check {
@@ -364,7 +365,7 @@ export default {
   }
 
   h3 {
-    font-size: 90%;
+    font-size: 80%;
   }
 
   h2 {
@@ -373,7 +374,7 @@ export default {
 
   .swiper-slide-wrapper span {
     display: inline-block;
-    background-color: rgba(0,0,0,0.2);
+    background-color: rgba(0,0,0,0.5);
     width: 100%;
     text-align: center;
     position: absolute;
@@ -384,6 +385,8 @@ export default {
     color: #ffffff;
     text-shadow: 1px 1px 1px #000;
     font-style: italic;
+    font-size: 0.8rem;
+    line-height: 1rem;
   }
   .swiper-container {
     margin-bottom: 2rem;
