@@ -98,12 +98,6 @@ const data = {
               value: i18n.t('message.tour_0.stops.6.name')
             },
             {
-              id: 2,
-              icon: 'fas fa-star-half-alt',
-              key: i18n.t('message.rating'),
-              value: 0 + '<span class="small">/5</span>'
-            },
-            {
               id: 3,
               icon: 'fas fa-clock',
               key: i18n.t('message.duration'),

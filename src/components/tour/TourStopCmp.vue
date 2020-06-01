@@ -183,7 +183,7 @@ export default {
             resolve()
           }, (error) => {
             // I cannot get user current position
-            that.$ga.event('Tour', 'Check', 'No Geolocation permission', this.stop.id)
+            that.$ga.event('Tour', 'Check', 'No Geolocation permission', that.stop.id)
             that.swalPopup = geolocalizationNotActivePopup(error)
             fireThePopup()
             that.isCheckingPosition = false
@@ -193,7 +193,7 @@ export default {
 
       let checkTheStopAndIncrementPromocodeCouter = () => {
         return new Promise(function (resolve, reject) {
-          if ( true || that.currentDistanceFromStop < that.minDistanceFromStop) { // true
+          if (that.currentDistanceFromStop < that.minDistanceFromStop) { // true
             that.stop.checked = true
             that.$emit('incrementStopsDone')
             that.$emit('updateRevealedPromocode', that.stop.id)
