@@ -3,7 +3,14 @@
   <h2><i class="fas fa-flag-checkered"></i>&nbsp;{{ $t('message.congrats') }}</h2>
   <h3>{{ $t('message.shareIt') }}</h3>
   <div>
-    <iframe :src="tourPostUrl" height="158" style="border:none;overflow:hidden" scrolling="no" frameborder="0" allowTransparency="true" allow="encrypted-media"></iframe>
+    <div class="fb-post" data-href="https://www.facebook.com/permalink.php?story_fbid=166304114892687&amp;id=103840521139047" data-show-text="true" data-width=""><blockquote cite="https://developers.facebook.com/permalink.php?story_fbid=166304114892687&amp;id=103840521139047" class="fb-xfbml-parse-ignore">
+    <p>Un giorno a... Milano
+    Visita i luoghi del nostro itinerario e scopri il PROMOCODE segreto!
+    Effettua un check nei...
+    </p>Pubblicato da <a href="https://www.facebook.com/Torzeon-103840521139047/">Torzeon</a> su&nbsp;<a href="https://developers.facebook.com/permalink.php?story_fbid=166304114892687&amp;id=103840521139047">Lunedì 1 giugno 2020</a></blockquote></div>
+
+    <br/><br/><br/><br/>
+
     <blockquote class="twitter-tweet"><p lang="en" dir="ltr"></p>&mdash; Torzeon (@torzeon) <a :href="tourTweetUrl"></a></blockquote>
   </div>
 </div>
