@@ -44,6 +44,10 @@ export default {
     border-top: 1px solid #ccc;
   }
 
+  #end .fb-post {
+    overflow-x: scroll;
+  }
+
   #end i {
     font-size: 200%;
     vertical-align: middle;

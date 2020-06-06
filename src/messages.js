@@ -24,7 +24,7 @@ const messages = {
       areYouHere: 'Are you here?<br/> <strong>Check</strong> this Place!',
       nearHere: 'Find other places near here...',
       goals: {
-        promo: 'Goal: find Promocode',
+        promo: 'Goal: find the Promocode',
         shop: 'Goal: get the complete Promocode and take a relaxing rest!',
         check: 'Goal: complete your Journey',
         finish: 'Goal: share your experience!'
@@ -61,7 +61,7 @@ const messages = {
         There will be <strong> a break at the gluttony ice cream store Oggi Gelato </strong> which is located in Corso Garibaldi, a delicious refreshment that will sweeten the final phase of the tour.
         `,
         info: 'info',
-        generalInfos: 'Tout information',
+        generalInfos: 'Tour information',
         places: 'Places',
         youWillVisit: 'Places you will visit!',
         placesImageInCardAltText: 'Galleria Vittorio Emanuele',
