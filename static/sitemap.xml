@@ -6,13 +6,21 @@
         <xhtml:link rel="alternate" hreflang="en" href="https://www.torzeon.com/#/a-day-in-milan"/>
 
         <image:image>
-            <image:loc>https://torzeon.s3.eu-central-1.amazonaws.com/torzeon-logo.min.png</image:loc>
+            <image:loc>https://torzeon.s3.eu-central-1.amazonaws.com/torzeon-logo-min.png</image:loc>
             <image:caption>
                 torzeon.com main logo
             </image:caption>
         </image:image>
 
-        <lastmod>2020-05-05</lastmod>
+
+        <image:image>
+            <image:loc>https://torzeon.s3.eu-central-1.amazonaws.com/tour_0/cover-min.jpg</image:loc>
+            <image:caption>
+                torzeon.com share image
+            </image:caption>
+        </image:image>
+
+        <lastmod>2020-06-06</lastmod>
         <changefreq>daily</changefreq>
         <priority>1.0</priority>
     </url>

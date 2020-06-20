@@ -15,7 +15,7 @@ const data = {
       default: true,
       title: i18n.t('message.tour_0.title'),
       subtitle: i18n.t('message.tour_0.subtitle'),
-      cover: 'https://torzeon.s3.eu-central-1.amazonaws.com/tour_0/share-min.jpg',
+      cover: 'https://torzeon.s3.eu-central-1.amazonaws.com/tour_0/cover-min.jpg',
       text: i18n.t('message.tour_0.text'),
       author: 'Marco Pavan',
       avatarAuthorUrl: 'https://torzeon.s3.eu-central-1.amazonaws.com/tour_0/author-min.jpg',

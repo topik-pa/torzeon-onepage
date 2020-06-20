@@ -14,7 +14,7 @@ button, a.btn {
   vertical-align: middle;
   background-color: transparent;
   border: 2px solid transparent;
-  padding: .5rem 1rem;
+  padding: .7rem 1rem;
   font-size: 100%;
   line-height: 1.4;
   border-radius: 5px;
@@ -25,6 +25,7 @@ button.primary, a.btn.primary {
   background-color: rgb(245, 224, 0);
   border-color: rgb(184, 170, 17);
   font-weight: bold;
+  width: 100%;
 }
 button.primary:hover, a.btn.primary:hover {
   background-color: rgb(230, 212, 25)
